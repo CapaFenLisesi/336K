@@ -1,0 +1,423 @@
+\chapter{Multi-Dimensional Motion}
+\section{Introduction}
+This chapter employs Newton's laws to 
+investigate various aspects  of multi-dimensional motion. 
+
+\section{Motion in a Two-Dimensional Harmonic Potential}\label{sn1}
+Consider a particle of mass $m$ moving in 
+the two-dimensional harmonic potential
+\begin{equation}\label{e5.1}
+U(x,y) = \frac{1}{2}\,k\,r^2,
+\end{equation} 
+where $r=\sqrt{x^2+y^2}$, and $k>0$. It follows that the particle is subject to
+a force,
+\begin{equation}
+{\bf f} = - \nabla U = -k\,(x,\, y) = - k\,{\bf r},
+\end{equation}
+which always points {\em towards}\/ the origin, and whose magnitude increases {\em linearly}\/ with
+increasing distance from the origin. According to Newton's second law, the
+equation of motion of the particle is 
+\begin{equation}
+m\,\frac{d^2{\bf r}}{dt^2} = {\bf f} = - k\,{\bf r}.
+\end{equation}
+When written in component form, the above equation reduces to
+\begin{eqnarray}\label{e5.4}
+\frac{d^2 x}{d t^2} &=& - \omega_0^{\,2}\,x,\\[0.5ex]
+\frac{d^2 y}{d t^2} &=& - \omega_0^{\,2}\,y,\label{e5.5}
+\end{eqnarray}
+where $\omega_0 = \sqrt{k/m}$. 
+
+Since Equations~(\ref{e5.4}) and (\ref{e5.5}) are both {\em simple harmonic equations},
+we can immediately write their general solutions:
+\begin{eqnarray}
+x &=& A\,\cos(\omega_0\,t-\phi_1),\\[0.5ex]
+y&=& B\,\cos(\omega_0\,t-\phi_2).
+\end{eqnarray}
+Here, $A$, $B$, $\phi_1$, and $\phi_2$ are arbitrary constants of integration. We can simplify the above equations slightly by shifting the
+origin of time (which is, after all, arbitrary): {\em i.e.},
+\begin{equation}
+t\rightarrow t' + \phi_1/\omega_0.
+\end{equation}
+Hence, we obtain
+\begin{eqnarray}\label{e5.9}
+x &=& A\,\cos(\omega_0\,t'),\\[0.5ex]
+y&=& B\,\cos(\omega_0\,t'-{\mit\Delta}),\label{e5.10}
+\end{eqnarray}
+where ${\mit\Delta}=\phi_2-\phi_1$. 
+Note that the motion is clearly {\em periodic}\/ in time, with period $T=2\,\pi/\omega_0$.
+Thus, the particle must trace out some {\em closed trajectory}\/ in the
+$x$-$y$ plane.
+The question, now, is what does this
+trajectory look like  as a function of
+the relative phase-shift, ${\mit\Delta}$, between the oscillations in the
+$x$- and $y$-directions?
+
+Using standard trigonometry, we can write Equation~(\ref{e5.10})
+in the form
+\begin{equation}
+y = B\left[\cos(\omega_0\,t')\,\cos{\mit\Delta} + \sin(\omega_0\,t')\,\sin{\mit\Delta}\right].
+\end{equation}
+Hence, using Equation~(\ref{e5.9}), we obtain
+\begin{equation}
+\left(\frac{y}{B} - \frac{x}{A}\,\cos{\mit\Delta}\right)^2=\sin^2(\omega_0\,t')\,\sin^2{\mit\Delta} = \left(1-\frac{x^2}{A^2}\right)\sin^2{\mit\Delta},
+\end{equation}
+which simplifies to give
+\begin{equation}\label{e5.13}
+\frac{x^2}{A^2}  - 2\,\frac{x\,y}{A\,B} \,\cos{\mit\Delta} + \frac{y^2}{B^2}
+= \sin^2{\mit\Delta}.
+\end{equation}
+Unfortunately, the above equation is not immediately recognizable as being
+the equation of any particular geometric curve: {\em e.g.}, a circle, an ellipse, or
+a parabola, {\em etc}.
+
+Perhaps our problem is that we are using the wrong coordinates.
+Suppose that we rotate our coordinate axes about the $z$-axis by an
+angle $\theta$, as illustrated in Figure~\ref{f3}. According to Equations~(\ref{t1}) and (\ref{t2}), our old coordinates  ($x$, $y$) are related to our new coordinates
+($x'$, $y'$) via
+\begin{eqnarray}
+x&=& x'\,\cos\theta - y'\,\sin \theta,\label{e5.14}\\[0.5ex]
+y &=& x'\,\sin\theta + y'\,\cos\theta.\label{e5.15}
+\end{eqnarray}
+Let us see whether Equation~(\ref{e5.13}) takes a simpler form when expressed
+in terms of our new coordinates. Equations (\ref{e5.13})--(\ref{e5.15})
+yield
+\begin{eqnarray}
+x'^{\,2}\left[\frac{\cos^2\theta}{A^2} - \frac{2\,\cos\theta\,\sin\theta\,\cos{\mit\Delta}}{A\,B} + \frac{\sin^2\theta}{B^2}\right]&&\nonumber\\[0.5ex]
++ y'^{\,2}\left[\frac{\sin^2\theta}{A^2} +\frac{2\,\cos\theta\,\sin\theta\,\cos{\mit\Delta}}{A\,B} + \frac{\cos^2\theta}{B^2}\right]&&\label{e5.16}\\[0.5ex]
++x' \,y'\left[-\frac{2\,\sin\theta\,\cos\theta}{A^2} + \frac{2\,(\sin^2\theta-\cos^2\theta)\,\cos{\mit\Delta}}{A\,B} + \frac{2\,\cos\theta\,\sin\theta}{B^2}\right] &=& \sin^2{\mit\Delta}.\nonumber
+\end{eqnarray}
+We can simplify the above equation by setting the term involving $x' \,y'$ to
+zero. Hence,
+\begin{equation}
+-\frac{\sin (2\,\theta)}{A^2}  - \frac{2\,\cos (2\,\theta)\,\cos{\mit\Delta}}{A\,B} + \frac{\sin (2\,\theta)}{B^2}= 0,
+\end{equation}
+where we have made use of some simple trigonometric identities. Thus, the $x' \,y'$ term disappears when $\theta$ takes the special value
+\begin{equation}
+\theta = \frac{1}{2}\,\tan^{-1}\left(\frac{2\,A\,B\,\cos{\mit\Delta}}{A^2-B^2}\right).
+\end{equation}
+In this case, Equation~(\ref{e5.16}) reduces to
+\begin{equation}\label{e5.19}
+\frac{x'^{\,2}}{a^2} + \frac{y'^{\,2}}{b^2} = 1,
+\end{equation}
+where
+\begin{eqnarray}
+\frac{1}{a^2}& =& \frac{1}{\sin^2{\mit\Delta}}\left[\frac{\cos^2\theta}{A^2} - \frac{2\,\cos\theta\,\sin\theta\,\cos{\mit\Delta}}{A\,B} + \frac{\sin^2\theta}{B^2}\right],\\[0.5ex]
+\frac{1}{b^2}& =& \frac{1}{\sin^2{\mit\Delta}}\left[\frac{\sin^2\theta}{A^2} +\frac{2\,\cos\theta\,\sin\theta\,\cos{\mit\Delta}}{A\,B} + \frac{\cos^2\theta}{B^2}\right].
+\end{eqnarray}
+Of course, we immediately recognize Equation~(\ref{e5.19}) as the equation of
+an {\em ellipse}, centered on the origin, whose major and minor axes are aligned along the
+$x'$- and $y'$-axes, and whose major and minor radii are $a$ and $b$,
+respectively (assuming that $a>b$). 
+
+We conclude that, in general, a particle of mass $m$ moving in the two-dimensional harmonic potential (\ref{e5.1}) executes a {\em closed elliptical
+orbit}\/ (which is not necessarily aligned along the $x$- and $y$-axes), centered on the origin, with
+period $T = 2\,\pi/\omega_0$, where $\omega_0=\sqrt{k/m}$. 
+
+\begin{figure}[h]
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter04/fig4.01.eps}}
+\caption{\em Trajectories in a two-dimensional harmonic oscillator potential.}\label{f24}
+\end{figure}
+
+Figure~\ref{f24} shows  some example trajectories calculated for $A=2$, $B=1$, and
+the following values of the phase difference, ${\mit\Delta}$: (a) ${\mit\Delta}=0$; (b) ${\mit\Delta}=\pi/4$; (c) ${\mit\Delta}=\pi/2$;
+(d) ${\mit\Delta}= 3\pi/4$. Note that when ${\mit\Delta}=0$ the
+trajectory degenerates into a straight-line (which can be thought of as an
+ellipse whose minor radius is zero).
+
+Perhaps, the main lesson to be learned from the above study of two-dimensional
+motion in a harmonic potential is that comparatively simple patterns of
+motion can be made to look complicated when expressed 
+in terms of ill-chosen coordinates.
+
+\section{Projectile Motion with Air Resistance}
+Suppose that a
+projectile of mass $m$ is launched, at $t=0$, from ground level (in a flat plain), making an angle $\theta$ to the horizontal. Suppose, further, that, in addition
+to the force of gravity, the projectile is subject to an air resistance
+force which acts in the opposite direction to  its instantaneous
+direction of motion, and whose magnitude is {\em directly proportional}\/ to its  instantaneous speed. This is not a particularly accurate model
+of the drag force due to air resistance (the magnitude of the drag force is typically proportion
+to the square of the speed---see Section~\ref{svelyd}), but it does lead to
+tractable equations of motion. Hence, by using this model we can, at least,
+get some idea of how air resistance modifies projectile trajectories.
+
+Let us adopt a Cartesian coordinate system whose origin coincides with the launch point, and whose $z$-axis
+points vertically upward. Let the initial velocity of the projectile
+lie in the $x$-$z$ plane. Note that, since neither gravity nor the drag force 
+cause the projectile to  move out of the $x$-$z$ plane,
+we can effectively ignore the $y$ coordinate in this problem.
+
+The equation of motion of our projectile is written
+\begin{equation}
+m\,\frac{d{\bf v}}{dt} = m\,{\bf g} - c\,{\bf v},
+\end{equation}
+where ${\bf v} = (v_x, v_z)$ is the projectile velocity,
+${\bf g} = (0, -g)$ the acceleration due to gravity, and
+$c$ a positive constant. In component form, the
+above equation becomes
+\begin{eqnarray}
+\frac{dv_x}{dt} &=& - g\,\frac{v_x}{v_t},\label{e5.23u}\\[0.5ex]
+\frac{d v_z}{dt} &=& - g\left(1+\frac{v_z}{v_t}\right).\label{e5.24u}
+\end{eqnarray}
+Here, $v_t = m\,g/c$ is the {\em terminal velocity}: {\em i.e.}, the
+velocity at which the drag force balances the gravitational force (for a
+projectile falling vertically downward).
+
+Integrating Equation~(\ref{e5.23u}), we obtain
+\begin{equation}
+\int_{v_{x\,0}}^v\frac{dv_x}{v_x} = - \frac{g}{v_t}\,t,
+\end{equation}
+where $v_{x\,0} = v_0\,\cos\theta$ is the $x$-component of the
+launch velocity. 
+Hence,
+\begin{equation}
+\ln\left(\frac{v_x}{v_{x\,0}}\right) = - \frac{g}{v_t}\,t,
+\end{equation}
+or
+\begin{equation}\label{e5.27u}
+v_x = v_0\,\cos\theta\,{\rm e}^{-g\,t/v_t}.
+\end{equation}
+It is clear, from the above equation, that air drag causes the  projectile's horizontal
+velocity, which would otherwise be constant, to {\em decay}\/ exponentially on a time-scale of order $v_t/g$.
+
+Integrating Equation~(\ref{e5.24u}), we get
+\begin{equation}
+\int_{v_{z\,0}}^{v_z} \frac{dv_z}{v_t+v_z} = - \frac{g}{v_t}\,t,
+\end{equation}
+where $v_{z\,0}=v_0\,\sin\theta$ is the $z$-component of the launch velocity. Hence,
+\begin{equation}
+\ln\left(\frac{v_t+v_z}{v_t+v_{z\,0}}\right) = - \frac{g}{v_t}\,t,
+\end{equation}
+or
+\begin{equation}\label{e5.30u}
+v_z = v_0\,\sin\theta\,{\rm e}^{-g\,t/v_t} - v_t\left(1-e^{-g\,t/v_t}\right).
+\end{equation}
+It thus follows, from Equations~(\ref{e5.27u}) and (\ref{e5.30u}), that if the
+projectile stays in the air much longer than a time of order $v_t/g$ then
+it ends up falling vertically downward at the terminal velocity, $v_t$, irrespective
+of its initial launch angle.
+
+Integration of (\ref{e5.27u}) yields
+\begin{equation}
+x = \frac{v_0\,v_t\,\cos\theta}{g}\left(1-{\rm e}^{-g\,t/v_t}\right).
+\end{equation}
+In the limit $t\ll v_t/g$, the above equation reduces to
+\begin{equation}\label{e5.32u}
+x = v_0\,\cos\theta\,t,
+\end{equation}
+which is the standard result in the absence of air drag.
+In the opposite limit, $t\gg v_t/g$, we get
+\begin{equation}\label{e5.33u}
+x = \frac{v_0\,v_t\,\cos\theta}{g}.
+\end{equation}
+The above expression clearly sets an effective upper limit on how far the
+projectile can travel in the horizontal direction.
+
+Integration of (\ref{e5.30u}) gives
+\begin{equation}
+z = \frac{v_t}{g}\,\left(v_0\,\sin\theta + v_t\right)\left(1-{\rm e}^{-g\,t/v_t}\right) - v_t\,t.
+\end{equation}
+In the limit $t\ll v_t/g$, this equation reduces to
+\begin{equation}
+z = v_0\,\sin\theta\,t - \frac{g}{2}\,t^2,
+\end{equation}
+which is the standard result in the absence of air drag. In the opposite
+limit, $t\gg v_t/g$, we get
+\begin{equation}
+z =  \frac{v_t}{g}\,\left(v_0\,\sin\theta + v_t\right) - v_t\,t.
+\end{equation}
+Incidentally,   the above analysis implies that air resistance
+only starts to have an appreciable effect on the trajectory after
+the projectile has been in the air a time of order $v_t/g$.
+
+It is clear, from the previous two equations, that the time
+of flight of the projectile ({\em i.e.}, the time at which $z=0$, excluding the
+trivial result $t=0$) is
+\begin{equation}
+t_f = \frac{2\,v_0\,\sin\theta}{g}
+\end{equation}
+when $t\ll v_t/g$, which implies that $v_0\,\sin\theta \ll v_t$,
+and
+\begin{equation}
+t_f = \frac{v_0\,\sin\theta}{g}
+\end{equation}
+when  $t\gg v_t/g$, which implies that $v_0\,\sin\theta \gg v_t$.
+It thus follows, from Equations~(\ref{e5.32u}) and (\ref{e5.33u}), that
+the horizontal range [{\em i.e.}, $x(t_f)$] of the projectile
+is 
+\begin{equation}\label{e5.39u}
+R = \frac{v_0^{\,2}\,\sin(2\,\theta)}{g}
+\end{equation}
+when $v_0\,\sin\theta \ll v_t$, and
+\begin{equation}\label{e5.40u}
+R= \frac{v_0\,v_t\,\cos\theta}{g}
+\end{equation}
+when $v_0\,\sin\theta \gg v_t$.
+Equation~(\ref{e5.39u}) is, of course, the standard result without
+air resistance. This result implies that, in the absence of air resistance, the maximum horizontal range, $v_0^{\,2}/g$,
+is achieved when the launch angle $\theta$ takes the value $45^\circ$.
+On the other hand, Equation~(\ref{e5.40u}) implies that, in the presence of
+air resistance, the maximum horizontal
+range, $v_0\,v_t/g$, is achieved when $\theta$ is made as small
+as possible. However, $\theta$ cannot be made too small, since
+expression (\ref{e5.40u}) is only valid when $v_0\,\sin\theta \gg v_t$.
+In fact, assuming  that $v_0\gg v_t$,  the maximum horizontal
+range, $v_0\,v_t/g$, is achieved when $\theta\sim v_t/v_0\ll 1$. We thus
+conclude that if air resistance is significant then it causes the horizontal range of the
+projectile to scale {\em linearly}, rather than quadratically, with the
+launch velocity, $v_0$. Moreover, the maximum horizontal  range is achieved
+with a launch angle which is {\em much shallower}\/ than the standard
+result, $45^\circ$. 
+
+\begin{figure}[h]
+\epsfysize=3in
+\centerline{\epsffile{Chapter04/fig4.02.eps}}
+\caption{\em Projectile trajectories in the presence of air resistance.}\label{fdrag}
+\end{figure}
+
+Figure~\ref{fdrag} shows some example trajectories calculated, from the above model, with the same launch
+angle, $45^\circ$, but with different values of the ratio $v_0/v_t$. Here,
+$X=x/(v_0^{\,2}/g)$ and $Z=z/(v_0^{\,2}/g)$. The solid, short-dashed,
+long-dashed, and dot-dashed curves correspond to $v_0/v_t = 0$, $1$, $2$,
+and $4$, respectively. It can be seen that as the air resistance strength
+increases  ({\em i.e.}, as $v_0/v_t$ increases), the range of the
+projectile decreases.  Furthermore, there is always an initial time interval
+during which the trajectory is identical to that calculated in the absence
+of air resistance ({\em i.e.}, $v_0/v_t=0$). Finally, in the presence of
+air resistance, the projectile tends to fall more steeply than it rises.
+Indeed, in the presence of strong air resistance ({\em i.e.}, $v_0/v_t=4$), the projectile falls almost
+vertically.
+
+\section{Charged Particle Motion in  Electric and Magnetic Fields}
+Consider a particle of mass $m$ and electric charge $q$ moving
+in the {\em uniform}\/ electric and magnetic fields, ${\bf E}$ and ${\bf B}$. 
+Suppose that the fields are ``crossed'' ({\em i.e.}, perpendicular to
+one another), so that ${\bf E}\cdot{\bf B} = 0$. 
+
+The force acting on the particle is given by the familiar Lorentz law:
+\begin{equation}
+{\bf f} = q\,\left({\bf E} + {\bf v}\times{\bf B}\right),
+\end{equation}
+where ${\bf v}$ is the particle's instantaneous velocity. Hence, from
+Newton's second law, the particle's equation of motion can be written
+\begin{equation}\label{e5.23}
+m\,\frac{d{\bf v}}{dt} = q\,\left({\bf E} + {\bf v}\times{\bf B}\right).
+\end{equation}
+
+It turns out that we can eliminate the electric field from the above equation by
+transforming to a different inertial frame. Thus, writing
+\begin{equation}
+{\bf v} = \frac{{\bf E}\times{\bf B}}{B^2} + {\bf v}',
+\end{equation}
+Equation~(\ref{e5.23}) reduces to
+\begin{equation}\label{e5.24}
+m\,\frac{d{\bf v}'}{dt} = q\,{\bf v}'\times{\bf B},
+\end{equation}
+where we have made use of a standard vector identity (see Section~\ref{svtp}), as well
+as the fact that ${\bf E}\cdot{\bf B} = 0$.
+Hence, we conclude that the addition of an electric field perpendicular to a
+given magnetic field simply causes the particle to drift perpendicular to both the electric and magnetic
+field with the fixed velocity
+\begin{equation}\label{e5.26}
+{\bf v}_{EB} = \frac{{\bf E}\times{\bf B}}{B^2},
+\end{equation}
+irrespective of its
+charge or mass,
+It follows that the electric field has no effect on the particle's
+motion in  a frame of reference which is co-moving with the so-called {\em E-cross-B velocity}\/ given above.
+
+Let us suppose that the magnetic field is directed along the $z$-axis. 
+As we have just seen, in the ${\bf E}\times{\bf B}$ frame, the particle's equation of motion reduces to Equation~(\ref{e5.24}), which can be written:
+\begin{eqnarray}\label{e5.27}
+\frac{d v_x'}{dt} &=& {\mit\Omega}\,v_y',\\[0.5ex]
+\frac{d v_y'}{dt} &=& -{\mit\Omega}\,v_x',\\[0.5ex]
+v_z' &=& 0.\label{e5.29}
+\end{eqnarray}
+Here,
+\begin{equation}
+{\mit\Omega} = \frac{q\,B}{m}
+\end{equation}
+is the so-called {\em cyclotron frequency}.
+Equations~(\ref{e5.27})--(\ref{e5.29}) can be integrated to give
+\begin{eqnarray}\label{e5.31}
+v_x'&=& v_\perp\,\sin({\mit\Omega}\,t),\\[0.5ex]
+v_y'&=&v_\perp\,\cos({\mit\Omega}\,t)\\[0.5ex]
+v_z' &=& v_\parallel,\label{e5.33}
+\end{eqnarray}
+where we have judiciously chosen the origin of time so as to eliminate
+any phase offset in the arguments of the above trigonometrical functions.
+According to Equations~(\ref{e5.31})--(\ref{e5.33}), in the ${\bf E}\times {\bf B}$
+frame, our charged particle gyrates at the cyclotron frequency in the plane perpendicular to the
+magnetic field with some fixed speed $v_\perp$, and drifts parallel to the magnetic
+field with  some  fixed speed $v_\parallel$. 
+The fact that the cyclotron frequency is positive for positively charged
+particles, and negative for negatively charged particles, just means that
+oppositely charged particles gyrate in opposite directions in the
+plane perpendicular to the magnetic field.
+
+Equations (\ref{e5.31})--(\ref{e5.33}) can be integrated to give
+\begin{eqnarray}\label{e5.34}
+x'&=& -{\mit\rho}\,\cos({\mit\Omega}\,t),\\[0.5ex]
+y'&=&{\mit\rho}\,\sin({\mit\Omega}\,t)\\[0.5ex]
+z' &=& v_\parallel\,t,\label{e5.37}
+\end{eqnarray}
+where we have  judiciously chosen the origin of our coordinate system so
+as to eliminate any constant offsets in the above equations.
+Here,
+\begin{equation}
+{\bf \rho} = \frac{v_\perp}{{\mit\Omega}}
+\end{equation}
+is called the {\em Larmor radius}. Equations~(\ref{e5.34})--(\ref{e5.37})
+are the equations of a {\em spiral}\/ of radius ${\mit\rho}$, aligned along the direction
+of the magnetic field ({\em i.e.}, the $z$-direction).
+
+\begin{figure}[h]
+\epsfysize=1in
+\centerline{\epsffile{Chapter04/fig4.03.eps}}
+\caption{\em The spiral trajectory of a negatively charged particle in a magnetic field.}\label{f5.3}
+\end{figure}
+
+We conclude that the general motion of a charged particle in crossed
+electric and magnetic field is a combination of ${\bf E}\times{\bf B}$
+drift [see Equation (\ref{e5.26})] and spiral motion aligned along the
+direction of the magnetic field---see Figure~\ref{f5.3}. Particles drift parallel to the magnetic field
+with constant speeds, and gyrate at the cyclotron frequency in the plane perpendicular to the magnetic field with constant speeds.
+Oppositely charged particles gyrate in opposite directions.
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{4.\arabic{enumi}}
+\begin{enumerate}
+\item An electron of mass $m$ and charge $-e$ moves in a uniform $y$-directed electric field of magnitude $E$,
+and a uniform $z$-directed magnetic field of magnitude $B$. The electron is situated at the
+origin at $t=0$ with an initial $x$-directed velocity of magnitude $v_0$. Show that the
+electron traces out a cycloid of the general form
+\begin{eqnarray}
+x &=& a\,\sin(\omega\,t) + b\,t,\nonumber\\[0.5ex]
+y &=& c\,[1-\cos(\omega\,t)],\nonumber\\[0.5ex]
+z &=& 0.\nonumber
+\end{eqnarray}
+Find the values of $a$, $b$, $c$, and $\omega$, and sketch the electron's trajectory
+in the $x$-$y$ plane when $v_0<E/B$, $E/B < v_0 < 2\,E/B$, and
+$v_0> 2\,E/B$.
+
+\item A particle of mass $m$ and charge $q$ moves in the $x$-$y$ plane
+under the influence of a constant amplitude rotating electric field
+which is such that $E_x= E_0\,\cos(\omega\,t)$ and $E_y=E_0\,\sin(\omega\,t)$. The particle starts at rest from the origin. Determine its subsequent motion. What shape is the particle's trajectory?
+\item A particle of mass $m$ slides on a frictionless surface whose height is a
+function of $x$ only: {\em i.e.}, $z=z(x)$. The function $z(x)$
+is specified by the parametric equations
+\begin{eqnarray}
+x&= &A\,[2\,\phi + \sin (2\,\phi)],\nonumber\\[0.5ex]
+z& = &A\,[1-\cos (2\,\phi)],\nonumber
+\end{eqnarray}
+where $\phi$ is the parameter. Show that the total energy of the
+particle can be written
+$$
+E = \frac{m}{2}\left(\frac{ds}{dt}\right)^{2} + \frac{1}{2}\,\frac{m\,g}{4\,A}\,s^2,
+$$
+where $s=4\,A\,\sin\phi$. Deduce that the particle undergoes periodic
+motion whose frequency is amplitude independent (even when the amplitude
+is large). Demonstrate that the frequency of the motion is given by $4\pi\,(A/g)^{1/2}$. 
+\end{enumerate}
+}

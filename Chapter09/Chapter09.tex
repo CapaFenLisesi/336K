@@ -1,0 +1,633 @@
+\chapter{Lagrangian Dynamics}\label{s10}
+\section{Introduction}
+This chapter describes an elegant reformulation of the laws of
+Newtonian dynamics which is due to  the French/Italian mathematician Joseph Louis
+Lagrange. This reformulation is particularly useful for finding the
+equations of motion of complicated dynamical systems.
+
+\section{Generalized Coordinates}
+Let the $q_i$, for $i=1,{\cal F}$, be a set of coordinates which uniquely
+specifies the instantaneous configuration of some dynamical system.
+Here, it is assumed that each of the $q_i$ can vary {\em independently}. 
+The  $q_i$ might  be Cartesian coordinates, or polar 
+coordinates, or angles, or some mixture of all three types of coordinate, and are, therefore,
+termed {\em generalized coordinates}. A dynamical system whose
+instantaneous configuration is fully specified by ${\cal F}$ independent
+generalized coordinates is said to have ${\cal F}$ {\em degrees of freedom}. 
+For instance, the instantaneous position of a particle moving freely
+in three dimensions is completely specified by its three Cartesian
+coordinates, $x$, $y$, and $z$. Moreover, these coordinates are clearly
+independent of one another. 
+Hence, a dynamical
+system consisting of  a single particle moving
+freely in three dimensions has three degrees of freedom. If there are two freely moving
+particles then the system has six degrees of freedom, and so on.
+
+Suppose that we have a dynamical system consisting of $N$ particles
+moving freely in three dimensions. This is an ${\cal F}= 3\,N$ degree of
+freedom system whose instantaneous configuration can be specified
+by ${\cal F}$ Cartesian coordinates. Let us denote these coordinates the
+$x_j$, for $j=1,{\cal F}$. Thus, $x_1, x_2, x_3$ are the Cartesian coordinates
+of the first particle, $x_4, x_5, x_6$  the Cartesian coordinates
+of the second particle, {\em etc}. Suppose that the instantaneous configuration of the system can also be specified by ${\cal F}$ generalized
+coordinates, which we shall denote the $q_i$, for $i=1,{\cal F}$. Thus, the
+$q_i$ might be the spherical coordinates of the particles.
+ In general,
+we expect the $x_j$ to be functions of the $q_i$. In other words,
+\begin{equation}
+x_j = x_j(q_1,q_2,\cdots,q_{\cal F}, t)
+\end{equation}
+for $j=1,{\cal F}$. Here, for the sake of generality, we have included the
+possibility that the functional relationship between the $x_j$ and the
+$q_i$ might depend on the time, $t$, explicitly. This would be the
+case if the dynamical system were subject to time varying constraints. For
+instance, a system consisting of a particle constrained to move on a surface which is itself
+moving. Finally, by the chain rule, the variation of the $x_j$ due to a variation of the $q_i$
+(at constant $t$) is given by
+\begin{equation}\label{e10.2}
+\delta x_j = \sum_{i=1,{\cal F}} \frac{\partial x_j}{\partial q_i}\,\delta q_i,
+\end{equation}
+for $j=1,{\cal F}$. 
+
+\section{Generalized Forces}
+The work done on the dynamical system when its Cartesian coordinates
+change by $\delta x_j$ is simply
+\begin{equation}
+\delta W = \sum_{j=1,{\cal F}} f_j\,\delta x_j
+\end{equation}
+Here, the $f_j$ are the Cartesian components of the forces acting on the
+various particles making up the system. Thus, $f_1, f_2, f_3$ are the
+components of the force acting on the first particle, $f_4, f_5, f_6$ 
+the components of the force acting on the second particle, {\em etc}. 
+Using Equation~(\ref{e10.2}), we can also write
+\begin{equation}
+\delta W = \sum_{j=1,{\cal F}} f_j\sum_{i=1,{\cal F}}\frac{\partial x_j}{\partial q_i}\,\delta q_i.
+\end{equation}
+The above expression can be rearranged to give
+\begin{equation}
+\delta W = \sum_{i=1,{\cal F}} Q_i\,\delta q_i,
+\end{equation}
+where 
+\begin{equation}\label{e10.6}
+Q_i = \sum_{j=1,{\cal F}} f_j\,\frac{\partial x_j}{\partial q_i}.
+\end{equation}
+Here, the $Q_i$ are termed {\em generalized forces}. Note that a generalized
+force does not necessarily have the dimensions of force. However, the
+product $Q_i\,q_i$ must have the dimensions of work. Thus, if 
+a particular $q_i$ is a Cartesian coordinate then the associated $Q_i$ is a force.
+Conversely, if a particular $q_i$ is an angle then the associated $Q_i$ is a torque. 
+
+Suppose that the dynamical system in question is {\em conservative}. It follows that
+\begin{equation}
+f_j = -\frac{\partial U}{\partial x_j},
+\end{equation}
+for $j=1,{\cal F}$, where $U(x_1,x_2,\cdots,x_{\cal F},t)$ is the system's potential energy. Hence, according to Equation~(\ref{e10.6}), 
+\begin{equation}\label{e10.8}
+Q_i = - \sum_{j=1,{\cal F}} \frac{\partial U}{\partial x_j}\,\frac{\partial x_j}{\partial q_i} = - \frac{\partial U}{\partial q_i},
+\end{equation}
+for $i=1,{\cal F}$. 
+
+\section{Lagrange's Equation}
+The Cartesian equations of motion of our system take
+the form
+\begin{equation}\label{e10.10}
+m_j\,\ddot{x}_j = f_j,
+\end{equation}
+for $j=1,{\cal F}$, where $m_1, m_2, m_3$ are each equal to the mass of the
+first particle, $m_4, m_5, m_6$ are each equal to the mass of the
+second particle, {\em etc.} Furthermore, the kinetic energy of the
+system can be written
+\begin{equation}\label{e10.11}
+K = \frac{1}{2}\sum_{j=1,{\cal F}} m_j\,\dot{x}_j^{\,2}.
+\end{equation}
+
+Now, since $x_j=x_j(q_1,q_2,\cdots, q_{\cal F},t)$, we can write
+\begin{equation}
+\dot{x}_j= \sum_{i=1,{\cal F}} \frac{\partial x_j}{\partial q_i}\,\dot{q}_i
++ \frac{\partial x_j}{\partial t},
+\end{equation}
+for $j=1,{\cal F}$.
+Hence, it follows that $\dot{x}_j = \dot{x}_j(\dot{q}_1,\dot{q}_2,\cdots,
+\dot{q}_{\cal F},q_1,q_2,\cdots,q_{\cal F},t)$. According to the
+above equation,
+\begin{equation}\label{e10.13}
+\frac{\partial \dot{x}_j}{\partial\dot{q}_i} = \frac{\partial x_j}{\partial q_i},
+\end{equation}
+where we are treating the $\dot{q}_i$ and the $q_i$ as {\em independent}\/
+variables.
+
+Multiplying Equation~(\ref{e10.13}) by $\dot{x}_j$, and then differentiating
+with respect to time, we obtain
+\begin{equation}\label{e10.14}
+\frac{d}{dt}\!\left(\dot{x}_j\,\frac{\partial \dot{x}_j}{\partial \dot{q}_i}\right)
+= \frac{d}{dt}\!\left(\dot{x}_j\,\frac{\partial x_j}{\partial q_i}\right)
+=\ddot{x}_j\, \frac{\partial x_j}{\partial q_i} + \dot{x}_j\,\frac{d}{dt}\!\left(
+\frac{\partial x_j}{\partial q_i}\right).
+\end{equation}
+Now,
+\begin{equation}\label{e10.15}
+\frac{d}{dt}\!\left(\frac{\partial x_j}{\partial q_i}\right) = \sum_{k=1,{\cal F}}
+\frac{\partial^2 x_j}{\partial q_i\,\partial q_k}\,\dot{q}_k + 
+\frac{\partial^2 x_j}{\partial q_i\,\partial t}.
+\end{equation}
+Furthermore,
+\begin{equation}\label{e10.16}
+\frac{1}{2} \,\frac{\partial\dot{x}_j^{\,2}}{\partial \dot{q}_i}
+= \dot{x}_j\,\frac{\partial \dot{x}_j}{\partial \dot{q}_i},
+\end{equation}
+and
+\begin{eqnarray}\label{e10.17}
+\frac{1}{2}\,\frac{\partial \dot{x}_j^{\,2}}{\partial q_i}
+= \dot{x}_j\,\frac{\partial \dot{x}_j}{\partial q_i} &=&
+\dot{x}_j\,\frac{\partial}{\partial q_i}\!\left(\sum_{k=1,{\cal F}}\frac{\partial x_j}{\partial q_k}\,\dot{q}_k + 
+\frac{\partial x_j}{\partial t}\right)\nonumber\\[0.5ex]& =& \dot{x}_j\left(\sum_{k=1,{\cal F}}\frac{\partial^2 x_j}{\partial q_i\,\partial q_k}\,\dot{q}_k + 
+\frac{\partial^2 x_j}{\partial q_i\,\partial t}\right)\nonumber\\[0.5ex]
+&=& \dot{x}_j\,\frac{d}{dt}\!\left(\frac{\partial x_j}{\partial q_i}\right),
+\end{eqnarray}
+where use has been made of Equation~(\ref{e10.15}). Thus, it follows
+from Equations~(\ref{e10.14}), (\ref{e10.16}), and (\ref{e10.17}) that
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{1}{2}\,\frac{\partial \dot{x}_j^{\,2}}{\partial \dot{q}_i}\right) = \ddot{x}_j\,\frac{\partial x_j}{\partial q_i} + \frac{1}{2}\,\frac{\partial \dot{x}_j^{\,2}}{\partial q_i}.
+\end{equation}
+
+Let us take the above equation, multiply by $m_j$, and then sum over all $j$. 
+We obtain
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{q}_i}\right) = \sum_{j=1,{\cal F}}
+f_j\,\frac{\partial x_j}{\partial q_i} + \frac{\partial K}{\partial q_i},
+\end{equation}
+where use has been made of Equations~(\ref{e10.10}) and (\ref{e10.11}). Thus, it follows from Equation~(\ref{e10.6}) that
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{q}_i}\right) = Q_i + \frac{\partial K}{\partial q_i}.
+\end{equation}
+Finally, making use of Equation~(\ref{e10.8}), we get
+\begin{equation}\label{e10.21}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{q}_i}\right) = -\frac{\partial U}{\partial q_i}+\frac{\partial K}{\partial q_i}.
+\end{equation}
+
+It is helpful to introduce a function $L$, called the {\em Lagrangian}, which
+is defined as the difference between the kinetic and potential energies of the dynamical system under investigation:
+\begin{equation}\label{e10.21a}
+L = K - U.
+\end{equation}
+Since the potential energy $U$ is clearly  independent of the
+$\dot{q}_i$, it follows from Equation~(\ref{e10.21}) that
+\begin{equation}\label{e10.23}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_i}\right)  -\frac{\partial L}{\partial q_i} =0,
+\end{equation}
+for $i=1,{\cal F}$. This equation is known as {\em Lagrange's equation}.
+
+According to the above analysis, if we can express the kinetic and
+potential energies of our dynamical system solely in terms of our generalized
+coordinates and their time derivatives then we can immediately write
+down the equations of motion of the system, expressed in terms
+of the generalized coordinates, using Lagrange's equation, (\ref{e10.23}).
+Unfortunately, this scheme only works for conservative systems.
+Let us now consider some examples. 
+
+\section{Motion in a Central Potential}\label{s10.5}
+Consider a particle of mass $m$ moving in  two dimensions in the central potential $U(r)$. This is clearly a two degree of freedom dynamical system.
+As described in Section~\ref{s6.5}, the particle's instantaneous position
+is most conveniently specified in terms of the plane polar
+coordinates $r$ and $\theta$. These are our two generalized coordinates.
+According to Equation~(\ref{e6.14}), the square of the particle's velocity
+can be written
+\begin{equation}
+v^2 = \dot{r}^{\,2} + (r\,\dot{\theta})^2.
+\end{equation}
+Hence, the Lagrangian of the system takes the form
+\begin{equation}\label{e10.24}
+L = \frac{1}{2}\,m\,(\dot{r}^{\,2} + r^2\,\dot{\theta}^{\,2}) - U(r).
+\end{equation}
+Note that
+\begin{eqnarray}
+\frac{\partial L}{\partial\dot{r}} = m\,\dot{r},&~~~~~~&\frac{\partial L}{\partial r} = m\,r\,\dot{\theta}^{\,2} - \frac{dU}{dr},\\[0.5ex]
+\frac{\partial L}{\partial \dot{\theta}} = m\,r^2\,\dot{\theta},&&\frac{\partial L}{\partial\theta} = 0.
+\end{eqnarray}
+Now, Lagrange's equation (\ref{e10.23}) yields the equations of motion,
+\begin{eqnarray}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{r}}\right)- \frac{\partial L}{\partial r} &=& 0,\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{\theta}}\right)- \frac{\partial L}{\partial \theta} &=& 0.
+\end{eqnarray}
+Hence, we obtain
+\begin{eqnarray}
+\frac{d}{dt}\!\left(m\,\dot{r}\right) - m\,r\,\dot{\theta}^{\,2} + \frac{dU}{dr} &=&0,\\[0.5ex]
+\frac{d}{dt}\!\left(m\,r^2\,\dot{\theta}\right) = 0,
+\end{eqnarray}
+or
+\begin{eqnarray}\label{e10.31}
+\ddot{r} - r\,\dot{\theta}^{\,2}&=& - \frac{d V}{dr},\\[0.5ex]
+r^2\,\dot{\theta}&=& h,\label{e10.32}
+\end{eqnarray}
+where $V = U/m$, and $h$ is a constant. We  recognize Equations~(\ref{e10.31}) and (\ref{e10.32}) as  the equations
+we derived in Chapter~\ref{skepler} for motion in a central potential.
+The advantage of the Lagrangian method of deriving these equations is
+that we avoid having to express the acceleration in terms of the generalized
+coordinates $r$ and $\theta$. 
+
+\section{Atwood Machines}
+An Atwood machine consists of two weights, of mass $m_1$ and $m_2$, 
+connected by a light inextensible cord of length $l$, which passes over
+a pulley of radius $a\ll l$, and moment of inertia $I$. See Figure~\ref{att}.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter09/fig9.01.eps}}
+\caption{\em An Atwood machine.}\label{att}
+\end{figure}
+
+Referring to the diagram, we can see that this is a one degree of freedom
+system whose instantaneous configuration is specified by the coordinate $x$.
+Assuming that the cord does not slip with respect to the pulley, the
+angular velocity of pulley is $\dot{x}/a$. Hence, the kinetic
+energy of the system is given by
+\begin{equation}
+K = \frac{1}{2}\,m_1\,\dot{x}^{\,2} + \frac{1}{2}\,m_2\,\dot{x}^{\,2}
++ \frac{1}{2}\,I\, \frac {\dot{x}^{\,2}}{a^2}.
+\end{equation}
+The potential energy of the system takes the form
+\begin{equation}
+U = -m_1\,g\,x - m_2\,g\,(l-x).
+\end{equation}
+It follows that the Lagrangian is written
+\begin{equation}
+L=\frac{1}{2}\left(m_1+ m_2+\frac{I}{a^2}\right)\dot{x}^{\,2} + g\,(m_1-m_2)\,x + {\rm const}.
+\end{equation}
+The equation of motion,
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{x}}\right) - \frac{\partial L}{\partial x} = 0,
+\end{equation}
+thus yields
+\begin{equation}
+\left(m_1+ m_2+\frac{I}{a^2}\right)\ddot{x} - g\,(m_1-m_2) = 0,
+\end{equation}
+or
+\begin{equation}
+\ddot{x} = \frac{g\,(m_1-m_2)}{m_1+m_2 + I/a^2},
+\end{equation}
+which is the correct answer.
+
+\begin{figure}
+\epsfysize=3.25in
+\centerline{\epsffile{Chapter09/fig9.02.eps}}
+\caption{\em A double Atwood machine.}\label{att1}
+\end{figure}
+
+Consider the dynamical system drawn in Figure~\ref{att1}. This is an Atwood
+machine in which one of the weights has been replaced by a second
+Atwood machine with a cord of length $l'$. The system now has two degrees of freedom, and
+its instantaneous position is specified by the two coordinates $x$ and $x'$,
+as shown. 
+
+For the sake of simplicity, let us neglect the masses of the two pulleys.
+Thus, the kinetic energy of the system is written
+\begin{equation}
+K = \frac{1}{2}\,m_1\,\dot{x}^{\,2} + \frac{1}{2}\,m_2\,(-\dot{x}+ \dot{x}')^2 + \frac{1}{2}\,m_3\,(-\dot{x} - \dot{x}')^2,
+\end{equation}
+whereas the potential energy takes the form
+\begin{equation}
+U = - m_1\,g\,x - m_2\,g\,(l-x+x')- m_3\,g\,(l-x+l'-x').
+\end{equation}
+It follows that the Lagrangian of the system is
+\begin{eqnarray}
+L &=& \frac{1}{2}\,m_1\,\dot{x}^{\,2} + \frac{1}{2}\,m_2\,(-\dot{x}+ \dot{x}')^2 + \frac{1}{2}\,m_3\,(-\dot{x} - \dot{x}')^2\nonumber\\[0.5ex]
+&&+ g\,(m_1-m_2-m_3)\,x+g\,(m_2-m_3)\,x' + {\rm const}.
+\end{eqnarray}
+Hence, the equations of motion,
+\begin{eqnarray}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{x}}\right) - \frac{\partial L}{\partial x} &=& 0,\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{x}'}\right) - \frac{\partial L}{\partial x'} &=& 0,
+\end{eqnarray}
+yield
+\begin{eqnarray}
+m_1\,\ddot{x} + m_2\,(\ddot{x}- \ddot{x}') + m_3\,(\ddot{x}+\ddot{x}')
+- g\,(m_1-m_2-m_3) &=& 0,\\[0.5ex]
+m_2\,(-\ddot{x} + \ddot{x}')+m_3\,(\ddot{x}+\ddot{x}') - g\,(m_2-m_3) &=& 0.
+\end{eqnarray}
+The accelerations $\ddot{x}$ and $\ddot{x}'$ can be obtained from
+the above two equations via simple algebra.
+
+\section{Sliding down a Sliding Plane}\label{s10.7}
+Consider the case of a particle of mass $m$ sliding down a smooth
+inclined plane of mass $M$ which is, itself, free to slide on
+a smooth horizontal surface, as shown in Figure~\ref{plane}.
+This is a two degree of freedom system, so we need two
+coordinates to specify the configuration. Let us choose $x$,
+the horizontal distance of the plane from some reference point, and
+$x'$, the parallel displacement of the particle from some reference point
+on the plane.
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{Chapter09/fig9.03.eps}}
+\caption{\em A sliding plane.}\label{plane}
+\end{figure}
+
+Defining $x$- and $y$-axes, as shown in the diagram, the $x$- and 
+$y$-components of the particle's velocity are clearly given by
+\begin{eqnarray}
+v_x &=& \dot{x} + \dot{x}'\,\cos\theta,\\[0.5ex]
+v_y&=& -\dot{x}'\,\sin\theta,
+\end{eqnarray}
+respectively, where $\theta$ is the angle of inclination of the plane with
+respect to the horizontal.
+Thus,
+\begin{equation}
+v^2 = v_x^{\,2} + v_y^{\,2} = \dot{x}^{\,2} + 2\,\dot{x}\,\dot{x}'\,\cos\theta+ \dot{x}'^{\,2}.
+\end{equation}
+Hence, the kinetic energy of the system takes the form
+\begin{equation}
+K = \frac{1}{2}\,M\,\dot{x}^{\,2} + \frac{1}{2}\,m\,(\dot{x}^{\,2} + 2\,\dot{x}\,\dot{x}'\,\cos\theta+ \dot{x}'^{\,2}),
+\end{equation}
+whereas the potential energy is given by
+\begin{equation}
+U = - m\,g\,x'\,\sin\theta + {\rm const}.
+\end{equation}
+It follows that the Lagrangian is written
+\begin{equation}\label{e10.51}
+L = \frac{1}{2}\,M\,\dot{x}^{\,2} + \frac{1}{2}\,m\,(\dot{x}^{\,2} + 2\,\dot{x}\,\dot{x}'\,\cos\theta+ \dot{x}'^{\,2})+  m\,g\,x'\,\sin\theta + {\rm const}.
+\end{equation}
+The equations of motion,
+\begin{eqnarray}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{x}}\right) - \frac{\partial L}{\partial x} &=& 0,\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial\dot{x}'}\right) - \frac{\partial L}{\partial x'} &=& 0,
+\end{eqnarray}
+thus yield
+\begin{eqnarray}
+M\,\ddot{x}+ m\,(\ddot{x} + \ddot{x}'\,\cos\theta) &=& 0,\\[0.5ex]
+m\,(\ddot{x}'+ \ddot{x}\,\cos\theta) - m\,g\,\sin\theta &=& 0.
+\end{eqnarray}
+Finally, solving for $\ddot{x}$ and $\ddot{x}'$, we obtain
+\begin{eqnarray}
+\ddot{x} &=&  - \frac{g\,\sin\theta\,\cos\theta}{(m+M)/m-\cos^2\theta},\\[0.5ex]
+\ddot{x}' &=& \frac{g\,\sin\theta}{1 - m\,\cos^2\theta/(m+M)}.
+\end{eqnarray}
+
+\section{Generalized Momenta}\label{s10.8}
+Consider the motion of a single particle moving in one dimension. The
+kinetic energy is
+\begin{equation}
+K = \frac{1}{2}\,m\,\dot{x}^{\,2},
+\end{equation}
+where $m$ is the mass of the particle, and $x$ its displacement.
+Now, the particle's linear momentum is $p=m\,\dot{x}$. However,
+this can also be written 
+\begin{equation}
+p = \frac{\partial K}{\partial \dot{x}}= \frac{\partial L}{\partial\dot{x}},
+\end{equation}
+since $L=K-U$, and the potential energy $U$ is independent of $\dot{x}$. 
+
+Consider a dynamical system described by ${\cal F}$ generalized coordinates
+$q_i$, for $i=1,{\cal F}$. By analogy with the above expression,  we can
+define {\em generalized momenta} of the form
+\begin{equation}
+p_i = \frac{\partial L}{\partial\dot{q}_i},
+\end{equation}
+for $i=1,{\cal F}$. Here, $p_i$ is sometimes called the momentum {\em conjugate}\/ to the coordinate $q_i$. Hence, Lagrange's equation (\ref{e10.23}) can be written
+\begin{equation}\label{e10.61}
+\frac{d p_i}{dt} = \frac{\partial L}{\partial q_i},
+\end{equation}
+for $i=1,{\cal F}$. Note that a generalized momentum does not necessarily have
+the dimensions of linear momentum.
+
+Suppose that the Lagrangian $L$ does not depend explicitly on some coordinate
+$q_k$. It follows from Equation~(\ref{e10.61}) that
+\begin{equation}
+\frac{d p_k}{dt} = \frac{\partial L}{\partial q_k}=0.
+\end{equation}
+Hence,
+\begin{equation}
+p_k = {\rm const.}
+\end{equation}
+The coordinate $q_k$ is said to be {\em ignorable}\/ in this case.
+Thus, we conclude that the generalized momentum associated with
+an ignorable coordinate is a constant of the motion.
+
+For example, in Section~\ref{s10.5}, the Lagrangian (\ref{e10.24}) for a
+particle moving in a central potential is independent of the angular
+coordinate $\theta$. Thus, $\theta$ is an ignorable coordinate, 
+and
+\begin{equation}
+p_\theta = \frac{\partial L}{\partial\dot{\theta}} = m\,r^2\,\dot{\theta}
+\end{equation}
+is a constant of the motion. Of course, $p_\theta$ is the angular momentum
+about the origin. This is conserved because a central force exerts no torque
+about the origin.
+
+Again, in Section~\ref{s10.7}, the Lagrangian (\ref{e10.51}) for a mass
+sliding down a sliding slope is independent
+of the Cartesian coordinate $x$. It follows that $x$ is an ignorable coordinate,
+and
+\begin{equation}
+p_x = \frac{\partial L}{\partial \dot{x}} = M\,\dot{x} + m\,(\dot{x}+\dot{x}'\,\cos\theta)
+\end{equation}
+is a constant of the motion. Of course, $p_x$ is the total linear momentum in the $x$-direction. This is conserved because there is no external force acting on
+the system in the $x$-direction.
+
+\section{Spherical Pendulum}
+Consider a pendulum consisting of a  compact mass $m$ on the end of light
+inextensible string of length $l$. Suppose that the mass is free to move
+in any direction (as long as the string remains taut). Let the
+fixed end of the string be located at the origin of our coordinate system. 
+We can define Cartesian coordinates, ($x$, $y$, $z$), such that
+the $z$-axis points vertically upward. We can also define spherical
+ coordinates, ($r$, $\theta$, $\phi$), whose axis points along the $-z$-axis. The latter coordinates are the most convenient, since $r$ is constrained to always take the value $l$. However, the two angular coordinates,
+$\theta$ and $\phi$, are free to vary independently. Hence, this is
+ a two degree of freedom system. 
+
+The Cartesian coordinates can be written in terms of the angular coordinates
+$\theta$ and $\phi$. In fact, 
+\begin{eqnarray}
+x &=& l\,\sin\theta\,\cos\phi,\\[0.5ex]
+y&=& l\,\sin\theta\,\sin\phi.\\[0.5ex]
+z &=& -l\,\cos\theta.
+\end{eqnarray}
+Hence, the potential energy of the system is
+\begin{equation}
+U = m\,g\,z= - m\,g\,l\,\cos\theta.
+\end{equation}
+Also,
+\begin{equation}
+v^2 = \dot{x}^{\,2} + \dot{y}^{\,2} + \dot{z}^{\,2} = l^2\,(\dot{\theta}^{\,2}+ \sin^2\theta\,\dot{\phi}^{\,2}).
+\end{equation}
+Thus, the Lagrangian of the system is written
+\begin{equation}
+L = \frac{1}{2}\,m\,l^2\,(\dot{\theta}^{\,2}+ \sin^2\theta\,\dot{\phi}^{\,2})
++ m\,g\,l\,\cos\theta.
+\end{equation}
+
+Note that the Lagrangian is independent of the angular coordinate $\phi$. It
+follows that
+\begin{equation}
+p_\phi = \frac{\partial L}{\partial \dot{\phi}} = m\,l^2\,\sin^2\theta\,\dot{\phi}
+\end{equation}
+is a constant of the motion. Of course, $p_\phi$ is the angular momentum of
+the system about the $z$-axis. This is conserved because neither the tension
+in the string nor the force of gravity exert a torque about the $z$-axis. 
+Conservation of angular momentum about the $z$-axis implies that
+\begin{equation}\label{e10.73}
+\sin^2\theta\,\dot{\phi} = h,
+\end{equation}
+where $h$ is a constant.
+
+The equation of motion of the system,
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{\theta}}\right) - \frac{\partial L}{\partial\theta} = 0,
+\end{equation}
+yields
+\begin{equation}
+\ddot{\theta} + \frac{g}{l}\,\sin\theta - \sin\theta\,\cos\theta\,\dot{\phi}^{\,2} = 0,
+\end{equation}
+or
+\begin{equation}\label{e10.76}
+\ddot{\theta} + \frac{g}{l}\,\sin\theta - h^2\,\frac{\cos\theta}{\sin^3\theta} = 0,
+\end{equation}
+where use has been made of Equation~(\ref{e10.73}).
+
+Suppose that $\phi=\phi_0 = {\rm const}$. It follows that $\dot{\phi}=h=0$. Hence, Equation~(\ref{e10.76}) yields
+\begin{equation}
+\ddot{\theta} + \frac{g}{l}\,\sin\theta= 0.
+\end{equation}
+This, of course, is the equation of a simple pendulum whose motion is
+restricted to the vertical plane $\phi = \phi_0$---see Section~\ref{s4.8}.
+
+Suppose that $\theta=\theta_0 = {\rm const}$.  It follows from Equation~(\ref{e10.73}) that $\dot{\phi} = \dot{\phi}_0 = {\rm const}.$: {\em i.e.}, the pendulum bob rotates uniformly in a horizontal plane. According
+to Equations~(\ref{e10.73}) and (\ref{e10.76}),
+\begin{equation}
+\dot{\phi}_0= \sqrt{\frac{g}{d}},
+\end{equation}
+where $d=l\,\cos\theta_0$ is the vertical distance of the plane of rotation below the pivot point. This type of pendulum is usually called a {\em conical
+pendulum}, since the string attached to the pendulum bob sweeps out a
+cone as the bob rotates. 
+
+Suppose, finally, that the motion is almost conical: {\em i.e.}, the value
+of $\theta$ remains close to the value $\theta_0$. Let
+\begin{equation}
+\theta = \theta_0 + \delta\theta.
+\end{equation}
+Taylor expanding Equation~(\ref{e10.76}) to first order in $\delta\theta$, the zeroth
+order terms cancel out, and we are left with
+\begin{equation}
+\delta\ddot{\theta} + \dot{\phi}_0^{\,2}\,(1+ 3\,\cos^2\theta_0)\,\delta\theta \simeq 0.
+\end{equation}
+Hence, solving the above equation, we obtain
+\begin{equation}
+\theta \simeq \theta_0 + \delta\theta_0\,\cos({\mit\Omega}\,t),
+\end{equation}
+where
+\begin{equation}
+{\mit\Omega} = \dot{\phi}_0 \,\sqrt{1+ 3\,\cos^2\theta_0}.
+\end{equation}
+Thus, the angle $\theta$ executes simple harmonic motion about its
+mean value $\theta_0$ at the angular frequency ${\mit\Omega}$. 
+
+Now the azimuthal angle, $\phi$, increases by
+\begin{equation}
+{\mit\Delta}\phi \simeq \dot{\phi}_0\,\frac{\pi}{{\mit\Omega}}= \frac{\pi}{\sqrt{1+3\,\cos^2\theta_0}}
+\end{equation}
+as the angle of inclination to the vertical, $\theta$, goes between
+successive maxima and minima. Suppose that $\theta_0$ is small.
+In this case, ${\mit\Delta}\phi$ is slightly greater than $\pi/2$. Now
+if ${\mit\Delta}\phi$ were exactly $\pi/2$ then the pendulum bob would
+trace out the outline of a slightly {\em warped circle}: {\em i.e.}, something like the
+outline of a potato chip or a saddle. The fact that ${\mit\Delta}\phi$
+is slightly greater than $\pi/2$ means that this shape {\em precesses}\/ about
+the $z$-axis in the {\em same}\/ direction as the direction rotation of the bob. The precession rate increases as 
+the angle of inclination $\theta_0$ increases. Suppose, now, that $\theta_0$
+is slightly less than $\pi/2$. (Of course, $\theta_0$ can never exceed $\pi/2$).
+In this case, ${\mit\Delta}\phi$ is slightly less than $\pi$. Now
+if ${\mit\Delta}\phi$ were exactly $\pi$ then the pendulum bob would
+trace out the outline of a slightly {\em tilted circle}. The fact that
+${\mit\Delta}\phi$ is slightly less than $\pi$ means that this shape
+{\em precesses}\/ about the $z$-axis in the {\em opposite}\/ direction to the
+direction of rotation of the bob. The precession rate increases as the
+angle of inclination $\theta_0$ decreases below $\pi/2$. 
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{9.\arabic{enumi}}
+\begin{enumerate}
+\item A horizontal rod $AB$ rotates with constant angular velocity $\omega$ about
+its midpoint $O$. A particle $P$ is attached to it by equal strings $AP$, $BP$.
+If $\theta$ is the inclination of the plane $APB$ to the vertical, prove that
+$$
+\frac{d^2\theta}{dt^2} -\omega^{\,2}\,\sin\theta\,\cos\theta = -\frac{g}{l}\,\sin\theta,
+$$
+where $l=OP$. Deduce the condition that the vertical position of $OP$ should be stable.
+
+\item A double pendulum consists of two simple pendula, with one pendulum
+suspended from the bob of the other. If the two pendula have equal lengths, $l$,
+and have bobs of equal mass, $m$, and if both pendula are confined to move in the
+same vertical plane, find Lagrange's equations of motion for the system. 
+Use $\theta$ and $\phi$---the angles the upper and
+lower pendulums  make with the downward vertical (respectively)---as the
+generalized coordinates. Do
+not assume small angles.
+\item The surface of the Diskworld is a disk of radius $R$ which
+rotates uniformly about a perpendicular axis passing through
+its center with angular velocity ${\mit\Omega}$. Diskworld gravitational acceleration is of magnitude
+$g$, and is everywhere directed normal to the disk.
+Find the Lagrangian
+of a projectile of mass $m$ using co-rotating cylindrical polar coordinates as the generalized
+coordinates. What are the momenta conjugate to each coordinate? Are
+any of these momenta conserved? Find Lagrange's equations of motion for
+the projectile.
+\item Find  Lagrange's equations of motion for  an elastic pendulum consisting of a particle
+of mass $m$ attached to an elastic string of stiffness $k$ and unstreatched
+length $l_0$. Assume that the motion takes place in a vertical plane.
+
+\item A disk of mass $M$ and radius $R$ rolls without slipping down a plane inclined at an angle $\alpha$ to the horizontal.
+The disk has a short weightless axle of negligible radius. From this axle is suspended a simple pendulum
+of length $l< R$ whose bob is of mass $m$. Assume that the motion of the pendulum takes place in the
+plane of the disk. Find Lagrange's equations of motion of the system.
+
+\epsfysize=1.75in
+\centerline{\epsffile{Chapter09/fig9.04.eps}}
+\item A vertical circular hoop of radius $a$ is rotated in a vertical plane about a point $P$ on its
+circumference at the constant angular velocity $\omega$. A bead of
+mass $m$ slides without friction on the hoop. Find the kinetic energy, the potential energy, the Lagrangian, and Largrange's equation
+of motion of the bead, respectively,  in terms of the angular coordinate $\theta$
+shown in the above diagram. Here, $x$ is a horizontal Cartesian coordinate,
+$z$ a vertical Cartesian coordinate, and $C$  the center of the hoop.
+Show that the beam oscillates like a pendulum about the point on the
+rim diagrammatically opposite the point about which the hoop
+rotates. What is the effective length of the pendulum?
+
+\item Consider a spherical pendulum of length $l$. Suppose that the string is initially horizontal, and the bob is rotating horizontally with tangental velocity $v$. Demonstrate that, at its lowest subsequent point, the bob will have fallen a vertical height $l\,{\rm e}^{-u}$,
+where
+$$
+\sinh u = \frac{v^2}{4\,g\,l}.
+$$
+Show that if $v^2$ is large compared to $4\,g\,l$ then this result becomes approximately
+$2\,g\,l^2/v^2$. 
+
+\item The kinetic energy of a rotating rigid object with an axis of symmetry
+can be written
+$$
+K = \frac{1}{2}\left[I_\perp\,\dot{\theta}^{\,2} + (I_\perp\,\sin^2\theta + I_\parallel\,\cos^2\theta)\,\dot{\phi}^{\,2} + 2\,I_\parallel\,\cos\theta\,\dot{\phi}\,\dot{\psi} + I_\parallel\,\dot{\psi}^{\,2}\right],
+$$
+where $I_\parallel$ is the  moment of inertia about the symmetry axis,
+$I_\perp$ is the moment of inertia about an axis perpendicular to the symmetry axis, and $\theta$, $\phi$, $\psi$ are the three Euler angles.
+Suppose that the object is rotating freely.
+Find the momenta conjugate to the Euler angles. Which of these
+momenta are conserved? Find Lagrange's equations of motion for the
+system. Demonstrate that if the system is precessing steadily (which
+implies that $\theta$, $\dot{\phi}$, and $\dot{\psi}$ are constants) then
+$$
+\dot{\psi} = \left(\frac{I_\perp-I_\parallel}{I_\parallel}\right)\cos\theta\,\dot{\phi}.
+$$
+\item Consider a nonconservative system in which the 
+dissipative forces take the form $f_i = -k_i\,\dot{x}_i$, where the $x_i$
+are Cartesian coordinates, and the $k_i$ are all positive. Demonstrate that
+the dissipative forces can be incorporated into the Lagrangian formalism 
+provided that Lagrange's equations of motion are modified to read
+$$
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right) - \frac{\partial L}{\partial q_i} + \frac{\partial R}{\partial \dot{q}_i}=0,
+$$
+where
+$$
+R = \frac{1}{2} \sum_i k_i\,\dot{x}_i^{\,2}
+$$
+is termed the Rayleigh Dissipation Function.
+\end{enumerate}
+}

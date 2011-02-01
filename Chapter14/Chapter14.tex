@@ -1,0 +1,557 @@
+\chapter{Lunar Motion}\label{moon}
+\section{Historical Background}
+The motion of the Planets around the Sun is   fairly accurately described by {\em Kepler's laws} (see Chapter~\ref{skepler}).
+Likewise, to a first approximation, the motion of the Moon around the Earth can also be accounted for via these laws.
+However, unlike the planetary orbits, the deviations of the lunar orbit from a Keplerian ellipse are sufficiently large that they
+are easily apparent to the naked eye. Indeed, the largest of these deviations, which is generally known as
+{\em evection}, was discovered in ancient times by the Alexandrian astronomer Claudius Ptolemy (90--168 AD). Moreover, the next largest deviation,
+which is called {\em variation}, was first observed by Tycho Brahe (1546--1601) without the
+aid of a telescope. Another non-Keplerian feature of the lunar orbit, which is sufficient obvious that it was known to the
+ancient Greeks, is the fact that the lunar {\em perigee}\/ ({\em i.e.}, the point of closest approach to the Earth)
+{\em precesses}\/  ({\em i.e.}, orbits about the Earth in the same direction as the Moon) at such a rate that it completes a full circuit
+ every $8.85$ years.\footnote{Note that this precession rate is about $10^4$ times greater than any of the planetary perihelion precession
+ rates discussed in Section~\ref{splanp}.} The ancient Greeks also noticed that the lunar {\em ascending node}\/ ({\em i.e.}, the point
+at which the Moon passes through the fixed plane of the Earth's orbit around the Sun from south to north)
+{\em regresses}\/  ({\em i.e.}, orbits about the Earth in the opposite direction to the Moon) at such a rate that it completes a full circuit  every 18.6 years. Of course, according to standard two-body orbit  theory, both the lunar perigee and  ascending node should be
+{\em stationary} (see Chapter~\ref{skepler}). 
+
+Newton demonstrated, in Book III of his Principia, that the deviations of the lunar orbit from a Keplerian ellipse are due to the
+gravitational influence of the Sun, which is  sufficiently large that it is not completely negligible compared with the mutual
+gravitational attraction of the Earth and the Moon.
+However, Newton was not able to give a complete account of these
+deviations, due to the complexity of the equations of motion which arise in a system of three mutually
+gravitating bodies (see Chapter~\ref{threeb}).  In fact, Clairaut (1713--1765) is generally credited with the first reasonably accurate and complete theoretical explanation  of the Moon's orbit. 
+His method of calculation makes use of an  expansion of the lunar equations of motion in terms of various small parameters.
+Clairaut, however, initially experienced difficulty in accounting for the precession of the lunar perigee. Indeed, his first calculation
+overestimated the period of this precession  by a factor of about two, leading him to question Newton's
+inverse-square law of gravitation. Later on, he realized that he could indeed account for the precession, in terms of
+standard Newtonian dynamics, by
+continuing his expansion in small parameters to higher order. After Clairaut, the theory of lunar motion was further elaborated in major works by
+D'Alembert (1717--1783), Euler (1707--1783), Laplace (1749--1827), Damoiseau (1768--1846), Plana (1781--1864), Poisson (1781--1840), Hansen (1795--1874),  De Pont\'{e}coulant (1795--1824), J.~Herschel (1792--1871), Airy (1801--1892), Delaunay (1816--1872), G.W.~Hill (1836--1914), and E.W.~Brown (1836--1938). The fact that so many celebrated mathematicians and astronomers devoted so much time and effort to lunar
+theory is a tribute to its inherent difficulty, as well as its great theoretical and practical interest. Indeed, for a period
+of about one hundred years (between 1767 and about 1850) the
+so-called {\em method of lunar distance}\/ was the principal means used by mariners to determine
+longitude at sea. This method depends crucially on a precise   knowledge of the position of the
+Moon in the sky as a function of time. Consequently, astronomers and mathematicians during the
+period in question  were spurred to make ever more accurate observations of the Moon's orbit, and to develop lunar theory
+to greater and greater precision. An important outcome of these activities were various  tables of lunar motion ({\em e.g.}, those
+of Mayer, Damoiseau, Plana, Hansen, and Brown), most of which were 
+published at public expense.  Finally, it is worth noting that the development  of lunar theory gave rise to many
+significant advances in mathematics and  dynamics, and was, in many ways, a precursor to the discovery of 
+chaotic motion in the 20th century (see Chapter~\ref{schaos}). 
+
+This chapter contains an introduction to lunar theory in which approximate expressions for evection, variation,
+the precession of the perigee,  and the regression of the ascending node are derived from the  laws of Newtonian dynamics.\footnote{For more information on lunar theory, see  {\em An Elementary Treatise on the Lunar Theory}, H.~Godfray (Macmillan \& Co.,  1853);  {\em An Introductory Treatise on the Lunar Theory}, E.W.~Brown (Cambridge University Press, 1896); {\em Lectures on the Lunar Theory}, J.C.~Adams (Cambridge University Press, 1900).}
+
+\section{Preliminary Analysis}
+Let ${\bf r}_E$ and ${\bf r}_M$ be the position vectors of the Earth and Moon, respectively, in a  {\em non-rotating}\/
+reference frame in which the Sun is at rest at the origin.  Treating this reference frame as {\em inertial}\/  (which  is an
+excellent  approximation, given that the  mass of the Sun is very much greater than that of the Earth or the Moon---see Chapter~\ref{ctwo}),
+the Earth's
+equation of motion becomes (see Chapter~\ref{skepler})
+\begin{equation}\label{ev1}
+\ddot{\bf r}_E  = - n'^{\,2}\,a'^{\,3}\,\frac{{\bf r}_E}{|{\bf r}_E|^{\,3}},
+\end{equation}
+where $n'=0.98560025^\circ$ per day and $a'=149,598,261\,{\rm km}$ are the mean angular velocity and major radius, respectively, of the
+terrestrial orbit about the Sun. Here, $\ddot{~}\equiv d^2/dt^2$. On the other hand, the Moon's equation of motion takes the form
+\begin{equation}\label{ev2}
+\ddot{\bf r}_M  = - n^{\,2}\,a^{\,3}\,\frac{({\bf r}_M-{\bf r}_E)}{|{\bf r}_M-{\bf r}_E|^{\,3}} - n'^{\,2}\,a'^{\,3}\,\frac{{\bf r}_M}{|{\bf r}_M|^{\,3}},
+\end{equation}
+where $n=13.17639646^\circ$ per day  and $a=384,399\,{\rm km}$ are the mean angular velocity and major radius, respectively, of the lunar 
+orbit about the Earth. Note that we have retained the perturbing influence ({\em i.e.}, acceleration) of the Sun in the
+lunar equation of motion, (\ref{ev2}), whilst  neglecting the perturbing influence of the Moon in the terrestrial
+equation of motion, (\ref{ev1}), since the former influence is significantly greater (by a factor $M_E/M_M\simeq 81$, where $M_E$ is the mass of the
+Earth, and $M_M$ the mass of the Moon) than the latter. 
+
+Let 
+\begin{eqnarray}
+{\bf r}&=&{\bf r}_M-{\bf r}_E,\\[0.5ex]
+{\bf r}' &=& -{\bf r}_E,\label{ev4}
+\end{eqnarray}
+be the position
+vectors of the Moon and Sun, respectively, relative to the Earth. It follows, from Equations~(\ref{ev1})--(\ref{ev4}), that in a non-inertial
+ reference frame,   $S$ (say), in which the Earth is at rest at the origin, but the coordinate axes point
+ in {\em fixed}\/ directions, the
+lunar and solar equations of motion take the form
+ \begin{eqnarray}\label{eMoon}
+ \ddot{\bf r} &=&
+ - n^{\,2}\,a^{\,3}\,\frac{{\bf r}}{|{\bf r}|^{\,3}}
+  + n'^{\,2}\,a'^{\,3}
+ \left[\frac{({\bf r}'-{\bf r})}{|{\bf r}'-{\bf r}|^{\,3}}-\frac{{\bf r}'}{|{\bf r}'|^{\,3}}\right],
+\\[0.5ex]
+\ddot{\bf r}' &=& - n'^{\,2}\,a'^{\,3}\,\frac{{\bf r}'}{|{\bf r}'|^{\,3}},\label{eSun}
+\end{eqnarray}
+ respectively.  
+ 
+ Let us set up a conventional Cartesian coordinate system in $S$ 
+ which is  such that the (apparent)  orbit of the
+ Sun about the Earth lies in the $x$-$y$ plane. This implies that the
+ $x$-$y$ plane corresponds to the so-called {\em ecliptic plane}. Accordingly, in $S$, the Sun
+ appears to orbit the Earth at the mean angular velocity $\bomega'=n'\,{\bf e}_z$ (assuming that the $z$-axis points
+ toward the so-called north ecliptic pole), whereas the
+  projection of the Moon onto the ecliptic plane  orbits the Earth at the mean angular velocity $\bomega = n\,{\bf e}_z$.
+
+In the following, for the sake of simplicity, we shall neglect the small eccentricity, 
+ $e'=0.016711$, of the Sun's apparent orbit about the
+Earth (which is actually the eccentricity of the Earth's orbit about the Sun), and approximate the solar orbit as a {\em circle}, centered on the Earth. Thus, if $x'$, $y'$, $z'$ are the Cartesian coordinates of the Sun in $S$ then
+ an appropriate solution of the solar equation of motion, (\ref{eSun}), is
+ \begin{eqnarray}\label{evx}
+ x'&=&a'\,\cos(n'\,t),\\[0.5ex]
+ y'&=&a'\,\sin(n'\,t),\\[0.5ex]
+ z' &=&0.\label{evz}
+ \end{eqnarray}
+ 
+ \section{Lunar Equations of Motion}
+  It is convenient to solve the lunar equation of motion, (\ref{eMoon}), in a {\em geocentric}\/ frame of reference, $S_1$ (say), which {\em rotates}\/ with respect to
+ $S$ at the fixed angular velocity $\bomega$. Thus, if the lunar orbit  were a circle, centered on the Earth, and lying in the ecliptic plane,
+ then the Moon would appear {\em stationary}\/ in $S_1$. In fact, the small eccentricity of the lunar orbit, $e=0.05488$, combined
+ with its slight inclination to the ecliptic plane, $\iota=5.161^\circ$, causes the Moon to execute a small periodic orbit about the stationary point. 
+ 
+  Let $x$, $y$, $z$ and $x_1$, $y_1$, $z_1$  be the Cartesian coordinates
+ of the Moon in $S$ and $S_1$, respectively.
+ It is easily demonstrated that (see Section~\ref{sgradx})
+ \begin{eqnarray}\label{ev10}
+ x&=&x_1\,\cos(n\,t) -y_1\,\sin(n\,t),\\[0.5ex]
+ y&=&x_1\,\sin(n\,t)+y_1\,\cos(n\,t),\\[0.5ex]
+ z&=&z_1.\label{ev12}
+ \end{eqnarray}
+ Moreover, if $x_1'$, $y_1'$, $z_1'$  are the Cartesian components of the Sun in $S_1$ then (see Section~\ref{stransx})
+ \begin{eqnarray}
+ x_1' &=&x'\,\cos(n\,t)+y'\,\sin(n\,t),\\[0.5ex]
+ y_1' &=& -x'\,\sin(n\,t) + y'\,\cos(n\,t),\\[0.5ex]
+ z_1'&=&z',
+ \end{eqnarray}
+ giving
+ \begin{eqnarray}\label{evxx}
+ x_1'&=&a'\,\cos[(n-n')\,t],\\[0.5ex]
+ y_1'&=&-a'\,\sin[(n-n')\,t],\\[0.5ex]
+ z_1'&=&0,\label{evzz}
+ \end{eqnarray}
+where use has been made of Equations~(\ref{evx})--(\ref{evz}).
+
+Now, in the rotating frame $S_1$, the lunar equation of motion (\ref{eMoon}) transforms to (see Chapter~\ref{snoni})
+ \begin{equation}
+ \ddot{\bf r}+ 2\,\bomega\times\dot{\bf r} + \bomega\times (\bomega\times {\bf r})
+ = - n^{\,2}\,a^{\,3}\,\frac{{\bf r}}{|{\bf r}|^{\,3}} + n'^{\,2}\,a'^{\,3}\left[\frac{({\bf r}'-{\bf r})}{|{\bf r}'-{\bf r}|^{\,3}}
+ -\frac{{\bf r}'}{|{\bf r}'|^{\,3}}\right],\label{ev19}
+ \end{equation}
+ where $\dot{~}\equiv d/dt$. 
+ Furthermore, expanding the final term on the right-hand side of (\ref{ev19}) to lowest order in the small parameter $a/a'=0.00257$, we obtain
+ \begin{equation}
+ \ddot{\bf r} +2\,\bomega\times\dot{\bf r}+\bomega\times (\bomega\times {\bf r})
+ \simeq - n^{\,2}\,a^{\,3}\,\frac{{\bf r}}{|{\bf r}|^{\,3}} + \frac{n'^{\,2}\,a'^{\,3}}{|{\bf r'}|^{\,3}}\left[\frac{(3\,{\bf r}\cdot{\bf r}')\,{\bf r}'}{|{\bf r}'|^{\,2}} - {\bf r}\right].
+ \end{equation}
+ When written in terms of Cartesian coordinates, the above equation yields
+ \begin{eqnarray}
+ \ddot{x}_1 -2\,n\,\dot{y}_1-\left(n^2+n'^{\,2}/2\right)x_1&\simeq&-n^2\,a^3\,\frac{x_1}{r^3}+\frac{3}{2}\,n'^{\,2}\,\cos[2\,(n-n')\,t]\,x_1\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,n'^{\,2}\,
+ \sin[2\,(n-n')\,t]\,y_1,\label{ev21}\\[0.5ex]
+ \ddot{y}_1+2\,n\,\dot{x}_1-\left(n^2+n'^{\,2}/2\right)y_1&\simeq&-n^2\,a^3\,\frac{y_1}{r^3}-\frac{3}{2}\,n'^{\,2}\,\sin[2\,(n-n')\,t]\,x_1\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,n'^{\,2}\,
+ \cos[2\,(n-n')\,t]\,y_1,\\[0.5ex]
+ \ddot{z}_1 + n'^{\,2}\,z_1 &\simeq& - n^2\,a^3\,\frac{z_1}{r^3},\label{ev23}
+ \end{eqnarray}
+ where $r=(x_1^{\,2}+y_1^{\,2}+z_1^{\,2})^{1/2}$, and use has been made of Equations~(\ref{evxx})--(\ref{evzz}).
+ 
+ It is convenient, at this stage, to normalize all lengths to $a$, and all times to $n^{-1}$. Accordingly, let 
+ \begin{eqnarray}
+ X&=&x_1/a,\label{evxxx}\\[0.5ex] 
+ Y&=&y_1/a,\\[0.5ex]
+ Z&=&z_1/a, \label{evzzz}
+ \end{eqnarray}
+ and $r/a=R=(X^2+Y^2+Z^2)^{1/2}$, and $T = n\,t$.
+ In  normalized form, Equations~(\ref{ev21})--(\ref{ev23}) become
+ \begin{eqnarray}\label{ev24}
+ \ddot{X} -2\,\dot{Y}-(1+m^2/2)\,X&\simeq&-\frac{X}{R^3}+\frac{3}{2}\,m^{2}\,\cos[2\,(1-m)\,T]\,X\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^{2}\,
+ \sin[2\,(1-m)\,T]\,Y,\\[0.5ex]
+ \ddot{Y}+2\,\dot{X}-(1+m^2/2)\,Y&\simeq&-\frac{Y}{R^3}-\frac{3}{2}\,m^{2}\,\sin[2\,(1-m)\,T]\,X\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^{2}\,
+ \cos[2\,(1-m)\,T]\,Y,\\[0.5ex]
+ \ddot{Z} + m^2\,Z &\simeq& -\frac{Z}{R^3},\label{ev26}
+ \end{eqnarray}
+ respectively, 
+ where $m=n'/n=0.07480$ is a measure of the perturbing influence of the Sun on the lunar orbit. Here, $\ddot{~}\equiv
+ d^2/dT^2$ and $\dot{~}\equiv d/dT$. 
+ 
+ Finally, let us write
+ \begin{eqnarray}\label{ev27}
+ X &=& X_0 + \delta X,\\[0.5ex]
+Y &=& \delta Y,\\[0.5ex]
+Z &=& \delta Z,\label{ev29}
+ \end{eqnarray}
+ where $X_0=(1+m^2/2)^{-1/3}$, and $|\delta X|$, $|\delta Y|$, $|\delta Z|\ll X_0$. Thus, if the lunar orbit were a circle,
+ centered on the Earth, and lying in the ecliptic plane,
+ then, in the rotating frame $S_1$, the Moon would appear stationary at the point $(X_0$, $0,$ $0)$. 
+ Expanding Equations~(\ref{ev24})--(\ref{ev26}) to {\em second-order}\/ in $\delta X$, $\delta Y$,
+  $\delta Z$, and neglecting terms of order $m^4$ and $m^2\,\delta X^{\,2}$, {\em etc.}, we obtain
+ \begin{eqnarray}\label{ev30}
+ \delta \ddot{X}-2\,\delta \dot{Y} - 3\,(1+m^2/2)\,\delta X &\simeq& \frac{3}{2}\,m^2\,\cos[2\,(1-m)\,T]+\frac{3}{2}\,m^2\,\cos[2\,(1-m)\,T]\,\delta X\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^2\,\sin[2\,(1-m)\,T]\,\delta Y-3\,\delta X^{\,2} + \frac{3}{2}\,(\delta Y^{\,2} + \delta Z^{\,2}),\nonumber\\[0.5ex]&&\\[0.5ex]
+ \delta \ddot{Y}+2\,\delta \dot{X} &\simeq& -\frac{3}{2}\,m^2\,\sin[2\,(1-m)\,T]-\frac{3}{2}\,m^2\,\sin[2\,(1-m)\,T]\,\delta X
+\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^2\,\cos[2\,(1-m)\,T]\,\delta Y +3\,\delta X\,\delta Y,\\[0.5ex]
+ \delta\ddot{Z} + (1+3\,m^2/2)\,\delta Z &\simeq & 3\,\delta X\,\delta Z.\label{ev32}
+ \end{eqnarray}
+ 
+Now,  once the above three equations have been solved for $\delta X$, $\delta Y$, and $\delta Z$, the Cartesian coordinates, $x$, $y$, $z$, of the Moon in the non-rotating geocentric
+ frame $S$ are obtained from Equations~(\ref{ev10})--(\ref{ev12}), (\ref{evxxx})--(\ref{evzzz}),  and (\ref{ev27})--(\ref{ev29}). However, it is  more convenient to write
+ $x=r\,\cos\theta$, $y=r\,\sin\theta$, and $z=r\,\sin\beta$, where $r$ is the {\em radial distance}\/ between the Earth and Moon, and $\theta$ and $\beta$ are termed the Moon's {\em ecliptic
+ longitude}\/ and {\em ecliptic latitude}, respectively. Moreover, it is easily seen that, to second-order in $\delta X$, $\delta Y$,
+  $\delta Z$, and neglecting terms of order $m^4$, 
+ \begin{eqnarray}\label{ev33}
+ \frac{r}{a}-1+\frac{m^2}{6}&\simeq&\delta X +\frac{1}{2}\,\delta Y^{\,2}+\frac{1}{2}\,\delta Z^{\,2},\\[0.5ex]
+ \theta - n\,t&\simeq&  \delta Y - \delta X\,\delta Y,\\[0.5ex]
+ \beta&\simeq& \delta Z-\delta X\,\delta Z.\label{ev35}
+ \end{eqnarray}
+ 
+ \section{Unperturbed Lunar Motion}
+ Let us, first of all,  neglect the perturbing influence of the Sun on the Moon's orbit by setting $m =0$ in the lunar equations of motion (\ref{ev30})--(\ref{ev32}). For the sake of simplicity, let us also neglect nonlinear effects in these equations by setting $\delta X^2=\delta Y^2=\delta Z^2=\delta X\,\delta Y=\delta X\,\delta Z=0$. In this case, the equations reduce to
+  \begin{eqnarray}\label{ev36}
+ \delta \ddot{X}-2\,\delta \dot{Y} - 3\,\delta X &\simeq& 0,\\[0.5ex]
+ \delta \ddot{Y}+2\,\delta \dot{X} &\simeq& 0,\\[0.5ex]
+ \delta\ddot{Z} + \delta Z &\simeq &0.\label{ev38}
+ \end{eqnarray}
+ By inspection, appropriate solutions are
+ \begin{eqnarray}
+ \delta X &\simeq &-e\,\cos(T-\alpha_0),\label{ev42x}\\[0.5ex]
+ \delta Y &\simeq &2\,e\,\sin(T-\alpha_0),\\[0.5ex]
+ \delta Z &\simeq &i\,\sin(T-\gamma_0),\label{ev44x}
+ \end{eqnarray}
+ where $e$, $\alpha_0$, $i$, and $\gamma_0$ are arbitrary constants. Recalling that $T=n\,t$, it follows from (\ref{ev33})--(\ref{ev35})
+  that
+ \begin{eqnarray}\label{ev42}
+ r &\simeq&a\left[1-e\,\cos(n\,t-\alpha_0)\right],\\[0.5ex]
+ \theta &\simeq& n\,t+2\,e\,\sin(n\,t-\alpha_0),\label{ev43}\\[0.5ex]
+ \beta &\simeq & \iota\,\sin(n\,t-\gamma_0).\label{ev44}
+ \end{eqnarray}
+ However,  Equations~(\ref{ev42}) and (\ref{ev43}) are simply first-order (in $e$) approximations to the
+ familiar Keplerian laws (see Chapter~\ref{skepler})
+ \begin{eqnarray}
+ r &=&\frac{a\,(1-e^2)}{1+e\,\cos(\theta-\alpha_0)},\\[0.5ex]
+ r^2\,\dot{\theta} &=& (1-e^2)^{1/2}\,n\,a^2,
+ \end{eqnarray}
+ where $\dot{~}\equiv d/dt$. 
+ Of course,  the above two laws describe a  body
+ which executes an {\em elliptical}\/ orbit, confocal with the Earth, of major radius $a$, mean angular velocity $n$, and eccentricity
+ $e$, such that the radius vector connecting the body to the Earth sweeps out equal areas in equal time intervals.
+ We conclude, unsurprisingly, that the unperturbed lunar orbit is a Keplerian ellipse.
+Note that the lunar {\em perigee}\/ lies at the  fixed ecliptic longitude $\theta=\alpha_0$. Equation (\ref{ev44}) is the first-order approximation to
+ \begin{equation}
+ \beta= \iota\,\sin(\theta-\gamma_0).
+ \end{equation}
+ This expression implies that the unperturbed lunar orbit is {\em co-planar}, but is {\em inclined}\/ at an angle $\iota$ to the ecliptic plane.
+Moreover, the {\em ascending node}\/  lies at the fixed ecliptic  longitude $\theta=\gamma_0$.  Incidentally, the neglect of nonlinear terms in Equations~(\ref{ev36})--(\ref{ev38}) is only valid as long as $e$, $\iota\ll 1$: {\em i.e.}, provided that the unperturbed lunar orbit is only
+ slightly elliptical, and slightly inclined to the ecliptic plane. In fact, the observed values of $e$ and
+ $\iota$ are $0.05488$ and $0.09008$ radians, respectively, so this is indeed the case.
+ 
+ \section{Perturbed Lunar Motion}
+ The perturbed nonlinear lunar equations of motion, (\ref{ev30})--(\ref{ev32}), take the general form
+ \begin{eqnarray}\label{ev51}
+ \delta \ddot{X}-2\,\delta \dot{Y} - 3\,(1+m^2/2)\,\delta X &\simeq& R_X,\\[0.5ex]
+ \delta \ddot{Y}+2\,\delta \dot{X} &\simeq&R_Y,\\[0.5ex]
+ \delta\ddot{Z} + (1+3\,m^2/2)\,\delta Z &\simeq &R_Z,\label{ev53}
+ \end{eqnarray}
+ where 
+ \begin{eqnarray}
+ R_X &=& a_0 + \sum_{j>0}a_j\,\cos(\omega_j\,T-\alpha_j),\label{ev54}\\[0.5ex]
+ R_Y &=&\sum_{j>0} b_j\,\sin(\omega_j\,T-\alpha_j),\\[0.5ex]
+ R_Z &=& \sum_{j>0} c_j\,\sin(\Omega_j\,T-\gamma_j).\label{ev56}
+ \end{eqnarray}
+ Let us search for solutions of the general form
+ \begin{eqnarray}
+ \delta X &=& x_0 + \sum_{j>0}x_j\,\cos(\omega_j\,T-\alpha_j),\label{ev57}\\[0.5ex]
+ \delta Y &=&\sum_{j>0} y_j\,\sin(\omega_j\,T-\alpha_j),\\[0.5ex]
+ \delta Z &=&\sum_{j>0}z_j\,\sin(\Omega_j\,T-\gamma_j).\label{ev59}
+ \end{eqnarray}
+ Substituting expressions (\ref{ev54})--(\ref{ev59}) into Equations~(\ref{ev51})--(\ref{ev53}), it is easily demonstrated that
+ \begin{eqnarray}\label{ev60}
+ x_0 &=& -\frac{a_0}{3\,(1+m^2/2)},\\[0.5ex]
+ x_j &=& \frac{\omega_j\,a_j-2\,b_j}{\omega_j\,(1-3\,m^2/2-\omega_j^{\,2})},\label{ev61}\\[0.5ex]
+ y_j &=&\frac{(\omega_j^{\,2}+ 3+3\,m^2/2)\,b_j - 2\,\omega_j\,a_j}{\omega_j^{\,2}\,(1-3\,m^2/2-\omega_j^{\,2})},\label{ev62}\\[0.5ex]
+ z_j &=& \frac{c_j}{1+3\,m^2/2-\Omega_j^{\,2}},\label{ev63}
+ \end{eqnarray}
+ where $j>0$. 
+ 
+ \begin{table}\centering
+ \begin{tabular}{c|cccc}\hline
+ $j$ & $\omega_j$  &$\alpha_j$ & $\Omega_j$ & $\gamma_j$\\[0.5ex]\hline
+ &&&&\\[-2ex]
+ $1$ & $1+c\,m^2$ & $\alpha_0$  & $1+g\,m^2$ & $\gamma_0$\\[0.5ex]
+ $2$ & $2\,(1+c\,m^2)$ & $2\,\alpha_0$ & $(c-g)\,m^2$ & $\alpha_0-\gamma_0$\\[0.5ex]
+ $3$ & $2\,(1+g\,m^2)$ & $2\,\gamma_0$ & $2+(c+g)\,m^2$ & $\alpha_0+\gamma_0$\\[0.5ex]
+ $4$ & $2-2\,m$ & $0$  &&\\[0.5ex]
+ $5$ & $1-2\,m-c\,m^2$ & $-\alpha_0$ & $1-2\,m-g\,m^2$ & $-\gamma_0$
+ \end{tabular}
+ \caption{\em Angular frequencies and phase-shifts associated with the principal periodic driving terms appearing in
+ the perturbed nonlinear lunar equations of motion.}\label{tv1}
+ \end{table}
+ 
+ The angular frequencies, $\omega_j$, $\Omega_j$, and phase shifts, $\alpha_j$, $\gamma_j$, of the principal periodic driving terms 
+ that appear  on the right-hand sides of the perturbed nonlinear lunar equations of motion, (\ref{ev51})--(\ref{ev53}), are
+ specified in Table~\ref{tv1}. Here, $c$ and $g$ are, as yet, unspecified ${\cal O}(1)$ constants associated with
+ the precession of the lunar perigee, and the regression of the ascending node, respectively. 
+ Note that $\omega_1$ and $\Omega_1$ are the  frequencies of the Moon's unforced motion in
+ ecliptic longitude and latitude, respectively. Moreover, $\omega_4$ is the forcing frequency associated with the
+ perturbing influence of the Sun. All other frequencies appearing in Table~\ref{tv1} are combinations of these
+ three fundamental frequencies. In fact, $\omega_2=2\,\omega_1$, $\omega_3=2\,\Omega_1$, 
+ $\omega_5=\omega_4-\omega_1$, $\Omega_2=\omega_1-\Omega_1$, $\Omega_3=\omega_1+\Omega_1$,
+ and $\Omega_5=\omega_4-\Omega_1$.  Note that there is no $\Omega_4$.
+ 
+ Now, a comparison of Equations (\ref{ev30})--(\ref{ev32}), (\ref{ev51})--(\ref{ev53}), and Table~\ref{ev1} reveals that
+ \begin{eqnarray}
+ R_X &=& \frac{3}{2}\,m^2\,\cos(\omega_4\,T-\alpha_4)+\frac{3}{2}\,m^2\,\cos(\omega_4\,T-\alpha_4)\,\delta X\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^2\,\sin(\omega_4\,T-\alpha_4)\,\delta Y-3\,\delta X^{\,2} + \frac{3}{2}\,(\delta Y^{\,2}+\delta Z^{\,2}),\\[0.5ex]
+ R_Y &=&- \frac{3}{2}\,m^2\,\sin(\omega_4\,T-\alpha_4)-\frac{3}{2}\,m^2\,\sin(\omega_4\,T-\alpha_4)\,\delta X\nonumber\\[0.5ex]
+ &&-\frac{3}{2}\,m^2\,\cos(\omega_4\,T-\alpha_4)\,\delta Y +3\,\delta X\,\delta Y,\\[0.5ex]
+ R_Z &=& 3\,\delta X\,\delta Z.
+ \end{eqnarray}
+ Substitution of the solutions (\ref{ev57})--(\ref{ev59}) into the above equations, followed by a comparison with expressions (\ref{ev54})--(\ref{ev56}),
+yields  the amplitudes $a_j$, $b_j$, and $c_j$  specified in Table~\ref{tv2}. Note that, in calculating these amplitudes,
+  we have neglected all contributions  to the periodic driving terms, appearing in  Equations~(\ref{ev51})--(\ref{ev53}) which  involve cubic, or higher order, combinations of $e$, $\iota$,  $m^2$, $x_j$, $y_j$, and $z_j$, since we only expanded Equations~(\ref{ev30})--(\ref{ev32})  to {\em second-order}\/ in $\delta X$, $\delta Y$, and $\delta Z$. 
+ 
+ \begin{table}
+ \centering
+ \begin{tabular}{c|ccc}\hline
+ $j$ & $a_j$ & $b_j$ & $c_j$\\[0.5ex]\hline
+ &&&\\[-2ex]
+ $0$ & $\frac{3}{2}\,e^2+\frac{3}{4}\,\iota^2$ & &\\[0.5ex]
+ $1$ & $\frac{3}{4}\,m^2\,x_5 - \frac{3}{4}\,m^2\,y_5-3\,x_4\,x_5+\frac{3}{2}\,y_4\,y_5$ & $-\frac{3}{4}\,m^2\,x_5
+ +\frac{3}{4}\,m^2\,y_5+\frac{3}{2}\,y_4\,x_5-\frac{3}{2}\,y_5\,x_4$ & $-\frac{3}{2}\,x_4\,z_5$\\[0.5ex]
+ $2$ & $-\frac{9}{2}\,e^2$ & $-3\,e^2$ & $\frac{3}{2}\,e\,\iota$\\[0.5ex]
+ $3$ & $-\frac{3}{4}\,\iota^2$ & $0$ & $-\frac{3}{2}\,e\,\iota$\\[0.5ex]
+ $4$ & $\frac{3}{2}\,m^2$ & $-\frac{3}{2}\,m^2$ & 0\\[0.5ex]
+ $5$ & $-\frac{9}{4}\,m^2\,e + 3\,e\,x_4+3\,e\,y_4$ & $\frac{9}{4}\,m^2\,e-3\,e\,x_4 - \frac{3}{2}\,e\,y_4$ &$-\frac{3}{2}\,\iota\,x_4$
+ \end{tabular}
+ \caption{\em Amplitudes of the periodic driving terms appearing in the perturbed nonlinear lunar equations of motion.}\label{tv2}
+ \end{table}
+ 
+ For $j=0$, it follows from Equation~(\ref{ev60}) and Table~\ref{tv2} that
+ \begin{equation}
+ x_0 = -\frac{1}{2}\,e^2 -\frac{1}{4}\,\iota^{\,2}.
+ \end{equation}
+ 
+ For $j=2$, making the approximation $\omega_2\simeq 2$ (see Table~\ref{tv1}), it follows from Equations (\ref{ev61}), (\ref{ev62})
+ and Table~\ref{tv2} that
+ \begin{eqnarray}
+ x_2&\simeq & \frac{1}{2}\,e^2,\\[0.5ex]
+ y_2 &\simeq & \frac{1}{4}\,e^2.
+ \end{eqnarray}
+ Likewise, making the approximation $\Omega_2\simeq 0$  (see Table~\ref{tv1}), it follows from Equation (\ref{ev63})
+  and Table~\ref{tv2} that
+ \begin{equation}
+ z_2\simeq  \frac{3}{2}\,e\,\iota.
+ \end{equation}
+ 
+ For $j=3$, making the approximation $\omega_3\simeq 2$ (see Table~\ref{tv1}), it follows from Equations  (\ref{ev61}), (\ref{ev62})
+ and Table~\ref{tv2} that
+ \begin{eqnarray}
+ x_3&\simeq & \frac{1}{4}\,\iota^2,\\[0.5ex]
+ y_3 &\simeq & -\frac{1}{4}\,\iota^2.
+ \end{eqnarray}
+ Likewise, making the approximation $\Omega_3\simeq 2$  (see Table~\ref{tv1}), it follows from Equation (\ref{ev63})
+  and Table~\ref{tv2} that
+ \begin{equation}
+ z_3\simeq  \frac{1}{2}\,e\,\iota.
+ \end{equation}
+ 
+ For $j=4$, making the approximation $\omega_4\simeq 2$ (see Table~\ref{tv1}), it follows from Equations (\ref{ev61}), (\ref{ev62})
+ and Table~\ref{tv2} that
+ \begin{eqnarray}
+ x_4&\simeq &-m^2,\\[0.5ex]
+ y_4 &\simeq & \frac{11}{8}\,m^2.
+ \end{eqnarray}
+ Thus, according to Table~\ref{tv2}, 
+ \begin{eqnarray}
+ a_5 &\simeq&-\frac{9}{8}\,m^2\,e,\label{ev76}\\[0.5ex]
+ b_5 &\simeq&\frac{51}{16}\,m^2\,e,\label{ev77}\\[0.5ex]
+ c_5 &\simeq & \frac{3}{2}\,m^2\,\iota.\label{ev78}
+ \end{eqnarray}
+ 
+ For $j=5$, making the approximation $\omega_5\simeq 1-2\,m$ (see Table~\ref{tv1}), it follows from Equations (\ref{ev61}), (\ref{ev62}), (\ref{ev76}), and (\ref{ev77}) that
+ \begin{eqnarray}
+ x_5&\simeq & -\frac{15}{8}\,m\,e,\\[0.5ex]
+ y_5 &\simeq & \frac{15}{4}\,m\,e.
+ \end{eqnarray}
+ Likewise, making the approximation $\Omega_5\simeq 1-2\,m$  (see Table~\ref{tv1}), it follows from Equations  (\ref{ev63})
+  and (\ref{ev78}) that
+ \begin{equation}
+ z_5\simeq  \frac{3}{8}\ m\,\iota.
+ \end{equation}
+ Thus, according to Table~\ref{tv2}, 
+ \begin{eqnarray}
+ a_1 &=&-\frac{135}{64}\,m^3\,e,\label{ev82}\\[0.5ex]
+ b_1 &=&\frac{765}{128}\,m^3\,e,\label{ev83}\\[0.5ex]
+ c_1 &=& \frac{9}{16}\,m^3\,\iota.\label{ev84}
+ \end{eqnarray}
+ 
+ Finally, for $j=1$, by analogy with Equations~(\ref{ev42x})--(\ref{ev44x}), we expect
+ \begin{eqnarray}
+ a_1 &=& -e,\label{ev85}\\[0.5ex]
+ b_1 &=& 2\,e,\label{ev86}\\[0.5ex]
+ c_1 &=& \iota.\label{ev87}
+ \end{eqnarray}
+ Thus, since $\omega_1=1+c\,m^2$ (see Table~\ref{tv1}), it follows from Equations~(\ref{ev61}), (\ref{ev82}),  (\ref{ev83}),
+ and (\ref{ev85}) 
+ that
+ \begin{equation}
+ -e \simeq \frac{ - (225/16)\,m^3\,e}{-(3/2)\,m^2-2\,c\,m^2},
+ \end{equation}
+ which yields
+ \begin{equation}\label{ev89}
+ c \simeq- \frac{3}{4} - \frac{225}{32}\,m + {\cal O}(m^2).
+ \end{equation}
+ Likewise, since 
+$\Omega_1=1+g\,m^2$ (see Table~\ref{tv1}), it follows from Equations~(\ref{ev63}), (\ref{ev84}),   and (\ref{ev87})
+ that
+ \begin{equation}
+ \iota \simeq \frac{ (9/16)\,m^3\,\iota}{(3/2)\,m^2-2\,g\,m^2},
+ \end{equation}
+ which yields
+ \begin{equation}\label{ev91}
+ g \simeq \frac{3}{4} + \frac{9}{32}\,m + {\cal O}(m^2).
+ \end{equation}
+ 
+ According to the above analysis, our final expressions for $\delta X$, $\delta Y$, and $\delta Z$  are
+ \begin{eqnarray}
+ \delta X &=& -\frac{1}{2}\,e^2-\frac{1}{4}\,\iota^2 - e\,\cos[(1+c\,m^2)\,T-\alpha_0] + \frac{1}{2}\,e^2\,\cos[2\,(1+c\,m^2)\,T-2\,\alpha_0]\nonumber\\[0.5ex]
+ &&+ \frac{1}{4}\,\iota^2\,\cos[2\,(1+g\,m^2)\,T-2\,\gamma_0] - m^2\,\cos[2\,(1-m)\,T]\nonumber\\[0.5ex]
+ &&-\frac{15}{8}\,m\,e\,\cos[(1-2\,m-c\,m^2)\,T+\alpha_0],\\[0.5ex]
+  \delta Y &=& 2\,e\,\sin[(1+c\,m^2)\,T-\alpha_0] + \frac{1}{4}\,e^2\,\sin[2\,(1+c\,m^2)\,T-2\,\alpha_0]\nonumber\\[0.5ex]
+ &&- \frac{1}{4}\,\iota^2\,\sin[2\,(1+g\,m^2)\,T-2\,\gamma_0] + \frac{11}{8}\,m^2\,\cos[2\,(1-m)\,T]\nonumber\\[0.5ex]
+&&+\frac{15}{4}\,m\,e\,\sin[(1-2\,m-c\,m^2)\,T+\alpha_0],\\[0.5ex]
+\delta Z &=& \iota\,\sin[(1+g\,m^2)\,T-\gamma_0] + \frac{3}{2}\,e\,\iota\,\sin[(c-g)\,m^2\,T-\alpha_0+\gamma_0]\nonumber\\[0.5ex]
+&&+\frac{1}{2}\,e\,\iota\,\sin [(2+c\,m^2+g\,m^2)\,T-\alpha_0-\gamma_0]\nonumber\\[0.5ex]
+&&+\frac{3}{8}\,m\,\iota\,\sin[(1-2\,m-g\,m^2)\,T+\gamma_0].
+ \end{eqnarray}
+ Thus, making use of Equations~(\ref{ev33})--(\ref{ev35}), we find that
+ \begin{eqnarray}\label{ev95}
+ \frac{r}{a} &=&1  - e\,\cos[(1+c\,m^2)\,T-\alpha_0] +\frac{1}{2}\,e^2 - \frac{1}{6}\,m^2- \frac{1}{2}\,e^2\,\cos[2\,(1+c\,m^2)\,T-2\,\alpha_0]\nonumber\\[0.5ex]
+ &&- m^2\,\cos[2\,(1-m)\,T]-\frac{15}{8}\,m\,e\,\cos[(1-2\,m-c\,m^2)\,T+\alpha_0],\\[0.5ex]
+  \theta &=& T + 2\,e\,\sin[(1+c\,m^2)\,T-\alpha_0] + \frac{5}{4}\,e^2\,\sin[2\,(1+c\,m^2)\,T-2\,\alpha_0]\nonumber\\[0.5ex]
+ &&- \frac{1}{4}\,\iota^2\,\sin[2\,(1+g\,m^2)\,T-2\,\gamma_0] + \frac{11}{8}\,m^2\,\sin[2\,(1-m)\,T]\nonumber\\[0.5ex]
+&&+\frac{15}{4}\,m\,e\,\sin[(1-2\,m-c\,m^2)\,T+\alpha_0],\label{ev96}\\[0.5ex]
+\beta &=& \iota\,\sin[(1+g\,m^2)\,T-\gamma_0] + e\,\iota\,\sin[(c-g)\,m^2\,T-\alpha_0+\gamma_0]\nonumber\\[0.5ex]
+&&+e\,\iota\,\sin [(2+c\,m^2+g\,m^2)\,T-\alpha_0-\gamma_0]\nonumber\\[0.5ex]
+&&+\frac{3}{8}\,m\,\iota\,\sin[(1-2\,m-g\,m^2)\,T+\gamma_0].\label{ev97}
+ \end{eqnarray}
+ The above expressions are accurate up to {\em second-order}\/ in the small parameters $e$, $\iota$, and $m$. 
+ 
+ \section{Description of Lunar Motion}
+ In order to better understand the perturbed lunar motion derived in the previous section, it is helpful to introduce the concept of 
+ the {\em mean moon}. This is an imaginary body which orbits the Earth, in the ecliptic plane,  at a
+ {\em steady}\/ angular velocity that is equal to the Moon's mean orbital angular velocity, $n$. Likewise, the
+ {\em mean sun}\/ is a second imaginary body which orbits the Earth, in the ecliptic plane, at a
+ {\em steady}\/ angular velocity that is equal to the Sun's mean orbital angular velocity, $n'$. Thus, the
+ ecliptic longitudes of the mean moon and the mean sun are
+ \begin{eqnarray}
+ \bar{\theta} &=& n\,t,\\[0.5ex]
+ \bar{\theta}' &=&n'\,t,
+ \end{eqnarray}
+ respectively. Here, for the sake of simplicity, and also for the sake of consistency with our
+ previous analysis, we have assumed that both objects are located at ecliptic longitude $0^\circ$ at time $t=0$. 
+
+ Now, from Equation~(\ref{ev95}), to first-order in small parameters, the lunar perigee corresponds  to $(1+c\,m^2)\,n\,t -\alpha_0=j\,2\pi$, where
+ $j$ is an integer. 
+ However, this condition can also be written $\bar{\theta}=\alpha$, where
+ \begin{equation}\label{ev101}
+ \alpha = \alpha_0 + \alpha_1\,n'\,t,
+ \end{equation}
+ and, making use of Equation~(\ref{ev89}),  together with the definition $m=n'/n$, 
+ \begin{equation}
+  \alpha_1 = \frac{3}{4}\,m+ \frac{255}{32}\,m^2 + {\cal O}(m^3).
+  \end{equation}
+  Thus, we can identify $\alpha$ as the mean ecliptic longitude of the perigee. Moreover, according to Equation~(\ref{ev101}),
+   the  perigee {\em precesses}\/  ({\em i.e.},  its longitude increases  in time) at the mean  rate
+  of  $360\,\alpha_1$ degrees per year. (Of course, a year corresponds to $\Delta t=2\pi/n'$.) Furthermore,  it is clear that this precession is entirely due to the perturbing influence of the Sun, since it only depends on the parameter $m$,
+  which is a measure of this influence. Given that $m=0.07480$, we find that the perigee advances by
+  $34.36^\circ$ degrees per year. Hence, we predict that the perigee completes a full circuit about the Earth every $1/\alpha_1 = 10.5$ years.
+  In fact, the lunar perigee completes a full circuit every $8.85$ years. Our prediction is somewhat inaccurate because
+  our previous analysis neglected ${\cal O}(m^2)$,  and smaller, contributions to the parameter $c$ [see Equation~(\ref{ev89})],
+  and these turn out to be significant. 
+  
+ From Equation~(\ref{ev97}), to first-order in small parameters, the Moon passes through its ascending node  when $(1+g\,m^2)\,n\,t -\gamma_0=\gamma_0+j\,2\pi$, where
+ $j$ is an integer. 
+ However, this condition can also be written $\bar{\theta}=\gamma$, where
+ \begin{equation}\label{ev103}
+ \gamma = \gamma_0 - \gamma_1\,n'\,t,
+ \end{equation}
+ and, making use of Equation~(\ref{ev91}), 
+ \begin{equation}
+  \gamma_1 = \frac{3}{4}\,m - \frac{9}{32}\,m^2 + {\cal O}(m^3).
+  \end{equation}
+  Thus, we can identify $\gamma$ as the mean ecliptic longitude of the ascending node. Moreover, according to Equation~(\ref{ev103}),
+   the  ascending node {\em regresses}\/  ({\em i.e.},  its longitude decreases  in time) at the mean rate
+  of  $360\,\gamma_1$ degrees per year.  As before,  it is clear that this regression is entirely due to the perturbing influence of the Sun.  Moreover, we   find that the ascending node retreats by
+  $19.63^\circ$ degrees per year. Hence, we predict that the ascending node completes a full circuit about the Earth every $1/\gamma_1=18.3$ years.
+  In fact, the lunar ascending node completes a full circuit every $18.6$ years, so our prediction is fairly accurate. 
+  
+  
+  It is  helpful to introduce the lunar {\em mean anomaly}, 
+  \begin{equation}
+  M = \bar{\theta} - \alpha,
+  \end{equation}
+  which is defined as the  angular distance (in longitude) between the mean Moon and the perigee.
+  It is also helpful to introduce the lunar {\em mean argument of latitude}, 
+  \begin{equation}
+  F = \bar{\theta}-\gamma,
+  \end{equation}
+  which is
+  defined as the angular distance (in longitude) between the mean Moon and the ascending node.
+   Finally, it is helpful to introduce the {\em mean elongation}\/ of the Moon,
+ \begin{equation}
+ D = \bar{\theta}-\bar{\theta}',
+ \end{equation}
+ which is defined as the difference between the longitudes of the mean Moon and the mean Sun.
+  
+  When expressed in terms of $M$, $F$, and $D$, our previous expression (\ref{ev96}) for the true ecliptic
+  longitude of the Moon becomes
+  \begin{equation}
+  \theta = \bar{\theta}+\lambda,
+  \end{equation}
+  where
+  \begin{eqnarray}\label{ev108}
+   \lambda &=&  2\,e\,\sin M+ \frac{5}{4}\,e^2\,\sin 2\,M
+- \frac{1}{4}\,\iota^2\,\sin 2\,F+ \frac{11}{8}\,m^2\,\sin 2\,D+\frac{15}{4}\,m\,e\,\sin(2\,D-M)\nonumber\\[0.5ex]&&
+\end{eqnarray}
+is the angular distance (in longitude) between the Moon and the mean Moon. The first three terms on the
+right-hand side of the above expression are Keplerian ({\em i.e.}, they are independent of the perturbing
+action of the Sun). In fact, the first is due to the eccentricity of the lunar orbit ({\em i.e.}, the fact that the
+geometric center of the orbit is slightly shifted from the Earth),  the second is due to
+the ellipticity of the orbit ({\em i.e.}, the fact that the orbit is slightly non-circular), and the third
+is due to the slight inclination of the  orbit to the ecliptic plane. However, the final two
+terms are caused by the perturbing action of the Sun. In fact, the fourth term corresponds to
+{\em variation}, whilst the fifth corresponds to {\em evection}. Note that variation attains its maximal
+amplitude around the so-called {\em octant points}, at which the
+Moon's disk  is either one-quarter or three-quarters illuminated ({\em i.e.}, when $D=45^\circ$, $135^\circ$, 
+$225^\circ$, or $315^\circ$). Conversely, the amplitude of variation is zero around the so-called {\em quadrant points},
+at which  the Moon's disk is either fully illuminated, half illuminated, or not illuminated at all ({\em i.e.}, when $D=0^\circ$, $90^\circ$, 
+$180^\circ$, or $270^\circ$). Evection can be thought of as causing a slight reduction in the eccentricity of the lunar
+orbit around the times of the new moon and the full moon ({\em i.e.}, $D=0^\circ$ and $D=180^\circ$), and
+causing a corresponding slight increase in the eccentricity around the times of the first and last quarter moons
+ ({\em i.e.}, $D=90^\circ$ and $D=270^\circ$). This follows because the evection term in Equation~(\ref{ev108}) augments the eccentricity
+ term, $2\,e\,\sin M$, when $\cos 2D=-1$, and reduces the term when $\cos 2D = +1$.
+ The variation and evection terms appearing in expression (\ref{ev108}) oscillate sinusoidally with periods of half a synodic month,\footnote{A
+ synodic month, which is $29.53$ days, is the mean period between successive new moons.}
+ or $14.8$ days, and $31.8$ days, respectively. These periods are in good agreement with observations.
+ Finally, the amplitudes of the variation and evection terms  (calculated using $m=0.07480$ and $e=0.05488$)
+ are $1630$ and $3218$ arc seconds, respectively. However, the observed amplitudes are 
+ $2370$ and $4586$ arc seconds, respectively. It turns out that our expressions for these amplitudes  are somewhat inaccurate because, for the
+ sake of simplicity, we have only calculated the lowest order (in $m$) contributions to them. Recall that we  also
+ neglected the slight eccentricity, $e'=0.016711$, of the Sun's apparent orbit about the
+Earth in our calculation. In fact, the eccentricity of the solar orbit gives rise to a small addition term $-3\,m\,e'\,\sin M'$ on the right-hand side of (\ref{ev108}),
+where $M'$ is the Sun's mean anomaly. This term, which is known as the {\em annual equation}, oscillates with a period
+of a solar year, and has an amplitude of $772$ arc seconds. 
+
+When expressed in terms of $D$ and $F$ our previous expression (\ref{ev97}) for the ecliptic latitude of the Moon
+becomes
+\begin{equation}
+\beta = \iota\,\sin(F+\lambda) + \frac{3}{8}\,m\,\iota\,\sin(2\,D-F).
+\end{equation}
+The first term on the right-hand side of this expression is Keplerian ({\em i.e.}, it is independent of the perturbing
+influence of the Sun). However, the final term, which is known as {\em evection in latitude}, is due to the
+Sun's action. Evection in latitude can be thought of as causing a slight increase in the inclination of the lunar orbit
+to the ecliptic at the times of the first and last quarter moons, and a slight decrease at the times of the new moon and
+the full moon. The evection in latitude term oscillates sinusoidally with a period of 32.3 days, and has
+an amplitude of 521 arc seconds. This period is in good agreement with observations. However, the observed
+amplitude of the evection in latitude term is 624 arc seconds.  As before, our expression for the amplitude  is somewhat inaccurate because we have only calculated the lowest order (in $m$) contribution.

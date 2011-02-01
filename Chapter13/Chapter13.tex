@@ -1,0 +1,626 @@
+\chapter{The Three-Body Problem}\label{threeb}
+
+\section{Introduction}
+We saw earlier, in Section~\ref{sredm}, that  an isolated dynamical system consisting of two
+freely moving point masses exerting forces on one another---which is usually referred to
+as a {\em two-body problem}---can always be converted into an equivalent
+one-body problem. In particular, this implies that we can {\em exactly solve}\/ a dynamical system containing {\em two}\/ gravitationally interacting
+ point masses, since the equivalent one-body problem
+is exactly soluble---see Chapter~\ref{skepler} and Section~\ref{sbin}. What about a system containing
+{\em three}\/ gravitationally interacting point masses? Despite hundreds of years of research, no exact solution
+of this famous problem---which is generally
+known as the {\em three-body problem}---has ever been found. It is, however, possible
+to make some progress by severely restricting the problem's scope.
+
+\section{Circular Restricted Three-Body Problem}
+Consider an isolated dynamical system consisting of three gravitationally  interacting point masses, $m_1$, $m_2$, and $m_3$.
+Suppose, however, that the third mass, $m_3$, is so much smaller than the other two that it has a negligible
+effect on their motion. Suppose, further, that the first two masses, $m_1$ and $m_2$, execute circular
+orbits about their common center of mass. In the following, we shall investigate this simplified problem, which  is generally known as the {\em circular restricted
+three-body problem}.  
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter13/fig13.01.eps}}
+\caption{\em The circular restricted three-body problem.}\label{f3b}
+\end{figure}
+
+Let us define a Cartesian coordinate system $(\xi,\,\eta,\,\zeta)$ in an inertial reference frame whose
+origin coincides with the center of mass, $C$, of the two orbiting masses. Furthermore, let the orbital plane of these masses
+coincide with the $\xi$-$\eta$ plane, and let them both lie on the $\xi$-axis at time $t=0$---see Figure~\ref{f3b}.
+Suppose that $R$ is the constant distance between the two orbiting masses, $r_1$ the constant distance
+between mass $m_1$ and the origin, and $r_2$ the constant distance between mass $m_2$ and the origin. Moreover,
+let $\omega$ be the constant orbital angular velocity. It follows, from Section~\ref{sbin},
+that
+\begin{eqnarray}\label{e14.1}
+\omega^2 &=& \frac{G\,M}{R^3},\\[0.5ex]
+\frac{r_1}{r_2} &=& \frac{m_2}{m_1},
+\end{eqnarray}
+where $M=m_1+m_2$.
+
+It is convenient to choose our unit of length such that $R=1$, and our unit of
+mass such that $G\,M=1$. It follows, from Equation~(\ref{e14.1}), that $\omega =1$. However, we shall continue to
+retain $\omega$ in our equations, for the sake of clarity. Let $\mu_1=G\,m_1$, and $\mu_2=G\,m_2=1-\mu_1$. It is easily demonstrated 
+that $r_1 = \mu_2$, and $r_2=1-r_1=\mu_1$. Hence, the two orbiting masses, $m_1$ and $m_2$, have position
+vectors ${\bf r}_1=(\xi_1,\,\eta_1,\,0)$ and ${\bf r}_2=(\xi_2,\,\eta_2,\,0)$, respectively, where (see Figure~\ref{f3b})
+\begin{eqnarray}\label{e14.3}
+{\bf r}_1 &=& \mu_2\,(-\cos \omega t,\,-\sin\omega t,\,0),\\[0.5ex]
+{\bf r}_2 &=&\mu_1\,(\cos \omega t,\,\sin\omega t,\,0).\label{e14.4}
+\end{eqnarray}
+Let the third mass have position vector ${\bf r} = (\xi,\,\eta,\,\zeta)$. The
+Cartesian components of the equation of motion of this mass are thus
+\begin{eqnarray}\label{e14.5a}
+\ddot{\xi}&=& -\mu_1\,\frac{(\xi-\xi_1)}{\rho_1^{\,3}} - \mu_2\,\frac{(\xi-\xi_2)}{\rho_2^{\,3}},\\[0.5ex]
+\ddot{\eta}&=& -\mu_1\,\frac{(\eta-\eta_1)}{\rho_1^{\,3}} - \mu_2\,\frac{(\eta-\eta_2)}{\rho_2^{\,3}},\\[0.5ex]
+\ddot{\zeta}&=& -\mu_1\,\frac{\zeta}{\rho_1^{\,3}} - \mu_2\,\frac{\zeta}{\rho_2^{\,3}},\label{e14.5c}
+\end{eqnarray}
+where
+\begin{eqnarray}\label{e14.6}
+\rho_1^{\,2} &=& (\xi-\xi_1)^2+(\eta-\eta_1)^2 + \zeta^2,\\[0.5ex]
+\rho_2^{\,2} &=& (\xi-\xi_2)^2+(\eta-\eta_2)^2 + \zeta^2.\label{e14.7}
+\end{eqnarray}
+
+\section{Jacobi Integral}\label{sjac}
+Consider the function
+\begin{equation}\label{e14.10}
+C = 2\left(\frac{\mu_1}{\rho_1}+\frac{\mu_2}{\rho_2}\right)  + 2\,\omega\,(\xi\,\dot{\eta}-\eta\,\dot{\xi})
+-\dot{\xi}^2-\dot{\eta}^2-\dot{\zeta}^2.
+\end{equation}
+The time derivative of this function is
+written
+\begin{equation}
+\dot{C} = - \frac{2\,\mu_1\,\dot{\rho}_1}{\rho_1^{\,2}}  - \frac{2\,\mu_2\,\dot{\rho}_2}{\rho_2^{\,2}} 
++ 2\,\omega\,(\xi\,\ddot{\eta} - \eta\,\ddot{\xi}) - 2\,\dot{\xi}\,\ddot{\xi} - 2\,\dot{\eta}\,\ddot{\eta}
+- 2\,\dot{\zeta}\,\ddot{\zeta}.
+\end{equation}
+Moreover, it follows, from Equations~(\ref{e14.3})--(\ref{e14.4}) and  (\ref{e14.6})--(\ref{e14.7}),
+that
+\begin{eqnarray}
+\rho_1\,\dot{\rho}_1 &=& -(\xi_1\,\dot{\xi}+\eta_1\,\dot{\eta}) + \omega\,(\xi\,\eta_1-\eta\,\xi_1) + \xi\,\dot{\xi}
+ + \eta\,\dot{\eta} + \zeta\,\dot{\zeta},\\[0.5ex]
+\rho_2\,\dot{\rho}_2 &=& -(\xi_2\,\dot{\xi}+\eta_2\,\dot{\eta}) + \omega\,(\xi\,\eta_2-\eta\,\xi_2) + \xi\,\dot{\xi}
+ + \eta\,\dot{\eta} + \zeta\,\dot{\zeta}.
+\end{eqnarray}
+Combining Equations~(\ref{e14.5a})--(\ref{e14.5c}) with the above three expressions, we obtain (after considerable
+algebra)
+\begin{equation}
+\dot{C} = 0.
+\end{equation}
+In other words, the function $C$---which is usually referred to as the {\em Jacobi integral}---is a {\em
+constant of the motion}.
+
+Now, we can rearrange Equation~(\ref{e14.10}) to give
+\begin{equation}\label{e14.15}
+{\cal E} \equiv \frac{1}{2}\,(\dot{\xi}^2+\dot{\eta}^2+\dot{\zeta}^2) -\left(\frac{\mu_1}{\rho_1}+\frac{\mu_2}{\rho_2}\right)
+= \bomega\cdot{\bf h} - \frac{C}{2},
+\end{equation}
+where ${\cal E}$ is the energy (per unit mass) of mass $m_3$, ${\bf h} = {\bf r}\times \dot{\bf r}$ its angular momentum
+(per unit mass), and $\bomega=(0,\,0,\,\omega)$  the orbital angular velocity of the other two masses.
+Note, however, that ${\bf h}$ is {\em not}\/ a constant of the motion. Hence, ${\cal E}$ is not 
+a constant of the motion either. In fact, the Jacobi integral is the {\em only}\/ constant of the
+motion in the circular restricted three-body problem. Incidentally, the energy 
+of mass $m_3$ is not a conserved quantity because the other two masses in the system
+are {\em moving}. 
+
+\section{Tisserand Criterion}
+Consider a dynamical system consisting of three gravitationally
+interacting point masses, $m_1$, $m_2$, and $m_3$. Let mass $m_1$ represent the Sun, mass $m_2$ the planet Jupiter, and mass $m_3$ a comet. Since the
+mass of a comet is very much less than that of the Sun or Jupiter, and  the Sun and Jupiter
+are in (almost) circular orbits about their common center of mass, the dynamical system in question satisfies
+all of the necessary criteria to be considered an example of a restricted three-body problem. 
+
+Now, the mass of the Sun is much greater than that of Jupiter. It follows that the gravitational
+effect of Jupiter on the cometary orbit is {\em negligible}\/ unless the comet makes a very {\em close
+approach}\/ to Jupiter. Hence, as described in Chapter~\ref{skepler}, before and after such an approach,  the comet executes a
+standard elliptical orbit about the Sun with fixed orbital parameters: {\em i.e.}, fixed major radius, eccentricity, and
+inclination to the ecliptic plane. However, in general, the orbital parameters before  and after the close approach will {\em not}\/ be the same
+as one another. Let us investigate further.
+
+Now, since $m_1\gg m_2$, we have $\mu_1=G\,m_1\simeq G\,(m_1+m_2)=1$, and $\rho_1\simeq r$.
+Hence, according to Equations~(\ref{e6.51}) and (\ref{e6.57}), the (approximately) conserved
+energy (per unit mass) of the comet before and after its close approach to Jupiter is
+\begin{equation}\label{e14.16}
+{\cal E} \equiv \frac{1}{2}\left(\dot{\xi}^{\,2}+\dot{\eta}^{\,2} + \dot{\zeta}^{\,2}\right) - \frac{1}{r} = - \frac{1}{2\,a}.
+\end{equation}
+Note that the comet's orbital energy is entirely determined by its major radius, $a$. (Incidentally, we are working
+in units such that the major radius of Jupiter's orbit is unity.) Furthermore, the (approximately) conserved
+angular momentum (per unit mass) of the comet before and after its approach to Jupiter
+is written ${\bf h}$, where ${\bf h}$ is directed {\em normal}\/ to the comet's orbital plane,
+and, from Equations~(\ref{e6.27}) and (\ref{e6.47}),
+\begin{equation}
+h^2 = a\,(1-e^2).
+\end{equation}
+Here, $e$ is the comet's orbital eccentricity. It follows that
+\begin{equation}\label{e14.17}
+\bomega\cdot {\bf h} = \omega\,h\,\cos I = \sqrt{a\,(1-e^2)}\,\cos I,
+\end{equation}
+since $\omega=1$ in our adopted system of units. Here, $I$ is the angle of
+inclination of the normal to the comet's orbital plane to that of Jupiter's orbital
+plane.
+
+Let $a$, $e$, and $I$ be the major radius, eccentricity, and inclination angle of the cometary
+orbit before the close encounter with Jupiter, and let $a'$, $e'$, and $I'$ be the corresponding
+parameters after the encounter. It follows from Equations~(\ref{e14.15}), (\ref{e14.16}), and
+(\ref{e14.17}), and the fact that $C$ is conserved during the encounter, whereas
+${\cal E}$ and $h$ are not, that
+\begin{equation}\label{e14.19}
+\frac{1}{2\,a} + \sqrt{a\,(1-e^2)}\,\cos I = \frac{1}{2\,a'} + \sqrt{a'\,(1-e'^{\,2})}\,\cos I'.
+\end{equation}
+This result is known as the {\em Tisserand criterion}, and restricts the possible changes in the
+orbital parameters of a comet due to a close encounter with Jupiter (or any other
+massive planet).
+
+The Tisserand criterion is very useful. For instance, whenever a new comet is discovered, astronomers
+immediately calculate its {\em Tisserand parameter},
+\begin{equation}
+T_J = \frac{1}{a} + 2\,\sqrt{a\,(1-e^2)}\,\cos I.
+\end{equation}
+If this parameter has the same value as that of a previously observed comet then it
+is quite likely that the new comet is, in fact, the same comet, but that
+its orbital parameters have changed since it was last observed, due to a close encounter with Jupiter. Incidentally,
+the subscript $J$ in the above formula is to remind us that we are dealing with the
+Tisserand parameter for close encounters with {\em Jupiter}. (The parameter is, thus, evaluated
+in a system of units in which the major radius of Jupiter's orbit is unity). Obviously,
+it is also possible to calculate Tisserand parameters for close encounters with other planets.
+
+The Tisserand criterion is also applicable to so-called {\em gravity assists}, in which a
+space-craft gains energy due to a close encounter with a moving planet. Such assists
+are often employed in missions to the outer planets  to reduce the amount of fuel
+which the space-craft must carry in order to reach its destination. In fact, it is clear,
+from Equations~(\ref{e14.16}) and (\ref{e14.19}), that a space-craft can make use of  a close encounter
+with a moving planet to increase (or decrease) its orbital major radius $a$, and, hence, to increase
+(or decrease)
+its total orbital energy. 
+
+\section{Co-Rotating Frame}
+Let us transform to a non-inertial frame of reference rotating with angular
+velocity $\omega$ about an axis normal
+to the orbital plane of masses $m_1$ and $m_2$, and passing through their center of mass. 
+It
+follows that masses $m_1$ and $m_2$ appear {\em stationary}\/ in this new reference frame.
+Let us define a Cartesian coordinate system $(x,\,y,\,z)$ in the rotating frame of reference which is
+such that masses $m_1$ and $m_2$ always lie on the $x$-axis, and the $z$-axis
+is parallel to the previously defined $\zeta$-axis. It follows that masses
+$m_1$ and $m_2$ have the fixed position vectors ${\bf r}_1=\mu_2\,(-1,\,0,\,0)$ and
+${\bf r}_2=\mu_1\,(1,\,0,\,0)$ in our new coordinate system. Finally, let the position vector of
+mass $m_3$ be ${\bf r} = (x,\,y,\,z)$---see Figure~\ref{f3b1}.
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter13/fig13.02.eps}}
+\caption{\em The co-rotating frame.}\label{f3b1}
+\end{figure}
+
+According to Chapter~\ref{snoni}, the equation of motion of mass $m_3$ in the rotating
+reference frame takes the form
+\begin{equation}\label{e14.21}
+\ddot{\bf r} + 2\,\bomega\times \dot{\bf r}= - \mu_1\,\frac{({\bf r}-{\bf r}_1)}{\rho_1^{\,3}} - 
+\mu_2\,\frac{({\bf r}-{\bf r}_2)}{\rho_2^{\,3}} - \bomega\times(\bomega\times {\bf r}),
+\end{equation}
+where $\bomega = (0,\,0,\,\omega)$, and
+\begin{eqnarray}
+\rho_1^{\,2} &=& (x+\mu_2)^2+y^2 + z^2,\\[0.5ex]
+\rho_2^{\,2} &=& (x-\mu_1)^2+y^2 + z^2.
+\end{eqnarray}
+Here, the second term on the left-hand side of Equation~(\ref{e14.21}) is the {\em Coriolis}\/ acceleration,
+whereas the final term on the right-hand side is the {\em centrifugal}\/ acceleration. The components of Equation~(\ref{e14.21})
+reduce to
+\begin{eqnarray}
+\ddot{x} - 2\,\omega\,\dot{y} &=& - \frac{\mu_1\,(x+\mu_2)}{\rho_1^{\,3}}- \frac{\mu_2\,(x-\mu_1)}{\rho_2^{\,3}}
++ \omega^2\,x,\\[0.5ex]
+\ddot{y} + 2\,\omega\,\dot{x} &=& - \frac{\mu_1\,y}{\rho_1^{\,3}}- \frac{\mu_2\,y}{\rho_2^{\,3}}
++ \omega^2\,y,\\[0.5ex]
+\ddot{z}  &=& - \frac{\mu_1\,z}{\rho_1^{\,3}}- \frac{\mu_2\,z}{\rho_2^{\,3}},
+\end{eqnarray}
+which yield
+\begin{eqnarray}\label{e14.27}
+\ddot{x} - 2\,\omega\,\dot{y} &=& -\frac{\partial U}{\partial x},\\[0.5ex]
+\ddot{y} + 2\,\omega\,\dot{x} &=& -\frac{\partial U}{\partial y},\label{e14.28}\\[0.5ex]
+\ddot{z}  &=& -\frac{\partial U}{\partial z},\label{e14.29}
+\end{eqnarray}
+where
+\begin{equation}\label{e14.30}
+U = - \frac{\mu_1}{\rho_1} - \frac{\mu_2}{\rho_2} - \frac{\omega^2}{2}\,(x^2+y^2)
+\end{equation}
+is the sum of the gravitational and centrifugal potentials.
+
+Now, it follows from Equations~(\ref{e14.27})--(\ref{e14.29}) that
+\begin{eqnarray}
+\ddot{x}\,\dot{x} - 2\,\omega\,\dot{x}\,\dot{y} &=& -\dot{x}\,\frac{\partial U}{\partial x},\\[0.5ex]
+\ddot{y}\,\dot{y} + 2\,\omega\,\dot{x}\,\dot{y} &=& -\dot{y}\,\frac{\partial U}{\partial y},\\[0.5ex]
+\ddot{z}\,\dot{z}  &=& -\dot{z}\,\frac{\partial U}{\partial z}.
+\end{eqnarray}
+Summing the above three equations, we obtain
+\begin{equation}
+\frac{d}{dt}\left[\frac{1}{2}\left(\dot{x}^2+\dot{y}^2+\dot{z}^2\right) + U\right] = 0.
+\end{equation}
+In other words,
+\begin{equation}\label{e14.35}
+C = - 2\,U - v^2
+\end{equation}
+is a {\em constant of the motion}, where $v^2=\dot{x}^2+\dot{y}^2+\dot{z}^2$. In fact, $C$ is the
+{\em Jacobi integral}\/ introduced in Section~\ref{sjac} [it is easily demonstrated that Equations~(\ref{e14.10}) and
+(\ref{e14.35}) are identical].
+ Note, finally, that
+the mass $m_3$ is restricted to regions in which
+\begin{equation}
+-2\,U \geq C,
+\end{equation} 
+since $v^2$ is a positive definite quantity.
+
+\section{Lagrange Points}
+Let us search for possible {\em equilibrium  points}\/ of the mass $m_3$ in the rotating reference frame. Such points
+are termed  {\em Lagrange points}. Thus, in the rotating  frame, the mass $m_3$   would remain at rest if placed at one of the Lagrange points. It is, thus, clear that these points are
+{\em fixed}\/ in the rotating frame.
+Conversely, in the inertial reference frame, the Lagrange points {\em rotate}\/ about the center of mass with
+angular velocity $\omega$, and the mass $m_3$  would consequently also rotate about the center
+of mass with angular velocity $\omega$ if placed at one of these points (with the appropriate
+velocity). In the following,
+we shall assumed, without loss of generality, that $m_1\geq m_2$.
+
+The Lagrange points satisfy $\dot{\bf r} =\ddot{\bf r} = {\bf 0}$ in the rotating frame.
+It thus follows, from Equations~(\ref{e14.27})--(\ref{e14.29}), that the Lagrange
+points are the solutions of
+\begin{equation}
+\frac{\partial U}{\partial x} = \frac{\partial U}{\partial y}= \frac{\partial U}{\partial z}=0.
+\end{equation}
+Now, it is easily seen that
+\begin{equation}
+\frac{\partial U}{\partial z} = \left(\frac{\mu_1}{\rho_1^{\,3}}+ \frac{\mu_2}{\rho_2^{\,3}}\right) z.
+\end{equation}
+Since the term in brackets is positive definite, we conclude that the only solution to the
+above equation is $z=0$. Hence, all of the Lagrange points lie in the $x$-$y$ plane.
+
+If $z=0$ then it is readily demonstrated that
+\begin{equation}
+\mu_1\,\rho_1^{\,2} + \mu_2\,\rho_2^{\,2} = x^2+y^2+\mu_1\,\mu_2,
+\end{equation}
+where use has been made of the fact that $\mu_1+\mu_2=1$. 
+Hence, Equation~(\ref{e14.30}) can also be written
+\begin{equation}\label{e14.40}
+U = - \mu_1\left(\frac{1}{\rho_1}+\frac{\rho_1^{\,2}}{2}\right)
+- \mu_2\left(\frac{1}{\rho_2}+\frac{\rho_2^{\,2}}{2}\right) + \frac{\mu_1\,\mu_2}{2}.
+\end{equation}
+The Lagrange points thus satisfy
+\begin{eqnarray}\label{e14.41}
+\frac{\partial U}{\partial x} &=& \frac{\partial U}{\partial \rho_1}\,\frac{\partial \rho_1}{\partial x}+\frac{\partial U}{\partial \rho_2}\,\frac{\partial \rho_2}{\partial x}=0,\\[0.5ex]
+\frac{\partial U}{\partial y} &=& \frac{\partial U}{\partial \rho_1}\,\frac{\partial \rho_1}{\partial y}+\frac{\partial U}{\partial \rho_2}\,\frac{\partial \rho_2}{\partial y}=0,\label{e14.42}
+\end{eqnarray}
+which reduce to
+\begin{eqnarray}\label{e14.43}
+\mu_1\left(\frac{1-\rho_1^{\,3}}{\rho_1^{\,2}}\right)\left(\frac{x+\mu_2}{\rho_1}\right)
++\mu_2\left(\frac{1-\rho_2^{\,3}}{\rho_2^{\,2}}\right)\left(\frac{x-\mu_1}{\rho_2}\right)&=&0, \\[0.5ex]
+\mu_1\left(\frac{1-\rho_1^{\,3}}{\rho_1^{\,2}}\right)\left(\frac{y}{\rho_1}\right)
++\mu_2\left(\frac{1-\rho_2^{\,3}}{\rho_2^{\,2}}\right)\left(\frac{y}{\rho_2}\right)&=&0.\label{e14.44}
+\end{eqnarray}
+
+Now, one obvious solution of Equation~(\ref{e14.44}) is $y=0$, corresponding to a Lagrange
+point which lies on the $x$-axis. It turns out that there are {\em three}\/ such points. $L_1$
+lies between masses $m_1$ and $m_2$, $L_2$ lies to the right of mass $m_2$, and
+$L_3$ lies to the left of mass $m_1$---see Figure~\ref{f3b1}. At the $L_1$ point,
+we have $x = -\mu_2+\rho_1=\mu_1-\rho_2$ and $\rho_1=1-\rho_2$. Hence, from Equation~(\ref{e14.43}),
+\begin{equation}\label{e14.45}
+\frac{\mu_2}{3\,\mu_1} = \frac{\rho_2^{\,3}\,(1-\rho_2+\rho_2^{\,2}/3)}{(1+\rho_2+\rho_2^{\,2})\,(1-\rho_2)^3}.
+\end{equation}
+Assuming that $\rho_2\ll 1$, we can find an approximate solution of Equation (\ref{e14.45})
+by expanding in powers of $\rho_2$:
+\begin{equation}
+\alpha = \rho_2 + \frac{\rho_2^{\,2}}{3} + \frac{\rho_2^{\,3}}{3} + \frac{51\,\rho_2^{\,4}}{81}+ {\cal O}(\rho_2^{\,5}).
+\end{equation}
+This equation can be inverted to give
+\begin{equation}
+\rho_2 = \alpha - \frac{\alpha^2}{3} - \frac{\alpha^3}{9} -\frac{23\,\alpha^4}{81}+{\cal O}(\alpha^5),
+\end{equation}
+where
+\begin{equation}
+\alpha = \left(\frac{\mu_2}{3\,\mu_1}\right)^{1/3}.
+\end{equation}
+is assumed to be a small parameter.
+
+At the $L_2$ point,
+we have $x = -\mu_2+\rho_1=\mu_1+\rho_2$ and $\rho_1=1+\rho_2$.
+Hence, from Equation~(\ref{e14.43}),
+\begin{equation}
+\frac{\mu_2}{3\,\mu_1} = \frac{\rho_2^{\,3}\,(1+\rho_2+\rho_2^{\,2}/3)}{(1+\rho_2)^2\,(1-\rho_2^{\,3})}.
+\end{equation}
+Again, expanding in powers of $\rho_2$, we obtain
+\begin{eqnarray}
+\alpha &=& \rho_2 -\frac{\rho_2^{\,2}}{3} + \frac{\rho_2^{\,3}}{3} + \frac{\rho_2^{\,4}}{81}+ {\cal O}(\rho_2^{\,5}),\\[0.5ex]
+\rho_2 &=& \alpha + \frac{\alpha^2}{3} - \frac{\alpha^3}{9} -\frac{31\,\alpha^4}{81}+{\cal O}(\alpha^5).
+\end{eqnarray}
+
+Finally, at the $L_3$ point,
+we have $x = -\mu_2-\rho_1=\mu_1-\rho_2$ and $\rho_2=1+\rho_1$. Hence, from Equation~(\ref{e14.43}),
+\begin{equation}
+\frac{\mu_2}{\mu_1} = \frac{(1-\rho_1^{\,3})\,(1+\rho_1)^2}{\rho_1^{\,3}\,(\rho_1^{\,2}+3\,\rho_1+3)}.
+\end{equation}
+Let $\rho_1=1-\beta$. Expanding in powers of $\beta$, we obtain
+\begin{eqnarray}
+\frac{\mu_2}{\mu_1} &=&  \frac{12\,\beta}{7} + \frac{144\,\beta^2}{49} + \frac{1567\,\beta^3}{343} + {\cal O}(\beta^4),\\[0.5ex]
+\beta &=&  \frac{7}{12}\left(\frac{\mu_2}{\mu_1}\right) - \frac{7}{12}\left(\frac{\mu_2}{\mu_1}\right)^2
++\frac{13223}{20736}\left(\frac{\mu_2}{\mu_1}\right)^3 + {\cal O}\left(\frac{\mu_2}{\mu_1}\right)^4,
+\end{eqnarray}
+where $\mu_2/\mu_1$ is assumed to be a small parameter.
+
+Let us now search for Lagrange points which {\em do not lie}\/ on the $x$-axis. One obvious solution of Equations~(\ref{e14.41})
+and (\ref{e14.42}) is 
+\begin{equation}
+\frac{\partial U}{\partial \rho_1} = \frac{\partial U}{\partial \rho_2} = 0,
+\end{equation}
+giving, from Equation~(\ref{e14.40}),
+\begin{equation}
+\rho_1 = \rho_2 =1,
+\end{equation}
+or
+\begin{equation}
+(x+\mu_2)^2 + y^2 = (x-1+\mu_2)^2 + y^2 = 1,
+\end{equation}
+since $\mu_1=1-\mu_2$.
+The two solutions of the above equation are
+\begin{eqnarray}
+x &=& \frac{1}{2}-\mu_2,\\[0.5ex]
+y &=& \pm \frac{\sqrt{3}}{2},
+\end{eqnarray}
+and specify the positions of the Lagrange points designated $L_4$ and $L_5$. Note that  point $L_4$ and the masses
+$m_1$ and $m_2$ lie at the apexes of an {\em equilateral triangle}. The same is
+true for   point $L_5$. We have now found all of the possible Lagrange points.
+
+\begin{figure}
+\epsfysize=2.75in
+\centerline{\epsffile{Chapter13/fig13.03.eps}}
+\caption{\em The masses $m_1$ and $m_2$, and the five Lagrange points, $L_1$ to $L_5$, calculated
+for $\mu_2=0.1$.}\label{flag}
+\end{figure}
+
+Figure~\ref{flag} shows the positions of the two masses, $m_1$ and $m_2$, and
+the five Lagrange points, $L_1$ to $L_5$, calculated for the case where $\mu_2=0.1$.
+
+\section{Zero-Velocity Surfaces}
+Consider the surface
+\begin{equation}\label{e14.60}
+V(x,y,z) = C,
+\end{equation}
+where
+\begin{equation}
+V = - 2\,U = \frac{2\,\mu_1}{\rho_1} 
++ \frac{2\,\mu_2}{\rho_2} +x^2+y^2.
+\end{equation}
+Note that $V\geq 0$.
+It follows, from Equation~(\ref{e14.35}), that if the mass $m_3$ has the Jacobi
+integral $C$, and lies on the surface specified in Equation~(\ref{e14.60}),
+then it must have {\em zero}\/ velocity. Hence, such a surface is termed a
+{\em zero-velocity surface}. The zero-velocity surfaces are important
+because they form the boundary of regions from which
+the mass $m_3$ is dynamically {\em excluded}: {\em i.e.}, regions in which $V< C$. 
+Generally speaking, the regions from which $m_3$ is excluded grow in area as
+$C$ increases, and {\em vice versa}.
+
+Let  $C_i$ be the value of $V$ at the $L_i$ Lagrange point, for $i=1,5$. When $\mu_2\ll 1$,
+it is easily demonstrated that
+\begin{eqnarray}
+C_1&\simeq & 3 + 3^{4/3}\,\mu_2^{\,2/3}-10\,\mu_2/3,\\[0.5ex]
+C_2&\simeq & 3 + 3^{4/3}\,\mu_2^{\,2/3}-14\,\mu_2/3,\\[0.5ex]
+C_3&\simeq & 3 + \mu_2,\\[0.5ex]
+C_4&\simeq & 3 - \mu_2,\\[0.5ex]
+C_4&\simeq & 3 - \mu_2.
+\end{eqnarray}
+Note that $C_1>C_2>C_3>C_4=C_5$.
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter13/fig13.04.eps}}
+\caption{\em The zero-velocity surface $V=C$, where $C> C_1$, calculated for $\mu_2=0.1$. The mass $m_3$ is excluded
+from the region lying between the two inner curves and the outer curve.}\label{fz1}
+\end{figure}
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter13/fig13.05.eps}}
+\caption{\em The zero-velocity surface $V=C$, where $C= C_1$, calculated for $\mu_2=0.1$. The mass $m_3$ is excluded
+from the region lying between the  inner and  outer curves.}\label{fz2}
+\end{figure}
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter13/fig13.06.eps}}
+\caption{\em The zero-velocity surface $V=C$, where $C= C_2$, calculated for $\mu_2=0.1$.  The mass $m_3$ is excluded
+from the region lying between the inner and  outer curve.}\label{fz3}
+\end{figure}
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter13/fig13.07.eps}}
+\caption{\em The zero-velocity surface $V=C$, where $C =C_3$, calculated for $\mu_2=0.1$.  The mass $m_3$ is excluded
+from the regions lying inside the  curve.}\label{fz4}
+\end{figure}
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter13/fig13.08.eps}}
+\caption{\em The zero-velocity surface $V=C$, where $C_4< C < C_3$, calculated for $\mu_2=0.1$.  The mass $m_3$ is excluded
+from the regions lying inside the two curves.}\label{fz5}
+\end{figure}
+
+Figures \ref{fz1}--\ref{fz5} show the intersection of the zero-velocity
+surface $V=C$ with the $x$-$y$ plane for various different values of $C$, and
+illustrate how the region from which $m_3$ is dynamically excluded---which we shall term the {\em excluded region}---evolves as the value of
+$C$ is varied. Of course, any point not in the excluded region is in the so-called {\em allowed region}.
+For $C> C_1$, the allowed region consists of two
+separate oval regions centered on $m_1$ and $m_2$, respectively,  plus an
+outer region which lies beyond a
+large circle centered on the origin. All three allowed regions are separated
+from one another by an excluded region---see Figure~\ref{fz1}. When $C=C_1$,
+the two inner allowed regions merge at the $L_1$ point---see Figure~\ref{fz2}.
+When $C=C_2$, the inner and outer allowed regions merge at the $L_2$ point, forming a  horseshoe-like excluded region---see Figure~\ref{fz3}.
+When $C=C_3$, the excluded region splits in two at the $L_3$ point---see Figure~\ref{fz4}.
+For $C_4 < C < C_3$, the two excluded  regions are localized about the
+$L_4$ and 
+$L_5$ points---see Figure~\ref{fz5}. Finally, for $C < C_4$, there is no excluded
+region.
+
+\begin{figure}
+\epsfysize=5in
+\centerline{\epsffile{Chapter13/fig13.09.eps}}
+\caption{\em The zero-velocity surfaces and Lagrange points calculated for $\mu_2=0.01$.}\label{fzer}
+\end{figure}
+
+Figure~\ref{fzer} shows the zero-velocity surfaces and Lagrange points
+calculated for the case $\mu_2=0.01$. It can be seen that, at very small values of
+$\mu_2$, the $L_1$ and $L_2$ Lagrange points are almost {\em equidistant}\/ from mass $m_2$.
+Furthermore, mass $m_2$, and the  $L_3$, $L_4$, and $L_5$ Lagrange points all lie  approximately  
+on a {\em unit circle}, 
+centered on mass $m_1$. It follows that, when $\mu_2$ is small, the Lagrange points $L_3$, $L_4$ and $L_5$ all
+share the orbit of mass $m_2$ about $m_1$ (in the inertial frame) with $C_3$ being directly opposite $m_2$,
+$L_4$ (by convention) $60^\circ$ ahead of $m_2$, and $L_5$ $60^\circ$ behind.
+
+\section{Stability of Lagrange Points}
+We have seen that the five Lagrange points, $L_1$ to $L_5$, are the equilibrium points
+of mass $m_3$ in the co-rotating frame. Let us now determine whether or not
+these equilibrium points are {\em stable}\/ to small displacements. 
+
+Now, the equations of motion of mass $m_3$ in the co-rotating frame are
+specified in Equations~(\ref{e14.27})--(\ref{e14.29}). Note that the motion
+in the $x$-$y$ plane is complicated by presence of  the Coriolis acceleration. However, the motion parallel to the $z$-axis simply
+corresponds to motion in the potential $U$. Hence, the condition for 
+the stability of the Lagrange points (which all lie at $z=0$) to small displacements parallel
+to the $z$-axis is simply (see Section~\ref{gpotn})
+\begin{equation}
+\left(\frac{\partial^2 U}{\partial z^2}\right)_{z=0} = \frac{\mu_1}{\rho_1^{\,3}} + \frac{\mu_2}{\rho_2^{\,3}}>0.
+\end{equation}
+This condition is satisfied everywhere in the $x$-$y$ plane. Hence, the Lagrange points are all
+{\em stable}\/ to small displacements parallel to the $z$-axis. It, thus, remains to investigate
+their stability to small displacements lying within the $x$-$y$ plane.
+
+Suppose that a Lagrange point is situated in the $x$-$y$ plane at coordinates $(x_0,\,y_0,\,0)$.
+Let us consider small amplitude $x$-$y$ motion in the vicinity of this point by writing
+\begin{eqnarray}\label{e14.68}
+x&=& x_0 + \delta x,\\[0.5ex]
+y&=&y_0 + \delta y,\label{e14.69}\\[0.5ex]
+z &=&0,\label{e14.69a}
+\end{eqnarray}
+where $\delta x$ and $\delta y$ are infinitesimal. Expanding $U(x,y,0)$ about the Lagrange point as a Taylor series, and retaining terms up to second-order in small
+quantities,  we obtain
+\begin{equation}
+U = U_0 + U_x\,\delta x+ U_y\,\delta y + \frac{1}{2}\,U_{xx}\,(\delta x)^2+ U_{xy}\,\delta x\,\delta y
++ \frac{1}{2}\,U_{yy}\,(\delta y)^2,
+\end{equation}
+where $U_0=U(x_0,y_0,0)$, $U_x=\partial U(x_0,y_0,0)/\partial x$, $U_{xx}=\partial^2 U(x_0,y_0,0)/\partial x^2$, 
+{\em etc.} However, by definition, $U_x=U_y=0$ at a Lagrange point, so the expansion simplifies to
+\begin{equation}\label{e14.71}
+U = U_0 + \frac{1}{2}\,U_{xx}\,(\delta x)^2+ U_{xy}\,\delta x\,\delta y
++ \frac{1}{2}\,U_{yy}\,(\delta y)^2.
+\end{equation}
+Finally, substitution of Equations~(\ref{e14.68})--(\ref{e14.69a}), and (\ref{e14.71})
+into the equations of $x$-$y$ motion, (\ref{e14.27}) and (\ref{e14.28}), yields
+\begin{eqnarray}
+\delta\ddot{x} - 2\,\delta\dot{y} &=& - U_{xx}\,\delta x -U_{xy}\,\delta y,\\[0.5ex]
+\delta\ddot{y} + 2\,\delta\dot{x} &=& - U_{xy}\,\delta x -U_{yy}\,\delta y,
+\end{eqnarray}
+since $\omega = 1$. 
+
+Let us search for a solution of the above pair of equations
+of the form $\delta x(t) = \delta x_0\,\exp(\gamma\,t)$ and
+$\delta y(t) = \delta y_0\,\exp(\gamma\,t)$. We obtain
+\begin{equation}
+\left(
+\begin{array}{cc}
+\gamma^2 + U_{xx}& -2\,\gamma+U_{xy}\\[0.5ex]
+2\,\gamma + U_{xy}& \gamma^2+ U_{yy}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+\delta x_0\\[0.5ex]
+\delta y_0
+\end{array}
+\right) = \left(
+\begin{array}{c}
+ 0\\[0.5ex]
+ 0
+\end{array}
+\right).
+\end{equation}
+This equation only has a non-trivial solution if the determinant of the
+matrix is zero. Hence, we get
+\begin{equation}\label{e14.75}
+\gamma^4 + (4+U_{xx}+U_{yy})\,\gamma^2 + (U_{xx}\,U_{yy}-U_{xy}^{\,2}) = 0.
+\end{equation}
+Now, it is convenient to define
+\begin{eqnarray}
+A &=& \frac{\mu_1}{\rho_1^{\,3}} + \frac{\mu_2}{\rho_2^{\,3}},\\[0.5ex]
+B &=& 3\left[ \frac{\mu_1}{\rho_1^{\,5}} + \frac{\mu_2}{\rho_2^{\,5}}\right]y^2,\\[0.5ex]
+C &=& 3\left[\frac{\mu_1\,(x+\mu_2)}{\rho_1^{\,5}}+\frac{\mu_2\,(x-\mu_1)}{\rho_2^{\,5}}\right]y,\\[0.5ex]
+D &=& 3\left[\frac{\mu_1\,(x+\mu_2)^2}{\rho_1^{\,3}}+\frac{\mu_2\,(x-\mu_1)^2}{\rho_2^{\,3}}\right],
+\end{eqnarray}
+where all terms are evaluated at the point $(x_0,\,y_0,\,0)$. It thus follows that
+\begin{eqnarray}
+U_{xx} &=& A - D - 1,\\[0.5ex]
+U_{yy} &=& A - B - 1,\\[0.5ex]
+U_{xy} &=& - C.
+\end{eqnarray}
+
+Consider the co-linear Lagrange points, $L_1$, $L_2$, and $L_3$. These all
+lie on the $x$-axis, and are thus characterized by
+$y=0$, $\rho_1^{\,2} = (x+\mu_2)^2$, and $\rho_2^{\,2} = (x-\mu_1)^2$. It follows,
+from the above equations, that $B=C=0$ and $D=3\,A$. Hence, $U_{xx}=-1-2\,A$,
+$U_{yy} = A-1$, and $U_{xy}=0$. Equation (\ref{e14.75}) thus yields
+\begin{equation}
+\Gamma^2 + (2-A)\,\Gamma + (1-A)\,(1+2\,A) = 0,
+\end{equation}
+where $\Gamma=\gamma^2$. Now, in order for a Lagrange point to be stable
+to small displacements, all four of the roots, $\gamma$,  of Equation~(\ref{e14.75}) must
+be {\em purely imaginary}. This, in turn, implies that the two roots of
+the above equation,
+\begin{equation}
+\Gamma = \frac{A-2\pm\sqrt{A\,(9\,A-8)}}{2},
+\end{equation}
+ must both be {\em real and negative}.
+Thus, the stability criterion is
+\begin{equation}
+\frac{8}{9}\leq A \leq 1.
+\end{equation}
+Figure~\ref{fa} shows $A$  calculated at the three co-linear Lagrange points  as a function of $\mu_2$, for all
+allowed values of this parameter ({\em i.e.}, $0<\mu_2\leq 0.5$). It can be seen that $A$
+is always greater than unity for all three points. Hence, we conclude that the co-linear
+Lagrange points, $L_1$, $L_2$, and $L_3$, are intrinsically {\em unstable}\/ equilibrium points in the co-rotating
+frame.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter13/fig13.10.eps}}
+\caption{\em The solid, short-dashed, and long-dashed curves show $A$ as a function of $\mu_2$ at the
+$L_1$, $L_2$, and $L_3$ Lagrange points.}\label{fa}
+\end{figure}
+
+Let us now consider the triangular Lagrange points, $L_4$ and $L_5$. These points
+are characterized by $\rho_1=\rho_2=1$. It follows that $A=1$, $B=9/4$, $C=\pm\sqrt{27/16}\,(1-2\,\mu_2)$,
+and $D=3/4$. Hence, $U_{xx} = -3/4$, $U_{yy}=-9/4$, and $U_{xy} = \mp\sqrt{27/16}\,(1-2\,\mu_2)$,
+where the upper/lower signs corresponds to $L_4$ and $L_5$, respectively.
+Equation~(\ref{e14.75}) thus yields
+\begin{equation}
+\Gamma^2 + \Gamma + \frac{27}{4}\,\mu_2\,(1-\mu_2) = 0
+\end{equation}
+for both points,
+where $\Gamma=\gamma^2$. As before, the stability criterion is that the two roots of the
+above  equation must both be
+real and negative. This is the case provided that $1 > 27\,\mu_2\,(1-\mu_2)$, which
+yields the stability criterion
+\begin{equation}
+\mu_2 < \frac{1}{2}\left(1-\sqrt{\frac{23}{27}}\right) = 0.0385.
+\end{equation}
+In unnormalized units, this criterion becomes
+\begin{equation}
+\frac{m_2}{m_1+ m_2} < 0.0385.
+\end{equation}
+
+We thus conclude that the $L_4$ and $L_5$ Lagrange points are {\em stable}\/ equilibrium
+points, in the co-rotating frame, provided that mass $m_2$ is less than about $4\%$ of
+mass $m_1$. If this is the case then mass $m_3$ can orbit around these points
+indefinitely. In the inertial frame, the mass will  share
+the orbit of mass $m_2$ about mass $m_1$, but will stay approximately $60^\circ$ {\em ahead of}\/ 
+mass $m_2$, if it is orbiting the $L_4$ point, or $60^\circ$ {\em behind}, if it is orbiting the $L_5$ point---see Figure~\ref{fzer}. This type of behavior has been observed in the Solar System. For instance,
+there is a sub-class of asteroids, known as the {\em Trojan  asteroids}, which are trapped
+in the vicinity of the $L_4$ and $L_5$ points of the Sun-Jupiter system (which easily
+satisfies the above stability criterion), and consequently share Jupiter's orbit around the Sun,
+staying approximately $60^\circ$ {\em ahead of}, and  $60^\circ$ {\em behind}, Jupiter, respectively.
+Furthermore, the $L_4$ and $L_5$ points of the Sun-Earth system are occupied by clouds of dust.

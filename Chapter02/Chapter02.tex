@@ -1,0 +1,577 @@
+\chapter{Newton's Laws of Motion}\label{sfun}
+\section{Introduction}
+This chapter discusses Newton's laws of motion.
+
+\section{Newtonian Dynamics}
+Newtonian dynamics is a mathematical model whose purpose is to 
+predict  the motions of the various objects that we encounter in the world
+around us. The general principles of this model were first enunciated
+by Sir Isaac Newton in a work entitled {\em Philosophiae Naturalis Principia
+Mathematica}\/ (Mathematical Principles of Natural Philosophy).  This work,
+which was first published in 1687,  is nowadays more commonly referred to as the {\em Principa}.\footnote{An excellent discussion of the historical
+development of Newtonian dynamics, as well as the physical and
+philosophical assumptions which underpin this theory, is
+given in {\em The Discovery of Dynamics: A Study from a Machian Point of View of the Discovery and the Structure of Dynamical Theories}, J.B.~Barbour (Oxford University Press, Oxford UK, 2001).}
+
+Up until the beginning of the 20th century, Newton's theory of motion 
+was thought to constitute a {\em complete}\/ description of all types of
+motion occurring in the Universe. We now know that this is not the
+case. The modern view is that Newton's theory is only an {\em approximation}\/ which is valid under certain circumstances. 
+The theory breaks down when the velocities of the objects under
+investigation approach the speed of light in vacuum, and must be modified in accordance with  Einstein's
+{\em special theory of  relativity}. The theory also fails in regions of space which are sufficiently curved that the propositions of Euclidean geometry
+do not hold to a good approximation, and must be augmented by Einstein's {\em general theory
+of relativity}.
+Finally, the theory breaks down on  atomic and subatomic length-scales, and must be replaced by {\em quantum mechanics}. 
+In this book, we shall  neglect  relativistic and quantum effects all together.
+It follows that  we must restrict our investigations to the motions  of {\em large}\/ (compared to an atom) {\em slow}\/ (compared to the speed of light) 
+objects moving in {\em Euclidean}\/ space. Fortunately, virtually all of the motions which we commonly observe in the world around us fall into
+this category. 
+
+ Newton very deliberately modeled his approach in the Principia on
+that taken in {\em Euclid's Elements}.
+Indeed, Newton's theory of motion has much in common with a conventional {\em axiomatic system}\/ such  as Euclidean geometry. Like all such  systems, Newtonian dynamics starts from a set of terms that are {\em undefined}\/ within the
+system. In  this case, the fundamental terms are {\em mass}, {\em position}, 
+{\em time}, and {\em force}. It is taken for granted that  we understand what these terms mean,
+and, furthermore, that they correspond to {\em measurable}\/ quantities which
+can be ascribed to, or associated with, objects in the world
+around us. In particular, it is assumed that the ideas of position
+in space, distance in space, and position as a function of time in space, are
+correctly described by the Euclidean vector algebra and vector calculus discussed in the
+previous chapter.
+The next component
+of an axiomatic system is a set of {\em axioms}. These are a set of
+{\em unproven}\/ propositions, involving the undefined terms, from which
+all other propositions in the system can be derived via logic and mathematical
+analysis. In the present case, the axioms are called {\em Newton's laws of
+motion}, and can only be justified via experimental observation.
+Note, incidentally, that Newton's laws, in their primitive form, are only applicable
+to {\em point objects}. However, these laws can
+be applied to extended objects by treating them as collections of point
+objects.
+
+One difference between an axiomatic system and a physical theory is that,
+in the latter case, even if a given prediction has been shown to follow
+necessarily from the axioms of the theory, it is still incumbent upon us to test the prediction against
+experimental observations. Lack of agreement might indicate
+faulty experimental data, faulty application of the theory (for instance, in the case of Newtonian dynamics, there
+might be forces at work which we have not identified), or, as a last resort, 
+incorrectness of the theory. Fortunately, 
+Newtonian dynamics has been found to give predictions which are in excellent agreement with experimental
+observations in all
+situations in which  it is expected to be valid.
+
+In the following, it is assumed that we know how to set up a rigid {\em Cartesian
+frame of reference}, and how to measure the positions of point objects as 
+functions of time within that frame. It is also taken for granted that we  have some basic
+familiarity with the laws of mechanics, and standard mathematics up to, and including, calculus, as well
+as
+the vector analysis outlined in Appendix~\ref{vector}.
+
+\section{Newton's Laws of Motion}
+Newton's laws of motion,  in the rather obscure language of the Principia,  take the following form:
+\begin{enumerate}
+\item Every body continues in its state of rest, or uniform motion in a 
+straight-line, unless
+compelled to change that state by forces impressed upon it.
+\item The change of motion ({\em i.e.}, momentum) of an object is proportional to the force impressed upon
+it, and is made in the direction of the straight-line in which the force is impressed.
+\item To every action there is always opposed an equal reaction; or, the mutual actions
+of two bodies upon each other are always equal and directed to contrary parts.  
+\end{enumerate}
+Let us now examine how these laws can be applied to dynamical systems. 
+
+\section{Newton's First Law of Motion}
+Newton's first law of motion essentially states that a  point object
+subject to zero net external force moves
+in a straight-line  with a constant speed ({\em i.e.}, it does not accelerate). However, this is only true in special frames of reference called {\em inertial frames}.  Indeed, we can think of Newton's
+first law as the {\em definition}\/ of an inertial frame: {\em i.e.},
+an inertial frame of reference is one in which a point object subject to zero
+net external force moves  in a straight-line with constant speed.
+
+Suppose that we have found an inertial frame of reference. Let us
+set up a Cartesian coordinate system in this frame. The motion
+of a point object can now be specified by giving its position vector, ${\bf r}\equiv (x,\,y,\,z)$,
+with respect to the origin of the coordinate system, as a function of time, $t$. 
+Consider a second frame of reference moving with some 
+{\em constant}\/ velocity
+${\bf u}$ with respect to the first frame. Without loss of generality,
+we can suppose that the Cartesian axes in the second frame are parallel
+to the corresponding axes in the first frame, that ${\bf u} \equiv (u,0,0)$,
+and, finally, that the origins of the two frames instantaneously coincide at $t=0$---see Figure~\ref{fun1}. Suppose that the position vector
+of our point object is ${\bf r}'\equiv (x',\,y',\,z')$ in the second frame of reference. 
+It is evident, from Figure~\ref{fun1}, that at any given time, $t$, the coordinates of the
+object in the two reference frames satisfy
+\begin{eqnarray}\label{e3.1}
+x' &=& x - u\,t,\\[0.5ex]
+y' &=& y,\\[0.5ex]
+z' &=& z.\label{e3.3}
+\end{eqnarray}
+This coordinate transformation was first discovered by Galileo Galilei, and is  known as a {\em Galilean transformation}\/
+in his honor. 
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter02/fig2.01.eps}}
+\caption{\em A Galilean coordinate transformation.}\label{fun1}
+\end{figure}
+
+By definition, the instantaneous velocity of the object in our first reference frame is given by
+${\bf v} = d{\bf r}/dt \equiv (dx/dt,\,dy/dt,\,dz/dt)$, with an analogous
+expression for the velocity, ${\bf v}'$, in the second frame. 
+It follows from differentiation of Equations~(\ref{e3.1})--(\ref{e3.3}) with respect to time that the velocity components in the two frames satisfy
+\begin{eqnarray}\label{e3.4}
+v_x'& = &v_x - u,\\[0.5ex]
+v_y' &=& v_y ,\\[0.5ex]
+v_z'&=&v_z.\label{e3.6}
+\end{eqnarray}
+These equations can be written more succinctly as
+\begin{equation}\label{e3.7}
+{\bf v}' = {\bf v} - {\bf u}.
+\end{equation}
+
+Finally, by definition, the instantaneous acceleration of the object in our first reference frame is given by
+${\bf a} = d{\bf v}/dt \equiv (dv_x/dt,\,dv_y/dt,\,dv_z/dt)$, with an analogous
+expression for the acceleration, ${\bf a}'$, in the second frame. 
+It follows from differentiation of Equations~(\ref{e3.4})--(\ref{e3.6}) with respect to time that the acceleration
+components in the two frames satisfy
+\begin{eqnarray}
+a_x'& = &a_x,\\[0.5ex]
+a_y' &=& a_y ,\\[0.5ex]
+a_z'&=&a_z.
+\end{eqnarray}
+These equations can be written more succinctly as
+\begin{equation}\label{e3.11}
+{\bf a}' = {\bf a}.
+\end{equation}
+
+According to Equations~(\ref{e3.7}) and (\ref{e3.11}), if an
+object is moving  in a straight-line with constant speed in our original
+inertial frame ({\em i.e.}, if  ${\bf a}={\bf 0}$) then it also
+moves in a (different) straight-line  with (a different) constant speed 
+in the second frame of reference ({\em i.e.}, ${\bf a}'= {\bf 0}$). Hence,
+we conclude that the second frame of reference is {\em also} an inertial frame.
+
+A simple extension of the above argument allows us to conclude that there
+are an {\em infinite}\/ number of different inertial frames moving with {\em constant
+velocities}\/ with respect to one another. Newton through that one of these inertial frames was special, and
+defined an absolute standard of rest: {\em i.e.}, a static object in this frame was in a state of absolute rest.
+However, Einstein showed that this is not the case. In fact, there is no absolute standard of rest: {\em i.e.}, all
+motion is relative---hence, the name ``relativity'' for Einstein's theory. Consequently, one inertial frame is
+just as good as another as far as Newtonian dynamics is concerned. 
+
+But, what happens if the second frame of reference {\em accelerates}\/ with
+respect to the first? In this case, it is not hard to see that Equation~(\ref{e3.11})
+generalizes to
+\begin{equation}
+{\bf a}' = {\bf a} - \frac{d{\bf u}}{dt},
+\end{equation}
+where ${\bf u}(t)$ is the instantaneous velocity of the second frame
+with respect to the first. According to the above formula, if an object is
+moving   in a straight-line with constant speed in the first frame ({\em i.e.}, if  ${\bf a}={\bf 0}$) then it does not move  in a
+straight-line with constant speed
+in the second frame ({\em i.e.}, ${\bf a}'\neq{\bf 0}$). Hence,
+if the first frame is an inertial frame then the second is {\em not}. 
+
+A simple extension of the above argument allows us to conclude that any
+frame of reference which accelerates with respect to a given inertial
+frame is not itself an inertial frame.
+
+For most practical purposes, when studying the motions of objects close to the
+Earth's surface, a reference frame which is  fixed with
+respect to this  surface is approximately inertial. However, 
+if the trajectory of a projectile within such a frame is measured to high
+precision then it will be found to deviate slightly from the predictions
+of Newtonian dynamics---see Chapter~\ref{snoni}. This deviation
+is due to the fact that the Earth is rotating, and its surface is therefore
+accelerating towards its axis of rotation.  When studying the motions of
+objects in orbit around the Earth, a reference frame whose origin
+is the center of the Earth, and whose coordinate axes are fixed with respect
+to distant stars, is approximately inertial. However, if such
+orbits are measured to extremely high precision then they will
+again be found to deviate very slightly from the predictions of Newtonian
+dynamics. In this case, the deviation is due to the Earth's orbital
+motion about the Sun. When studying the orbits of the planets
+in the Solar System, a reference frame whose origin is the center of the Sun,  and whose coordinate axes are fixed with respect
+to distant stars, is approximately inertial. In this case, any deviations
+of the orbits from the predictions of Newtonian dynamics
+due to the orbital motion of the Sun about the galactic center are
+far too small to be measurable. It should be noted that it is impossible
+to identify an {\em absolute}\/ inertial frame---the best approximation to such
+a frame  would be one in which the cosmic microwave background appears
+to be (approximately) isotropic. However, for a given dynamical problem, it is always
+possible to identify an {\em approximate}\/ inertial frame. Furthermore, any
+deviations of such a frame from a true inertial frame can be incorporated
+into the framework of Newtonian dynamics via the introduction of so-called fictitious forces---see Chapter~\ref{snoni}.
+
+\section{Newton's Second Law of Motion}\label{new2}
+Newton's second law of motion essentially states that if a point object
+is subject to an external force, ${\bf f}$, then its equation of motion
+is given by
+\begin{equation}\label{en2}
+\frac{d{\bf p}}{dt} = {\bf f},
+\end{equation}
+where the momentum, ${\bf p}$, is the product of the  object's inertial
+mass, $m$,   and its velocity, ${\bf v}$. If $m$
+is not a function of time then the above expression reduces to the
+familiar equation
+\begin{equation}\label{e3.14}
+m\,\frac{d{\bf v}}{dt} = {\bf f}.
+\end{equation}
+Note that this equation is only valid in a {\em inertial frame}. 
+Clearly, the inertial mass of an object measures its reluctance to deviate
+from its preferred state of uniform motion in a straight-line (in an
+inertial frame). Of course, the above equation of motion can only be solved if we have an independent expression for the force, ${\bf f}$  ({\em i.e.}, a law of force).
+Let us suppose that this is the case.
+
+An important corollary of Newton's second law is that force is a {\em vector
+quantity}. This must be the case, since the law  equates force to the
+product of a scalar (mass) and a vector (acceleration). 
+Note that acceleration is obviously a vector because it is directly related to displacement, which is the prototype of all vectors---see Appendix~\ref{vector}. One consequence of force being a vector is
+that two forces, ${\bf f}_1$ and ${\bf f}_2$, both acting at a given
+point, have the same effect as a single force, ${\bf f} = {\bf f}_1+{\bf f}_2$,
+acting at the same point, where the summation is performed according to the
+laws of vector addition---see Appendix~\ref{vector}. Likewise, a single force, ${\bf f}$, acting at
+a given point, has the same effect as two forces, ${\bf f}_1$ and ${\bf f}_2$,
+acting at the same point, provided that ${\bf f}_1+{\bf f}_2={\bf f}$. This
+method of combining and splitting forces is known as the {\em resolution of
+forces}, and lies at the heart of many calculations in Newtonian dynamics.
+
+Taking the scalar product of Equation~(\ref{e3.14}) with the velocity, ${\bf v}$,
+we obtain
+\begin{equation}
+m\,{\bf v}\!\cdot\!\frac{d {\bf v}}{dt} = 
+\frac{m}{2}\frac{d({\bf v}\cdot{\bf v})}{dt}=\frac{m}{2}\frac{d v^2}{dt} = 
+{\bf f}\cdot{\bf v}.
+\end{equation}
+This can be written
+\begin{equation}\label{e3.15}
+\frac{d K}{dt} = {\bf f}\cdot {\bf v}.
+\end{equation}
+where 
+\begin{equation}
+K = \frac{1}{2}\,m\,v^2.
+\end{equation}
+The right-hand side of Equation~(\ref{e3.15}) represents the rate at
+which the force does work on the object: {\em i.e.},
+the rate at which the force transfers energy to the object. The quantity
+$K$ represents the energy the object possesses by virtue of its motion.
+This type of energy is generally known as {\em kinetic energy}. Thus, Equation~(\ref{e3.15}) states that any work done on  point object by an external force
+goes to increase the object's kinetic energy.
+
+Suppose that, under the action of the force, ${\bf f}$, our object moves
+from point $P$ at time $t_1$ to point $Q$ at time $t_2$. The
+net change in the object's kinetic energy is obtained by integrating
+Equation~(\ref{e3.15}):
+\begin{equation}\label{e3.18}
+{\mit\Delta}K = \int_{t_1}^{t_2} {\bf f}\cdot{\bf v}\,dt
+=\int_P^Q {\bf f}\cdot d{\bf r},
+\end{equation}
+since ${\bf v} = d{\bf r}/dt$.
+Here, $d{\bf r}$ is an element of the object's path between points $P$
+and $Q$, and the integral in ${\bf r}$ represents the net work done by the
+force as the objects moves along the path from $P$ to $Q$. 
+
+As described in Section~\ref{sgrad}, there are basically two kinds
+of forces in nature. Firstly, those for which line integrals of the type
+$\int_P^Q {\bf f}\cdot d{\bf r}$ depend on the end points, but not
+on the path taken between these points. Secondly, those for which
+line integrals of the type $\int_P^Q {\bf f}\cdot d{\bf r}$ depend
+both on the end points, and the path taken between these points. 
+The first kind of force is termed {\em conservative}, whereas the
+second kind is termed {\em non-conservative}. It was also
+demonstrated in Section~\ref{sgrad} that if the line integral $\int_P^Q {\bf f}\cdot d{\bf r}$ is {\em path independent}\/ then the force ${\bf f}$ can always
+be written as the gradient of a scalar field. In other words, all
+conservative forces satisfy
+\begin{equation}\label{e3.16}
+{\bf f} = - \nabla U,
+\end{equation}
+for some scalar field $U({\bf r})$.  
+Note that
+\begin{equation}
+\int_P^Q \nabla U\cdot d{\bf r} \equiv {\mit\Delta} U = U(Q) - U(P),
+\end{equation}
+irrespective of the path taken between $P$ and $Q$. 
+Hence, it follows from Equation~(\ref{e3.18})
+that 
+\begin{equation}
+{\mit\Delta} K = - {\mit\Delta} U
+\end{equation}
+for conservative forces. Another way of writing this is 
+\begin{equation}\label{e3.22}
+E = K + U = {\rm constant}.
+\end{equation}
+Of course, we recognize this as an {\em energy conservation equation}: $E$
+is the object's total energy, which is conserved; $K$ is the energy the
+object has by virtue of its motion, otherwise know as its
+{\em kinetic energy}; and $U$ is the energy the object has by
+virtue of its position, otherwise known as its {\em potential
+energy}. Note, however, that we can only write such  energy conservation
+equations for conservative forces. Gravity is a good example of a conservative force.
+Non-conservative forces, on the other hand,  do not conserve energy. In general, this
+is because of some sort of frictional energy loss which drains energy
+from the dynamical system whilst it remains in motion.
+Note that potential energy is undefined to an arbitrary additive constant.
+In fact, it is only the {\em difference}\/ in potential energy between
+different points in space that is well-defined.
+
+\section{Newton's Third Law of Motion}\label{new3}
+Consider a system of $N$ mutually interacting point objects.
+Let the $i$th object, whose mass is $m_i$, be located at vector displacement ${\bf r}_i$.
+Suppose that this object exerts a force ${\bf f}_{ji}$ on the $j$th object. 
+Likewise, suppose that the $j$th object exerts a force ${\bf f}_{ij}$ on the
+$i$th object.
+Newton's third
+law of motion essentially states that these two forces are equal and opposite, irrespective
+of their nature.
+In other words, 
+\begin{equation}\label{e966}
+{\bf f}_{ij} = - {\bf f}_{ji}.
+\end{equation}
+One corollary of Newton's third law is that an object cannot exert
+a force on itself. Another corollary is that all forces in the Universe have corresponding reactions. The only exceptions to this
+rule are the fictitious forces which arise in non-inertial reference frames ({\em e.g.}, the centrifugal and Coriolis
+forces which appear in  rotating reference frames---see Chapter~\ref{snoni}). Fictitious forces do not possess  reactions.
+
+It should be noted that Newton's third law implies {\em action at a
+distance}. In other words, if the force  that object
+$i$ exerts on object $j$ suddenly changes then Newton's third law
+demands that there must be an {\em immediate}\/
+change in the force that object
+$j$ exerts on object $i$. Moreover, this must be true irrespective of the
+distance between the two objects. However, we now know that
+Einstein's theory of relativity forbids information  from traveling through the
+Universe faster than the velocity of light in vacuum. Hence, action at a distance is also forbidden. In other words,  if the force  that object
+$i$ exerts on object $j$ suddenly changes then there must be a
+{\em time delay}, which is at least as long as it takes a light ray to propagate
+between the two objects, before  the force that object
+$j$ exerts on object $i$ can respond. Of course, this means that
+Newton's third law is not, strictly speaking, correct. However, as
+long as we restrict our investigations to the motions of dynamical
+systems on time-scales that are long compared to the time
+required for  light-rays to traverse these systems, Newton's third
+law can be regarded as being approximately correct. 
+
+In an inertial frame, Newton's second law of motion applied to the $i$th object yields
+\begin{equation}\label{e3.24}
+m_i\,\frac{d^2 {\bf r}_i}{dt^2} = \sum_{j=1,N}^{j\neq i}\! {\bf f}_{ij}.
+\end{equation}
+Note that the summation on the right-hand side of the above equation excludes the case
+$j=i$, since the $i$th object cannot exert a force on itself. Let us now take the above
+equation and sum it over all objects. We obtain
+\begin{equation}
+\sum_{i=1,N} \!m_i\,\frac{d^2 {\bf r}_i}{dt^2}=\sum_{i,j=1,N}^{j\neq i}\! {\bf f}_{ij}.
+\end{equation}
+Consider the sum  over forces on the right-hand side of the above equation.
+Each element of this sum---${\bf f}_{ij}$, say---can be paired with another element---${\bf f}_{ji}$,
+in this case---which is equal and opposite, according to Newton's third law. In other words,
+ the elements of the sum all cancel out in pairs. Thus, the net value of the sum is {\em zero}.  
+It follows that the above equation can be written
+\begin{equation}\label{e6yy}
+M\,\frac{d^2 {\bf r}_{cm}}{dt^2}= {\bf 0},
+\end{equation}
+where $M = \sum_{i=1}^N m_i$ is the total mass.  The quantity ${\bf r}_{cm}$ is the vector displacement of the {\em center of mass} of
+the system, which is an imaginary point whose coordinates are the mass weighted
+averages of the coordinates of the objects that constitute  the system: {\em i.e.}, 
+\begin{equation}\label{e3.27}
+{\bf r}_{cm} = \frac{\sum_{i=1}^N m_i\,{\bf r}_i}{\sum_{i=1}^N m_i}.
+\end{equation}
+According to Equation~(\ref{e6yy}), the center of mass of the
+system moves in a uniform straight-line, in accordance with
+Newton's first law of motion, irrespective of the nature of the
+forces acting between the various components of the system.
+
+Now, if the center of mass moves in a uniform straight-line  then
+the  center of mass velocity,
+\begin{equation}\label{e6xy}
+\frac{d{\bf r}_{cm} }{dt}= \frac{\sum_{i=1}^N m_i\, d{\bf r}_i/dt}{\sum_{i=1}^N m_i},
+\end{equation}
+is a constant of the motion. However, the momentum of the $i$th object takes the
+form ${\bf p}_i = m_i\,d{\bf r}_i/dt$. Hence, the total momentum of the
+system is written
+\begin{equation}\label{e6yx}
+{\bf P} = \sum_{i=1}^N m_i\,\frac{d {\bf r}_i}{dt}.
+\end{equation}
+A comparison of Equations~(\ref{e6xy}) and (\ref{e6yx}) suggests that ${\bf P}$ is also
+a constant of the motion. In other words, the total momentum
+of the system is a {\em conserved}\/ quantity, irrespective of the nature of the
+forces acting between the various components of the system. This result (which only holds if there is no net external force acting on the system) is
+a direct consequence of Newton's third law of motion.
+
+Taking the vector product of Equation~(\ref{e3.24}) with the position vector ${\bf r}_i$, we
+obtain
+\begin{equation}\label{e988}
+m_i\,{\bf r}_i\times \frac{d^2{\bf r}_i }{dt^2}= \sum_{j=1,N}^{j\neq i} {\bf r}_i\times {\bf f}_{ij}.
+\end{equation}
+However, it is easily seen that
+\begin{equation}
+m_i\,{\bf r}_i\times \frac{d^2{\bf r}_i }{dt^2}= \frac{d}{dt}\!\left( m_i\,{\bf r}_i\times
+\frac{d{\bf r}_i}{dt}\right) = \frac{d{\bf l}_i}{dt},
+\end{equation}
+where
+\begin{equation}
+{\bf l}_i = m_i\,{\bf r}_i\times \frac{d{\bf r}_i}{dt}
+\end{equation}
+is the {\em angular momentum}\/ of the $i$th particle about the origin
+of our coordinate system.
+The total angular momentum of the system (about the origin) takes the form
+\begin{equation}
+{\bf L} = \sum_{i=1,N} {\bf l}_i
+\end{equation}
+Hence, summing Equation~(\ref{e988}) over all particles, we obtain
+\begin{equation}\label{e977}
+\frac{d {\bf L}}{dt} = \sum_{i,j = 1,N}^{i\neq j} {\bf r}_i\times {\bf f}_{ij}.
+\end{equation}
+
+Consider  the sum on the right-hand side of the above equation. A general term,
+${\bf r}_i\times {\bf f}_{ij}$, in this sum can always be paired with a
+matching term, ${\bf r}_j\times {\bf f}_{ji}$, in which the indices have been swapped.
+Making use of Equation~(\ref{e966}), the sum of a general matched pair  can be written
+\begin{equation}
+{\bf r}_i\times {\bf f}_{ij}+{\bf r}_j\times {\bf f}_{ji} = 
+({\bf r}_i-{\bf r}_j)\times {\bf f}_{ij}.
+\end{equation}
+Let us assume that the  forces acting between the
+various components of the system are {\em central}\/ in nature, so
+that  ${\bf f}_{ij}$ is parallel
+to ${\bf r}_i-{\bf r}_j$. In other words, the force exerted on object $j$
+by object $i$ either points directly toward, or directly away from, object $i$,
+and {\em vice versa}. 
+ This is a reasonable assumption,
+since most of the forces which we encounter in the world around us  are of this type ({\em e.g.}, gravity). 
+It follows that if the forces are central in nature then the vector product
+on the right-hand side of the above expression is zero.
+We conclude that
+\begin{equation}
+{\bf r}_i\times {\bf f}_{ij}+{\bf r}_j\times {\bf f}_{ji} = {\bf 0},
+\end{equation}
+for all values of $i$ and $j$. Thus, the sum on the right-hand side of Equation~(\ref{e977}) is zero for any kind of central force. We are left with
+\begin{equation}\label{e955}
+\frac{d {\bf L}}{dt} = {\bf 0}.
+\end{equation}
+In other words, the total angular momentum of the system is
+a {\em conserved}\/ quantity, provided that the different components of the
+system interact via {\em central}\/ forces (and there is no net external torque
+acting on the system).
+
+\section{Non-Isolated Systems}\label{new4}
+Up to now, we have only considered {\em isolated}\/ dynamical systems, in which all of the forces acting
+on the system originate  within the system itself. Let us now generalize our approach to
+deal with {\em non-isolated}\/ dynamical systems, in which some of the forces  originate outside the system. Consider a system of $N$ mutually interacting point objects. Let
+$m_i$ and ${\bf r}_i$ be the mass and position vector of the $i$th object, respectively. Suppose
+that the $i$th object is subject to two forces. First, an {\em internal force}\/ which originates
+from the other objects in the system, and second an {\em external force}\/ which originates
+outside the system. In other words, let the force acting on the $i$th object take the form
+\begin{equation}
+{\bf f}_i = \sum_{j=1,N}^{j\neq i} {\bf f}_{ij} + {\bf F}_i,
+\end{equation}
+where ${\bf f}_{ij}$ is the internal force exerted by object $j$ on object $i$, and ${\bf F}_i$  the
+net external force acting on object $i$. 
+
+The equation of motion of the $i$th object is
+\begin{equation}\label{eemon}
+m_i\,\frac{d^2{\bf r}_i}{dt^2} = {\bf f}_i =  \sum_{j=1,N}^{j\neq i} {\bf f}_{ij} + {\bf F}_i.
+\end{equation}
+Summing over all objects, we obtain
+\begin{equation}
+\sum_{i=1,N} m_i\,\frac{d^2{\bf r}_i}{dt^2} =  \sum_{i,j=1,N}^{j\neq i} {\bf f}_{ij} + \sum_{i=1,N}{\bf F}_i,
+\end{equation}
+which reduces to
+\begin{equation}\label{etrans}
+\frac{d{\bf P}}{dt} = {\bf F},
+\end{equation}
+where
+\begin{equation}
+{\bf F} = \sum_{i=1,N} {\bf F}_i
+\end{equation}
+is the net external force acting on the system. Here, the sum over the internal forces has cancelled out in pairs
+due to Newton's third law of motion. We conclude that the total system momentum  evolves in time according to the
+simple equation (\ref{etrans})
+when there is a net external force acting on the system, but is completely unaffected by the internal forces.
+The fact that Equation~(\ref{etrans}) is similar in form to Equation~(\ref{en2}) suggests that the center of
+mass of a system of many point objects has analogous dynamics to a point object.
+
+Taking ${\bf r}_i\times$ Equation~(\ref{eemon}), and summing over all objects, we obtain
+\begin{equation}\label{erotn}
+\frac{d{\bf L}}{dt} = {\bf T},
+\end{equation}
+where
+\begin{equation}
+{\bf T} = \sum_{i=1,N} {\bf r}_i\times {\bf F}_i
+\end{equation}
+is the net external torque acting on the system. Here, the sum over the internal
+torques has cancelled out in pairs, assuming that the internal forces are central in nature.
+We conclude that the total system angular momentum  evolves in time according to the simple equation (\ref{erotn})
+when there is a net external torque acting on the system, but is completely unaffected by the internal torques. 
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{2.\arabic{enumi}}
+\begin{enumerate}
+\item Consider an isolated system of $N$ point objects interacting via
+gravity. Let the mass and position vector of the $i$th object be
+ $m_i$ and  ${\bf r}_i$, respectively. What is  the vector equation
+ of motion of the $i$th object? Write expressions for the total
+ kinetic energy, $K$, and potential energy, $U$, of the system.
+ Demonstrate from the equations of motion  that $K+U$ is a conserved quantity.
+ 
+ \item Consider a function of many variables $f(x_1,x_2,\cdots,x_n)$. 
+ Such a function which satisfies
+ $$
+ f(t\,x_1, t\,x_2,\cdots,t\,x_n) = t^a\,f(x_1,x_2,\cdots,x_n)
+ $$
+ for all $t>0$, and all values of the $x_i$, is termed a {\em homogenous function of degree $a$}. 
+ Prove the following theorem regarding homogeneous functions:
+ $$
+ \sum_{i=1,n} x_i\,\frac{\partial f}{\partial x_i} = a\,f
+ $$
+ 
+  \item Consider an isolated system of $N$ point objects interacting via
+attractive central forces. Let the mass and position vector of the $i$th object be
+ $m_i$ and  ${\bf r}_i$, respectively. Suppose that magnitude of the force exerted on object $i$ by
+object $j$ is $k_i\,k_j\,|{\bf r}_i-{\bf r}_j|^{-n}$. Here, the $k_i$ measure
+some constant physical
+property of the particles ({\em e.g.}, their electric charges). Write
+an expression for the total potential energy $U$ of the system. Is
+this a homogenous function? If so, what is its degree?
+Write the equation of motion of the $i$th particle. Use the mathematical
+theorem from the previous exercise to demonstrate that
+$$
+\frac{1}{2}\frac{d^2 I}{dt^2} = 2\,K + (n-1)\,U,
+$$
+where $I=\sum_{i=1,N} m_i\, r_i^{\,2}$, and $K$ is the kinetic energy.
+This result is known as the {\em virial theorem}.
+Demonstrate that there are no bound steady-states for the system
+when $n\geq 3$. 
+ 
+\item A star can be through of as a spherical system that consists of a very large number of particles interacting
+via gravity.  Show that, for such a system, the virial theorem, introduced in the previous exercise, implies that
+$$
+\frac{d^2 I}{dt^2} = -2\,U + c,
+$$
+where $c$ is a constant, and the $r_i$ are measured from the center of mass. Hence, deduce that the angular frequency of small amplitude radial pulsations
+of the star (in which the radial displacement is directly proportional to the radial distance from the center) takes the form
+$$
+\omega = \left(\frac{|U_0|}{I_0}\right)^{1/2},
+$$
+where $U_0$ and $I_0$ are the equilibrium values of $U$ and $I$. Finally, show that if the mass
+density within the star varies as $r^{-\alpha}$, where $\alpha<3$, then
+$$
+\omega = \left(\frac{5-\alpha}{5-2\,\alpha}\,\frac{G\,M}{R^{\,3}}\right)^{1/2},
+$$
+where $M$ and $R$ are the stellar mass and radius, respectively.
+ 
+\item Consider a system of $N$ point particles. Let the $i$th particle have mass $m_i$, electric
+ charge $q_i$, and position vector ${\bf r}_i$. Suppose that the charge to
+ mass ratio, $q_i/m_i$, is the same for all particles. The system is placed
+ in a uniform magnetic field ${\bf B}$. Write the equation
+ of motion of the $i$th particle. You may neglect any magnetic fields generated by the motion of the particles. Demonstrate that the total momentum
+ ${\bf P}$ of the system precesses  about ${\bf B}$ at the frequency
+ ${\mit\Omega} = q_i\,B/m_i$. Demonstrate that $L_\parallel + {\mit\Omega}\,I_\parallel/2$ is a constant of the motion. Here, $L_\parallel$
+ is the total angular momentum of the system parallel to the magnetic
+ field, and $I_\parallel$ is the moment of inertia of the system about
+ an axis parallel to ${\bf B}$ which passes through the origin.
+\end{enumerate}
+}
+
+

@@ -1,0 +1,608 @@
+\chapter{Coupled Oscillations}
+\section{Introduction} 
+This chapter examines the motion of a many degree of
+freedom dynamical system which is perturbed from some equilibrium state.
+
+\section{Equilibrium State}
+Consider an ${\cal F}$ degree of freedom dynamical system described by the
+generalized coordinates $q_i$, for $i=1,{\cal F}$. Suppose that the
+kinetic energy $K$ and the potential energy $U$ are not explicit
+functions of time. This implies that the system in question
+is {\em isolated}: {\em i.e.}, it is not subject to any external forces or
+time-varying constraints. In virtually all dynamical systems of interest, the kinetic
+energy can be expressed as a {\em quadratic form}: {\em i.e.}, 
+\begin{equation}\label{e12.1}
+K = \frac{1}{2}\sum_{i,j=1,{\cal F}} m_{ij}(q_1,q_2,\cdots, q_{\cal F})\,\dot{q}_i\,\dot{q}_j.
+\end{equation}
+Without loss of generality, we can specify that the weights $m_{ij}$ in the above form are
+invariant under interchange of the indices $i$ and $j$: {\em i.e.},
+\begin{equation}
+m_{ij} = m_{ji}.
+\end{equation}
+Finally, the potential energy is written $U=U(q_1,q_2,\cdots, q_{\cal F})$. 
+
+Suppose that $q_i=q_{i\,0}$, for $i=1,{\cal F}$, corresponds to an
+{\em equilibrium state} of the system. It follows that
+$q_i=q_{i\,0}$ and $\dot{q}_i=\ddot{q}_i=0$, for $i=1,{\cal F}$, should be a possible solution of the equations of motion. 
+Now, Lagrange's equations of motion for the system take the form [see
+Equation~(\ref{e10.23})]
+\begin{equation}\label{e12.3}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{q}_i}\right) - \frac{\partial K}{\partial q_i}+ \frac{\partial U}{\partial q_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$. Here, we have made use of the definition $L=K-U$, and
+the fact that $U$ is independent of the $\dot{q}_i$.  Now, it is clear, from
+an examination of Equation~(\ref{e12.1}), that every component making up
+the first two terms in the above equation contains either a $\dot{q}_j$ or
+a $\ddot{q}_j$, for some $j$.  But, we can set all of the generalized velocities
+and accelerations  to zero in an equilibrium state of the system.
+Hence, the first two terms in the above equation are zero, and the
+condition for equilibrium reduces to
+\begin{equation}\label{e12.2}
+Q_{i\,0} = - \frac{\partial U(q_{1\,0}, q_{2\,0},\cdots,q_{{\cal F}\,0})}{\partial q_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$. In other words,  $q_i=q_{i\,0}$, for $i=1,{\cal F}$, is an equilibrium
+state provided that all of the generalized forces, $Q_i$ [see Equation~(\ref{e10.8})],  evaluated at $q_i=q_{i\,0}$,
+are zero. Let us suppose that this is the case. 
+
+\section{Stability Equations}
+It is evident that if our system is initialized in some equilibrium state, with
+all of the $\dot{q}_i$ set to zero, then it will remain in this state for ever. 
+But what happens if the system is slightly perturbed from the equilibrium
+state?
+
+Let
+\begin{equation}
+q_i = q_{i\,0} + \delta q_i,
+\end{equation}
+for $i=1,{\cal F}$, where the $\delta q_i$ are {\em small}. To lowest order in $\delta q_i
+$, the
+kinetic energy (\ref{e12.1}) can be written
+\begin{equation}\label{e12.6}
+K \simeq \frac{1}{2}\sum_{i,j=1,{\cal F}} M_{ij}\,\delta\dot{q}_i\,\delta\dot{q}_j,
+\end{equation}
+where 
+\begin{equation}\label{e12.7}
+M_{ij} = m_{ij}(q_{1\,0},q_{2\,0},\cdots,q_{{\cal F}\,0}),
+\end{equation}
+and
+\begin{equation}\label{e12.8}
+M_{ij} = M_{ji}.
+\end{equation}
+Note that the weights $M_{ij}$ in the quadratic form (\ref{e12.6}) are now {\em constants}. 
+
+Taylor expanding the potential energy function about the equilibrium state, up to second-order in the $\delta q_i$, we obtain
+\begin{equation}\label{e12.9}
+U \simeq U_0 - \sum_{i=1,{\cal F}} Q_{i\,0}\,\delta q_i - \frac{1}{2}\sum_{i,j=1,{\cal F}} G_{ij}\,\delta q_i \,\delta q_j,
+\end{equation}
+where $U_0=U(q_{1\,0},q_{2\,0},\cdots, q_{{\cal F}\,0})$, the $Q_{i\,0}$
+are specified in Equation~(\ref{e12.2}), and
+\begin{equation}\label{e12.10}
+G_{ij} = -\frac{\partial^2 U(q_{1\,0},q_{2\,0},\cdots, q_{{\cal F}\,0})}{\partial q_i\,\partial q_j}.
+\end{equation}
+Now, we can set $U_0$ to zero without loss of generality. Moreover, according to Equation~(\ref{e12.2}), the
+$Q_{i\,0}$ are all zero. Hence, the  expression (\ref{e12.9}) reduces to
+\begin{equation}\label{e12.11}
+U \simeq  - \frac{1}{2}\sum_{i,j=1,{\cal F}} G_{ij}\,\delta q_i \,\delta q_j.
+\end{equation}
+Note that, since $\partial^2 U/\partial q_i\,\partial q_j\equiv
+\partial^2 U/\partial q_j\,\partial q_i$, the constants weights $G_{ij}$  in the
+above quadratic form are invariant under interchange of the indices $i$ and $j$: {\em i.e.},
+\begin{equation}\label{e12.12}
+G_{ij} = G_{ji}.
+\end{equation}
+
+With $K$ and $U$ specified by the quadratic forms (\ref{e12.6}) and (\ref{e12.11}), respectively, Lagrange's equations of motion (\ref{e12.3}) reduce to
+\begin{equation}\label{e12.13}
+\sum_{j=1,{\cal F}}\left(M_{ij}\,\delta\ddot{q}_j - G_{ij}\,\delta q_j\right) = 0,
+\end{equation}
+for $i=1,{\cal F}$. 
+Note that the above coupled differential equations are {\em linear} in the $\delta q_i$. It follows
+that the solutions are {\em superposable}.
+Let us search for  solutions of the above equations in which all of the perturbed coordinates $\delta q_i$
+have a common time variation of the form
+\begin{equation}\label{e12.14}
+\delta q_i(t) = \delta q_i\,{\rm e}^{\,\gamma\,t},
+\end{equation}
+for $i=1,{\cal F}$. 
+Now, Equations~(\ref{e12.13}) are a set of ${\cal F}$ second-order differential equations.
+Hence, the most general solution contains $2{\cal F}$ arbitrary constants of integration. Thus, if we can find sufficient independent solutions of the form (\ref{e12.14}) to Equations~(\ref{e12.13})  that the superposition
+of these solutions contains $2{\cal F}$ arbitrary constants then we can be sure that we
+have found the most general solution. Equations
+(\ref{e12.13}) and (\ref{e12.14}) yield
+\begin{equation}\label{e12.15}
+\sum_{j=1,{\cal F}}(G_{ij}- \gamma^2\,M_{ij})\,\delta q_j = 0,
+\end{equation}
+which can be written more succinctly as a matrix equation:
+\begin{equation}\label{e12.16}
+({\bf G} - \gamma^2\,{\bf M})\,\delta\bf{q} = {\bf 0}.
+\end{equation}
+Here, ${\bf G}$ is the real [see Equation~(\ref{e12.10})] symmetric [see Equation~(\ref{e12.12})] ${\cal F}\times {\cal F}$ matrix of the $G_{ij}$ values. 
+Furthermore, ${\bf M}$ is the real [see Equation~(\ref{e12.1})] symmetric [see Equation~(\ref{e12.8})] ${\cal F}\times {\cal F}$ matrix of the $M_{ij}$ values. Finally,
+$\delta {\bf q}$ is the $1\times {\cal F}$ vector of the $\delta q_i$ values, and
+${\bf 0}$ is a null vector.
+
+\section{More Matrix Eigenvalue Theory}\label{smat2}
+Equation (\ref{e12.16}) takes the form of a matrix eigenvalue equation:
+\begin{equation}\label{e12.17}
+({\bf G} - \lambda\,{\bf M})\,\bf{x} = {\bf 0}.
+\end{equation}
+Here, ${\bf G}$ and ${\bf M}$ are both real symmetric matrices, whereas
+$\lambda$ is  termed the {\em eigenvalue}, and ${\bf x}$ the associated {\em eigenvector}. 
+The above matrix equation is essentially a set of ${\cal F}$ homogeneous simultaneous algebraic equations for the components of ${\bf x}$. As is well-known, a necessary condition for such a set of equations to possess a
+non-trivial solution is that the {\em determinant}\/ of the matrix must
+be zero: {\em i.e.}, 
+\begin{equation}
+|{\bf G} -\lambda\,{\bf M}| = 0.
+\end{equation}
+The above formula reduces to an ${\cal F}$th-order {\em polynomial}\/ equation
+for $\lambda$. Hence, we conclude that Equation~(\ref{e12.17}) is satisfied
+by ${\cal F}$ eigenvalues, and ${\cal F}$ associated eigenvectors.
+
+We can easily demonstrate that the eigenvalues are all {\em real}. Suppose
+that $\lambda_k$ and ${\bf x}_k$ are the $k$th eigenvalue and
+eigenvector, respectively. Then we have
+\begin{equation}\label{e12.19}
+{\bf G}\,{\bf x}_k = \lambda_k\,{\bf M}\,{\bf x}_k.
+\end{equation}
+Taking the transpose and complex conjugate of the above equation, and
+right multiplying by ${\bf x}_k$, we obtain
+\begin{equation}
+{\bf x}_k^{\ast\,T}\,{\bf G}^{\ast\,T}\,{\bf x}_k = \lambda_k^\ast\,
+{\bf x}_k^{\ast\,T}\,{\bf M}^{\ast\,T}\,{\bf x}_k.
+\end{equation}
+Here, $~^T$ denotes a transpose, and $~^\ast$ a complex conjugate.
+However, since ${\bf G}$ and ${\bf M}$ are both real symmetric
+matrices, it follows that ${\bf G}^{\ast\,T} = {\bf G}$ and ${\bf M}^{\ast\,T}={\bf M}$. Hence,
+\begin{equation}
+{\bf x}_k^{\ast\,T}\,{\bf G}\,{\bf x}_k = \lambda_k^\ast\,
+{\bf x}_k^{\ast\,T}\,{\bf M}\,{\bf x}_k.
+\end{equation}
+Next, left multiplying Equation~(\ref{e12.19}) by ${\bf x}_k^{\ast\,T}$,
+we obtain
+\begin{equation}
+{\bf x}_k^{\ast\,T}\,{\bf G}\,{\bf x}_k = \lambda_k\,
+{\bf x}_k^{\ast\,T}\,{\bf M}\,{\bf x}_k.
+\end{equation}
+Taking the difference between the above two expressions, we get
+\begin{equation}
+(\lambda_k^\ast-\lambda_k)\,{\bf x}_k^{\ast\,T}\,{\bf M}\,{\bf x}_k = 0.
+\end{equation}
+Since ${\bf x}_k^{\ast\,T}\,{\bf M}\,{\bf x}_k$ is not generally zero, except in the trivial case where
+${\bf x}_k$ is a null vector, we conclude that $\lambda_k^\ast = \lambda_k$
+for all $k$. In other words, the eigenvalues are all real. It immediately
+follows that the eigenvectors can also be chosen to be all real.
+
+Consider two distinct eigenvalues, $\lambda_k$ and $\lambda_l$, with
+the associated eigenvectors ${\bf x}_k$ and ${\bf x}_l$, respectively. 
+We have
+\begin{eqnarray}\label{e12.24}
+{\bf G}\,{\bf x}_k &=& \lambda_k\,{\bf M}\,{\bf x}_k,\\[0.5ex]
+{\bf G}\,{\bf x}_l &=& \lambda_l\,{\bf M}\,{\bf x}_l.\label{e12.25}
+\end{eqnarray}
+Right multiplying the transpose of Equation~(\ref{e12.24}) by ${\bf x}_l$,
+and left multiplying Equation (\ref{e12.25}) by ${\bf x}_k^T$, we obtain
+\begin{eqnarray}
+{\bf x}_k^T\,{\bf G}\,{\bf x}_l&=& \lambda_k\,{\bf x}_k^T\,{\bf M}\,{\bf x}_l,\\[0.5ex]
+{\bf x}_k^T\,{\bf G}\,{\bf x}_l &=& \lambda_l\,{\bf x}_k^T\,{\bf M}\,{\bf x}_l.
+\end{eqnarray}
+Taking the difference between the above two expressions, we get
+\begin{equation}
+(\lambda_k-\lambda_l)\,{\bf x}_k^T\,{\bf M}\,{\bf x}_l = 0.
+\end{equation}
+Hence, we conclude that
+\begin{equation}
+{\bf x}_k^T\,{\bf M}\,{\bf x}_l = 0,
+\end{equation}
+provided $\lambda_k\neq \lambda_l$. 
+In other words, two eigenvectors corresponding to two different eigenvalues
+are ``orthogonal'' to one another (in the sense specified in the above equation).
+Moreover, it is easily demonstrated that different eigenvectors corresponding to the same
+eigenvalue can be chosen in such a manner that they are also orthogonal to one another---see Section~\ref{smatrix}. Thus, we conclude
+that all of the eigenvectors are {\em mutually orthogonal}. Since Equation~(\ref{e12.17}) only specifies the directions, and not the lengths, of the
+eigenvectors, we are free to normalize our eigenvectors such that
+\begin{equation}\label{e12.30}
+{\bf x}_k^T\,{\bf M}\,{\bf x}_l = \delta_{kl},
+\end{equation}
+where $\delta_{kl}=1$ when $k=l$, and $\delta_{kl}=0$ otherwise. 
+Note, finally, that since the ${\bf x}_k$, for $k=1,{\cal F}$, are mutually orthogonal,
+they are {\em independent}\/ ({\em i.e.}, one eigenvector cannot be expressed as a linear combination of the others), and completely span ${\cal F}$-dimensional vector space.
+
+\section{Normal Modes} 
+It follows from Equation~(\ref{e12.14}) and (\ref{e12.15}), plus the
+mathematical results contained in the previous section, that the
+most general solution to Equation~(\ref{e12.13}) can be written
+\begin{equation}\label{e12.31}
+\delta {\bf q}(t) = \sum_{k=1,{\cal F}}\delta {\bf q}_k(t),
+\end{equation}
+where
+\begin{equation}\label{e12.32}
+\delta {\bf q}_k(t) = \left(\alpha_k \,{\rm e}^{+\sqrt{\lambda_k}\,t}+\beta_k\,{\rm e}^{-\sqrt{\lambda_k}\,t}\right)
+{\bf x}_k. 
+\end{equation}
+Here, the $\lambda_k$ and the ${\bf x}_k$ are the eigenvalues and eigenvectors obtained by solving Equation~(\ref{e12.17}). Moreover, the $\alpha_k$ and $\beta_k$ are arbitrary constants. Finally, we have made
+use of the fact that the two roots of $\gamma^2=\lambda_k$ are
+$\gamma=\pm \sqrt{\lambda}_k$. 
+
+According to Equation~(\ref{e12.31}), the most general perturbed motion of the
+system consists of a {\em linear combination}\/ of ${\cal F}$ different modes. These
+modes are generally termed {\em normal modes}, since they are mutually
+orthogonal (because the ${\bf x}_k$ are mutually orthogonal).  Furthermore, it follows
+from the independence of the ${\bf x}_k$ that the normal
+modes are also {\em independent}\/ ({\em i.e.}, one mode cannot be expressed as a
+linear combination of the others). The $k$th normal mode has a specific
+pattern of motion which is specified by the $k$th  eigenvector, ${\bf x}_k$. 
+Moreover, the $k$th  mode has a specific time variation which is determined by the associated eigenvalue, $\lambda_k$. Recall that
+$\lambda_k$ is {\em real}. Hence, there are only two possibilities. Either $\lambda_k$ is {\em positive}, in which case we can write
+\begin{equation}
+\delta {\bf q}_k(t) = \left(\alpha_k \,{\rm e}^{+\gamma_k\,t}+\beta_k\,{\rm e}^{-\gamma_k\,t}\right)
+{\bf x}_k,
+\end{equation}
+where $\lambda_k = \gamma_k^{\,2}$, or 
+$\lambda_k$ is {\em negative}, in which case we can write
+\begin{equation}
+\delta {\bf q}_k(t) = \left(\alpha_k \,{\rm e}^{+{\rm i}\,\omega_k\,t}+\beta_k\,{\rm e}^{-{\rm i}\,\omega_k\,t}\right)
+{\bf x}_k,
+\end{equation}
+where $\lambda_k = -\omega_k^{\,2}$. In other words, if $\lambda_k$ is
+positive then the $k$th normal mode {\em grows}\/ or decays secularly in time, whereas
+if $\lambda_k$ is negative then the $k$th normal mode {\em oscillates}\/  in time.
+Obviously, if the system possesses one or more normal modes which grow
+secularly in time then the equilibrium about which we originally expanded the
+equations of motion must be an {\em unstable}\/ equilibrium. On the
+other hand, if all of the normal modes oscillate in time then the equilibrium is
+{\em stable}. Thus, we conclude that whilst Equation~(\ref{e12.2})
+is the condition for the existence of an equilibrium state in a many degree of freedom system, the condition for the
+equilibrium to be {\em stable}\/ is that all of the eigenvalues of the stability
+equation (\ref{e12.17}) must be {\em negative}.
+
+The arbitrary constants $\alpha_k$ and $\beta_k$ appearing in expression (\ref{e12.32})
+are determined from the {\em initial conditions}. Thus, if $\delta {\bf q}^{(0)}
+= \delta {\bf q}(t=0)$ and $\delta \dot{\bf q}^{(0)} = \delta \dot{\bf q}(t=0)$
+then  it is easily demonstrated from Equations~(\ref{e12.30})--(\ref{e12.32})
+that
+\begin{equation}
+{\bf x}_k^{T}\,{\bf M}\,\delta {\bf q}^{(0)} = \alpha_k + \beta_k,
+\end{equation}
+and
+\begin{equation}
+{\bf x}_k^{T}\,{\bf M}\,\delta \dot{\bf q}^{(0)} =\sqrt{\lambda}_k\,(\alpha_k - \beta_k).
+\end{equation}
+Hence,
+\begin{eqnarray}
+\alpha_k &=& \frac{{\bf x}_k^{T}\,{\bf M}\,\delta{\bf q}^{(0)} +{\bf x}_k^{T}\,{\bf M}\,\delta \dot{\bf q}^{(0)}/\sqrt{\lambda}_k}{2},\\[0.5ex]
+\beta_k &=& \frac{{\bf x}_k^{T}\,{\bf M}\,\delta {\bf q}^{(0)} -{\bf x}_k^{T}\,{\bf M}\,\delta \dot{\bf q}^{(0)}/\sqrt{\lambda}_k}{2}.
+\end{eqnarray}
+Note, finally, that since there are $2{\cal F}$ arbitrary constants (two for each of the ${\cal F}$ normal modes), we can be sure that Equation~(\ref{e12.31}) represents the
+most general solution to Equation~(\ref{e12.13}).
+
+\section{Normal Coordinates}
+Since the eigenvectors ${\bf x}_k$, for $k=1,{\cal F}$, span ${\cal F}$-dimensional
+vector space, we can always write the displacement vector $\delta{\bf q}$
+as some linear combination of the ${\bf x}_k$: {\em i.e.}, 
+\begin{equation}\label{e12.39}
+\delta {\bf q}(t) = \sum_{k=1,{\cal F}}\eta_k(t)\,{\bf x}_k.
+\end{equation}
+We can regard the $\eta_k(t)$ as a new set of generalized coordinates,
+since specifying the $\eta_k$ is equivalent to specifying the $\delta q_k$
+(and, hence, the $q_k$). The $\eta_k$ are usually termed {\em normal coordinates}. According to Equations~(\ref{e12.30}) and (\ref{e12.39}), the
+normal coordinates can be written in terms of the $\delta q_k$ as
+\begin{equation}\label{e12.40}
+\eta_k = {\bf x}_k^T\,{\bf M}\,\delta{\bf q}.
+\end{equation}
+Let us now try to express $K$, $U$, and the equations of motion
+in terms of the $\eta_k$. 
+
+The kinetic
+energy can be written 
+\begin{equation}
+K = \frac{1}{2}\,\delta \dot{\bf q}^T\,{\bf M}\,\delta\dot{\bf q},
+\end{equation}
+where use has been made of Equation~(\ref{e12.6}).
+It follows from (\ref{e12.39}) that
+\begin{equation}
+K = \frac{1}{2}\sum_{k,l=1,{\cal F}} \dot{\eta}_k\,\dot{\eta}_l\,{\bf x}_k^T\,{\bf M}\,{\bf x}_l.
+\end{equation}
+Finally, making use of the orthonormality condition (\ref{e12.30}),
+we obtain
+\begin{equation}\label{e12.44}
+K = \frac{1}{2}\sum_{k=1,{\cal F}}\dot{\eta}_k^{\,2}.
+\end{equation}
+Hence,  the kinetic energy $K$ takes the form of a {\em diagonal}\/ quadratic form when expressed in terms of the normal coordinates.
+
+The potential energy can be written
+\begin{equation}
+U=- \frac{1}{2}\,\delta {\bf q}^T\,{\bf G}\,\delta{\bf q},
+\end{equation}
+where use has been made of Equations~(\ref{e12.11}). It follows from (\ref{e12.39}) that
+\begin{equation}
+U =- \frac{1}{2}\sum_{k,l=1,{\cal F}} \eta_k\,\eta_l\,{\bf x}_k^T\,{\bf G}\,{\bf x}_l.
+\end{equation}
+Finally, making use of Equation~(\ref{e12.19}) and the orthonormality condition (\ref{e12.30}),
+we obtain
+\begin{equation}\label{e12.47}
+U = -\frac{1}{2}\sum_{k=1,{\cal F}}\lambda_k\, \eta_k^{\,2}.
+\end{equation}
+Hence, the potential energy $U$ also takes the form of a {\em diagonal}\/ quadratic form when expressed in terms of the normal coordinates.
+
+Writing Lagrange's equations of motion in terms of the normal
+coordinates, we obtain [{\em cf.},  Equation~(\ref{e12.3})]
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{\eta}_k}\right) - \frac{\partial K}{\partial \eta_k}+ \frac{\partial U}{\partial \eta_k} = 0,
+\end{equation}
+for $k=1,{\cal F}$. Thus, it follows from Equations~(\ref{e12.44}) and (\ref{e12.47})
+that
+\begin{equation}
+\ddot{\eta}_k = \lambda_k\,\eta_k,
+\end{equation}
+for $k=1,{\cal F}$. In other words, Lagrange's equations reduce to a set of
+${\cal F}$ {\em uncoupled}\/ simple harmonic equations when expressed in terms
+of the normal coordinates. The solutions to the above equations are obvious:
+{\em i.e.}, 
+\begin{equation}\label{e12.50}
+\eta_k(t) = \alpha_k \,{\rm e}^{+\sqrt{\lambda_k}\,t}+\beta_k\,{\rm e}^{-\sqrt{\lambda_k}\,t},
+\end{equation}
+where $\alpha_k$ and $\beta_k$ are arbitrary constants. Hence, it is clear from Equations~(\ref{e12.39}) and (\ref{e12.50}) that the most general solution to
+the perturbed equations of motion is indeed given by Equations~(\ref{e12.31})
+and (\ref{e12.32}).
+
+In conclusion, the  equations of motion of a many degree of
+freedom dynamical system which is slightly perturbed from an equilibrium state take a particularly simple form when expressed
+in terms of the normal coordinates. Each normal
+coordinate specifies the instantaneous displacement of an independent 
+mode of oscillation (or secular growth) of the system. Moreover, each
+normal coordinate oscillates at a characteristic frequency (or grows at a characteristic rate), and is completely unaffected by the other coordinates.
+
+\section{Spring-Coupled Masses}
+Consider the two degree of freedom dynamical system pictured in Figure \ref{spring}. In this system, two point objects of mass $m$ are free
+to move in one dimension.  Furthermore, the masses are 
+connected together by a spring of spring constant $k$, and are also each attached to
+ fixed supports via  springs of spring constant $k'$. 
+\begin{figure}
+\epsfysize=1.in
+\centerline{\epsffile{Chapter11/fig11.01.eps}}
+\caption{\em Two spring-coupled masses.}\label{spring}
+\end{figure}
+
+Let $q_1$ and $q_2$ be the displacements of the first and second masses,
+respectively, from the equilibrium state. It follows that the
+extensions of the left-hand, middle, and right-hand springs are 
+$q_1$, $q_2-q_1$, and $-q_2$, respectively. The kinetic energy of the system takes the
+form
+\begin{equation}\label{e12.51}
+K = \frac{m}{2} \,(\dot{q}_1^{\,2} + \dot{q}_2^{\,2}),
+\end{equation}
+whereas the potential energy is written
+\begin{equation}
+U= \frac{1}{2}\left[k'\,q_1^{\,2} + k\,(q_2-q_1)^2+ k'\,q_2^{\,2}\right].
+\end{equation}
+The above expression can be rearranged to give
+\begin{equation}\label{e12.53}
+U= \frac{1}{2}\left[(k+k')\,q_1^{\,2} -2\,k\,q_1\,q_2 + (k+k')\,q_2^{\,2}\right].
+\end{equation}
+
+A comparison of Equations~(\ref{e12.51}) and (\ref{e12.53}) with the standard
+forms (\ref{e12.6}) and (\ref{e12.11}) yields the following
+expressions for the mass matrix, ${\bf M}$, and the force matrix, ${\bf G}$:
+\begin{eqnarray}\label{e12.54}
+{\bf M} &=& \left(
+\begin{array}{cc}
+m& 0\\
+0& m\end{array}
+\right),\\[1ex]
+{\bf G} &=& \left(\begin{array}{cc}
+-k-k'& k\\
+k& -k-k'\end{array}\right).
+\end{eqnarray}
+Now, the equation of motion of the system takes the form [see Equation (\ref{e12.17})]
+\begin{equation}\label{e12.56}
+({\bf G} -\lambda\,{\bf M})\,{\bf x} = {\bf 0},
+\end{equation}
+where ${\bf x}$ is the column vector of the $q_1$ and $q_2$ values.
+The solubility condition for the above equation is
+\begin{equation}
+\left|{\bf G} - \lambda\,{\bf M}\right| = 0,
+\end{equation}
+or
+\begin{equation}
+\left|\begin{array}{cc}
+-k-k'-\lambda\,m& k\\[0.5ex]
+k&-k-k'-\lambda\,m
+\end{array}\right| = 0,
+\end{equation}
+which yields the following quadratic equation for the eigenvalue $\lambda$:
+\begin{equation}
+m^2\,\lambda^2 + 2\,m\,(k+k')\,\lambda + k'\,(k'+2\,k) = 0.
+\end{equation}
+
+The two roots of the above equation are
+\begin{eqnarray}
+\lambda_1 &=& - \frac{k'}{m},\\[0.5ex]
+\lambda_2 &=& - \frac{(2\,k+k')}{m}.
+\end{eqnarray}
+The fact that the roots are negative implies that both normal modes are
+{\em oscillatory}\/ in nature: {\em i.e.}, the original equilibrium is {\em stable}. 
+The characteristic oscillation frequencies of the modes are
+\begin{eqnarray}\label{e12.62}
+\omega_1 &=& \sqrt{-\lambda_1} = \sqrt{\frac{k'}{m}},\\[0.5ex]
+\omega_2 &=& \sqrt{-\lambda_2} = \sqrt{\frac{2\,k+k'}{m}}.\label{e12.63}
+\end{eqnarray}
+
+Now, the first row of Equation~(\ref{e12.56}) gives
+\begin{equation}
+\frac{q_1}{q_2}= \frac{k}{k+k'+\lambda\,m}.
+\end{equation}
+Moreover, Equations~(\ref{e12.30}) and (\ref{e12.54}) yield the following
+normalization condition for the eigenvectors:
+\begin{equation}
+{\bf x}_k^T\,{\bf x}_k = m^{-1},
+\end{equation}
+for $k=1,2$.  It follows that the two eigenvectors are
+\begin{eqnarray}\label{e12.66}
+{\bf x}_1 &=& (2\,m)^{-1/2}\,(1,\,\,\,\, 1),\\[0.5ex]
+{\bf x}_2 &=& (2\,m)^{-1/2}\,(1,-1).\label{e12.67}
+\end{eqnarray}
+
+According to Equations~(\ref{e12.62})--(\ref{e12.63}) and (\ref{e12.66})--(\ref{e12.67}), our two degree of freedom system possesses two normal modes. The first mode oscillates at the frequency $\omega_1$, and is a purely {\em symmetric}\/
+mode: {\em i.e.}, $q_1 = q_2$. Note that such a mode does not stretch
+the middle spring. Hence, $\omega_1$ is independent of $k$. In fact, $\omega_1$ is simply the characteristic oscillation frequency of a mass $m$ on the end of a spring of spring constant $k'$. The second mode
+oscillates at the frequency $\omega_2$, and is a purely
+{\em anti-symmetric}\/ mode: {\em i.e.}, $q_1=-q_2$. Since such a mode
+stretches the middle spring, the second mode experiences a greater restoring force than the first, and hence has a higher oscillation frequency: {\em i.e.},
+$\omega_2> \omega_1$. 
+
+Note, finally, from Equations~(\ref{e12.40}) and (\ref{e12.54}), that the normal
+coordinates of the system are:
+\begin{eqnarray}
+\eta_1 &=& \sqrt{\frac{m}{2}}\,(q_1 + q_2),\\[0.5ex]
+\eta_2 &=& \sqrt{\frac{m}{2}}\,(q_1-q_2).
+\end{eqnarray}
+When expressed in terms of these normal coordinates, the kinetic
+and potential energies of the system reduce to
+\begin{eqnarray}
+K &=& \frac{1}{2}\,(\dot{\eta}_1^{\,2} + \dot{\eta}_2^{\,2}),\\[0.5ex]
+U &=&\frac{1}{2}\,(\omega_1^{\,2}\,\eta_1^{\,2} + \omega_2^{\,2}\,\eta_2^{\,2}),
+\end{eqnarray}
+respectively.
+
+\section{Triatomic Molecule}
+Consider the simple model of a linear triatomic molecule ({\em e.g.}, carbon
+dioxide) illustrated in Figure~\ref{triatomic}. The molecule consists
+of a central atom of mass $M$ flanked by two identical atoms of
+mass $m$. The atomic bonds are represented as springs of spring constant $k$.
+The linear displacements of the flanking atoms are $q_1$ and $q_2$,
+whilst that of the central atom is $q_3$. Let us investigate the linear  modes of oscillation our model molecule.
+\begin{figure}
+\epsfysize=1.25in
+\centerline{\epsffile{Chapter11/fig11.02.eps}}
+\caption{\em A model triatomic molecule.}\label{triatomic}
+\end{figure}
+
+The kinetic energy of the molecule is written
+\begin{equation}\label{e12.72}
+K = \frac{m}{2}\,(\dot{q}_1^{\,2} + \dot{q}_2^{\,2})+ \frac{M}{2}\,\dot{q}_3^{\,2},
+\end{equation}
+whereas the potential energy takes the form
+\begin{equation}\label{e12.73}
+U = \frac{k}{2}\,(q_3-q_1)^2 + \frac{k}{2}\,(q_2-q_3)^2.
+\end{equation}
+Clearly, we have a three degree of freedom dynamical system. However, we
+can reduce this to a two degree of freedom system by only considering
+{\em oscillatory}\/ modes of motion, and, hence, neglecting {\em translational}\/ modes. We can achieve this by demanding that the center
+of mass of the system remains stationary. In other words, we require that
+\begin{equation}
+m\,(q_1+q_2) + M\,q_3 = 0.
+\end{equation}
+This constraint can be rearranged to give
+\begin{equation}\label{e12.75}
+q_3 = - \frac{m}{M}\,(q_1+q_2).
+\end{equation}
+Eliminating $q_3$ from Equations~(\ref{e12.72}) and (\ref{e12.73}), we obtain
+\begin{equation}
+K = \frac{m}{2}\left[(1+\alpha)\,\dot{q}_1^{\,2} + 2\,\alpha\,\dot{q}_1\,\dot{q}_2 + (1+\alpha)\,\dot{q}_2^{\,2}\right],
+\end{equation}
+and
+\begin{equation}
+U = \frac{k}{2}\left[(1+2\,\alpha+2\,\alpha^2)\,q_1^{\,2} + 4\,\alpha\,(1+\alpha)\,q_1\,q_2 +(1+2\,\alpha+2\,\alpha^2)\,q_2^{\,2}\right],
+\end{equation}
+respectively, where $\alpha =m/M$. 
+
+A comparison of the above expressions with the standard
+forms (\ref{e12.6}) and (\ref{e12.11}) yields the following
+expressions for the mass matrix, ${\bf M}$, and the force matrix, ${\bf G}$:
+\begin{eqnarray}
+{\bf M} &=& m\left(
+\begin{array}{cc}
+1+\alpha& \alpha\\
+\alpha& 1+\alpha\end{array}
+\right),\\[1ex]
+{\bf G} &=& -k\left(\begin{array}{cc}
+1+2\,\alpha+2\,\alpha^2& 2\,\alpha\,(1+\alpha)\\
+2\,\alpha\,(1+\alpha)&1+2\,\alpha+2\,\alpha^2 \end{array}\right).
+\end{eqnarray}
+Now, the equation of motion of the system takes the form [see Equation (\ref{e12.17})]
+\begin{equation}\label{e12.80}
+({\bf G} -\lambda\,{\bf M})\,{\bf x} = {\bf 0},
+\end{equation}
+where ${\bf x}$ is the column vector of the $q_1$ and $q_2$ values.
+The solubility condition for the above equation is
+\begin{equation}
+\left|{\bf G} - \lambda\,{\bf M}\right| = 0,
+\end{equation}
+which yields the following quadratic equation for the eigenvalue $\lambda$:
+\begin{equation}
+(1+2\,\alpha)\,\left[m^2\,\lambda^2 + 2\,m\,k\,(1+\alpha)\,\lambda + k^2\,(1+2\alpha)\right] = 0.
+\end{equation}
+
+The two roots of the above equation are
+\begin{eqnarray}
+\lambda_1 &=& - \frac{k}{m},\\[0.5ex]
+\lambda_2 &=& - \frac{k\,(1+2\alpha)}{m}.
+\end{eqnarray}
+The fact that the roots are negative implies that both normal modes are indeed
+{\em oscillatory} in nature. The characteristic oscillation frequencies are
+\begin{eqnarray}\label{e12.85}
+\omega_1 &=& \sqrt{-\lambda_1} = \sqrt{\frac{k}{m}},\\[0.5ex]
+\omega_2 &=& \sqrt{-\lambda_2} = \sqrt{\frac{k\,(1+2\,\alpha)}{m}}.
+\end{eqnarray}
+Equation~(\ref{e12.80}) can now be solved, subject to the normalization
+condition (\ref{e12.30}), to give the two eigenvectors:
+\begin{eqnarray}
+{\bf x}_1 &=& (2\,m)^{-1/2}\,(1,-1),\\[0.5ex]
+{\bf x}_2 &=& (2\,m)^{-1/2}\,(1+2\,\alpha)^{-1/2}\,(1,\,\,\,\,1).\label{e12.88}
+\end{eqnarray}
+
+Thus, we conclude from Equations~(\ref{e12.75}) and (\ref{e12.85})--(\ref{e12.88}) that our model molecule possesses two normal modes of oscillation. The first mode oscillates at the frequency $\omega_1$, and
+is an {\em anti-symmetric}\/ mode in which $q_1=-q_2$ and $q_3=0$. 
+In other words, in this mode of oscillation, the two end atoms move in opposite
+directions whilst the central atom remains stationary. The second mode oscillates at the frequency $\omega_2$, and is a mixed symmetry mode in which
+ $q_1=q_2$ but $q_3=-2\,\alpha\,q_1$. In other words, in this mode of oscillation,  the
+ two end atoms move in the same direction whilst the central atom moves
+ in the opposite direction.
+ 
+ Finally, it is easily demonstrated that the normal coordinates of the system
+ are 
+ \begin{eqnarray}
+ \eta_1 &=& \sqrt{\frac{m}{2}}\,(q_1-q_2),\\[0.5ex]
+ \eta_2 &=& \sqrt{\frac{m\,(1+2\,\alpha)}{k}}\,(q_1+q_2).
+ \end{eqnarray}
+ When expressed in terms of these coordinates, $K$ and $U$ reduce to
+ \begin{eqnarray}
+K &=& \frac{1}{2}\,(\dot{\eta}_1^{\,2} + \dot{\eta}_2^{\,2}),\\[0.5ex]
+U &=&\frac{1}{2}\,(\omega_1^{\,2}\,\eta_1^{\,2} + \omega_2^{\,2}\,\eta_2^{\,2}),
+\end{eqnarray}
+respectively.
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{11.\arabic{enumi}}
+\begin{enumerate}
+\item A particle of mass $m$ is attached to a rigid support by means of a spring of
+spring constant $k$. At equilibrium, the spring hangs vertically
+downward. An identical oscillator is added to this system, the
+spring of the former being attached to the mass of the latter.
+Calculate the characteristic frequencies for one-dimensional vertical
+oscillations, and describe the associated normal modes.
+\item A simple pendulum consists of a bob of mass $m$ suspended
+by an inextensible light string of length $l$. From the bob of
+this pendulum, a second identical
+pendulum is suspended. Consider the case of small angle oscillations
+in the same vertical plane. Calculate the characteristic frequencies, and describe the associated normal modes.
+\item A thin hoop of radius $a$ and mass $m$ oscillates in its
+own plane (which is constrained to be vertical) hanging from a single fixed point. A small mass $m$ slides
+without friction along the hoop. Consider the case of small oscillations.
+Calculate the characteristic frequencies, and describe the associated normal modes.
+\item A simple pendulum of mass $m$ and length $l$ is suspended from
+ a block of mass $M$ which is constrained to slide along a frictionless
+horizontal track. Consider the case of small oscillations. Calculate the characteristic frequencies, and describe the associated normal modes.
+\item A thin uniform rod of mass $m$ and length $a$ is suspended from
+one end by a light string of length $l$. The other end of the string
+is attached to a fixed support. Consider the case of small oscillations
+in a vertical plane. 
+Calculate the characteristic frequencies, and describe the associated normal modes.
+\item A triatomic molecule consists of three atoms of equal mass.
+Each atom is attached to the other two atoms via identical chemical bonds.
+The equilibrium state of the molecule is such that the masses are at the vertices of 
+an equilateral triangle of side $a$. Modeling the chemical bonds as
+springs of spring constant $k$, and only considering motion in the plane of the molecule, find the vibrational frequencies and normal modes of the molecule. Exclude translational and rotational modes. 
+\end{enumerate}
+}

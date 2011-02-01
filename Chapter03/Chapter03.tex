@@ -1,0 +1,1072 @@
+\chapter{One-Dimensional Motion}
+\section{Introduction}
+This chapter employs Newton's laws  to 
+investigate one-dimensional motion. Particular
+attention is given to the various mathematical techniques commonly used
+to analyze  oscillatory motion.
+
+\section{Motion in a General One-Dimensional Potential}\label{gpotn}
+Consider a point particle of mass $m$ moving in the $x$-direction, say,
+under the action of some $x$-directed force $f(x)$. 
+Suppose that $f(x)$ is a conservative force: {\em e.g.}, gravity. In this case,
+according to Equation~(\ref{e3.16}), we can write
+\begin{equation}\label{egrad}
+f(x) = - \frac{dU(x)}{dx},
+\end{equation}
+where $U(x)$ is the potential energy of the particle at position $x$. 
+
+Let the curve $U(x)$ take the form shown in Figure~\ref{f43}.
+For instance, this curve might represent the gravitational potential energy 
+of a cyclist freewheeling in a hilly region. Observe that we have set the
+potential energy at infinity to zero (which we are generally
+free to do, since
+potential energy is undefined to an arbitrary additive constant). This is a  fairly common  convention.
+What can we deduce about the motion of the particle in this potential?
+
+Well, we know that the total energy, $E$---which is the sum of the kinetic
+energy, $K$, and the potential energy, $U$---is a {\em constant} of the motion---see Equation~(\ref{e3.22}).
+Hence, we can write
+\begin{equation}\label{e555}
+K(x) = E - U(x).
+\end{equation}
+However, we also know that a kinetic energy can never be negative [since $K=(1/2)\,m\,v^2$, and neither
+$m$ nor $v^2$ can be negative]. Hence, the above
+expression tells us that the particle's motion  is restricted to the
+region (or regions) in which the potential energy curve $U(x)$ falls
+below the value $E$. This idea is illustrated in Figure~\ref{f43}.
+Suppose that the total energy of the system is $E_0$. It is clear, from
+the figure, that the particle is trapped inside one or other of the two dips
+in the potential---these dips are
+generally referred to as {\em potential wells}. 
+Suppose that we now raise the energy to $E_1$. In this
+case, the particle is free to enter or leave each of the potential wells, but
+its motion is still {\em bounded}\/ to some extent, since it clearly cannot move off to
+infinity. Finally, let us raise the energy to $E_2$. Now the
+particle is {\em unbounded}: {\em i.e.}, it can move off to infinity. In conservative systems
+in which it makes sense to adopt the convention that the potential
+energy at infinity is zero, bounded systems are characterized
+by $E<0$, whereas unbounded systems are characterized by  $E>0$. 
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter03/fig3.01.eps}}
+\caption{\em A potential energy curve.}\label{f43}   
+\end{figure}
+
+The above discussion suggests that the motion of an particle moving in a potential
+generally becomes less bounded as the total energy $E$ of the system increases. 
+ Conversely, we would expect the motion to become more bounded as $E$ decreases.
+In fact, if the energy becomes sufficiently small then it appears likely that the
+system will settle down in some {\em equilibrium state}\/ in which the particle is stationary.
+Let us try  to identify any  prospective equilibrium states in Figure~\ref{f43}.
+If the particle remains stationary then it must be subject to zero force (otherwise
+it would accelerate). Hence, according to Equation~(\ref{egrad}), an equilibrium
+state is characterized by
+\begin{equation}
+\frac{dU}{dx} = 0.
+\end{equation}
+In other words, a equilibrium state corresponds to either a {\em maximum}\/
+or a {\em minimum}\/ of the potential energy curve $U(x)$. It can
+be seen that the $U(x)$ curve shown in Figure~\ref{f43} has
+three associated equilibrium states located at
+$x=x_0$, $x=x_1$, and $x=x_2$. 
+
+Let us now make a distinction between {\em stable}\/ equilibrium points
+and {\em unstable}\/ equilibrium points. When the particle is slightly
+displaced from a stable equilibrium point then the resultant force $f$ acting
+on it
+must always be such as to  return it to this point.
+In other words, if $x=x_0$ is an equilibrium point then we require
+\begin{equation}
+\left.\frac{df}{dx}\right|_{x_0} <0
+\end{equation}
+for stability: {\em i.e.}, if the particle is displaced to the right, so that $x-x_0>0$,
+then the force must act to the left, so that $f <0$, and {\em vice versa}.
+Likewise, if 
+\begin{equation}
+\left.\frac{df}{dx}\right|_{x_0} >0
+\end{equation}
+then the equilibrium point $x=x_0$ is unstable. It follows, from
+ Equation~(\ref{egrad}), that stable equilibrium points are
+characterized by
+\begin{equation}
+\frac{d^2 U}{dx^2}>0.
+\end{equation}
+In other words, a stable equilibrium point corresponds to a {\em minimum}\/
+of the potential energy curve $U(x)$. Likewise, an unstable
+equilibrium point corresponds to a {\em maximum}\/ of the $U(x)$ curve. Hence,
+we conclude that,
+in Figure~\ref{f43},  $x=x_0$ and $x=x_2$ are stable equilibrium points, whereas $x=x_1$ is an unstable equilibrium point. 
+Of course, this makes perfect sense if we think of $U(x)$ as
+a gravitational potential energy curve,  so that $U$ is
+directly proportional to height. In this case, all we are saying is that it is
+easy to confine a low energy mass at the bottom of a valley,
+but very difficult to balance the same mass on the top of
+a hill (since any slight displacement of the mass will cause it
+to fall down the hill). Note, finally, that if
+\begin{equation}
+\frac{dU}{dx}=\frac{d^2 U}{dx^2}=0
+\end{equation}
+at any point (or in any region) then we have what is known as a {\em neutral equilibrium}\/
+point. We can move the particle slightly away from such a point and it will still
+remain in equilibrium ({\em i.e.}, it will neither attempt to return to
+its initial state,  nor will it continue to move). A neutral equilibrium point
+corresponds to a {\em flat spot}\/ in a $U(x)$ curve. See Figure~\ref{f44}.
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter03/fig3.02.eps}}
+\caption{\em Different types of equilibrium point.}\label{f44}   
+\end{figure}
+
+The equation of motion of an particle moving in one dimension
+under the action of a conservative force is, in principle, integrable. Since
+$K=(1/2)\,m\,v^2$, the energy
+conservation equation (\ref{e555}) can be rearranged to give
+\begin{equation}
+v = \pm\left(\frac{2\,[E-U(x)]}{m}\right)^{1/2},
+\end{equation}
+where the $\pm$ signs correspond to motion to the left and to the right, respectively. However, since
+$v=dx/dt$, this expression can be integrated to give
+\begin{equation}
+t=\pm\left(\frac{m}{2\,E}\right)^{1/2} \int_{x_0}^x\frac{dx'}{\sqrt{1-U(x')/E}},
+\end{equation}
+where $x(t=0)=x_0$. For sufficiently simple potential functions, $U(x)$, the
+above equation can be solved to give $x$ as a function of $t$.
+For instance, if $U=(1/2)\,k\,x^2$,  $x_0=0$, and the plus sign is chosen, then
+\begin{equation}
+t = \left(\frac{m}{k}\right)^{1/2}\int_0^{(k/2\,E)^{1/2}\,x}\frac{dy}{\sqrt{1-y^2}}= \left(\frac{m}{k}\right)^{1/2} \sin^{-1}\left(\left[\frac{k}{2\,E}\right]^{1/2} x\right),
+\end{equation}
+which can be inverted to give
+\begin{equation}
+x = a\,\sin (\omega\,t),
+\end{equation}
+where $a = \sqrt{2\,E/k}$ and $\omega = \sqrt{k/m}$. 
+Note that the particle reverses direction each time it reaches one of the so-called
+{\em turning points}\/ ($x=\pm a$) at which $U=E$ (and, so $K=0$). 
+
+\section{Velocity Dependent Forces}\label{svelyd}
+Consider a particle of mass $m$ moving in one dimension under the
+action of a force, $f$, which is a function of the particle's speed, $v$, but not
+of its displacement, $x$. Note that such a force is intrinsically non-conservative [since it clearly cannot be expressed as minus the gradient of 
+some potential function, $U(x)$]. 
+Now, the particle's equation of motion is written
+\begin{equation}
+m\,\frac{dv}{dt} = f(v).
+\end{equation}
+Integrating this equation, we obtain
+\begin{equation}
+\int_{v_0}^v \frac{dv'}{f(v')} = \frac{t}{m},
+\end{equation}
+where $v(t=0)=v_0$. In principle, the above equation can be solved to
+give $v(t)$. The equation of motion is also written
+\begin{equation}
+m\,v\,\frac{dv}{dx} = f(v),
+\end{equation}
+since $v=dx/dt$. Integrating this equation, we obtain
+\begin{equation}
+\int_{v_0}^v \frac{v'\,dv'}{f(v')} = \frac{x-x_0}{m},
+\end{equation}
+where $x(t=0) = x_0$. In principle, the above equation
+can be solved to give $v(x)$. 
+
+Let us now consider a specific example. Suppose that an object of mass $m$ falls
+vertically under gravity. Let $x$ be the height through which the object
+has fallen since $t=0$, at which time the object is assumed to be at rest. It follows that
+$x_0=v_0=0$. Suppose that, in addition to the force of gravity, $m\,g$, where $g$ is the gravitational acceleration, our
+object is subject to a retarding air resistance force which is proportional
+to the square of its instantaneous velocity. The object's equation
+of motion is thus
+\begin{equation}
+m\,\frac{dv}{dt} = m\, g - c\,v^2,
+\end{equation}
+where $c>0$. This equation can be integrated to give
+\begin{equation}
+\int_0^v \frac{dv'}{1-(v'/v_t)^2} = g\,t,
+\end{equation}
+where $v_t=(m\,g/c)^{1/2}$. Making a change of variable, we obtain
+\begin{equation}
+\int_0^{v/v_t}\frac{dy}{1-y^2} = \frac{g}{v_t}\,t.
+\end{equation}
+The left-hand side of the above equation is now a standard integral, which can be solved to give
+\begin{equation}
+\tanh^{-1}\left(\frac{v}{v_t}\right) = \frac{g\,t}{v_t},
+\end{equation}
+or
+\begin{equation}
+ v = v_t\,\tanh\left(\frac{g\,t}{v_t}\right).
+ \end{equation}
+ Thus, when $t\ll v_t/g$, we obtain the standard result $v\simeq g\,t$,
+ since $\tanh x\simeq x$ for $x\ll 1$. However, when $t\gg v_t/g$, we get
+ $v\simeq v_t$, since $\tanh x\simeq 1$ for $x\gg 1$. It follows that
+ air resistance prevents the downward velocity of our object from
+ increasing indefinitely as it falls. Instead, at large times, the velocity asymptotically approaches
+ the so-called {\em terminal velocity}, $v_t$ (at which the gravitational
+ and air resistance forces balance). 
+ 
+ The equation of motion of our falling object is also  written
+ \begin{equation}
+ m\,v\,\frac{dv}{dx} = m\,g - c\,v^2.
+ \end{equation}
+ This equation can be integrated to give
+ \begin{equation}
+ \int_0^v\frac{v'\,dv'}{1-(v'/v_t)^2} = g\,x.
+ \end{equation}
+ Making a change of variable, we obtain
+ \begin{equation}
+ \int_0^{(v/v_t)^2} \frac{dy}{1-y} = \frac{x}{x_t},
+ \end{equation}
+ where $x_t = m/ (2\,c)$. The left-hand side of the above equation is now a standard integral, which can
+ be solved to give
+ \begin{equation}
+ -\ln\!\left[1-\left(\frac{v}{v_t}\right)^2\right] = \frac{x}{x_t},
+\end{equation}
+or
+\begin{equation}
+v = v_t\left(1-{\rm e}^{-x/x_t}\right)^{1/2}.
+\end{equation}
+It follows  that our object needs to fall a distance
+of order $x_t$ before it achieves its terminal velocity.
+
+Incidentally, it is quite easy to account for an air resistance force
+which scales as the square of projectile velocity. Let us imaging that
+our projectile is moving sufficiently rapidly that air does not have enough
+time to flow around it, and is instead simply knocked out of the way.
+If our projectile has cross-sectional area $A$,  perpendicular to the direction of its motion,
+and is moving with speed $v$, then the mass of air that it knocks out of
+its way per second is $\rho_a\,A\,v$, where $\rho_a$ is the mass density
+of air. Suppose that the air knocked out of the way is pushed in the direction
+of the projectile's motion with a speed of order $v$. It follows that the
+air gains momentum per unit time $\rho_a\,A\,v^2$ in the direction
+of the projectile's motion. Hence, by Newton's third law, the projectile
+loses the same momentum per unit time in the direction of its motion.
+In other words, the projectile is subject to a drag force of magnitude
+\begin{equation}
+f_{drag} = C\,\rho_a\,A\,v^2
+\end{equation}
+acting in the opposite direction to its motion.
+Here, $C$ is an ${\cal O}(1)$ dimensionless constant, known as the
+{\em drag coefficient}, which depends on the exact shape of the
+projectile. Obviously, streamlined  projectiles, such as arrows, have small drag coefficients,
+whereas non-streamlined projectiles, such as bricks, have large drag
+coefficients. From before, the terminal velocity of our projectile is $v_t=
+(m\,g/c)^{1/2}$, where $m$ is its mass, and $c=C\,\rho_a\,A$.
+Writing $m = A\,d\,\rho$, where $d$ is the typical linear dimension
+of the projectile, and $\rho$ its mass density, we obtain
+\begin{equation}
+v_t = \left(\frac{\rho\,g\,d}{\rho_a\,C}\right)^{1/2}.
+\end{equation}
+The above expression tells us that large, dense, streamlined projectiles ({\em e.g.}, medicine balls)
+tend to have large terminal velocities, and small, rarefied, non-streamlined
+projectiles ({\em e.g.}, feathers)  tend to have small terminal velocities. Hence, the former
+type of projectile is relatively less affected by air resistance than the
+latter.
+
+\section{Simple Harmonic Motion}
+Consider the motion of a point particle of mass $m$ which is
+slightly displaced from a stable equilibrium point at $x=0$. 
+Suppose that the particle is moving in the conservative force-field $f(x)$. According to the analysis of Section~\ref{gpotn}, in order for $x=0$ to be a stable equilibrium point
+we require both
+\begin{equation}\label{e4.8}
+f(0) = 0,
+\end{equation}
+and
+\begin{equation}\label{e4.9}
+\frac{d f(0)}{dx} < 0.
+\end{equation}
+
+Now, our particle obeys Newton's second law of motion,
+\begin{equation}
+m\,\frac{d^2 x}{d t^2} = f(x).
+\end{equation}
+Let us assume that it always stays fairly close to its equilibrium
+point. In this case, to a good approximation, we can represent $f(x)$
+via a truncated Taylor expansion about this point. In other words,
+\begin{equation}
+f(x) \simeq f(0) + \frac{df(0)}{dx}\,x + {\cal O}(x^2).
+\end{equation}
+However, according to (\ref{e4.8}) and (\ref{e4.9}), the above
+expression can be written
+\begin{equation}\label{e4.12a}
+f(x) \simeq - m\,\omega_0^{\,2}\,x,
+\end{equation}
+where $df(0)/dx = -m\,\omega_0^{\,2}$. 
+Hence, we conclude that our particle satisfies the following approximate
+equation of motion,
+\begin{equation}\label{e4.13}
+\frac{d^2 x}{dt^2}+ \omega_0^{\,2}\,x\simeq 0,
+\end{equation}
+provided that it does not stray too far from its equilibrium point: {\em i.e.},
+provided $|x|$ does not become too large.
+
+Equation~(\ref{e4.13}) is called the {\em simple harmonic equation}, and
+governs the motion of {\em all}\/ one-dimensional conservative systems which are slightly
+perturbed from some stable equilibrium state. The solution of Equation~(\ref{e4.13})
+is well-known:
+\begin{equation}\label{e4.12}
+x(t) = a\,\sin(\omega_0\,t -\phi_0).
+\end{equation}
+The pattern of motion described by above expression, 
+which is called {\em simple harmonic motion},
+is {\em periodic}\/ in time, with repetition period
+$T_0 = 2\pi/\omega_0$, and {\em oscillates}\/ between $x=\pm a$. Here, $a$
+is called the {\em amplitude}\/ of the motion. The parameter $\phi_0$,
+known as the {\em phase angle}, 
+simply shifts the pattern of motion backward and forward in time. 
+Figure~\ref{fshm} shows some examples of simple harmonic motion.
+Here, $\phi_0 = 0$, $+\pi/4$, and $-\pi/4$ correspond to the
+solid, short-dashed, and long-dashed curves, respectively.
+
+Note that the frequency, $\omega_0$---and, hence, the period, $T_0$---of
+simple harmonic motion is determined by the parameters appearing in the simple harmonic equation,
+(\ref{e4.13}). However, the amplitude, $a$, and the phase angle, $\phi_0$,
+are the two integration constants  of this second-order ordinary differential
+equation, and are, thus, determined by the initial conditions: {\em i.e.}, by the particle's initial displacement and velocity.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter03/fig3.03.eps}}
+\caption{\em Simple harmonic motion.}\label{fshm}   
+\end{figure}
+
+Now, from Equations~(\ref{egrad}) and (\ref{e4.12a}), the potential
+energy of our particle at position $x$ is approximately
+\begin{equation}
+U(x) \simeq \frac{1}{2}\,m\,\omega_0^{\,2}\,x^2.
+\end{equation}
+Hence, the total energy is written
+\begin{equation}
+E = K + U = \frac{1}{2}\,m\left(\frac{dx}{dt}\right)^2+  \frac{1}{2}\,m\,\omega_0^{\,2}\,x^2,
+\end{equation}
+giving
+\begin{equation}\label{e4.37x}
+E = \frac{1}{2}\,m\,\omega_0^{\,2}\,a^2\,\cos^2(\omega_0\,t-\phi_0)
++ \frac{1}{2}\,m\,\omega_0^{\,2}\,a^2\,\sin^2(\omega_0\,t-\phi_0)
+= \frac{1}{2}\,m\,\omega_0^{\,2}\,a^2,
+\end{equation}
+where use has been made of Equation~(\ref{e4.12}), and the trigonometric
+identity $\cos^2\theta+\sin^2\theta \equiv 1$. Note that the
+total energy is {\em constant}\/ in time, as is to be expected for a
+conservative system, and is proportional to the {\em amplitude squared}\/
+of the motion.
+
+\section{Damped Oscillatory Motion}\label{s4.4}
+According to Equation~(\ref{e4.12}), a one-dimensional conservative system which is
+slightly perturbed from a stable equilibrium point (and then left alone) oscillates about this
+point with a fixed frequency and a constant amplitude. In other words,
+the oscillations never die away. This is not very realistic, since we
+know that, in practice, if we slightly perturb a  dynamical system (such as a
+pendulum) from a stable equilibrium point then it will indeed oscillate about this point,
+but  these oscillations will  eventually die away due to frictional effects,
+which are present in virtually all real dynamical systems. In order to model
+this process, we need to include some sort of frictional drag force in
+our perturbed equation of motion, (\ref{e4.13}).
+
+The most common model for a frictional drag force is  one which is
+always directed in the {\em opposite direction}\/ to the instantaneous velocity
+of the object upon which it acts, and is {\em directly proportional}\/ to the magnitude
+of this velocity. Let us adopt this model.
+So, our drag force can be written
+\begin{equation}
+f_{drag} = - 2\,m\,\nu\,\frac{dx}{dt},
+\end{equation}
+where $\nu$ is a positive constant with the dimensions of frequency. Including such a force in our
+perturbed equation of motion, (\ref{e4.13}),  we obtain
+\begin{equation}\label{e4.19}
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2}\,x
+= 0.
+\end{equation}
+Thus, the positive constant $\nu$ parameterizes the strength of the frictional
+damping  in our dynamical system.
+
+Equation (\ref{e4.19}) is a linear second-order ordinary differential
+equation, which we suspect possesses oscillatory solutions. There is
+a standard trick for solving such an equation. We search for complex
+ solutions of the form
+\begin{equation}\label{e4.20}
+x = a\,{\rm e}^{-{\rm i}\,\omega\,t},
+\end{equation}
+where the constants $\omega$ and $a$ are both, in general, complex. Of course,
+the physical solution is the {\em real part}\/ of the above expression: {\em i.e.}, 
+\begin{equation}
+x = |a|\,\cos[{\rm arg}(a)-{\rm Re}(\omega)\,t]\,{\rm e}^{\,{\rm Im}(\omega)\,t}.
+\end{equation}
+Clearly, the modulus and argument of the complex amplitude, $a$, determine
+the amplitude (at $t=0$) and phase of the oscillation, respectively, whereas the
+real and imaginary parts of the complex frequency, $\omega$, determine its
+ frequency and growth-rate, respectively.
+Note that this method of solution is only appropriate for {\em linear}\/ differential
+equations. Incidentally, the method works because
+\begin{equation}
+{\rm Re}[{\cal L}(x)]\equiv {\cal L}({\rm Re}[x]),
+\end{equation}
+where $x$ is a complex variable, and ${\cal L}$ some real linear differential
+operator which acts on this variable. [A linear operator satisfies  ${\cal L}(a\,x)=a\,{\cal L}(x)$ for all $a$ and $x$, where $a$ is a constant. The differential operator appearing
+in Equation~(\ref{e4.19}) is clearly of this type.]
+
+Substituting Equation~(\ref{e4.20}) into Equation~(\ref{e4.19}), we obtain
+\begin{equation}
+a \left[-\omega^2-{\rm i}\,2\,\nu\,\omega + \omega_0^{\,2}\right]
+{\rm e}^{-{\rm i}\,\omega\,t} = 0,
+\end{equation}
+which reduces to the following quadratic equation for $\omega$ [since $a\,\exp(-{\rm i}\,\omega\,t)\neq 0$]:
+\begin{equation}
+\omega^2 + {\rm i}\,2\,\nu\,\omega - \omega_0^{\,2} = 0.
+\end{equation}
+The solution to this equation is 
+\begin{equation}
+\omega_\pm = - {\rm i}\,\nu \pm \sqrt{\omega_0^{\,2}-\nu^2}.
+\end{equation}
+Thus, the most general physical solution to Equation~(\ref{e4.19}) is
+\begin{equation}
+x(t) = {\rm Re}\left[a_+\,{\rm e}^{-{\rm i}\,\omega_+\,t}
++ a_-\,{\rm e}^{-{\rm i}\,\omega_-\,t}\right],
+\end{equation}
+where $a_\pm$ are two arbitrary complex constants.
+
+We can distinguish three different cases. In the first case, $\nu < \omega_0$, and the motion is said to be {\em underdamped}. The most general
+solution is written
+\begin{equation}\label{e4.47x}
+x(t) = x_0\,{\rm e}^{-\nu\,t}\,\cos(\omega_r\,t) + \left(\frac{v_0+\nu\,x_0}{\omega_r}\right){\rm e}^{-\nu\,t}\,\sin(\omega_r\,t),
+\end{equation}
+where $\omega_r = \sqrt{\omega_0^{\,2}-\nu^2}$, $x_0 = x(0)$, and
+$v_0 = dx(0)/dt$. It can be seen that the solution oscillates at some real
+frequency, $\omega_r$, which is somewhat less than the natural frequency
+of oscillation of the undamped system, $\omega_0$, but also {\em decays}
+exponentially in time at a rate proportional to the damping coefficient, $\nu$. 
+
+In the second case, $\nu=\omega_0$, and the motion is said to be {\em
+critically damped}. The most general solution is written
+\begin{equation}
+x(t) = \left[x_0 \,(1+\omega_0\,t) + v_0\,t\right] {\rm e}^{-\omega_0\,t}.
+\end{equation}
+It can be seen that the solution now decays without oscillating. 
+
+In the third case, $\nu>\omega_0$, and the motion is said to be {\em overdamped}. The most general solution is written
+\begin{equation}
+x(t) = -\left(\frac{v_0 + \nu_-\,x_0}{\nu_+-\nu_-}\right){\rm e}^{-\nu_+\,t}
++ \left(\frac{v_0+\nu_+\,x_0}{\nu_+-\nu_-}\right){\rm e}^{-\nu_-\,t},
+\end{equation}
+where $\nu_\pm = \nu\pm \sqrt{\nu^2-\omega_0^{\,2}}$. It can be seen
+that the solution again decays without oscillating, except there are now
+{\em two}\/ independent decay rates. The largest, $\nu_+$, is always greater than the
+critically damped decay rate, $\omega_0$, whereas the smaller, $\nu_-$,
+is always less than this decay rate. This means that, in general,
+the critically damped solution is more rapidly damped than either 
+the underdamped or  overdamped solutions.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter03/fig3.04.eps}}
+\caption{\em Damped oscillatory motion.}\label{fosc}   
+\end{figure}
+
+Figure~\ref{fosc} shows typical examples of underdamped ({\em i.e.}, $\nu=\omega_0/4$), critically damped ({\em i.e.}, $\nu=\omega_0$), and
+overdamped ({\em i.e.}, $\nu=4\,\omega_0$) solutions, calculated with the
+initial conditions $x_0=1$ and $v_0=0$. Here, $T_0= 2\pi/\omega_0$. 
+The three solutions correspond to the solid, short-dashed, and long-dashed curves,
+respectively.
+
+\section{Quality Factor}\label{squal}
+The total energy of a damped oscillator is the sum of its kinetic and
+potential energies: {\em i.e.}, 
+\begin{equation}
+E = \frac{1}{2}\,m\left(\frac{dx}{dt}\right)^2 + \frac{1}{2}\,m\,\omega_0^{\,2}\,x^2.
+\end{equation}
+Differentiating the above expression with
+respect to time, we obtain
+\begin{equation}
+\frac{dE}{dt} = m\,\frac{dx}{dt}\,\frac{d^2 x}{dt^2} + m\,\omega_0^{\,2}\,x\,\frac{dx}{dt} = m\,\frac{dx}{dt}\left(\frac{d^2 x}{dt^2} + \omega_0^{\,2}\,x\right).
+\end{equation}
+It follows from Equation~(\ref{e4.19}) that
+\begin{equation}\label{e4.52x}
+\frac{dE}{dt} = -2\,m\,\nu\left(\frac{dx}{dt}\right)^2.
+\end{equation}
+We conclude that the presence of damping causes the oscillator energy to
+decrease monotonically in time, and, hence, causes the   amplitude of the oscillation to eventually become negligibly small [see Equation~(\ref{e4.37x})].
+
+The energy loss rate of a weakly damped ({\em i.e.}, $\nu\ll\omega_0$) oscillator is conveniently 
+characterized in terms of a parameter, $Q$, which is known as the 
+{\em quality factor}. This parameter is defined to be $2\pi$ times the
+energy stored in the oscillator, divided by the energy lost in a single
+ oscillation period. If the oscillator is weakly damped then
+the energy lost per period is relatively small, and $Q$ is therefore
+much larger than unity.  Roughly speaking, $Q$ is the number of oscillations
+ that the oscillator typically completes, after being set in motion, before its
+ amplitude decays to a negligible value.
+ Let us find an expression for $Q$.
+
+Now, the most general solution for a weakly damped 
+oscillator can be written in the form
+[{\em cf.}, Equation~(\ref{e4.47x})]
+\begin{equation}
+x = x_0\,{\rm e}^{-\nu\,t}\,\cos(\omega_r\,t-\phi_0),
+\end{equation}
+where $x_0$ and $\phi_0$ are constants, and $\omega_r=\sqrt{\omega_0^{\,2}+\nu^2}$. It follows that
+\begin{equation}
+\frac{dx}{dt} =- x_0\,\nu\,{\rm e}^{-\nu\,t}\,\cos(\omega_r\,t-\phi_0)-
+x_0\,\omega_r\,{\rm e}^{-\nu\,t}\,\sin(\omega_r\,t-\phi_0).
+\end{equation}
+Thus, making use of Equation~(\ref{e4.52x}), the energy lost during a single oscillation period is
+\begin{eqnarray}
+\Delta E &=& -\int_0^{T_r} \frac{dE}{dt}\,dt\\[0.5ex]
+&=& 2\,m\,\nu\,x_0^{\,2}\int_0^{T_r}{\rm e}^{-2\,\nu\,t}\left[\nu\,\cos(\omega_r\,t-\phi_0) + \omega_r\,\sin(\omega_r\,t-\phi_0)\right]^2 dt,\nonumber
+\end{eqnarray}
+where $T_r=2\pi/\omega_r$. 
+In the weakly damped limit, $\nu\ll \omega_r$, the exponential factor is approximately
+unity in the interval $t=0$ to $t=T_r$, so that
+\begin{equation}
+\Delta E \simeq \frac{2\,m\,\nu\,x_0^{\,2}}{\omega_r}\int_0^{2\pi} \left(
+\nu^2\,\cos^2\theta + 2\,\nu\,\omega_r\,\cos\theta\,\sin\theta + \omega_r^{\,2}\,\sin^2\theta\right)d\theta.
+\end{equation}
+Thus,
+\begin{equation}
+\Delta E \simeq \frac{2\pi\,m\,\nu\,x_0^{\,2}}{\omega_r}\,(\nu^2+\omega_r^{\,2}) =2 \pi\,m\,\omega_0^{\,2}\,x_0^{\,2}\left(\frac{\nu}{\omega_r}\right),
+\end{equation}
+since  $\cos^2\theta$ and $\sin^2\theta$ both have the average values $1/2$ in the interval
+$0$ to $2\pi$, whereas  $\cos\theta\,\sin\theta$ has the average value $0$. 
+According to Equation~(\ref{e4.37x}), the energy stored in the oscillator
+(at $t=0$) is
+\begin{equation}
+E = \frac{1}{2}\,m\,\omega_0^{\,2}\,x_0^{\,2}.
+\end{equation}
+It follows that
+\begin{equation}
+Q = 2\pi\,\frac{E}{\Delta E} = \frac{\omega_r}{2\,\nu}\simeq \frac{\omega_0}{2\,\nu}.
+\end{equation}
+
+\section{Resonance}\label{eres}
+We have seen that when a one-dimensional dynamical system is slightly perturbed
+from a stable equilibrium point (and then left alone), it eventually returns to this point at
+a rate controlled by the amount of damping in the system. Let us now
+suppose that the same system is subject to {\em continuous}\/ oscillatory constant amplitude
+external forcing at some fixed frequency, $\omega$. In this
+case, we would expect the system to eventually settle down to some steady oscillatory pattern of motion
+with the same frequency as the external forcing. Let us investigate the properties of this type of driven oscillation.
+
+Suppose that our system is subject to an external force of the form
+\begin{equation}\label{e4.29}
+f_{ext}(t) = m\,\omega_0^{\,2}\,X_1\,\cos(\omega\,t).
+\end{equation}
+Here, $X_1$ is the  amplitude of the oscillation at which the external force matches the restoring
+force, (\ref{e4.12a}). Incorporating the above force into our perturbed
+equation of motion, (\ref{e4.19}), we obtain
+\begin{equation}
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2}\,x
+= \omega_0^{\,2}\,X_1\,\cos(\omega\,t).
+\end{equation}
+Let us  search for a solution of the form (\ref{e4.20}), and
+represent the right-hand side of the above equation as
+$\omega_0^{\,2}\,X_1\,\exp(-{\rm i}\,\omega\,t)$. It is again understood
+that the physical solutions are the {\em real parts}\/ of these expressions. 
+Note that $\omega$ is now a real parameter. We obtain
+\begin{equation}
+a\left[-\omega^2-{\rm i}\,2\,\nu\,\omega + \omega_0^{\,2}\right] {\rm e}^{-{\rm i}\,\omega\,t}
+= \omega_0^{\,2}\,X_1\,{\rm e}^{-{\rm i}\,\omega\,t}.
+\end{equation}
+Hence,
+\begin{equation}\label{e4.32}
+a = \frac{\omega_0^{\,2}\,X_1}{\omega_0^{\,2}-\omega^2 - {\rm i}\,2\,\nu\,\omega}.
+\end{equation}
+In general, $a$ is a complex quantity. Thus, we can write
+\begin{equation}\label{e4.33}
+a = x_1\,{\rm e}^{\,{\rm i}\,\phi_1},
+\end{equation}
+where $x_1$ and $\phi_1$ are both real. It follows from 
+Equations~(\ref{e4.20}),  (\ref{e4.32}), and (\ref{e4.33}) that the physical solution takes the
+form
+\begin{equation}
+x(t) = x_1\,\cos(\omega\,t-\phi_1),
+\end{equation}
+where 
+\begin{equation}\label{e4.35}
+x_1 = \frac{\omega_0^{\,2}\,X_1}{\left[(\omega_0^{\,2}-\omega^2)^2
++ 4\,\nu^2\,\omega^2\right]^{1/2}},
+\end{equation}
+and
+\begin{equation}\label{e4.36}
+\phi_1 = \tan^{-1}\left(\frac{2\,\nu\,\omega}{\omega_0^{\,2}-\omega^2}\right).
+\end{equation}
+We conclude that, in response to the applied sinusoidal force, (\ref{e4.29}), the system
+executes a sinusoidal pattern of motion at the {\em same}\/ frequency, with fixed amplitude $x_1$, and phase-lag $\phi_1$ (with respect to
+the external force).
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter03/fig3.05.eps}}
+\caption{\em Resonance.}\label{fres}   
+\end{figure}
+Let us investigate the variation of $x_1$ and $\phi_1$ with the forcing frequency,
+$\omega$.  This is most easily done graphically. Figure~\ref{fres} shows $x_1$ and $\phi_1$ as functions of $\omega$ for
+various values of $\nu/\omega_0$. Here, $\nu/\omega_0 = 1$, $1/2$, $1/4$, $1/8$, and $1/16$ correspond to the solid, dotted, short-dashed, long-dashed,
+and dot-dashed curves, respectively. It can be seen that as the amount of
+damping in the system is decreased, the amplitude of the response becomes
+progressively more peaked at the natural frequency of oscillation of the system, $\omega_0$. This effect is known as {\em resonance}, and
+$\omega_0$ is termed the {\em resonant frequency}. Thus,
+a weakly damped system ({\em i.e.}, $\nu\ll \omega_0$) can be driven to large amplitude by the application of a relatively
+small external force which oscillates at a frequency close to the resonant frequency. Note that the response of the system is in phase ({\em i.e.}, $\phi_1\simeq 0$)
+with the external driving force for driving frequencies well below the resonant
+frequency, is in phase quadrature
+({\em i.e.}, $\phi_1=\pi/2$)
+at the resonant frequency, and is in anti-phase ({\em i.e.}, $\phi_1\simeq \pi$)
+for frequencies well above the resonant frequency.
+
+According to Equation~(\ref{e4.35}),
+\begin{equation}
+\frac{x_1(\omega=\omega_0)}{x_1(\omega = 0)} = \frac{\omega_0}{2\,\nu}
+=Q.
+\end{equation}
+In other words, the ratio of the driven amplitude at the resonant frequency
+to that at a typical non-resonant frequency (for the same drive amplitude)
+is of order the quality factor. Equation~(\ref{e4.35}) also implies that,
+for a weakly damped oscillator ($\nu\ll \omega_0$),
+\begin{equation}
+\frac{x_1(\omega)}{x_1(\omega=\omega_0)}\simeq \frac{\nu}{[(\omega-\omega_0)^2 + \nu^2]^{1/2}},
+\end{equation}
+provided $|\omega-\omega_0|\ll \omega_0$. 
+Hence, the width of the resonance
+peak (in frequency) is $\Delta\omega = 2\,\nu$, where the edges of peak are defined as the points at which the driven amplitude
+is reduced to $1/\sqrt{2}$ of its maximum value. It follows that the
+fractional width is
+\begin{equation}
+\frac{\Delta \omega}{\omega_0} = \frac{2\,\nu}{\omega_0} = \frac{1}{Q}.
+\end{equation}
+We conclude that the
+height and width of the resonance peak of a weakly damped ($Q\gg 1$) oscillator scale as $Q$ and
+$Q^{-1}$, respectively. Thus, the area under the resonance curve stays
+approximately constant as $Q$ varies. 
+ 
+\section{Periodic Driving Forces}
+In the last section, we investigated the response of a one-dimensional dynamical system, close to a stable equilibrium point, 
+to an external force which varies as $\cos(\omega\,t)$.  Let us
+now examine the response of the same system to a more complicated
+external force.
+
+Consider a general external force which is {\em periodic} in time, with
+period $T$. By analogy with Equation~(\ref{e4.29}), we can write such a 
+force as
+\begin{equation}\label{e4.37}
+f_{ext}(t) = m\,\omega_0^{\,2}\,X(t),
+\end{equation}
+where
+\begin{equation}\label{eper}
+X(t+T) = X(t)
+\end{equation}
+for all $t$. 
+
+It is convenient to represent $X(t)$ as a {\em Fourier series}\/ in time, so that
+\begin{equation}\label{e4.39}
+X(t) = \sum_{n=0}^{\infty} X_{n}\,\cos(n\,\omega\,t),
+\end{equation}
+where $\omega = 2\pi/T$. By writing $X(t)$ in this form, we {\em automatically}
+satisfy the periodicity constraint (\ref{eper}). [Note that by choosing a cosine
+Fourier series we are limited to even functions in $t$: {\em i.e.}, $X(-t)=X(t)$.
+Odd functions in $t$ can be represented by sine Fourier series, and
+mixed functions require a combination of cosine and sine Fourier series.]
+ The constant coefficients
+$X_n$ are known as  {\em Fourier coefficients}. But,
+how do we determine these coefficients for a given functional form, $X(t)$?
+
+Well, it follows from the periodicity of the cosine function that
+\begin{equation}\label{e4.40}
+\frac{1}{T} \int_0^T \cos (n\,\omega\,t)\,dt = \delta_{n\,0},
+\end{equation}
+where $\delta_{n\,n'}$ is unity if $n=n'$, and zero otherwise, and
+is known as the {\em Kronecker delta function}. 
+Thus, integrating Equation~(\ref{e4.39}) 
+in $t$ from $t=0$ to $t=T$, and making use of Equation~(\ref{e4.40}),
+we obtain
+\begin{equation}\label{e4.41}
+X_0 = \frac{1}{T}\int_0^T X(t) \,dt.
+\end{equation}
+
+It is also easily demonstrated that
+\begin{equation}\label{e4.42}
+\frac{2}{T} \int_0^T \cos(n\,\omega\,t)\,\cos(n'\,\omega\,t) \,dt= \delta_{n\,n'},
+\end{equation}
+provided $n, n'>0$. Thus, multiplying Equation~(\ref{e4.39}) by
+$\cos(n\,\omega\,t)$, integrating in $t$ from $t=0$ to $t=T$, and
+making use of Equations~(\ref{e4.40}) and (\ref{e4.42}), we obtain
+\begin{equation}\label{e4.43}
+X_n = \frac{2}{T} \int_0^T X(t)\,\cos(n\,\omega\,t)\,dt
+\end{equation}
+for $n>0$.  Hence, we have now determined the Fourier coefficients of
+the general periodic function $X(t)$. 
+
+We can incorporate the periodic external force (\ref{e4.37}) into our
+perturbed equation of motion by writing
+\begin{equation}
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2}\,x
+= \omega_0^{\,2}\,\sum_{n=0}^\infty X_n\,{\rm e}^{-{\rm i}\,n\,\omega\,t},
+\end{equation}
+where we are again using the convention that the physical solution
+corresponds to the {\em real part}\/ of the complex solution. Note that
+the above differential equation is {\em linear}. This means that if $x_a(t)$
+and $x_b(t)$ represent two independent solutions to this equation then
+any linear combination of $x_a(t)$ and $x_b(t)$ is also a solution. We can
+exploit the linearity of the above equation to write the
+solution in the form
+\begin{equation}
+x(t) = \sum_{n=0}^\infty X_n\,a_n\,{\rm e}^{-{\rm i}\,n\,\omega\,t},
+\end{equation}
+where the $a_n$ are the complex amplitudes of the solutions to
+\begin{equation}
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2}\,x
+= \omega_0^{\,2}\,{\rm e}^{-{\rm i}\,n\,\omega\,t}.
+\end{equation}
+In other words, $a_n$ is obtained by substituting $x = a_n\,\exp(-{\rm i}\,n\,\omega\,t)$ into the above equation.
+Hence, it follows that
+\begin{equation}\label{e4.47}
+a_n = \frac{\omega_0^{\,2}}{\omega_0^{\,2} - n^2\,\omega^2 - 
+{\rm i}\,2\,\nu\,n\,\omega}.
+\end{equation}
+Thus, the physical solution takes the form
+\begin{equation}\label{e4.48}
+x(t) = \sum_{n=0}^{\infty} X_n\,x_n\,\cos(n\,\omega\,t-\phi_n),
+\end{equation}
+where
+\begin{equation}
+a_n = x_n \,{\rm e}^{\,{\rm i}\,\phi_n},
+\end{equation}
+and $x_n$ and $\phi_n$ are real parameters. It follows from
+Equation~(\ref{e4.47}) that
+\begin{equation}
+x_n = \frac{\omega_0^{\,2}}{\left[(\omega_0^{\,2}-n^2\,\omega^2)^2
++ 4\,\nu^2\,n^2\,\omega^2\right]^{1/2}},
+\end{equation}
+and
+\begin{equation}
+\phi_n = \tan^{-1}\left(\frac{2\,\nu\,n\,\omega}{\omega_0^{\,2}-n^2\,\omega^2}\right).
+\end{equation}
+We have now fully determined the response of our dynamical system to
+a general periodic driving force.
+
+As an example, suppose that the external force periodically delivers a brief kick to
+the system. For instance, let
+$X(t) = A$ for $0\leq t\leq T/10$ and $9\,T/10<t<T$, and  $X(t)=0$ otherwise (in the period $0\leq t\leq T$). 
+It follows from Equation~(\ref{e4.41}) and (\ref{e4.43}) that, in this case,
+\begin{equation}
+X_0 = 0.2\,A,
+\end{equation}
+and
+\begin{equation}
+X_n = \frac{2\,\sin(n\,\pi/5)\,A}{n\,\pi},
+\end{equation}
+for $n>0$. Obviously, to obtain an exact solution, we would have to include
+every Fourier harmonic in Equation~(\ref{e4.48}), which would be impractical. However, we can obtain
+a fairly accurate approximate solution by {\em truncating}\/ the Fourier series ({\em i.e.},
+by neglecting all the terms with $n>N$, where $N\gg 1$).
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{Chapter03/fig3.06.eps}}
+\caption{\em Periodic forcing.}\label{ffou}   
+\end{figure}
+
+Figure~\ref{ffou} shows an example calculation in which the Fourier
+series is truncated after 100 terms. The parameters used
+in this calculation are $\omega = 1.2\,\omega_0$ and $\nu= 0.8\,\omega_0$.
+The left panel shows the Fourier reconstruction of the driving force, $X(t)$. The
+glitches at the rising and falling edges of the pulses are called {\em Gibbs
+phenomena}, and are an inevitable consequence of attempting to
+represent a discontinuous periodic function as a Fourier series. The
+right panel shows the Fourier reconstruction of the response, $x(t)$,  of the dynamical
+system to the applied force.
+
+\section{Transients}\label{strans}
+We saw, in Section~\ref{eres}, that when a one-dimensional dynamical system,
+close to a stable equilibrium point, is subject to a sinusoidal external
+force of the form (\ref{e4.29}) then the equation of motion of the
+system is written
+\begin{equation}\label{e4.54}
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2}\,x
+= \omega_0^{\,2}\,X_1\,\cos(\omega\,t).
+\end{equation}
+We also found that the solution to this equation which oscillates in sympathy
+with the applied force takes the form
+\begin{equation}\label{e4.55}
+x(t) = x_1\,\cos(\omega\,t-\phi_1),
+\end{equation}
+where $x_1$ and $\phi_1$ are specified in Equations~(\ref{e4.35}) and (\ref{e4.36}), respectively.
+However, (\ref{e4.55}) is not the most general solution to Equation~(\ref{e4.54}).
+It should be clear that we can take the above solution and add to it
+any solution of Equation~(\ref{e4.54}) calculated with the right-hand side set to zero,
+and the result will also be a solution of Equation~(\ref{e4.54}). 
+Now, we investigated the solutions to (\ref{e4.54}) with the right-hand
+set to zero in Section~\ref{s4.4}. In the underdamped regime ($\nu<\omega_0$),
+we found that the most general such solution takes the
+form
+\begin{equation}
+x(t) = A\,{\rm e}^{-\nu\,t}\,\cos(\omega_r\,t) + B\,{\rm e}^{-\nu\,t}\,
+\sin(\omega_r\,t),
+\end{equation}
+where $A$ and $B$ are two arbitrary constants [they are in fact the integration constants
+ of the second-order ordinary differential equation (\ref{e4.54})],
+and $\omega_r = \sqrt{\omega_0^{\,2}-\nu^2}$. Thus,
+the most general solution to Equation~(\ref{e4.54}) is written
+\begin{equation}\label{e4.56}
+x(t) = A\,{\rm e}^{-\nu\,t}\,\cos(\omega_r\,t) + B\,{\rm e}^{-\nu\,t}\,
+\sin(\omega_r\,t) + x_1\,\cos(\omega\,t-\phi_1).
+\end{equation}
+The first two terms on the right-hand side of the above equation
+are called {\em transients}, since they decay in time. The transients
+are determined by the {\em initial conditions}. However, if we wait
+long enough after setting the system into motion then the transients will 
+always decay away, leaving the time-asymptotic solution (\ref{e4.55}), which is independent of the
+initial conditions.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter03/fig3.07.eps}}
+\caption{\em Transients.}\label{ftrans}   
+\end{figure}
+
+As an example, suppose that we set the system into motion at time
+$t=0$ with the initial conditions $x(0)=dx(0)/dt=0$. 
+Setting $x(0)=0$ in Equation~(\ref{e4.56}), we obtain
+\begin{equation}
+A = - x_1\,\cos\phi_1.
+\end{equation}
+Moreover, setting $dx(0)/dt=0$ in Equation~(\ref{e4.56}), we get
+\begin{equation}
+B = -\frac{x_1\,(\nu\,\cos\phi_1+\omega\,\sin\phi_1)}{\omega_r}.
+\end{equation}
+Thus, we have now determined the constants $A$ and $B$, and, hence,
+fully specified the solution for $t>0$. Figure~\ref{ftrans}
+shows  this solution (solid curve) calculated for
+$\omega = 2\,\omega_0$ and 
+$\nu=0.2\,\omega_0$. Here,  $T_0=2\pi/\omega_0$. The associated  time-asymptotic solution (\ref{e4.55})
+is also shown for the sake of comparison (dashed curve). It can
+be seen that the full solution quickly converges to the time-asymptotic
+solution.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter03/fig3.08.eps}}
+\caption{\em A simple pendulum.}\label{f98}  
+\end{figure}
+\section{Simple Pendulum}\label{s4.8}
+Consider a compact mass $m$ suspended from a light inextensible string of length $l$, such that the
+mass is free to swing from side to side in a vertical plane, as shown in 
+Figure~\ref{f98}.
+This setup is known as a {\em simple pendulum}. 
+ Let $\theta$ be the angle subtended between the string and
+the downward vertical. Obviously, the stable equilibrium state of the simple pendulum corresponds to
+the situation in which the mass is stationary, and hangs vertically down ({\em 
+i.e.}, $\theta=0$).
+From elementary mechanics, the angular equation of motion of the pendulum is 
+\begin{equation}
+I\,\frac{d^2{\theta}}{dt^2} = \tau,
+\end{equation}
+where $I$ is the moment of inertia of the mass (see Section~\ref{mom}), and $\tau$ is the torque acting 
+about the pivot point (see Section~\ref{svecp}).
+For the
+case in hand, given that the mass is essentially a point particle, and is situated a distance $l$ from
+the axis of rotation ({\em i.e.}, the pivot point), it is easily seen that 
+$I=m\,l^2$. 
+
+The two forces acting on the mass are the downward gravitational force, $m\,g$, where $g$ is the acceleration due to gravity, 
+ and the tension, $T$, in the string.
+Note, however, that the tension makes no contribution to the torque, 
+since its line of action clearly passes
+through the pivot point. From simple trigonometry, 
+the line of action of the gravitational force passes a distance $l\,\sin\theta$ 
+from the
+pivot point. Hence, the magnitude of the gravitational torque is $m\,g\,l\,
+\sin\theta$.
+Moreover, the gravitational torque is  a {\em restoring torque}: {\em i.e.}, if 
+the mass is
+displaced slightly from its equilibrium state ({\em i.e.}, $\theta =0$) then the
+ gravitational torque clearly acts
+ to push the mass back toward that state. Thus, we can write
+\begin{equation}
+\tau = - m\,g\,l\,\sin\theta.
+\end{equation}
+Combining the previous two equations, we obtain the following  angular equation 
+of motion of the pendulum:
+\begin{equation}\label{epend}
+l\,\frac{d^2{\theta}}{dt^2} +g\,\sin\theta=0.
+\end{equation}
+Note that, unlike all of the other equations of motion which we have
+examined in this chapter, the above equation is {\em nonlinear} [since $\sin(a\,\theta)\neq a\,\sin\theta$, except when $\theta\ll 1$].
+
+Let us assume, as usual, that the system does not stray very far from
+its equilibrium state ($\theta=0$). If this is the case then we
+can make the small angle approximation $\sin\theta\simeq \theta$, and
+the above equation of motion simplifies to
+\begin{equation}
+\frac{d^2\theta}{dt^2} + \omega_0^{\,2}\,\theta\simeq 0,
+\end{equation}
+where $\omega_0 = \sqrt{g/l}$. Of course, this is just the
+simple harmonic equation. Hence, we can immediately write the solution
+as
+\begin{equation}\label{e4.64}
+\theta(t) = \theta_0\,\cos(\omega_0\,t).
+\end{equation}
+We conclude that the pendulum swings back and forth at a fixed frequency, $\omega_0$, which depends on $l$ and $g$, but is {\em independent}\/ of the amplitude,
+$\theta_0$, of the motion.
+
+Suppose, now, that we desire a more accurate solution of Equation~(\ref{epend}).
+One way in which we could achieve this would be to include
+more terms in the small angle expansion of $\sin\theta$, which is
+\begin{equation}
+\sin\theta = \theta - \frac{\theta^{\,3}}{3!} + \frac{\theta^{\,5}}{5!} +\cdots.
+\end{equation}
+For instance, keeping the first two terms in this expansion, Equation~(\ref{epend})
+becomes
+\begin{equation}\label{e4.66}
+\frac{d^2\theta}{dt^2} + \omega_0^{\,2}\,(\theta-\theta^{\,3}/6)\simeq 0.
+\end{equation}
+By analogy with (\ref{e4.64}), let us try a trial solution of the
+form
+\begin{equation}
+\theta(t) = \vartheta_0\,\cos(\omega\,t).
+\end{equation}
+Substituting this into Equation~(\ref{e4.66}), 
+and making use of the trigonometric identity
+\begin{equation}
+\cos^3 u \equiv (3/4)\,\cos u+ (1/4)\,\cos(3\,u),
+\end{equation}
+we obtain
+\begin{equation}
+\vartheta_0\left[\omega_0^{\,2}-\omega^2 - (1/8)\,\omega_0^{\,2}\,\vartheta_0^{\,2} \right] \cos(\omega\,t)- (1/24)\,\omega_0^{\,2}\,\vartheta_0^{\,3} \,\cos(3\,\omega\,t)\simeq 0.
+\end{equation}
+It is evident that the above equation cannot be satisfied for all values of $t$,
+except in the trivial case $\vartheta_0=0$. However, the
+form of this expression does suggest a better trial solution, namely
+\begin{equation}\label{e4.70}
+\theta(t) = \vartheta_0\,\cos(\omega\,t) + \alpha\,\vartheta_0^{\,3}\,\cos(3\,\omega\,t),
+\end{equation}
+where $\alpha$ is ${\cal O}(1)$. Substitution of this expression into 
+Equation~(\ref{e4.66}) yields
+\begin{eqnarray}
+\vartheta_0\left[\omega_0^{\,2}-\omega^2 - (1/8)\,\omega_0^{\,2}\,\vartheta_0^{\,2} \right] \cos(\omega\,t) + &&\nonumber\\[0.5ex]\vartheta_0^{\,3}\left[\alpha\,\omega_0^{\,2} - 9\,\alpha\,\omega^2-
+(1/24)\,\omega_0^{\,2}\right] \cos(3\,\omega\,t) + {\cal O}(\vartheta_0^{\,5})&\simeq& 0.
+\end{eqnarray}
+We can only satisfy the above equation at all values of $t$, and for non-zero $\vartheta_0$, by setting the two expressions in square brackets to zero.
+This yields
+\begin{equation}\label{e4.72}
+\omega \simeq \omega_0 \,\sqrt{1-(1/8)\,\vartheta_0^{\,2}},
+\end{equation}
+and
+\begin{equation}
+\alpha\simeq -\frac{\omega_0^{\,2}}{192}.
+\end{equation}
+Now, the amplitude of the motion is given by
+\begin{equation}
+\theta_0 = \vartheta_0 + \alpha\,\vartheta_0^{\,3} = \vartheta_0-\frac{\omega_0^{\,2}}{192}\,\vartheta_0^{\,3}.
+\end{equation}
+Hence, Equation~(\ref{e4.72}) simplifies to
+\begin{equation}
+\omega = \omega_0\left[1-\frac{\theta_0^{\,2}}{16} + {\cal O}(\theta_0^{\,4})\right].
+\end{equation}
+The above expression is only approximate, but it illustrates an important
+point: {\em i.e.}, that the frequency of oscillation of a simple pendulum
+is {\em not}, in fact, amplitude independent. Indeed, the frequency
+goes down slightly as the amplitude increases.
+
+The above example illustrates how we might go about solving a
+nonlinear equation of motion by means of an expansion in a
+small parameter (in this case, the amplitude of the motion).
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{3.\arabic{enumi}}
+\begin{enumerate}
+\item If a train of mass $M$ is subject to a retarding force $M\,(a+b\,v^2)$, show that if
+the engines are shut off when the speed is $v_0 $ then the train will
+come to rest in a time
+$$
+\frac{1}{\sqrt{a\,b}}\,\tan^{-1}\left(\sqrt{\frac{a}{b}}\,v_0\right),
+$$
+after traveling a distance
+$$
+\frac{1}{2\,b}\,\ln\left(1+\frac{b\,v_0^{\,2}}{a}\right).
+$$
+
+\item A particle is projected upward from the Earth's surface with a 
+velocity which would, if gravity were uniform, carry it to a height $h$.
+Show that if the variation of gravity with height is allowed for, but the
+resistance of air is neglected, then the height reached will be greater by $h^2/(R-h)$, where
+$R$ is the Earth's radius. 
+
+\item A particle is projected vertically upward from the Earth's surface with a velocity
+just sufficient for it to reach infinity (neglecting air resistance). Prove that the time needed to
+reach a height $h$ is
+$$
+\frac{1}{3}\left(\frac{2\,R}{g}\right)^{1/2}\,\left[\left(1+\frac{h}{R}\right)^{3/2}-1\right].
+$$
+where $R$ is the Earth's radius, and $g$ its surface gravitational acceleration.
+
+\item A particle of mass $m$ is constrained to move in one dimension such that its instantaneous displacement is $x$. The particle is 
+ released at rest from $x=b$, and is
+ subject to a force of the form  $f(x) = - k\,x^{-2}$. Show that the time required
+for the particle to reach the origin is
+$$
+\pi\left(\frac{m\,b^3}{8\,k}\right)^{1/2}.
+$$
+\item A block of mass $m$ slides along a horizontal surface which is lubricated with
+heavy oil such that the block suffers a viscous retarding force
+of the form
+$$
+F = - c\,v^n,
+$$
+where $c>0$ is a constant, and $v$ is the block's instantaneous velocity.
+If the initial speed is $v_0$ at time $t=0$, find $v$ and the displacement
+$x$ as functions of time $t$. Also find $v$ as a function of $x$. Show
+that for $n=1/2$ the block does not travel further than $2\,m\,v_0^{3/2}/(3\,c)$.
+
+ \item A particle is projected vertically upward in a constant gravitational
+ field with an initial speed $v_0$. Show that if there is a retarding force
+ proportional to the square of the speed then the speed of the
+ particle when it returns to the initial position is
+ $$
+ \frac{v_0\,v_t}{\sqrt{v_0^{\,2} + v_t^{\,2}}},
+ $$
+ where $v_t$ is the terminal speed.
+ 
+ \item A particle of mass $m$ moves (in one dimension) in a medium under the influence of a
+ retarding force of the form $m\,k\,(v^3+a^2\,v)$, where $v$ is the
+ particle speed, and $k$ and $a$ are positive constants. Show that
+ for any value of the initial speed the particle will
+ never move a distance greater than $\pi/(2\,k\,a)$, and will only come to rest as $t\rightarrow \infty$.
+
+\item Two light springs have spring constants $k_1$ and $k_2$, respectively, and are used in a vertical
+orientation to support an object of mass $m$. Show that the angular frequency of oscillation
+is $[(k_1+k_2)/m]^{1/2}$ if the springs are in parallel, and $[k_1\,k_2/(k_1+k_2)\,m]^{1/2}$
+if the springs are in series.
+
+\item A body of uniform cross-sectional area $A$ and mass density $\rho$ floats in a liquid
+of density $\rho_0$ (where $\rho<\rho_0$), and at equilibrium displaces a volume $V$. Show
+that the period of small oscillations about the equilibrium position is
+$$
+T = 2\pi\,\sqrt{\frac{V}{g\,A}}.
+$$
+
+\item Show that the ratio of two successive maxima in the displacement of a damped
+harmonic oscillator is constant.
+
+\item If the amplitude of a damped harmonic oscillator decreases to $1/e$ of its initial
+value after $n$ periods show that the ratio of the period of oscillation to the period
+of the same oscillator with no damping is
+$$
+\left(1+\frac{1}{4\pi^2\,n^2}\right)^{1/2}\simeq 1 + \frac{1}{8\pi^2\,n^2}.
+$$
+
+\item Consider a damped driven oscillator whose equation of motion is
+$$
+\frac{d^2 x}{dt^2} + 2\,\nu\,\frac{dx}{dt} + \omega_0^{\,2} \,x = F(t).
+$$
+Let $x=0$ and $dx/dt = v_0$ at $t=0$.
+ \begin{enumerate}
+\item Find the solution for $t>0$ when $F = \sin(\omega\,t)$.
+\item Find the solution for $t>0$ when $F= \sin^2(\omega\,t)$.
+\end{enumerate}
+
+\item Obtain the time asymptotic response of a damped  linear oscillator of natural frequency $\omega_0$ and damping coefficient
+$\nu$ to a
+square-wave periodic forcing function of amplitude $F_0=m\,\omega_0^{\,2}\,X_0$  and frequency $\omega$. Thus, $F(t) = F_0$ for
+$-\pi/2< \omega\,t< \pi/2$, $3\pi/2<\omega\,t<5\pi/2$, {\em etc.}, and
+$F(t)=-F_0$ for $\pi/2<\omega\,t<3\pi/2$, $5\pi/2<\omega\,t<7\pi/2$, {\em etc.}
+\end{enumerate}
+}

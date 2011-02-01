@@ -1,0 +1,1084 @@
+\chapter{Rigid Body Rotation}\label{srigid}
+\section{Introduction}
+This chapter examines the rotation of rigid bodies in
+three dimensions.
+
+\section{Fundamental Equations}
+We can think of a rigid body as a collection of a large number of small mass elements
+which all maintain a fixed spatial relationship with respect to one another.
+Let there be $N$ elements, and let the $i$th element be of mass $m_i$, and instantaneous position
+vector ${\bf r}_i$. The equation of motion of the $i$th element
+is written
+\begin{eqnarray}\label{e9.1}
+m_i\,\frac{d^2{\bf r}_i}{dt^2} = \sum_{j=1,N}^{j\neq i}
+{\bf f}_{ij} + {\bf F}_i.
+\end{eqnarray}
+Here, ${\bf f}_{ij}$ is the internal force exerted on the $i$th  element by the
+$j$th element, and ${\bf F}_i$  the external force acting on the $i$th
+element. The internal forces ${\bf f}_{ij}$ represent the 
+stresses which develop within the body in order to ensure that its various
+elements maintain a constant spatial relationship with respect to one another.
+Of course, ${\bf f}_{ij} = - {\bf f}_{ji}$, by Newton's third law.
+The external forces represent forces which originate outside the body.
+
+Repeating the analysis of Section~\ref{new4}, we can
+sum Equation~(\ref{e9.1}) over all mass elements to obtain
+\begin{equation}\label{e9.2}
+M\,\frac{d^2{\bf r}_{cm}}{dt^2} = {\bf F}.
+\end{equation}
+Here,  $M=\sum_{i=1,N} m_i$ is the total mass, ${\bf r}_{cm}$ 
+the position vector of the center of mass [see Equation~(\ref{e3.27})],
+and ${\bf F}  = \sum_{i=1,N} {\bf F}_i$  the total external force.
+It can be seen that the center of mass of a rigid body moves under the action of the external forces like
+a point particle whose mass is identical with that of the body.
+
+Again repeating the analysis of Section~\ref{new4}, we can sum ${\bf r}_i\times$ Equation~(\ref{e9.1}) over all mass elements to obtain
+\begin{equation}\label{e9.3}
+\frac{d{\bf L}}{dt} = {\bf T}.
+\end{equation}
+Here, ${\bf L}=\sum_{i=1,N} m_i\,{\bf r}_i\times d{\bf r}_i/dt$ is the
+total angular momentum of the body (about the origin), and
+${\bf T} = \sum_{i=1, N} {\bf r}_i\times{\bf F}_i$ the
+total external torque (about the origin). Note that the above equation is
+only valid if the internal forces are {\em central}\/ in nature. However, this
+is not a particularly onerous constraint. Equation~(\ref{e9.3}) describes
+how the angular momentum of a rigid body evolves in time under the action
+of
+the external torques.
+
+In the following, we shall only consider the {\em rotational}\/ motion of rigid bodies, since their translational motion is similar to that
+of  point particles [see Equation~(\ref{e9.2})], and, therefore, fairly straightforward
+in nature.
+
+\section{Moment of Inertia Tensor}\label{mom}
+Consider a rigid body rotating with fixed angular velocity \mbox{\boldmath$\omega$} about
+an axis which passes through the origin---see Figure~\ref{rig}.
+Let ${\bf r}_i$ be the position vector of the $i$th mass element, whose mass
+is $m_i$.
+We expect this position vector to {\em precess}\/ about the axis of rotation
+(which is parallel to \mbox{\boldmath$\omega$})
+with angular velocity $\omega$. It, therefore, follows from Equation~(\ref{e239})
+that
+\begin{equation}\label{e9.4}
+\frac{d{\bf r}_i}{dt} =  \mbox{\boldmath$\omega$}\times {\bf r}_i.
+\end{equation}
+Thus, the above equation  specifies the velocity, ${\bf v}_i = d{\bf r}_i/dt$, 
+of each mass element as the body rotates  with fixed angular velocity \mbox{\boldmath$\omega$} about
+an axis passing  through the origin.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter08/fig8.01.eps}}
+\caption{\em A rigid rotating body.}\label{rig}
+\end{figure}
+
+The total angular momentum of the body (about the origin) is written
+\begin{equation}\label{e9.5}
+{\bf L} = \sum_{i=1,N} m_i\,{\bf r}_i\times\frac{d{\bf r}_i}{dt} = 
+\sum_{i=1,N}m_i\,{\bf r}_i\times(\mbox{\boldmath$\omega$}\times {\bf r}_i) = \sum_{i=1,N}m_i\left[r_i^{\,2}\,\mbox{\boldmath$\omega$}- ({\bf r}_i\cdot\mbox{\boldmath$\omega$})\,{\bf r}_i\right],
+\end{equation}
+where use has been made of Equation~(\ref{e9.4}), and some standard vector
+identities (see Section~\ref{svtp}). The above formula can be written as a matrix equation
+of the form
+\begin{equation}\label{e9.6}
+\left(\begin{array}{c}L_x\\L_y\\L_z\end{array}\right)=
+\left(\begin{array}{ccc}
+I_{xx}&I_{xy}&I_{xz}\\
+I_{yx}&I_{yy}&I_{yz}\\
+I_{zx}&I_{zy}&I_{zz}
+\end{array}\right)\left(\begin{array}{c}\omega_x\\\omega_y\\\omega_z\end{array}\right),
+\end{equation}
+where
+\begin{eqnarray}\label{e9.7}
+I_{xx} &=& \sum_{i=1,N}(y_i^{\,2}+z_i^{\,2}) \,m_i= \int(y^2+ z^2)\,dm,\\[0.5ex]
+I_{yy} &=& \sum_{i=1,N}(x_i^{\,2}+z_i^{\,2}) \,m_i= \int(x^2+ z^2)\,dm,\\[0.5ex]
+I_{zz} &=& \sum_{i=1,N}(x_i^{\,2}+y_i^{\,2}) \,m_i= \int(x^2+ y^2)\,dm,\\[0.5ex]
+I_{xy}=I_{yx} &=& - \sum_{i=1,N}x_i\,y_i \,m_i=- \int x\,y\,dm,\label{e9.11}\\[0.5ex]
+I_{yz}=I_{zy} &=& - \sum_{i=1,N}y_i\,z_i \,m_i= -\int y\,z\,dm,\label{e9.12}\\[0.5ex]
+I_{xz}=I_{zx} &=& - \sum_{i=1,N}x_i\,z_i \,m_i= -\int x\,z\,dm.\label{e9.13a}
+\end{eqnarray}
+Here, $I_{xx}$ is called the {\em moment of inertia}\/ about the $x$-axis,
+$I_{yy}$  the moment of inertia about the $y$-axis, $I_{xy}$ 
+the $xy$ {\em product of inertia}, $I_{yz}$  the $yz$ product of
+inertia, {\em etc}. The matrix of the $I_{ij}$ values is
+known as the {\em moment of inertia tensor}.\footnote{A tensor is the two-dimensional generalization of a vector. However, for present purposes, we can
+simply think of a tensor as another name for a matrix.} Note that each component
+of the moment of inertia tensor can be written as either a sum over separate
+mass elements, or as an integral over infinitesimal mass elements.
+In the integrals, $dm = \rho\,dV$, where $\rho$ is the mass density, and 
+$dV$ a volume element.
+Equation~(\ref{e9.6}) can be written more succinctly as
+\begin{equation}\label{e9.13}
+{\bf L} = \tilde{\bf I}\,\mbox{\boldmath$\omega$}.
+\end{equation}
+Here, it is understood that ${\bf L}$ and \mbox{\boldmath$\omega$} are
+both {\em column vectors}, and $\tilde{\bf I}$ is the {\em matrix}\/ of the $I_{ij}$ values.
+Note that $\tilde{\bf I}$ is a {\em real symmetric}\/ matrix:
+{\em i.e.}, $I_{ij}^{\,\ast} = I_{ij}$ and $I_{ji} = I_{ij}$. 
+
+In general, 
+the angular momentum vector, ${\bf L}$, obtained from Equation (\ref{e9.13}),
+points in a different direction to the angular velocity vector, \mbox{\boldmath$\omega$}. In other words, ${\bf L}$
+is generally {\em not parallel}\/ to \mbox{\boldmath$\omega$}.
+
+Finally, although the above results  were obtained assuming a
+fixed angular velocity, they remain valid at each instant in time if the angular velocity varies.
+
+\section{Rotational Kinetic Energy}
+The instantaneous rotational kinetic energy of a rotating rigid body is written
+\begin{equation}
+K = \frac{1}{2}\sum_{i=1,N} m_i\left(\frac{d{\bf r}_i}{dt}\right)^2.
+\end{equation}
+Making use of Equation~(\ref{e9.4}), and some vector identities (see Section~\ref{sstp}),
+the kinetic energy takes the form
+\begin{equation}
+K = \frac{1}{2}\sum_{i=1,N} m_i\,(\mbox{\boldmath$\omega$}\times
+{\bf r}_i)\cdot(\mbox{\boldmath$\omega$}\times
+{\bf r}_i) = \frac{1}{2}\,\mbox{\boldmath$\omega$} \cdot\!\! \sum_{i=1,N} 
+m_i\,{\bf r}_i\times (\mbox{\boldmath$\omega$}\times {\bf r}_i).
+\end{equation}
+Hence, it follows from (\ref{e9.5}) that
+\begin{equation}\label{e9.16}
+K = \frac{1}{2}\,\, \mbox{\boldmath$\omega$} \cdot {\bf L}.
+\end{equation}
+Making use of Equation~(\ref{e9.13}), we can also
+write
+\begin{equation}\label{e9.17}
+K = \frac{1}{2}\,\mbox{\boldmath$\omega$}^T\,\tilde{\bf I}\,\mbox{\boldmath$\omega$}.
+\end{equation}
+Here, $\mbox{\boldmath$\omega$}^T$ is the {\em row vector}\/ of the Cartesian components
+$\omega_x$, $\omega_y$, $\omega_z$, which is, of course, the transpose
+(denoted $~^T$) of the column vector \mbox{\boldmath$\omega$}.
+When written in component form, the above equation yields
+\begin{equation}\label{e9.18}
+K = \frac{1}{2}\left(I_{xx}\,\omega_x^{\,2}+ I_{yy}\,\omega_y^{\,2}+I_{zz}\,\omega_z^{\,2} + 2\,I_{xy}\,\omega_x\,\omega_y + 2\,I_{yz}\,\omega_y\,\omega_z + 2\,I_{xz}\,\omega_x\,\omega_z\right).
+\end{equation}
+
+\section{Matrix Eigenvalue Theory}\label{smatrix}
+It is time to review a little matrix theory. Suppose that ${\bf A}$ is
+a {\em real symmetric}\/ matrix of dimension $n$. If follows that
+${\bf A}^\ast = {\bf A}$ and ${\bf A}^T = {\bf A}$, where $~^\ast$
+denotes a complex conjugate, and $~^T$ denotes a transpose.
+Consider the matrix equation
+\begin{equation}\label{e9.21}
+{\bf A} \,{\bf x} = \lambda\,{\bf x}.
+\end{equation}
+Any column vector ${\bf x}$ which satisfies the above equation is called
+an {\em eigenvector}\/ of ${\bf A}$. Likewise, the associated number $\lambda$ is called an {\em eigenvalue}\/ of ${\bf A}$. Let us investigate the properties of the eigenvectors and eigenvalues of a real
+symmetric matrix.
+
+Equation~(\ref{e9.21}) can be rearranged to give
+\begin{equation}
+({\bf A} - \lambda\,{\bf 1})\,{\bf x} = {\bf 0},
+\end{equation}
+where ${\bf 1}$ is the unit matrix. The above matrix equation is essentially a set of $n$ homogeneous
+simultaneous algebraic equations for the $n$ components of ${\bf x}$. 
+A well-known property of such a set of equations is that it only has a non-trivial
+solution when the determinant of the associated matrix is set to zero. 
+Hence, a necessary condition for the above set of equations to have a non-trivial
+solution is that
+\begin{equation}
+|{\bf A} - \lambda\,{\bf 1}| = 0.
+\end{equation}
+The above formula is essentially an $n$th-order {\em polynomial}\/ equation
+for $\lambda$. We know that such an equation has $n$ (possibly complex)
+roots. Hence, we conclude that there are $n$ eigenvalues, and $n$ associated eigenvectors, of the $n$-dimensional matrix ${\bf A}$. 
+
+Let us now demonstrate that the $n$ eigenvalues and eigenvectors of the real symmetric matrix
+${\bf A}$ are all {\em real}. We have
+\begin{equation}\label{e9.24}
+{\bf A}\,{\bf x}_i = \lambda_i\,{\bf x}_i,
+\end{equation}
+and, taking the transpose and complex conjugate, 
+\begin{equation}\label{e9.25}
+{\bf x}_i^{\ast\,T}\,{\bf A} = \lambda_i^{\,\ast}\,{\bf x}_i^{\ast\,T},
+\end{equation}
+where ${\bf x}_i$ and $\lambda_i$ are the $i$th eigenvector and eigenvalue
+of ${\bf A}$, respectively. Left multiplying Equation~(\ref{e9.24}) by
+${\bf x}_i^{\ast\,T}$, we obtain
+\begin{equation}
+{\bf x}_i^{\ast\,T} {\bf A}\,{\bf x}_i = \lambda_i\,{\bf x}_i^{\ast\,T}{\bf x}_i.
+\end{equation}
+Likewise, right multiplying (\ref{e9.25}) by ${\bf x}_i$, we get
+\begin{equation}
+{\bf x}_i^{\ast\,T}\,{\bf A}\,{\bf x}_i = \lambda_i^{\,\ast}\,{\bf x}_i^{\ast\,T}{\bf x}_i.
+\end{equation}
+The difference of the previous two equations yields
+\begin{equation}
+(\lambda_i - \lambda_i^{\,\ast})\,{\bf x}_i^{\ast\,T} {\bf x}_i = 0.
+\end{equation}
+It follows that $\lambda_i=\lambda_i^{\,\ast}$, since ${\bf x}_i^{\ast\,T}{\bf x}_i$ (which is ${\bf x}_i^{\,\ast}\cdot{\bf x}_i$ in vector notation) is positive definite. Hence, $\lambda_i$ is real.
+It immediately follows that ${\bf x}_i$ is real.
+
+Next, let us show that two eigenvectors corresponding to two {\em different}\/ eigenvalues are {\em mutually orthogonal}. Let
+\begin{eqnarray}
+{\bf A}\,{\bf x}_i &=& \lambda_i\,{\bf x}_i,\\[0.5ex]
+{\bf A}\,{\bf x}_j&=& \lambda_j\,{\bf x}_j,
+\end{eqnarray}
+where $\lambda_i\neq \lambda_j$. Taking the transpose of the first equation and right multiplying by ${\bf x}_j$, and left multiplying the second
+equation by ${\bf x}_i^T$, we obtain
+\begin{eqnarray}
+{\bf x}_i^T\,{\bf A}\,{\bf x}_j &=& \lambda_i\,{\bf x}_i^T{\bf x}_j,\\[0.5ex]
+{\bf x}_i^T\,{\bf A}\,{\bf x}_j&=& \lambda_j\,{\bf x}_i^T{\bf x}_j.
+\end{eqnarray}
+Taking the difference of the above two equations, we get
+\begin{equation}
+(\lambda_i-\lambda_j)\,{\bf x}_i^T{\bf x}_j = 0.
+\end{equation}
+Since, by hypothesis, $\lambda_i\neq \lambda_j$, it follows
+that ${\bf x}_i^T{\bf x}_j = 0$. In vector notation, this is the same
+as ${\bf x}_i \cdot{\bf x}_j=0$. Hence, the eigenvectors ${\bf x}_i$ and
+${\bf x}_j$ are mutually orthogonal. 
+
+Suppose that $\lambda_i=\lambda_j=\lambda$. In this case, we cannot conclude
+that ${\bf x}_i^T{\bf x}_j = 0$ by the above argument. However, it is easily seen that any
+linear combination of ${\bf x}_i$ and ${\bf x}_j$ is an eigenvector
+of ${\bf A}$ with eigenvalue $\lambda$. Hence, it is possible
+to define two new eigenvectors of ${\bf A}$, with the eigenvalue
+$\lambda$, which are mutually orthogonal. For instance,
+\begin{eqnarray}
+{\bf x}_i' &=& {\bf x}_i,\\[0.5ex]
+{\bf x}_j'&=& {\bf x}_j - \left(\frac{{\bf x}_i^T{\bf x}_j}{{\bf x}_i^T{\bf x}_i}\right) {\bf x}_i.
+\end{eqnarray}
+It should be clear that this argument can be generalized to deal with any
+number of eigenvalues which take the same value.
+
+In conclusion, a real symmetric $n$-dimensional matrix
+possesses $n$ {\em real}\/ eigenvalues, with $n$ associated {\em real}\/ eigenvectors,
+which are, or can be chosen to be, {\em mutually orthogonal}.
+
+\section{Principal Axes of Rotation}
+We have seen that the moment of inertia tensor, $\tilde{\bf I}$, defined in Section~\ref{mom}, takes the form of a  real symmetric three-dimensional
+matrix. It therefore follows, from the matrix theory that we have just reviewed,
+that the moment of inertia tensor possesses {\em three  mutually orthogonal eigenvectors}\/ which are associated with {\em three  real eigenvalues}. Let the $i$th eigenvector (which can be normalized to
+be a unit vector) be denoted $\hat{\mbox{\boldmath$\omega$}}_i$, and the $i$th eigenvalue $\lambda_i$. It then
+follows that
+\begin{equation}\label{e9.34}
+\tilde{\bf I}\, \hat{\mbox{\boldmath$\omega$}}_i = \lambda_i\,\hat{\mbox{\boldmath$\omega$}}_i ,
+\end{equation}
+for $i=1, 3$. 
+
+The directions of the three mutually orthogonal unit vectors $\hat{\mbox{\boldmath$\omega$}}_i $ define the three so-called {\em principal axes
+of rotation}\/ of the rigid body under investigation. These axes are special because when the body  rotates about
+one of them ({\em i.e.}, when \mbox{\boldmath$\omega$} is parallel to one of them)  the angular momentum vector ${\bf L}$
+becomes {\em parallel}\/ to the angular velocity vector \mbox{\boldmath$\omega$}.
+This can be seen from a comparison of Equation~(\ref{e9.13}) and Equation~(\ref{e9.34}). 
+
+Suppose that we reorient our Cartesian coordinate
+axes so the they coincide with the mutually orthogonal principal axes of rotation. In this new reference frame, the eigenvectors of $\tilde{\bf I}$ are the unit vectors,
+${\bf e}_x$, ${\bf e}_y$, and ${\bf e}_z$, and the eigenvalues
+are the moments of inertia about these axes, $I_{xx}$, $I_{yy}$, and $I_{zz}$, respectively. These latter quantities are referred to as the
+{\em principal moments of inertia}.
+Note that the products of inertia are all {\em zero}\/ in the new
+reference frame. Hence, in this frame, the moment
+of inertia tensor takes the form of a  {\em diagonal}\/ matrix: {\em i.e.},
+\begin{equation}
+\tilde{\bf I} = 
+\left(\begin{array}{ccc}
+I_{xx}&0&0\\
+0&I_{yy}&0\\
+0&0&I_{zz}
+\end{array}\right).
+\end{equation}
+Incidentally, it is easy to verify that ${\bf e}_x$, ${\bf e}_y$, and ${\bf e}_z$ are indeed
+the eigenvectors of the above matrix, with the eigenvalues $I_{xx}$, $I_{yy}$, and $I_{zz}$, respectively, and that ${\bf L} = \tilde{\bf I}\,\mbox{\boldmath$\omega$}$ is indeed parallel to \mbox{\boldmath$\omega$} whenever \mbox{\boldmath$\omega$}
+is directed along ${\bf e}_x$, ${\bf e}_y$, or ${\bf e}_z$.
+
+When expressed in our new coordinate system, Equation~(\ref{e9.13})
+yields
+\begin{equation}
+{\bf L} = \left(I_{xx}\,\omega_x,\,I_{yy}\,\omega_y,I_{zz}\,\omega_z\right),
+\end{equation}
+whereas Equation~(\ref{e9.18}) reduces to
+\begin{equation}
+K = \frac{1}{2}\left(I_{xx}\,\omega_x^{\,2} + I_{yy}\,\omega_y^{\,2}
++ I_{zz}\,\omega_z^{\,2}\right).
+\end{equation}
+
+In conclusion,  there are many great simplifications to be had by choosing a coordinate system whose axes coincide with the principal axes of rotation of the
+rigid body under investigation. But how do we determine the directions of the
+principal axes in practice?
+
+Well, in general, we have to solve the eigenvalue equation
+\begin{equation}
+\tilde{\bf I}\,\hat{\mbox{\boldmath$\omega$}} = \lambda\,\hat{\mbox{\boldmath$\omega$}},
+\end{equation}
+or
+\begin{equation}\label{e9.39}
+\left(\begin{array}{ccc}
+I_{xx}-\lambda&I_{xy}&I_{xz}\\
+I_{yx}&I_{yy}-\lambda&I_{yz}\\
+I_{zx}&I_{zy}&I_{zz}-\lambda
+\end{array}\right)\left(\begin{array}{c}\cos\alpha\\\cos\beta\\\cos\gamma\end{array}\right) = \left(\begin{array}{c}0\\0\\0\end{array}\right),
+\end{equation}
+where $\hat{\mbox{\boldmath$\omega$}} = (\cos\alpha,\,\cos\,\beta,\,\cos\gamma)$, and $\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$. Here, $\alpha$ is the angle the unit eigenvector subtends with the $x$-axis, $\beta$ the angle it
+subtends with the $y$-axis, and $\gamma$ the angle it subtends with the $z$-axis. Unfortunately, the analytic solution of the above matrix equation
+is generally quite difficult.
+
+Fortunately, however, in many instances the rigid body under investigation possesses some
+kind of symmetry, so that at least one principal axis can be found by
+inspection. In this case, the other two principal axes can be determined
+as follows. 
+
+Suppose that the $z$-axis is known to be a principal axes (at the origin)
+in some coordinate system. It follows that the two products of inertia $I_{xz}$
+and $I_{yz}$ are zero [otherwise, $(0,\,0,\,1)$ would not be an eigenvector in Equation~(\ref{e9.39})]. The other two principal axes must lie in the
+$x$-$y$ plane: {\em i.e.}, $\cos\gamma=0$. It then follows that $\cos\beta=\sin\alpha$, since $\cos^2\alpha+\cos^2\beta+ \cos^2\gamma=1$. 
+The first two rows in the matrix equation (\ref{e9.39}) thus
+reduce to
+\begin{eqnarray}\label{e9.40}
+(I_{xx}-\lambda)\,\cos\alpha + I_{xy}\,\sin\alpha &=& 0,\\[0.5ex]
+I_{xy}\,\cos\alpha + (I_{yy}-\lambda)\,\sin\alpha &=& 0.
+\end{eqnarray}
+Eliminating $\lambda$ between the above two equations, we obtain 
+\begin{equation}\label{e9.42}
+I_{xy} \,(1-\tan^2\alpha) = (I_{xx}-I_{yy})\,\tan\alpha.
+\end{equation}
+But, $\tan( 2\,\alpha) \equiv 2\,\tan\alpha/(1-\tan^2\alpha)$. Hence, Equation~(\ref{e9.42}) yields
+\begin{equation}\label{e9.43}
+\tan (2\,\alpha) = \frac{2\,I_{xy}}{I_{xx} - I_{yy}}.
+\end{equation}
+There are two values of $\alpha$, lying between $-\pi/2$ and $\pi/2$, which
+satisfy the above equation. These specify the angles, $\alpha$, that
+ the two mutually orthogonal principal axes lying in the $x$-$y$ plane
+make with the $x$-axis. Hence, we have now determined the directions of
+all three principal axes. Incidentally, once we have determined the orientation angle, $\alpha$, of a principal axis, 
+we can then substitute back into Equation~(\ref{e9.40}) to obtain the corresponding
+principal moment of inertia, $\lambda$. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter08/fig8.02.eps}}
+\caption{\em A uniform rectangular laminar.}\label{lam}
+\end{figure}
+
+As an example, consider a uniform rectangular lamina of mass $m$ and sides $a$ and $b$ which lies
+in the $x$-$y$ plane, as shown in Figure~\ref{lam}. Suppose that the axis of
+rotation passes through the origin ({\em i.e.}, through a corner of the lamina).
+Since $z=0$ throughout the lamina, it follows from Equations~(\ref{e9.12}) and
+(\ref{e9.13a}) that $I_{xz}= I_{yz} = 0$.  Hence, the $z$-axis
+is a principal axis. After some straightforward integration, Equations~(\ref{e9.7})--(\ref{e9.11}) yield
+\begin{eqnarray}
+I_{xx} &=& \frac{1}{3}\,m\,b^2,\\[0.5ex]
+I_{yy} &=& \frac{1}{3}\,m\,a^2,\\[0.5ex]
+I_{xy} &=& - \frac{1}{4}\,m\,a\,b.
+\end{eqnarray}
+Thus, it follows from Equation~(\ref{e9.43}) that
+\begin{equation}
+\alpha = \frac{1}{2}\tan^{-1}\left(\frac{3}{2}\frac{a\,b}{a^2-b^2}\right).
+\end{equation}
+The above equation specifies the orientation of the two principal axes that
+lie in the $x$-$y$ plane.
+For the special case where $a=b$, we get  $\alpha=\pi/4,\,
+3\pi/4$: {\em i.e.}, the two in-plane principal axes of a square lamina (at a corner) are parallel to the two diagonals of the
+lamina.
+
+\section{Euler's Equations}
+The fundamental equation of motion of a rotating body [see Equation~(\ref{e9.3})],
+\begin{equation}\label{e9.48}
+{\bf T} = \frac{d{\bf L}}{dt},
+\end{equation}
+is only valid in an {\em inertial}\/ frame. However, we have seen that  ${\bf L}$
+is most simply expressed in a frame of reference whose axes are aligned
+along the principal axes of rotation of the body. Such a frame of reference
+{\em rotates}\/ with the body, and is, therefore, {\em non-inertial}. Thus, it is helpful to define {\em two}\/ Cartesian coordinate systems, with the same origins. The first,
+with coordinates $x$, $y$, $z$, is a fixed inertial frame---let us denote
+this the {\em fixed frame}. The second, with coordinates $x'$, $y'$, $z'$,
+co-rotates with the body in such a manner that the $x'$-, $y'$-, and $z'$-axes are always pointing along its principal axes of rotation---we shall
+refer to this as the {\em body frame}. Since the body frame co-rotates with the body, its instantaneous angular velocity is the same as that of the
+body. Hence, it follows from the analysis in Section~\ref{srot} that
+\begin{equation}\label{e9.49}
+\frac{d{\bf L}}{dt} = \frac{d{\bf L}}{dt'} + \mbox{\boldmath$\omega$}\times{\bf L}.
+\end{equation}
+Here, $d/dt$ is the time derivative in the fixed frame, and $d/dt'$ the
+time derivative in the body frame.
+Combining Equations~(\ref{e9.48}) and (\ref{e9.49}), we obtain
+\begin{equation}\label{e9.50}
+{\bf T} = \frac{d{\bf L}}{dt'} + \mbox{\boldmath$\omega$}\times{\bf L}.
+\end{equation}
+Now, in the body frame let ${\bf T}= (T_{x'},\,T_{y'},T_{z'})$ and  $\mbox{\boldmath$\omega$}= (\omega_{x'},\,\omega_{y'},\,\omega_{z'})$.
+It follows that
+ ${\bf L} =  (I_{x'x'}\,\omega_{x'},\,I_{y'y'}\,\omega_{y'},\,I_{z'z'}\,\omega_{z'})$,
+ where $I_{x'x'}$, $I_{y'y'}$ and $I_{z'z'}$ are the principal
+ moments of inertia. Hence, in the body frame, the components of Equation~(\ref{e9.50}) yield
+ \begin{eqnarray}\label{e9.51}
+ T_{x'} &=& I_{x'x'}\,\dot{\omega}_{x'} - (I_{y'y'}-I_{z'z'})\,\omega_{y'}\,\omega_{z'},\\[0.5ex]
+ T_{y'} &=& I_{y'y'}\,\dot{\omega}_{y'} - (I_{z'z'}-I_{x'x'})\,\omega_{z'}\,\omega_{x'},\\[0.5ex]
+ T_{z'} &=& I_{z'z'}\,\dot{\omega}_{z'} - (I_{x'x'}-I_{y'y'})\,\omega_{x'}\,\omega_{y'},\label{e9.53}
+ \end{eqnarray}
+ where $\dot{~}=d/dt'$. 
+Here, we have made use of the fact that the  moments of inertia
+of a rigid body are {\em constant}\/ in time in the co-rotating body frame.
+The above equations are known as {\em Euler's equations}.
+ 
+ Consider a rigid body which is constrained to rotate about a fixed
+ axis with {\em constant}\/ angular velocity. It follows that
+ $\dot{\omega}_{x'}=\dot{\omega}_{y'} = \dot{\omega}_{z'}=0$.
+ Hence, Euler's equations, (\ref{e9.51})--(\ref{e9.53}), reduce to
+ \begin{eqnarray}\label{e9.54}
+ T_{x'} &=&  - (I_{y'y'}-I_{z'z'})\,\omega_{y'}\,\omega_{z'},\\[0.5ex]
+ T_{y'} &=&  - (I_{z'z'}-I_{x'x'})\,\omega_{z'}\,\omega_{x'},\\[0.5ex]
+ T_{z'} &=&  - (I_{x'x'}-I_{y'y'})\,\omega_{x'}\,\omega_{y'}.\label{e9.56}
+ \end{eqnarray}
+ These equations specify the components of the steady (in the body frame) torque  exerted on the body by 
+ the constraining supports. The steady (in the
+ body frame) angular momentum is written
+ \begin{equation}\label{e9.57x}
+ {\bf L} = (I_{x'x'}\,\omega_{x'},\,I_{y'y'}\,\omega_{y'},\,
+ I_{z'z'}\,\omega_{z'}).
+ \end{equation}
+ It is easily demonstrated that ${\bf T}= \mbox{\boldmath$\omega$}\times{\bf L}$. Hence,
+ the torque is perpendicular to both the angular velocity and the angular
+ momentum vectors.
+ Note that if the axis of rotation is a principal
+ axis then two of the three components of 
+\mbox{\boldmath$\omega$} are zero (in the body frame). It follows from Equations~(\ref{e9.54})--(\ref{e9.56}) that
+all three components of the torque are zero. In other words, {\em zero}\/ external torque
+is required to make the body  rotate steadily about a {\em principal axis}.
+
+Suppose that the body is {\em freely rotating}: {\em i.e.}, there are no external
+torques. Furthermore, let the body be {\em rotationally symmetric}\/
+about the $z'$-axis. It follows that $I_{x'x'} = I_{y'y'} = I_\perp$.
+Likewise, we can write $I_{z'z'} = I_\parallel$. In general, however, $I_\perp\neq I_\parallel$. Thus, Euler's equations  yield
+\begin{eqnarray}\label{e9.57}
+I_\perp\,\frac{d\omega_{x'}}{dt'} + (I_{\parallel}-I_{\perp})\,\omega_{z'}\,\omega_{y'} &=& 0,\\[0.5ex]
+I_\perp\,\frac{d\omega_{y'}}{dt'} - (I_{\parallel}-I_{\perp})\,
+\omega_{z'}\,\omega_{x'} &=& 0,\label{e9.58}\\[0.5ex]
+\frac{d\omega_{z'}}{dt'} &=& 0.
+\end{eqnarray}
+Clearly, $\omega_{z'}$ is a constant of the motion.
+Equation~(\ref{e9.57}) and (\ref{e9.58}) can be written
+\begin{eqnarray}
+\frac{d\omega_{x'}}{dt'} + {\mit\Omega}\,\omega_{y'} &=& 0,\\[0.5ex]
+\frac{d\omega_{y'}}{dt'} - {\mit\Omega}\,\omega_{x'} &=& 0,
+\end{eqnarray}
+where ${\mit\Omega}= (I_{\parallel}/I_\perp-1)\,\omega_{z'}$. As is easily
+demonstrated, the solution to the above equations is
+\begin{eqnarray}
+\omega_{x'} &=& \omega_\perp\,\cos({\mit\Omega}\,t'),\\[0.5ex]
+\omega_{y'}&=&\omega_\perp\,\sin({\mit\Omega}\,t'),
+\end{eqnarray}
+where $\omega_\perp$ is a constant. Thus, the projection of the
+angular velocity vector onto the $x'$-$y'$ plane has the fixed length
+$\omega_\perp$, and rotates steadily about the $z'$-axis with angular
+velocity ${\mit\Omega}$.
+It follows that the length of the angular
+velocity vector, $\omega=(\omega_{x'}^2+\omega_{y'}^2+\omega_{z'}^2)^{1/2}$,  is a constant of the motion.
+Clearly,  the angular
+velocity vector makes some constant angle, $\alpha$,  with the $z'$-axis, which implies that
+$\omega_{z'} = \omega\,\cos\alpha$ and $\omega_\perp = \omega\,\sin\alpha$.
+Hence, the components of the angular velocity vector are
+\begin{eqnarray}
+\omega_{x'} &=& \omega\,\sin\alpha\,\cos({\mit\Omega}\,t'),\\[0.5ex]
+\omega_{y'} &=& \omega\,\sin\alpha\,\sin({\mit\Omega}\,t'),\\[0.5ex]
+\omega_{z'} &=& \omega\,\cos\alpha,
+\end{eqnarray}
+where
+\begin{equation}\label{e9.68a}
+{\mit\Omega} =\omega\,\cos\alpha \left(\frac{I_\parallel}{I_\perp}-1\right).
+\end{equation}
+We conclude that, in the body frame, the angular velocity vector {\em precesses}\/ about the
+symmetry axis ({\em i.e.}, the $z'$-axis) with the angular
+frequency ${\mit\Omega}$. Now, the components of the angular momentum vector are
+\begin{eqnarray}
+L_{x'} &=& I_\perp\,\omega\,\sin\alpha\,\cos({\mit\Omega}\,t'),\\[0.5ex]
+L_{y'} &=& I_\perp\,\omega\,\sin\alpha\,\sin({\mit\Omega}\,t'),\\[0.5ex]
+L_{z'} &=& I_\parallel\,\omega\,\cos\alpha.
+\end{eqnarray}
+Thus, in the body frame, the angular momentum vector is also of constant length, and
+precesses about the symmetry axis with the angular frequency
+${\mit\Omega}$. Furthermore, the angular momentum vector makes a constant angle $\theta$ with the symmetry
+axis, where
+\begin{equation}\label{e9.73a}
+\tan\theta = \frac{I_\perp}{I_\parallel}\,\tan\alpha.
+\end{equation}
+Note that the angular momentum vector, the angular velocity vector, and
+the symmetry axis all lie in the {\em same plane}:
+{\em i.e.}, ${\bf e}_{z'}\cdot{\bf L}\times \mbox{\boldmath$\omega$}=0$,
+as can easily be verified. Moreover, the
+angular momentum vector lies between the angular velocity vector and
+the symmetry axis ({\em i.e.}, $\theta<\alpha$) for a flattened (or oblate) body
+({\em i.e.}, $I_\perp< I_\parallel$), whereas the angular velocity vector lies
+between the angular momentum vector and the symmetry axis ({\em i.e.}, $\theta>\alpha$) for  an elongated (or prolate) body ({\em i.e.}, $I_\perp>I_\parallel$). 
+
+Let us now consider the most general motion of a freely rotating
+{\em asymmetric}\/ rigid body, as seen in the body frame. Since a freely rotating
+body experiences no external torques, its angular momentum vector
+${\bf L}$ is a constant of the motion in the inertial fixed frame. In general, the direction of this vector varies with time in the non-inertial body frame, but its
+length remains fixed. This can be seen from Equation~(\ref{e9.49}):
+if $d{\bf L}/dt=0$ then the scalar product of this equation
+with ${\bf L}$ implies that $d L^2/dt'=0$. It follows from Equation~(\ref{e9.57x}) that
+\begin{equation}\label{e9.73x}
+L^2 = I_{x'x'}^{\,2}\,\omega_{x'}^{\,2} + I_{y'y'}^{\,2}\,\omega_{y'}^{\,2} 
++ I_{z'z'}^{\,2}\,\omega_{z'}^{\,2} ={\rm constant}.
+\end{equation}
+The above constraint can also be derived directly from Euler's equations,
+(\ref{e9.51})--(\ref{e9.53}), by setting $T_{x'}=T_{y'}=T_{z'}=0$.
+A freely rotating body subject to no external torques clearly has a constant rotational kinetic energy.
+Hence, from Equation~(\ref{e9.16}), 
+\begin{equation}\label{e9.74x}
+\bomega\cdot {\bf L} =  I_{x'x'}\,\omega_{x'}^{\,2} + I_{y'y'}\,\omega_{y'}^{\,2} 
++ I_{z'z'}\,\omega_{z'}^{\,2} ={\rm constant}.
+\end{equation}
+This constraint can also be derived directly from Euler's equations.
+We conclude that, in the body frame, the components of $\bomega$ must
+simultaneously satisfy the two constraints (\ref{e9.73x}) and (\ref{e9.74x}).
+These constraints are the equations of two ellipsoids whose principal 
+axes coincide with the principal axes of the body, and whose principal
+radii are in the ratio $I_{x'x'}^{-1}:I_{y'y'}^{-1}:I_{z'z'}^{-1}$
+and $I_{x'x'}^{-1/2}:I_{y'y'}^{-1/2}:I_{z'z'}^{-1/2}$, respectively. 
+In general, the intersection of these two ellipsoids is a {\em closed curve}. 
+Hence, we conclude that the most general motion of a freely rotating
+asymmetric body, as seen in the body frame, is a form of irregular
+{\em precession}\/ in which the tip of the angular
+velocity vector $\bomega$   periodically traces out the aforementioned closed curve. It is easily demonstrated that the tip of the angular momentum vector ${\bf L}$
+periodically traces out a different closed curve.
+
+\section{Eulerian Angles}\label{seuler}
+We have seen how we can solve Euler's equations to determine the properties
+of a rotating body in the co-rotating {\em body frame}. Let us now investigate how we can determine the same properties in the inertial
+{\em fixed frame}.
+
+The fixed frame and the body frame share the
+same origin. Hence, we can transform from one to the other by
+means of an appropriate {\em rotation}\/ of our coordinate axes.
+In general, if we restrict ourselves to rotations about one of the Cartesian 
+axes,   {\em three}\/ successive rotations are required to
+transform the fixed frame into the body frame. There are, in fact, many different
+ways to combined three successive rotations in order to achieve this. In the following, we shall describe the
+most widely used method, which is due to Euler.
+
+We start in the fixed frame, which has coordinates $x$, $y$, $z$, and
+unit vectors ${\bf e}_x$, ${\bf e}_y$, ${\bf e}_z$.  Our first rotation
+is counterclockwise (looking down the axis) through an angle $\phi$ about the $z$-axis. The new frame has coordinates $x''$, $y''$, $z''$, and
+unit vectors ${\bf e}_{x''}$, ${\bf e}_{y''}$, ${\bf e}_{z''}$. According
+to Equations~(\ref{t1})--(\ref{t3}), the transformation of coordinates can be represented as
+follows:
+\begin{equation}\label{e9.72}
+\left(\begin{array}{c}x''\\y''\\z''\end{array}\right)=
+\left(\begin{array}{ccc}
+\cos\phi&\sin\phi&0\\
+-\sin\phi&\cos\phi&0\\
+0&0&1
+\end{array}\right)\left(\begin{array}{c}x\\y\\z\end{array}\right).
+\end{equation}
+The angular velocity vector associated with $\phi$ has the magnitude $\dot{\phi}$, 
+and is directed along ${\bf e}_z$ ({\em i.e.}, along the axis of rotation).
+Hence, we can write
+\begin{equation}\label{e9.73}
+\mbox{\boldmath$\omega$}_\phi = \dot{\phi}\,{\bf e}_z.
+\end{equation}
+Clearly, $\dot{\phi}$ is the precession rate about the ${\bf e}_z$ axis,
+as seen in the fixed frame.
+
+The second rotation is counterclockwise (looking down the axis) through
+an angle $\theta$ about the $x''$-axis. The new frame has coordinates
+$x'''$, $y'''$, $z'''$, and unit vectors ${\bf e}_{x'''}$, ${\bf e}_{y'''}$, ${\bf e}_{z'''}$. By analogy with Equation~(\ref{e9.72}), the transformation
+of coordinates can be represented as follows:
+\begin{equation}
+\left(\begin{array}{c}x'''\\y'''\\z'''\end{array}\right)=
+\left(\begin{array}{ccc}
+1&0&0\\
+0&\cos\theta&\sin\theta\\
+0&-\sin\theta&\cos\theta
+\end{array}\right)\left(\begin{array}{c}x''\\y''\\z''\end{array}\right).
+\end{equation}
+The angular velocity vector associated with $\theta$ has the magnitude $\dot{\theta}$, 
+and is directed along ${\bf e}_{x''}$ ({\em i.e.}, along the axis of rotation).
+Hence, we can write
+\begin{equation}\label{e9.75}
+\mbox{\boldmath$\omega$}_\theta = \dot{\theta}\,{\bf e}_{x''}.
+\end{equation}
+
+The third rotation is counterclockwise (looking down the axis) through
+an angle $\psi$ about the $z'''$-axis. The new frame is the body frame, which has coordinates
+$x'$, $y'$, $z'$, and unit vectors ${\bf e}_{x'}$, ${\bf e}_{y'}$, ${\bf e}_{z'}$. The transformation of coordinates can be represented as
+follows:
+\begin{equation}
+\left(\begin{array}{c}x'\\y'\\z'\end{array}\right)=
+\left(\begin{array}{ccc}
+\cos\psi&\sin\psi&0\\
+-\sin\psi&\cos\psi&0\\
+0&0&1
+\end{array}\right)\left(\begin{array}{c}x'''\\y'''\\z'''\end{array}\right).
+\end{equation}
+The angular velocity vector associated with $\psi$ has the magnitude $\dot{\psi}$, 
+and is directed along ${\bf e}_{z''}$ ({\em i.e.}, along the axis of rotation).
+Note that ${\bf e}_{z'''}={\bf e}_{z'}$, since the third rotation is about
+${\bf e}_{z'''}$.
+Hence, we can write
+\begin{equation}\label{e9.77}
+\mbox{\boldmath$\omega$}_\psi= \dot{\psi}\,{\bf e}_{z'}.
+\end{equation}
+Clearly, $\dot{\psi}$ is {\em minus}\/ the precession rate about the ${\bf e}_{z'}$ axis, as seen in the body frame.
+
+The full transformation between the fixed frame and the body frame
+is rather complicated. However, the following results can easily be
+verified:
+\begin{eqnarray}\label{e9.78}
+{\bf e}_z &=& \sin\psi\,\sin\theta\,{\bf e}_{x'} + \cos\psi\,\sin\theta\,{\bf e}_{y'}
++ \cos\theta\,{\bf e}_{z'},\\[0.5ex]\label{e9.79}
+{\bf e}_{x''} &=& \cos\psi\,{\bf e}_{x'} -\sin\psi\,{\bf e}_{y'}.
+\end{eqnarray}
+It follows from Equation~(\ref{e9.78}) that ${\bf e}_z\!\cdot\!{\bf e}_{z'} =\cos\theta$. In other words, $\theta$ is the angle of inclination between the
+$z$- and $z'$-axes.
+Finally, since the total angular velocity can be written
+\begin{equation}\label{e9.81aa}
+\mbox{\boldmath$\omega$} = \mbox{\boldmath$\omega$}_\phi
++\mbox{\boldmath$\omega$}_\theta+\mbox{\boldmath$\omega$}_\psi,
+\end{equation}
+Equations~(\ref{e9.73}), (\ref{e9.75}), and (\ref{e9.77})--(\ref{e9.79})
+yield
+\begin{eqnarray}\label{e9.81}
+\omega_{x'} &=& \sin\psi\,\sin\theta\,\dot{\phi} +\cos\psi\,\dot{\theta},\\[0.5ex]
+\omega_{y'} &=& \cos\psi\,\sin\theta\,\dot{\phi}-\sin\psi\,\dot{\theta},\label{e9.82}\\[0.5ex]\label{e9.83}
+\omega_{z'} &=& \cos\theta\,\dot{\phi} +\dot{\psi}.
+\end{eqnarray}
+
+The angles $\phi$, $\theta$, and $\psi$ are termed {\em Eulerian angles}. Each has a clear physical interpretation: $\phi$ is the angle of precession
+about the ${\bf e}_z$ axis in the fixed frame, $\psi$ is minus the angle of precession about the
+${\bf e}_{z'}$ axis in the body frame, and $\theta$ is the angle of inclination
+between the ${\bf e}_z$ and ${\bf e}_{z'}$ axes. Moreover, we can
+express the components of the angular velocity vector \mbox{\boldmath$\omega$} in the body frame entirely in terms of the Eulerian angles, and their time derivatives  [see Equations~(\ref{e9.81})--(\ref{e9.83})].
+
+Consider a rigid body which is constrained to rotate about a fixed axis with
+the constant angular velocity $\omega$. Let the fixed angular velocity
+vector point along the $z$-axis.  In the previous section, we saw that
+the angular momentum and the torque were both steady in the body frame.
+Since there is no precession of quantities in the body frame, it follows that
+the Eulerian angle $\psi$ is  constant. Furthermore, since the angular velocity vector is
+fixed in the body frame, as well as the fixed frame [as can be seen by applying Equation~(\ref{e9.49})
+to \mbox{\boldmath$\omega$} instead of ${\bf L}$], it must subtend a constant angle  with the
+${\bf e}_{z'}$ axis. Hence, the Eulerian angle $\theta$ is also constant.
+It follows from Equations~(\ref{e9.81})--(\ref{e9.83}) that
+\begin{eqnarray}
+\omega_{x'} &=& \sin\psi\,\sin\theta\,\dot{\phi},\\[0.5ex]
+\omega_{y'} &=& \cos\psi\,\sin\theta\,\dot{\phi},\\[0.5ex]
+\omega_{z'} &=& \cos\theta\,\dot{\phi},
+\end{eqnarray}
+which implies that $ \omega\equiv (\omega_{x'}^{\,2}+\omega_{y'}^{\,2}+\omega_{z'}^{\,2})^{1/2}=\dot{\phi}$. In other words, the precession
+rate, $\dot{\phi}$,  in the fixed frame is equal to $\omega$. Hence, in the fixed frame,
+the constant torque and angular momentum vectors found in the body
+frame {\em precess}\/ about the angular velocity vector ({\em i.e.}, about the
+$z$-axis) at the rate $\omega$. As discussed in the previous section, for the special case where the angular
+velocity vector is {\em parallel}\/ to one of the  principal axes of the body, the angular
+momentum vector is parallel to the angular velocity vector, and the torque is {\em zero}. Thus,
+in this case, there is no precession in the fixed frame.
+
+Consider a rotating device such as a flywheel or a propeller. If the device
+is {\em statically balanced}\/ then its center of mass lies on the axis
+of rotation. This is desirable since, otherwise, gravity, which effectively
+acts at the center of mass, exerts a varying torque about the
+axis of rotation as the device rotates, giving rise to unsteady rotation. If the device is
+{\em dynamically balanced}\/ then the axis of rotation is also
+a principal axis, so that, as the device rotates its angular momentum vector,
+${\bf L}$,
+remains parallel to the axis of rotation. This is desirable since, otherwise,
+the angular momentum vector is not parallel to the axis of rotation, and, therefore, precesses around it. Since $d{\bf L}/dt$ is equal to the
+torque, a precessing torque must also be applied to the device (at right-angles
+to both the axis and ${\bf L}$). The result is a reaction
+on the bearings which can give rise to violent vibration and
+wobbling, even when the device is statically balanced.
+
+Consider a freely rotating body which is rotationally symmetric about one axis (the $z'$-axis). In the absence of an external torque, the
+angular momentum vector ${\bf L}$ is a constant of the motion [see Equation~(\ref{e9.3})]. Let ${\bf L}$ point along the $z$-axis. In the
+previous section, we saw that the angular momentum vector subtends a
+constant angle $\theta$ with the axis of symmetry: {\em i.e.}, with the $z'$-axis. Hence, the time derivative
+of the Eulerian angle $\theta$ is zero. We also saw that the angular momentum
+vector, the axis of symmetry, and the angular velocity vector are coplanar.
+Consider an instant in time at which all of these vectors lie in the $y'$-$z'$
+plane. This implies that $\omega_{x'}=0$. According to the
+previous section, the angular velocity vector subtends a constant
+angle $\alpha$ with the symmetry axis.  It follows that
+$\omega_{y'}=\omega\,\sin\alpha$ and $\omega_{z'}=\omega\,\cos\alpha$. Equation (\ref{e9.81}) yields
+$\psi=0$. Hence, Equation~(\ref{e9.82}) yields
+\begin{equation}\label{e9.88}
+\omega\,\sin\alpha = \sin\theta\,\dot{\phi}.
+\end{equation}
+This can be combined with Equation~(\ref{e9.73a}) to give
+\begin{equation}\label{e9.89}
+\dot{\phi} = \omega\left[1 + \left(\frac{I_\parallel^{\,2}}{I_\perp^{\,2}}-1\right)\cos^2\alpha\right]^{1/2}.
+\end{equation}
+Finally, Equations~(\ref{e9.83}), together with (\ref{e9.73a}) and (\ref{e9.88}),
+yields
+\begin{equation}
+\dot{\psi} = \omega\,\cos\alpha-\cos\theta\,\dot{\phi} = \omega\,\cos\alpha\left(1-\frac{\tan\alpha}{\tan\theta}\right)=
+\omega\,\cos\alpha\left(1-\frac{I_\parallel}{I_\perp}\right).
+\end{equation}
+A comparison of the above equation with Equation~(\ref{e9.68a}) gives
+\begin{equation}
+\dot{\psi}=-{\mit\Omega}.
+\end{equation}
+Thus, as expected, $\dot{\psi}$ is minus the precession rate (of the angular
+momentum and angular velocity vectors) in the body frame. On the other hand, $\dot{\phi}$ is the precession rate (of the angular velocity vector
+and the symmetry axis) in the
+fixed frame. Note that $\dot{\phi}$ and ${\mit\Omega}$ are
+quite dissimilar. For instance, ${\mit\Omega}$ is negative for elongated
+bodies ($I_\parallel<I_\perp$) whereas $\dot{\phi}$ is positive definite. It follows that the precession is always in the
+same sense as $L_z$ in the fixed frame, whereas the
+precession in the body frame is in the opposite sense to $L_{z'}$ for elongated bodies. We
+found, in the previous section, that for a {\em flattened}\/ body the angular
+momentum  vector lies between the angular velocity vector and the symmetry
+axis. This means that, in the fixed frame, the angular velocity vector
+and the symmetry axis lie on {\em opposite}\/ sides of the fixed angular
+momentum vector.  On the other hand, for an {\em elongated}\/ body
+we found that the angular velocity vector lies between the angular momentum
+vector and the symmetry axis. This means that, in the fixed frame, the
+angular velocity vector and the symmetry axis lie on the {\em same}\/ side of
+the fixed angular momentum vector. (Recall that the angular
+momentum vector, the angular velocity vector, and the symmetry
+axis, are coplanar.)
+
+As an example, consider the free rotation of a thin disk. It is easily
+demonstrated (from the perpendicular axis theorem)
+that
+\begin{equation}
+I_\parallel = 2\,I_\perp
+\end{equation}
+for such a disk. Hence, from Equation~(\ref{e9.68a}), the precession rate in the
+body frame is
+\begin{equation}
+{\mit\Omega} = \omega\,\cos\alpha.
+\end{equation}
+According to Equation~(\ref{e9.89}), the precession rate in the fixed frame is
+\begin{equation}
+\dot{\phi} = \omega\left[1+ 3\,\cos^2\alpha\right]^{1/2}.
+\end{equation}
+In the limit in which $\alpha$ is small ({\em i.e.}, in which the
+angular velocity vector is almost parallel to the symmetry axis),
+we obtain
+\begin{eqnarray}
+{\mit\Omega}&\simeq & \omega,\\[0.5ex]
+\dot{\phi}&\simeq & 2\,\omega.
+\end{eqnarray}
+Thus, the symmetry axis precesses in the fixed frame at approximately
+twice the angular speed of rotation. This precession is manifest as
+a wobbling motion.
+
+It is known that the axis of rotation of the Earth is  very slightly inclined to
+its symmetry axis (which passes through the two geographic poles). The angle $\alpha$ is approximately $0.2$ seconds of an arc
+(which corresponds to a distance of about $6\,{\rm m}$ on the Earth's surface).
+It is also known that the ratio of the terrestrial moments of inertia 
+is about $I_\parallel/I_\perp=1.00327$, as determined from the
+Earth's oblateness---see Section~\ref{smcl}. Hence, from (\ref{e9.68a}), the precession rate of the
+angular velocity vector about the symmetry axis, as viewed in a geostationary reference frame, is
+\begin{equation}
+{\mit\Omega} = 0.00327\,\omega,
+\end{equation}
+giving a precession period of
+\begin{equation}
+T'= \frac{2\pi}{{\mit\Omega}} = 305\,\,{\rm days}.
+\end{equation}
+(Of course, $2\pi/\omega = 1$ day.)
+The observed period of precession is about 440 days. The disagreement
+between theory and observation is attributed to the fact that the Earth
+is not perfectly rigid. 
+The Earth's symmetry axis subtends an angle $\theta\simeq \alpha = 0.2''$ [see (\ref{e9.73a})] with 
+its  angular momentum vector, but lies on the opposite side of this vector to the angular velocity vector. 
+This implies that, as viewed from space, the Earth's angular velocity vector is almost parallel to its
+fixed angular momentum vector, whereas its symmetry axis subtends an angle of $0.2"$ with both vectors, and
+precesses about them.
+The (theoretical) precession rate of the Earth's symmetry
+axis, as seen from space, is given by Equation~(\ref{e9.89}):
+\begin{equation}
+\dot{\phi} = 1.00327\,\omega.
+\end{equation}
+The associated precession period is
+\begin{equation}
+T = \frac{2\pi}{\dot{\phi}} = 0.997\,\,{\rm days}.
+\end{equation}
+The free precession of the Earth's symmetry axis in space, which is  known as the {\em Chandler wobble}, since it
+was discovered by the American astronomer Seth Chandler in 1891, 
+ is superimposed on
+a much slower  forced precession, with a period of about 26,000 years, caused by
+the small gravitational torque exerted on the Earth by the Sun and the
+Moon, as a consequence of the Earth's slight oblateness---see Section~\ref{sprec}. 
+
+\section{Gyroscopic Precession}\label{sgyro}
+Let us now study the motion of a {\em rigid rotationally symmetric top}\/ which
+is free to turn about a fixed point (without friction), but which is
+subject to a gravitational torque---see Figure~\ref{top}. Suppose that the $z'$-axis
+coincides with the symmetry axis. Let the principal moment of inertia about the symmetry axis
+be $I_\parallel$, and let the other principal moments both take the value $I_\perp$.
+Suppose that the
+$z$-axis points vertically upward, and let the common origin, $O$,  of  the
+fixed and body frames coincide with the fixed point about which the top
+turns. Suppose that
+the center of mass of the top lies a distance $l$ along its symmetry axis from point $O$, and
+that the mass of the top is $m$. Let the symmetry axis of the
+top subtend an angle $\theta$ (which is an Eulerian angle) with
+the upward vertical. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter08/fig8.03.eps}}
+\caption{\em A symmetric top.}\label{top}
+\end{figure}
+
+Consider an instant in time at which the Eulerian angle $\psi$ is zero.
+This implies that the $x'$-axis is horizontal [see Equation~(\ref{e9.78})], as shown in the diagram.
+The gravitational force, which acts at the
+center of mass, thus exerts a torque $m\,g\,l\,\sin\theta$ in the
+$x'$-direction. Hence, the components of the torque in the body
+frame are
+\begin{eqnarray}
+T_{x'} &=& m\,g\,l\,\sin\theta,\\[0.5ex]
+T_{y'} &=& 0,\\[0.5ex]
+T_{z'} &=& 0.
+\end{eqnarray}
+The components of the angular velocity vector in the body frame
+are given by Equations~(\ref{e9.81})--(\ref{e9.83}). 
+ Thus, Euler's equations
+(\ref{e9.51})--(\ref{e9.53}) take the form:
+\begin{eqnarray}
+m\,g\,l\,\sin\theta &=& I_\perp\,(\ddot{\theta}- \cos\theta\,\sin\theta\,\dot{\phi}^{\,2}) + L_\psi\,\sin\theta\,\dot{\phi},\label{e9.104}\\[0.5ex]
+0&=& I_\perp\,(2\,\cos\theta\,\dot{\theta}\,\dot{\phi} +\sin\theta\,\ddot{\phi}) - L_\psi\,\dot{\theta},\label{e9.105}\\[0.5ex]
+0&=& \dot{L}_\psi,\label{e9.106}
+\end{eqnarray}
+where
+\begin{equation}
+L_\psi = I_\parallel\,(\cos\theta\,\dot{\phi}+\dot{\psi})= I_\parallel\,{\mit\Omega},
+\end{equation}
+and ${\mit\Omega} = \omega_{z'}$ is the angular velocity of the top.
+Multiplying Equation (\ref{e9.105}) by $\sin\theta$, we obtain
+\begin{equation}\label{e9.108}
+\dot{L}_\phi = 0,
+\end{equation}
+where
+\begin{equation}\label{e9.109}
+L_\phi = I_\perp\,\sin^2\theta\,\dot{\phi} + L_\psi\,\cos\theta.
+\end{equation}
+According to Equations~(\ref{e9.106}) and (\ref{e9.108}), the
+two quantities $L_\psi$ and $L_\phi$ are constants
+of the motion. These two quantities are the {\em angular momenta}\/ of the
+system about the $z'$- and $z$-axis, respectively. (To be more exact,
+they are the generalized momenta conjugate to the coordinates $\psi$ and
+$\phi$, respectively---see Section~\ref{s10.8}.) They
+are conserved because the gravitational torque has no component
+along either the $z'$-  or the $z$-axis. (Alternatively, they are
+conserved because the Lagrangian of the top does not depend explicitly
+on the coordinates $\psi$ and $\theta$---see Section~\ref{s10.8}.)
+
+If there are no frictional forces acting on the top then the total
+energy, $E=K+U$, is also a constant of the motion. Now,
+\begin{equation}
+E = \frac{1}{2}\,\left(I_\perp\,\omega_{x'}^{\,2} + I_\perp\,\omega_{y'}^{\,2}+
+I_\parallel\,\omega_{z'}^{\,2}\right) + m\,g\,l\,\cos\theta.
+\end{equation}
+When written in terms of the Eulerian angles (with $\psi=0$), this
+becomes
+\begin{equation}\label{e9.111}
+E=\frac{1}{2}\left(I_\perp\,\dot{\theta}^{\,2} + I_\perp\,\sin^2\theta\,\dot{\phi}^{\,2} + L_\psi^{\,2}/I_\parallel\right) + m\,g\,l\,\cos\theta.
+\end{equation}
+Eliminating $\dot{\phi}$ between Equations~(\ref{e9.109}) and (\ref{e9.111}),
+we obtain the following differential equation for $\theta$:
+\begin{equation}
+E = \frac{1}{2}\,I_\perp\,\dot{\theta}^{\,2} + \frac{(L_\phi-L_\psi\,\cos\theta)^2}{2\,I_\perp\,\sin^2\theta} + \frac{1}{2}\frac{L_\psi^{\,2}}{I_\parallel} + m\,g\,l\,\cos\theta.
+\end{equation}
+Let
+\begin{equation}
+E' = E - \frac{1}{2}\frac{L_\psi^{\,2}}{I_\parallel},
+\end{equation}
+and $u=\cos\theta$. It follows that
+\begin{equation}
+\dot{u}^{\,2} = 2\,(E' -m\,g\,l\,u)\,(1-u^2)\,I_\perp^{-1} - (L_\phi-L_\psi\,u)^2\,I_\perp^{-2},
+\end{equation}
+or
+\begin{equation}\label{e9.115}
+\dot{u}^{\,2} = f(u),
+\end{equation}
+where $f(u)$ is a {\em cubic}\/ polynomial. In principal, the above equation
+can be integrated to give $u$ (and, hence, $\theta$) as a function of $t$:
+\begin{equation}\label{e9.116}
+t = \int_{u_0}^u\frac{du'}{\sqrt{f(u')}}.
+\end{equation}
+
+Fortunately, we do not have to perform the above integration (which is very ugly)
+in order to discuss the general properties of the solution to
+Equation~(\ref{e9.115}). It is clear, from Equation~(\ref{e9.116}), that $f(u)$
+needs to be {\em positive}\/ in order to obtain a physical solution. Hence, the
+limits of the motion in $\theta$ are determined by the three roots of the
+equation $f(u)=0$. Since $\theta$ must lie between $0$ and $\pi/2$,
+it follows that $u$ must lie between 0 and 1. It can easily be demonstrated that 
+$f\rightarrow\pm\infty$ as $u\rightarrow\pm\infty$. It can also be shown
+that the
+largest root $u_3$ lies in the region $u_3>1$, and the two smaller
+roots $u_1$ and $u_2$ (if they exist) lie in the region $-1\leq u\leq +1$.
+It follows that, in the region $-1\leq u\leq 1$, $f(u)$ is only positive between $u_1$ and $u_2$. 
+Figure~\ref{fcurve} shows
+a case where $u_1$ and $u_2$ lie in the range
+0 to 1. The corresponding values of $\theta$---$\theta_1$ and $\theta_2$, say---are then the limits of the vertical motion.
+The axis of the top oscillates backward and forward between these two
+values of $\theta$ as the top precesses about the vertical axis. This
+oscillation is called {\em nutation}. Incidentally, if $u_1$ becomes
+negative then the nutation will cause the top to strike the ground (assuming
+that it is spinning on a level surface).
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter08/fig8.04.eps}}
+\caption{\em The function $f(u)$.}\label{fcurve}
+\end{figure}
+
+If there is a double root of $f(u)=0$ ({\em i.e.}, if $u_1 = u_2$) then
+there is no nutation, and the top precesses steadily.  However, the
+criterion for steady precession is most easily obtained directly from
+Equation~(\ref{e9.104}). In the absence of nutation, $\dot{\theta}=\ddot{\theta}=0$.
+Hence, we obtain
+\begin{equation}
+m\,g\,l = -I_\perp\,\cos\theta\,\dot{\phi}^{\,2}+ L_\psi\,\dot{\phi},
+\end{equation}
+or 
+\begin{equation}\label{e9.118}
+{\mit\Omega}= \frac{m\,g\,l}{I_\parallel\,\dot{\phi}} + \frac{I_\perp}{I_\parallel}\,\cos\theta\,\dot{\phi}.
+\end{equation}
+The above equation is the criterion for steady precession. 
+Since the right-hand side of Equation~(\ref{e9.118}) possesses a minimum
+value, which is given by  $2\,\sqrt{m\,g\,l\,I_\perp\,\cos\theta}/I_\parallel$, it follows that
+\begin{equation}
+{\mit\Omega} >  {\mit\Omega}_{\rm crit} = \frac{2\,\sqrt{m\,g\,l\,I_\perp\,\cos\theta}}{I_\parallel}
+\end{equation}
+is a necessary condition for obtaining steady precession at the
+inclination angle $\theta$. For ${\mit\Omega}>{\mit\Omega}_{\rm crit}$, there are two
+roots to Equation~(\ref{e9.118}), corresponding to a slow and a fast steady
+precession rate for a given inclination angle $\theta$. If ${\mit\Omega}\gg {\mit\Omega}_{\rm crit}$ then these two roots are approximately given by
+\begin{eqnarray}
+(\dot{\phi})_{\rm slow} &\simeq & \frac{m\,g\,l}{I_\parallel\,{\mit\Omega}},\\[0.5ex]
+(\dot{\phi})_{\rm fast} &\simeq & \frac{I_\parallel\,{\mit\Omega}}{I_\perp\,\cos\theta}.
+\end{eqnarray}
+The slower of these two precession rates is the one which is
+generally observed.
+
+\section{Rotational Stability}
+Consider a rigid body for which all of the principal moments of inertia
+are distinct. Let $I_{z'z'} > I_{y'y'} > I_{x'x'}$. Suppose that the
+body is rotating freely  about one of its principal axes. What happens when the
+body is slightly disturbed? 
+
+Let the body be  initially rotating about the $x'$-axis, so that
+\begin{equation}
+\mbox{\boldmath$\omega$} = \omega_{x'}\,{\bf e}_{x'}.
+\end{equation}
+If we apply a slight perturbation then the angular velocity becomes
+\begin{equation}
+\mbox{\boldmath$\omega$} = \omega_{x'}\,{\bf e}_{x'} + \lambda\,{\bf e}_{y'} + \mu\,{\bf e}_{z'},
+\end{equation}
+where $\lambda$ and $\mu$ are both assumed to be small.
+Euler's equations (\ref{e9.51})--(\ref{e9.53}) take the
+form
+\begin{eqnarray}
+I_{x'x'}\,\dot{\omega}_{x'} - (I_{y'y'}-I_{z'z'})\,\lambda\,\mu&=& 0,\\[0.5ex]
+I_{y'y'}\,\dot{\lambda} - (I_{z'z'}-I_{x'x'})\,\omega_{x'}\,\mu &=& 0,\\[0.5ex]
+I_{z'z'} \,\dot{\mu} - (I_{x'x'}-I_{y'y'})\,\omega_{x'}\,\lambda&=& 0.
+\end{eqnarray}
+Since $\lambda\,\mu$ is second-order in small quantities---and, therefore, negligible---the first of the above equations tells us that $\omega_{x'}$
+is an approximate constant of the motion. The other two equations
+can be written
+\begin{eqnarray}
+\dot{\lambda} &=& \left[\frac{(I_{z'z'}-I_{x'x'})\,\omega_{x'}}{I_{y'y'}}\right]\mu,\\[0.5ex]
+\dot{\mu} &=& - \left[\frac{(I_{y'y'}-I_{x'x'})\,\omega_{x'}}{I_{z'z'}}\right]\lambda.
+\end{eqnarray}
+Differentiating the first equation with respect to time, and then eliminating
+$\dot{\mu}$, we obtain
+\begin{equation}
+\ddot{\lambda} + \left[\frac{(I_{y'y'}-I_{x'x'})\,(I_{z'z'}-I_{x'x'})}{I_{y'y'}\,I_{z'z'}}\right]\omega_{x'}^{\,2} \,\lambda = 0.
+\end{equation}
+It is easily demonstrated that $\mu$ satisfies the same differential equation.
+Since the term in square brackets in the above equation is {\em positive},
+the equation takes the form of a {\em simple harmonic equation}, and, thus,
+has the bounded solution:
+\begin{equation}
+\lambda = \lambda_0 \,\cos({\mit\Omega}_{x'}\,t' - \alpha).
+\end{equation}
+Here, $\lambda_0$ and $\alpha$ are constants of integration, and
+\begin{equation}
+{\mit\Omega}_{x'} = \left[\frac{(I_{y'y'}-I_{x'x'})\,(I_{z'z'}-I_{x'x'})}{I_{y'y'}\,I_{z'z'}}\right]^{1/2}\! \omega_{x'}.
+\end{equation}
+Thus, the body oscillates sinusoidally about its initial state
+with the angular frequency ${\mit\Omega}_{x'}$.
+It follows that  the body  is {\em stable}\/ to small perturbations
+when rotating about the $x'$-axis, in the sense that the amplitude of
+such perturbations does not grow in time.
+
+Suppose that the body is initially rotating about the $z'$-axis, and
+is subject to a small perturbation. A similar argument to the above allows
+us to conclude that the body oscillates sinusoidally about its initial state
+with angular frequency
+\begin{equation}
+{\mit\Omega}_{z'} = \left[\frac{(I_{z'z'}-I_{x'x'})\,(I_{z'z'}-I_{y'y'})}{I_{x'x'}\,I_{y'y'}}\right]^{1/2}\! \omega_{z'}.
+\end{equation}
+Hence, the body is also stable to small perturbations when rotating about the
+$z'$-axis.
+
+Suppose, finally, that the body is initially rotating about the $y'$-axis,
+and is subject to a small perturbation, such that
+\begin{equation}
+\mbox{\boldmath$\omega$} = \lambda\,{\bf e}_{x'} + \omega_{y'}\,{\bf e}_{y'} + \mu\,{\bf e}_{z'}.
+\end{equation}
+It is easily demonstrated that $\lambda$ satisfies the following differential
+equation:
+\begin{equation}
+\ddot{\lambda} - \left[\frac{(I_{y'y'}-I_{x'x'})\,(I_{z'z'}-I_{y'y'})}{I_{x'x'}\,I_{z'z'}}\right]\omega_{y'}^{\,2} \,\lambda = 0.
+\end{equation}
+Note that the term in square brackets is {\em positive}. Hence, the
+above equation is {\em not}\/ the simple harmonic equation. Indeed
+its solution takes the form
+\begin{equation}
+\lambda = A\,{\rm e}^{\,k\,t'} + B\,{\rm e}^{-k\,t'}.
+\end{equation}
+Here, $A$ and $B$ are constants of integration, and
+\begin{equation}
+k= \left[\frac{(I_{y'y'}-I_{x'x'})\,(I_{z'z'}-I_{y'y'})}{I_{x'x'}\,I_{z'z'}}\right]^{1/2}\omega_{y'}.
+\end{equation}
+In this case, the amplitude of the perturbation grows exponentially in time.
+Hence,  the body is {\em unstable}\/ to small perturbations
+when rotating about the $y'$-axis.
+
+In conclusion,  a rigid body with three distinct principal moments of inertia is stable to small perturbations when rotating about the
+principal axes with the largest and smallest  moments, but
+is unstable when rotating about the axis with the intermediate
+ moment.
+
+Finally, if two of the principal moments are the same then it can be shown
+that the body is only stable to small perturbations when rotating
+about the principal axis whose  moment is distinct from the other two.
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{8.\arabic{enumi}}
+\begin{enumerate}
+\item Find the principal axes of rotation and the principal moments of inertia for a
+thin uniform rectangular plate of mass $m$ and dimensions $2\,a$ by $a$ for rotation
+about  axes passing through (a) the center of mass, and (b) a corner.
+\item A rigid body having an axis of symmetry rotates freely about a fixed point under no
+torques. If $\alpha$ is the angle between the symmetry axis and the instantaneous axis of
+rotation, show that the angle between the axis of rotation and the invariable line
+(the ${\bf L}$ vector) is
+$$
+\tan^{-1}\left[\frac{(I_\parallel-I_\perp)\,\tan\alpha}{I_\parallel-I_\perp\,\tan^2\alpha}\right]
+$$
+where $I_\parallel$ (the moment of inertia about the symmetry axis) is greater than $I_\perp$
+(the moment of inertia about an axis normal to the symmetry axis).
+\item Since the greatest value of $I_\parallel/I_\perp$ is 2 (symmetrical lamina) show
+from the previous result that the angle between the angular velocity and angular momentum
+vectors cannot exceed $\tan^{-1}(1/\sqrt{8})\simeq19.5^\circ$. Find the corresponding
+value of $\alpha$. 
+\item A thin uniform rod of length $l$ and mass $m$ is constrained to rotate
+with constant angular velocity $\omega$ about an axis passing through the
+center of the rod, and making an angle $\alpha$ with the rod.
+Show that the angular momentum about the center of the rod is perpendicular to the rod, and is of magnitude $(m\,l^2\,\omega/12)\,\sin\alpha$. Show that
+the torque is perpendicular to both the rod and the angular momentum vector,
+and is of magnitude $(m\,l^2\omega^2/12)\,\sin\alpha\,\cos\alpha$. 
+
+\item A thin uniform disk of radius $a$ and mass $m$ is constrained to rotate
+with constant angular velocity $\omega$ about an axis passing through its center, and making an angle $\alpha$ with the normal to the disk.
+Find the angular momentum about the center of the disk, as
+well as the torque acting on the disk. 
+\item Demonstrate that for an isolated rigid body which possesses an
+axis of symmetry, and rotates about one of its principal axes, the motion is
+only stable to small perturbations if the principal axis is that which corresponds to the
+symmetry axis. 
+
+\end{enumerate}
+
+}

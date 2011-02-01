@@ -1,0 +1,1163 @@
+\chapter{Vector Algebra and Vector Calculus}\label{vector}
+\section{Introduction}
+This appendix contains a brief outline of  vector algebra and vector calculus. The essential purpose of {\em vector algebra}\/
+is to convert the propositions of Euclidean geometry  in three-dimensional
+space into a convenient algebraic form. {\em Vector calculus}\/ allows us to define
+the instantaneous velocity and acceleration of a moving object in three-dimensional space, as
+well as the work done when such an object travels along a general
+curved trajectory in a force field. Vector calculus also introduces the concept of a {\em scalar
+field}: {\em e.g.}, the potential energy associated with a conservative force field.
+
+\section{Scalars and Vectors}
+Many physical quantities ({\em e.g.}, mass, energy) are 
+ entirely defined by a numerical magnitude (in appropriate units). Such quantities, which have no directional element, are
+known as {\em scalars}. Moreover, since scalars can be represented by real numbers,
+it follows that they obey the familiar laws of ordinary algebra. However, there exits a
+second class of physical quantities ({\em e.g.}, velocity, acceleration, force) which are
+only completely defined when both a numerical magnitude {\em and}\/ a direction in space is specified. 
+Such quantities are known as {\em vectors}. By definition, a vector obeys the same algebra as
+a displacement in space, and may thus be represented geometrically by a
+straight-line, $\stackrel{\displaystyle \rightarrow}{PQ}$ (say), where the arrow
+indicates the direction of the displacement ({\em i.e.}, from point $P$ to point $Q$)---see Figure~\ref{fig1}. 
+The magnitude of the vector is represented by the length of the  straight-line.
+
+\begin{figure}
+\epsfysize=1.25in
+\centerline{\epsffile{AppendixA/figA.01.eps}}
+\caption{\em A vector.}\label{fig1}
+\end{figure}
+
+It is conventional to denote vectors by bold-faced symbols ({\em e.g.}, ${\bf a}$, ${\bf F}$) and
+scalars by non-bold-faced symbols ({\em e.g.}, $r$, $S$). The magnitude of
+a general vector, ${\bf a}$, is  denoted  $|{\bf a}|$, or just $a$, and is, by definition, always
+greater than or equal to zero. It is convenient to define a vector with zero magnitude---this is
+denoted ${\bf 0}$, and has no direction. Finally, two vectors, ${\bf a}$ and ${\bf b}$, are said
+to be equal when their magnitudes and directions are identical. 
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{AppendixA/figA.02.eps}}
+\caption{\em Vector addition.}\label{fig2}
+\end{figure}
+
+\section{Vector Algebra}
+Suppose that the displacements $\stackrel{\displaystyle \rightarrow}{PQ}$ and  $\stackrel{\displaystyle \rightarrow}{QR}$
+represent the vectors ${\bf a}$ and ${\bf b}$, respectively---see Figure~\ref{fig2}. It can be seen that the result
+of combining these two displacements is to give the net displacement $\stackrel{\displaystyle \rightarrow}{PR}$. Hence,
+if
+ $\stackrel{\displaystyle \rightarrow}{PR}$ represents the vector ${\bf c}$ then we can write
+ \begin{equation}
+ {\bf c} = {\bf a} + {\bf b}.
+ \end{equation}
+ This defines {\em vector addition}. 
+ By completing the parallelogram $PQRS$, we can also see that
+ \begin{equation}
+ \stackrel{\displaystyle \rightarrow}{PR} \,= \, \stackrel{\displaystyle \rightarrow}{PQ}+\stackrel{\displaystyle \rightarrow}{QR}\,=\, 
+  \stackrel{\displaystyle \rightarrow}{PS}+\stackrel{\displaystyle \rightarrow}{SR}.
+  \end{equation}
+However, $\stackrel{\displaystyle \rightarrow}{PS}$ has the same length and direction as $\stackrel{\displaystyle \rightarrow}{QR}$,
+and, thus, represents the {\em same}\/ vector, ${\bf b}$. Likewise,  $\stackrel{\displaystyle \rightarrow}{PQ}$ and $\stackrel{\displaystyle \rightarrow}{SR}$ both represent the vector ${\bf a}$. Thus, the above equation is equivalent to
+\begin{equation}
+{\bf c} = {\bf a} + {\bf b} = {\bf b} + {\bf a}.
+\end{equation}
+We conclude that the addition of vectors is  {\em commutative}.  It can also
+be shown that the {\em associative}\/ law  holds: {\em i.e.}, 
+\begin{equation}
+{\bf a} +
+ ({\bf b} + {\bf c}) = ({\bf a} + {\bf b}) + {\bf c}.
+ \end{equation}
+
+The null vector, ${\bf 0}$, is represented by a displacement of zero length and arbitrary direction. 
+Since the result of combining such a displacement with a  finite length displacement is the same
+as the latter displacement by itself, it follows that
+\begin{equation}
+{\bf a} + {\bf 0} = {\bf a},
+\end{equation}
+where ${\bf a}$ is a general vector. 
+The negative of ${\bf a}$ is defined as that vector which has the same magnitude, but  acts in the opposite direction, and is denoted $-{\bf a}$.
+The sum of ${\bf a}$ and  $-{\bf a}$ is  thus
+the null vector: {\em i.e.},
+\begin{equation}
+{\bf a} + (-{\bf a}) = {\bf 0}.
+\end{equation}
+We can also define the difference of two vectors, ${\bf a}$ and ${\bf b}$, as
+\begin{equation}
+{\bf c} = {\bf a} - {\bf b} = {\bf a} +(-{\bf b}).
+\end{equation}
+This definition of {\em vector subtraction}\/ is illustrated in Figure~\ref{fig2a}. 
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.02a.eps}}
+\caption{\em Vector subtraction.}\label{fig2a}
+\end{figure}
+
+If $n>0$ is a scalar then the expression $n\,{\bf a}$ denotes a vector whose direction is the same
+as ${\bf a}$, and whose magnitude
+is $n$ times that of ${\bf a}$. (This definition becomes obvious when $n$ is an integer.)
+If $n$ is negative then, since $n\,{\bf a} = |n|\,(-{\bf a})$, it follows
+that $n\,{\bf a}$ is a vector whose magnitude is $|n|$ times that of ${\bf a}$, and whose
+direction is opposite to ${\bf a}$. These definitions imply that if $n$ and $m$ are
+two scalars then
+\begin{eqnarray}
+n\,(m\,{\bf a}) &=& n\,m\,{\bf a} = m\,(n\,{\bf a}),\\[0.5ex]
+(n+m)\,{\bf a} &=& n\,{\bf a} + m\,{\bf a},\\[0.5ex]
+n\,({\bf a} + {\bf b}) &=& n\,{\bf a} + n\,{\bf b}.
+\end{eqnarray}
+
+\section{Cartesian Components of a Vector}
+Consider a Cartesian coordinate system $Oxyz$ consisting of
+an origin, $O$, and three mutually perpendicular coordinate axes, $Ox$, $Oy$, and
+$Oz$---see Figure~\ref{fig2b}. Such a system is said to be {\em right-handed}\/  if, when looking along the $Oz$ direction, a $90^\circ$ clockwise
+rotation about $Oz$  is required to take $Ox$ into $Oy$. Otherwise, it is said to be left-handed. In physics, it is conventional to always use   right-handed coordinate systems. 
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.02b.eps}}
+\caption{\em A right-handed Cartesian coordinate system.}\label{fig2b}
+\end{figure}
+
+It is convenient to define unit vectors, ${\bf e}_x$, ${\bf e}_y$, and ${\bf e}_z$,  parallel to $Ox$, $Oy$, and $Oz$, respectively.
+Incidentally, a unit vector is a vector whose magnitude is unity. The position vector, ${\bf r}$,  of some general point $P$ whose Cartesian coordinates
+are ($x$, $y$, $z$) is then given by
+\begin{equation}
+{\bf r} = x\,{\bf e}_z + y\,{\bf e}_y+z\,{\bf e}_z.
+\end{equation}
+In other words, we can get from $O$ to $P$ by moving a distance $x$ parallel to $Ox$, then a distance
+$y$ parallel to $Oy$, and then a distance $z$ parallel to $Oz$. Similarly, if ${\bf a}$ is an arbitrary vector then 
+\begin{equation}
+{\bf a} = a_x\,{\bf e}_x+ a_y\,{\bf e}_y+a_z\,{\bf e}_z,
+\end{equation}
+where $a_x$, $a_y$, and $a_z$ are termed the {\em Cartesian components}\/ of ${\bf a}$. It is coventional to write ${\bf a} \equiv (a_x,\,a_y,\,a_z)$. 
+It follows that ${\bf e}_x\equiv (1,\,0,\,0)$, ${\bf e}_y\equiv (0,\,1,\,0)$, and ${\bf e}_z\equiv
+(0,\,0,\,1)$. Of course, ${\bf 0} \equiv (0,\,0,\,0)$. 
+
+According to the three-dimensional generalization of the Pythagorean theorem, the distance $OP\equiv |{\bf r}|=r$ is
+given by
+\begin{equation}
+r = \sqrt{x^2 + y^2 + z^2}.
+\end{equation}
+By analogy, the magnitude of a general vector ${\bf a}$ takes the form
+\begin{equation}
+a = \sqrt{a_x^{\,2} + a_y^{\,2} + a_z^{\,2}}.
+\end{equation}
+
+If ${\bf a}\equiv (a_x,\,a_y,\,a_z)$ and ${\bf b}\equiv (b_x,\,b_y,\,b_z)$ then it is
+easily demonstrated that
+\begin{equation}
+{\bf a} + {\bf b} \equiv (a_x+b_x,\,a_y+b_y,\,a_z+b_z).
+\end{equation}
+Furthermore, if $n$ is a scalar then it is apparent that
+\begin{equation}
+n\,{\bf a} \equiv (n\,a_x,\,n\,a_y,\,n\,a_z).
+\end{equation}
+
+\section{Coordinate Transformations}\label{stransx}
+A Cartesian coordinate system allows  position and direction in space to be represented in a very convenient
+manner. Unfortunately, such a coordinate system also introduces arbitrary elements into our analysis. After all, two independent observers might well choose coordinate systems with different origins, and
+different orientations of the coordinate axes. In general, a given vector ${\bf a}$ will have different
+sets of components in these two coordinate systems. However, the direction and magnitude of ${\bf a}$ are the
+same in both cases. Hence, the two sets of components must be related to one another in a very particular fashion.  
+Actually, since vectors are represented by {\em moveable}\/ line elements in space ({\em i.e.},  in Figure~\ref{fig2},  $\stackrel{\displaystyle \rightarrow}{PQ}$ and  $\stackrel{\displaystyle \rightarrow}{SR}$ represent the {\em same}\/ vector), it follows that
+the components of a general vector are not affected by a simple shift in the origin of a Cartesian coordinate system. On the other hand, the
+components are modified when the coordinate axes are rotated. 
+
+Suppose that we transform to a new coordinate system, $Ox'y'z'$, which has the
+same origin as $Oxyz$, and is obtained by 
+rotating the coordinate axes of $Oxyz$ through an angle
+$\theta$ about  $Oz$---see Figure~\ref{f3}.
+Let the coordinates of a general point $P$ be $(x,\,y,\,z)$ in $Oxyz$ and $(x',\, y',\, z')$ in $Ox'y'z'$. According to simple trigonometry, these two sets of coordinates are related to one another via the transformation:
+\begin{eqnarray}
+x' &=& x\cos\theta + y\sin \theta,\label{t1}\\[0.5ex]
+y' &=& -x\sin\theta + y\cos\theta,\label{t2}\\[0.5ex]
+z' &=& z.\label{t3}
+\end{eqnarray}
+Consider the vector displacement ${\bf r} \equiv\, \stackrel{\displaystyle \rightarrow}{OP}$. 
+Note that this displacement is represented by the {\em same}\/ symbol, ${\bf r}$, in both
+coordinate systems, since the magnitude and
+direction of ${\bf r}$ are manifestly {\em independent}\/ of the orientation of the coordinate axes. The
+coordinates of ${\bf r}$ {\em do}\/ depend on the orientation of the axes: {\em i.e.}, ${\bf r}\equiv (x,\,y,\,z)$ in $Oxyz$, and
+${\bf r}\equiv (x',\,y',\,z')$ in $Ox'y'z'$. 
+However, they must depend in a very specific manner [{\em i.e.}, Equations~(\ref{t1})--(\ref{t3})] which
+preserves the magnitude and direction of ${\bf r}$.
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.03.eps}}
+\caption{\em Rotation of the coordinate axes about $Oz$.}\label{f3}
+\end{figure}
+
+The 
+components of a general vector ${\bf a}$  transform in an analogous
+manner to Equations~(\ref{t1})--(\ref{t3}): {\em i.e.}, 
+\begin{eqnarray}
+a_{x'} &=& a_x\cos\theta + a_y\sin \theta,\label{tt1}\\[0.5ex]
+a_{y'} &=& -a_x\sin\theta + a_y\cos\theta,\\[0.5ex]
+a_{z'} &=& a_z.\label{tt3}
+\end{eqnarray}
+Moreover, there are similar transformation rules for rotation about $Ox$ and $Oy$.
+Equations~(\ref{tt1})--(\ref{tt3}) effectively constitute the {\em definition}\/ of a vector: {\em i.e.}, 
+ the three
+quantities ($a_x,\, a_y,\, a_z$) are the components of a vector provided that
+they transform under rotation of the coordinate axes about $Oz$ in accordance with Equations~(\ref{tt1})--(\ref{tt3}). (And also transform
+correctly under rotation about $Ox$ and $Oy$).
+Conversely, ($a_x,\, a_y,\, a_z$) {\em cannot}\/ be the components of a vector if they
+do not transform in accordance with Equations~(\ref{tt1})--(\ref{tt3}). Of course, scalar quantities are {\em invariant}\/
+ under rotation of the coordinate axes.
+Thus, the individual components of a vector ($a_x$, say) are real numbers, but 
+they are
+{\em not}\/ scalars.
+Displacement vectors, and all vectors derived from
+displacements ({\em e.g.}, velocity, acceleration), automatically satisfy Equations~(\ref{tt1})--(\ref{tt3}). There are, however, other
+physical quantities which have both magnitude and direction, but which are not
+obviously related to displacements. We need to check carefully to see whether these
+quantities are really vectors (see Section~\ref{srotn}). 
+
+\section{Scalar Product}
+A scalar quantity is invariant under all possible rotational transformations.
+The individual components of a vector are not scalars because they change under
+transformation. Can we form a scalar out of some combination of the components
+of one, or more, vectors? Suppose that we were to define the
+``percent''  product,
+\begin{equation}
+{\bf a}\,\%\,{\bf b} \equiv a_x \,b_z + a_y \,b_x + a_z \,b_y = {\rm scalar~number},
+\end{equation}
+for general vectors ${\bf a}$ and ${\bf b}$. Is ${\bf a}\,\%\,{\bf b}$ 
+invariant under transformation, as must be the case if it is a scalar number?
+Let us consider an example. Suppose that ${\bf a} \equiv (0,\,1,\,0)$ and
+${\bf b} \equiv (1,\,0,\,0)$. It is easily seen that ${\bf a}\,\%\,{\bf b}= 1$. Let
+us now rotate the coordinate axes through $45^\circ$ about  $Oz$. In the new
+coordinate system, ${\bf a} \equiv (1/\sqrt{2},\, 1/\sqrt{2},\, 0)$ and ${\bf b} \equiv (1/\sqrt{2},\,-
+1/\sqrt{2},\, 0)$, giving ${\bf a}\,\%\,{\bf b} = 1/2$. Clearly, ${\bf a}\,\%\,{\bf b}$
+is {\em not} invariant under rotational transformation, so 
+the above definition is a bad one.
+
+Consider, now, 
+the {\em dot product}\/ or {\em scalar product}:
+\begin{equation}
+{\bf a} \cdot {\bf b} \equiv a_x \,b_x + a_y \,b_y + a_z \,b_z =  {\rm scalar~number}.
+\end{equation}
+Let us rotate the coordinate axes though $\theta$ degrees about $Oz$. According to
+Equations~(\ref{tt1})--(\ref{tt3}),  ${\bf a} \cdot {\bf b}$ takes the form
+\begin{eqnarray}
+ {\bf a} \cdot {\bf b} &= &(a_x\, \cos\theta+a_y\,\sin\theta)\,(b_x\,\cos\theta + b_y\,\sin\theta)\nonumber\\[0.5ex]
+&&+(-a_x\,\sin\theta + a_y\,\cos\theta)\,(-b_x\,\sin \theta + b_y\,\cos\theta)
++a_z\, b_z\nonumber\\[0.5ex]
+&= &a_x\, b_x + a_y\, b_y + a_z\, b_z
+\end{eqnarray}
+in the new coordinate system.
+Thus, 
+${\bf a} \cdot {\bf b}$ {\em is}\/ invariant under rotation about $Oz$. It can easily
+be shown that it is also invariant under rotation about $Ox$ and $Oy$.
+We conclude that ${\bf a} \cdot {\bf b}$ is a true scalar, and that the above definition is
+a good one. Incidentally, ${\bf a} \cdot {\bf b}$ is the {\em only}\/
+simple  combination of
+the components of two vectors which transforms like a scalar. It is easily
+shown that the dot product  is commutative  and distributive: {\em i.e.},
+\begin{eqnarray}
+{\bf a} \cdot {\bf b} &=& {\bf b} \cdot {\bf a},\nonumber\\[0.5ex] 
+{\bf a}\cdot({\bf b}+{\bf c}) &=& {\bf a} \cdot {\bf b} + {\bf a}\cdot {\bf c}.
+\end{eqnarray}
+The associative property is meaningless for the dot product, because we cannot
+have $({\bf a}\cdot{\bf b}) \cdot{\bf c}$, since  ${\bf a}\cdot{\bf b}$ is scalar.
+
+We have shown that the dot product ${\bf a} \cdot {\bf b}$ is coordinate independent.
+But what is the geometric significance of this? Well, in the special case
+where ${\bf a} = {\bf b}$, we get
+\begin{equation}
+{\bf a} \cdot {\bf b} = a_x^{~2}+a_y^{~2} + a_z^{~2} = |{\bf a}|^2=a^2.
+\end{equation}
+So, the invariance of ${\bf a} \cdot {\bf a}$ is equivalent to the invariance 
+of the magnitude of  vector ${\bf a}$ under transformation. 
+
+Let us now investigate the general case. The length squared of $AB$ in the
+vector triangle shown in Figure~\ref{f5} is
+\begin{equation}
+({\bf b} - {\bf a} ) \cdot ({\bf b} - {\bf a} ) = |{\bf a}|^2 + |{\bf b}|^2 - 2\,{\bf a} \cdot
+{\bf b}.
+\end{equation}
+However, according to the ``cosine rule'' of trigonometry,
+\begin{equation}
+(AB)^2 = (OA)^2 + (OB)^2 - 2 \,(OA)\,(OB)\,\cos\theta,
+\end{equation}
+where $(AB)$ denotes the length of side $AB$. It follows that
+\begin{equation}
+{\bf a} \cdot {\bf b} = |{\bf a}|\, |{\bf b}|\, \cos\theta.
+\end{equation}
+In this case, the invariance of ${\bf a} \cdot {\bf b}$ under transformation is equivalent
+to the invariance of the angle subtended between the two vectors. Note that
+if ${\bf a} \cdot {\bf b} =0$ then either $|{\bf a}|=0$, $|{\bf b}|=0$, or the vectors
+$\bf a$ and $\bf b$ are mutually perpendicular. The angle subtended between two vectors
+can easily be obtained from the dot product: {\em i.e.}, 
+\begin{equation}
+\cos\theta = \frac{{\bf a} \cdot {\bf b}}{|{\bf a}| \,|{\bf b}| }.
+\end{equation}
+
+\begin{figure}
+\epsfysize=1.5in
+\centerline{\epsffile{AppendixA/figA.04.eps}}
+\caption{\em A vector triangle.}\label{f5}
+\end{figure}
+
+The work $W$ performed by a constant force $\bf F$ which moves an object through a displacement $\bf r$
+is the product of the magnitude of $\bf F$ times the displacement in the direction
+of $\bf F$. If the angle subtended between  $\bf F$ and $\bf r$ is $\theta$ then
+\begin{equation}
+W = |{\bf F}| \,(|{\bf r}|\,\cos\theta) = {\bf F}\cdot {\bf r}.
+\end{equation}
+
+The work $dW$ performed by a non-constant force ${\bf f}$ which moves an
+object through an infinitesimal displacement $d{\bf r}$ in a time interval $dt$ is $dW={\bf f}\cdot d{\bf r}$. Thus, the rate at which the force does
+work on the object, which is usually referred to as the power, is
+$P = dW/dt = {\bf f}\cdot d{\bf r}/dt$, or $P={\bf f}\cdot {\bf v}$,
+where ${\bf v} = d{\bf r}/dt$ is the object's instantaneous velocity.
+
+\section{Vector Product}\label{svecp}
+We have discovered how to construct a {\em scalar}\/ from the components of two
+general vectors $\bf a$ and $\bf b$. Can we also construct a {\em vector}\/ which is not
+just a linear combination of $\bf a$ and $\bf b$? Consider the following definition:
+\begin{equation}
+{\bf a} \ast{\bf b} \equiv (a_x \,b_x,\, a_y\, b_y,\, a_z \,b_z).
+\end{equation}
+Is ${\bf a} \ast {\bf b}$ a proper vector? Suppose  that ${\bf a} =
+(0,\,1,\,0)$, ${\bf b} = (1,\,0,\,0)$. In this case,  ${\bf a} \ast {\bf b}= {\bf 0}$.
+However, if we rotate the coordinate axes through $45^\circ$ about $Oz$ then
+${\bf a} = (1/\sqrt{2},\, 1/\sqrt{2},\, 0)$, ${\bf b} = (1/\sqrt{2},\, -1/\sqrt{2},\,0)$,
+and ${\bf a}\ast {\bf b} = (1/2,\, -1/2,\,0)$. Thus, ${\bf a}\ast {\bf b}$ does
+not transform like a vector, because its magnitude depends on the choice of axes.
+So, above definition is a bad one.
+
+Consider, now, the {\em cross product}\/ or {\em vector product}:
+\begin{equation}
+{\bf a}\times{\bf b} \equiv (a_y \, b_z-a_z\, b_y,\, a_z\, b_x - a_x\, b_z,\, a_x\, b_y - a_y\, b_x)
+={\bf c}.
+\end{equation}
+Does this rather unlikely combination transform like a vector? Let us try
+rotating the coordinate axes through an angle $\theta$  about $Oz$ using Equations~(\ref{tt1})--(\ref{tt3}).
+In the new coordinate system,
+\begin{eqnarray}
+c_{x'} &= &(-a_x\, \sin\theta + a_y\,\cos\theta)\,b_z - a_z\,(-b_x\, \sin\theta + b_y\,\cos\theta)
+\nonumber\\[0.5ex]
+&=& (a_y\, b_z - a_z\, b_y)\, \cos\theta + (a_z\, b_x-a_x\, b_z)\,\sin\theta\nonumber\\[0.5ex]
+& =& c_x\,\cos\theta
++c_y\,\sin\theta.
+\end{eqnarray}
+Thus, the $x$-component of ${\bf a}\times{\bf b}$ transforms correctly. It can
+easily  be shown that the other components transform correctly as well, and that
+all components also transform correctly under rotation about $Ox$ and $Oy$. 
+Thus, ${\bf a}\times {\bf b}$ is a proper vector. Incidentally, ${\bf a}\times {\bf b}$
+is the {\em only}\/ simple combination of the components of two vectors that transforms
+like a vector (which is non-coplanar with ${\bf a}$ and ${\bf b}$).
+ The cross product is 
+{\em anticommutative},
+\begin{equation}
+{\bf a}\times{\bf b} = - {\bf b} \times{\bf a},
+\end{equation}
+distributive,
+\begin{equation}
+{\bf a}\times({\bf b} +{\bf c})=  {\bf a} \times{\bf b}+{\bf a}\times{\bf c},
+\end{equation}
+but is {\em not}\/ associative,
+\begin{equation}
+{\bf a}\times({\bf b} \times{\bf c})\neq ({\bf a}\times{\bf b}) \times{\bf c}.
+\end{equation}
+
+The cross product  transforms like a vector, which
+means that it must have  a well-defined direction and magnitude. We can show
+that ${\bf a}\times{\bf b}$ is {\em perpendicular}\/ to both ${\bf a}$ and ${\bf b}$.
+Consider ${\bf a}\cdot {\bf a}\times{\bf b}$. If this is zero then the cross product
+must be perpendicular to ${\bf a}$. Now,
+\begin{eqnarray}
+{\bf a}\cdot {\bf a}\times{\bf b} &= &a_x\,(a_y\, b_z-a_z\, b_y) + a_y\, (a_z\, b_x- a_x \,b_z)
++a_z\,(a_x \,b_y - a_y\, b_x)\nonumber\\[0.5ex]
+&=& 0.
+\end{eqnarray}
+Therefore, ${\bf a}\times {\bf b}$ is perpendicular to ${\bf a}$. Likewise, it can
+be demonstrated that ${\bf a}\times{\bf b}$ is perpendicular to ${\bf b}$. 
+The vectors $\bf a$, $\bf b$, and ${\bf a}\times{\bf b}$ form a {\em right-handed}\/
+set, like the unit vectors ${\bf e}_x$, ${\bf e}_y$, and ${\bf e}_z$. In fact,  ${\bf e}_x\times
+{\bf e}_y={\bf e}_z$. This defines a unique direction for ${\bf a}\times{\bf b}$, which
+is obtained from a right-hand rule---see Figure~\ref{f6}.
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.05.eps}}
+\caption{\em The right-hand rule for cross products. Here, $\theta$ is less that $180^\circ$.}\label{f6}
+\end{figure}
+
+Let us now evaluate the magnitude of ${\bf a}\times {\bf b}$. We have
+\begin{eqnarray}
+({\bf a}\times{\bf b})^2 &=& (a_y \,b_z-a_z\, b_y)^2 +(a_z \,b_x - a_x\, b_z)^2 +(a_x \,b_y
+-a_y \,b_x)^2\nonumber\\[0.5ex]
+&=& (a_x^{~2}+a_y^{~2}+a_z^{~2})\,(b_x^{~2}+b_y^{~2}+b_z^{~2}) -
+(a_x\, b_x + a_y \,b_y + a_z\, b_z)^2\nonumber\\[0.5ex]
+&=& |{\bf a}|^2 \,|{\bf b}|^2 - ({\bf a}\cdot {\bf b})^2\nonumber\\[0.5ex]
+&=& |{\bf a}|^2 \,|{\bf b}|^2 - |{\bf a}|^2 \,|{\bf b}|^2 \,\cos^2\theta = |{\bf a}|^2\,|{\bf b}|^2\, \sin^2\theta.
+\end{eqnarray}
+Thus,
+\begin{equation}
+|{\bf a}\times{\bf b}| = |{\bf a}|\,|{\bf b}|\,\sin\theta,
+\end{equation}
+where $\theta$ is the angle subtended between ${\bf a}$ and ${\bf b}$.
+Clearly, ${\bf a}\times{\bf a} = {\bf 0}$ for any vector, since $\theta$ is always
+zero in this case. Also, if ${\bf a}\times{\bf b} = {\bf 0}$ then either
+$|{\bf a}|=0$, $|{\bf b}|=0$, or ${\bf b}$ is parallel (or antiparallel) to ${\bf a}$.
+
+Consider the parallelogram defined by the vectors ${\bf a}$ and ${\bf b}$---see Figure~\ref{f7}.
+The {\em scalar area}\/ of the parallelogram is $a\,b \sin\theta$. By convention, the {\em vector area}\/ has the magnitude of the
+scalar area, and is normal to the plane of the parallelogram, in the sense obtained from a right-hand circulation rule by rotating ${\bf a}$ on to
+${\bf b}$ (through an acute angle): {\em i.e.}, if the fingers of the right-hand circulate in the direction of
+rotation then the thumb of the right-hand indicates the direction of the vector area. So, the vector area is coming out of the
+page in Figure~\ref{f7}.
+It follows that
+\begin{equation}
+{\bf S} = {\bf a}\times {\bf b},
+\end{equation}
+
+\begin{figure}[b]
+\epsfysize=1.25in
+\centerline{\epsffile{AppendixA/figA.06.eps}}
+\caption{\em A vector parallelogram.}\label{f7}
+\end{figure}
+
+Suppose that a force ${\bf F}$ is applied at position ${\bf r}$---see Figure~\ref{f8}.
+The torque about the origin $O$ is the product of the magnitude of the force and
+the length of the lever arm $OQ$. Thus, the magnitude of the torque is
+$|{\bf F}|\,|{\bf r}|\,\sin\theta$. The direction of the torque is conventionally defined as the direction of
+the axis through $O$ about which the force tries to rotate objects, in the sense
+determined by a right-hand circulation rule. Hence, the torque is out of the page in Figure~\ref{f8}.
+ It follows that the vector torque is
+given by
+\begin{equation}
+\btau = {\bf r}\times{\bf F}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{AppendixA/figA.07.eps}}
+\caption{\em A torque.}\label{f8}
+\end{figure}
+
+The angular momentum, ${\bf l}$, of a particle of linear momentum ${\bf p}$ and position vector ${\bf r}$ is simply defined as the moment of its
+momentum about the origin: {\em i.e.}, 
+\begin{equation}
+{\bf l}={\bf r}\times {\bf p}.
+\end{equation}
+
+\section{Rotation}\label{srotn}
+Let us try to define a rotation vector \mbox{\boldmath$\theta$} whose magnitude
+is the angle of the rotation, $\theta$, and whose direction is parallel to the axis of 
+rotation, in the sense determined by a right-hand circulation rule. Unfortunately, this is not a good vector. The problem is that the addition of rotations
+is not commutative, whereas vector addition is commuative. 
+Figure~\ref{f9} shows the effect of applying two successive $90^\circ$ rotations,
+one about $Ox$, and the other about the $Oz$, to a standard six-sided die. In the
+left-hand case, the $z$-rotation is applied before the $x$-rotation, and {\em vice
+versa} in the right-hand case. It can be seen that the die ends up in two completely
+different states. In other words, the $z$-rotation plus the
+$x$-rotation does not equal
+the  $x$-rotation plus the $z$-rotation. This non-commuting algebra cannot be
+represented by vectors. So, although rotations have a well-defined magnitude and
+direction, they are {\em not}\/ vector quantities. 
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{AppendixA/figA.08.eps}}
+\caption{\em Effect of successive rotations about perpendicular axes on a six-sided die.}\label{f9}
+\end{figure}
+
+But, this is not quite the end of the story. Suppose that we take a general vector
+$\bf a$ and rotate it about $Oz$ by a {\em small}\/ angle $\delta \theta_z$.
+This is equivalent to rotating the coordinate axes about the $Oz$ by $-\delta\theta_z$.
+According to Equations~(\ref{tt1})--(\ref{tt3}), we have
+\begin{equation}
+{\bf a}' \simeq {\bf a} +\delta\theta_z \,{\bf e}_z\times {\bf a},
+\end{equation}
+where use has been made of the small angle approximations $\sin\theta \simeq \theta$
+and $\cos\theta\simeq 1$. The above equation can easily be generalized to allow
+small rotations about $Ox$ and $Oy$ by $\delta \theta_x$ and $\delta\theta_y$,
+respectively. We find that
+\begin{equation}\label{e2.41z}
+{\bf a}' \simeq {\bf a} + \delta \mbox{\boldmath$\theta$}\times {\bf a},
+\end{equation}
+where
+\begin{equation}
+\delta\mbox{\boldmath$\theta$} = \delta\theta_x \,{\bf e}_x + \delta\theta_y \,{\bf e}_y + 
+ \delta\theta_z \,{\bf e}_z.
+\end{equation}
+Clearly, we can define a rotation vector, \mbox{$\delta$\boldmath$\theta$}, but it only
+works for {\em small}\/ angle rotations ({\em i.e.}, sufficiently small that the small
+angle approximations of sine and cosine are good). According to the above equation,
+a small $z$-rotation plus a small $x$-rotation is (approximately) equal to 
+the two rotations applied in the opposite order. 
+The fact that infinitesimal rotation is a vector implies that angular velocity,
+\begin{equation}
+\mbox{\boldmath$\omega$} = \lim_{\delta t\rightarrow 0} \frac{\delta 
+\mbox{\boldmath$\theta$} }{\delta t},
+\end{equation}
+must be a vector as well. Also, if ${\bf a}'$ is interpreted as ${\bf a}(t+\delta t)$
+in Equation~(\ref{e2.41z}) then it follows that the equation of motion of a vector
+which precesses  about the origin with some angular velocity \mbox{\boldmath$\omega$} is
+\begin{equation}
+\frac{d {\bf a}}{dt} = \mbox{\boldmath$\omega$}\times {\bf a}.\label{e239}
+\end{equation}
+
+\section{Scalar Triple Product}\label{sstp}
+Consider three vectors ${\bf a}$, ${\bf b}$, and ${\bf c}$. The {\em scalar triple product}\/ is
+defined ${\bf a}\cdot {\bf b}\times {\bf c}$. Now, ${\bf b}\times {\bf c}$ is the vector area of
+the parallelogram defined by ${\bf b}$ and ${\bf c}$. So, ${\bf a}\cdot {\bf b} \times{\bf c}$
+is the scalar area of this parallelogram multiplied by the component of ${\bf a}$ in the direction
+of its  normal. It follows that ${\bf a}\cdot {\bf b}\times{\bf c}$ is
+the {\em volume}\/ of the parallelepiped defined by vectors ${\bf a}$, ${\bf b}$, and ${\bf c}$---see Figure~\ref{f9a}.
+This volume is independent of how the triple product is formed from ${\bf a}$, ${\bf b}$, 
+and ${\bf c}$, except that 
+\begin{equation}
+{\bf a} \cdot {\bf b}\times{\bf c} = - {\bf a} \cdot {\bf c}\times{\bf b}.
+\end{equation}
+So, the ``volume'' is positive if ${\bf a}$, ${\bf b}$, and ${\bf c}$ form a right-handed set
+({\em i.e.}, if ${\bf a}$ lies above the plane of ${\bf b}$ and ${\bf c}$,
+in the sense determined from a right-hand circulation rule by rotating
+${\bf b}$ onto ${\bf c}$) and negative if they form a left-handed set. 
+The triple product is unchanged if the dot and cross product operators are interchanged,
+\begin{equation}
+{\bf a} \cdot {\bf b}\times{\bf c} = {\bf a} \times{\bf b} \cdot{\bf c}.
+\end{equation}
+The triple product is also invariant under any cyclic permutation of ${\bf a}$, ${\bf b}$,
+and ${\bf c}$,
+\begin{equation}
+{\bf a} \cdot {\bf b} \times{\bf c} = {\bf b} \cdot {\bf c} \times{\bf a} = 
+{\bf c} \cdot {\bf a} \times{\bf b},
+\end{equation}
+but any anti-cyclic permutation causes it to change sign,
+\begin{equation}
+{\bf a} \cdot  {\bf b} \times{\bf c} = - {\bf b} \cdot {\bf a} \times{\bf c}.
+\end{equation}
+The scalar triple product is zero if any
+two of ${\bf a}$, ${\bf b}$, and ${\bf c}$ are parallel, or if ${\bf a}$, ${\bf b}$, and ${\bf c}$
+are coplanar. 
+\begin{figure}
+\epsfysize=1.5in
+\centerline{\epsffile{AppendixA/figA.09.eps}}
+\caption{\em A vector parallelepiped.}\label{f9a}
+\end{figure}
+
+
+If ${\bf a}$, ${\bf b}$, and ${\bf c}$ are non-coplanar then any vector ${\bf r}$ can be
+written in terms of them: {\em i.e.}, 
+\begin{equation}
+{\bf r} = \alpha \,{\bf a} + \beta\,{\bf b} + \gamma\, {\bf c}.
+\end{equation}
+Forming the dot product of this equation with ${\bf b}\times{\bf c}$, we then obtain
+\begin{equation}
+{\bf r}  \cdot {\bf b} \times{\bf c} = \alpha\, {\bf a}\cdot{\bf b} \times{\bf c},
+\end{equation}
+so
+\begin{equation}
+\alpha = \frac{{\bf r}\cdot{\bf b}\times{\bf c}}{{\bf a}\cdot{\bf b}\times{\bf c}}.
+\end{equation}
+Analogous expressions can be written for $\beta$ and $\gamma$. The parameters $\alpha$, $\beta$,
+and $\gamma$ are uniquely determined provided $ {\bf a}\cdot{\bf b} \times{\bf c} \neq 0$:
+{\em i.e.}, provided that the three vectors are non-coplanar. 
+
+\section{Vector Triple Product}\label{svtp}
+For three vectors ${\bf a}$, ${\bf b}$, and ${\bf c}$, the {\em vector triple product}\/ is defined
+${\bf a}\times({\bf b} \times {\bf c})$. The brackets are important because
+${\bf a}\times({\bf b} \times {\bf c}) \neq ({\bf a}\times{\bf b} )\times {\bf c}$. 
+In fact, it can be demonstrated that
+\begin{equation}
+{\bf a}\times({\bf b} \times {\bf c}) \equiv ({\bf a}\cdot {\bf c}) \,{\bf b} - ({\bf a}\cdot
+{\bf b})\,{\bf c}\label{e247}
+\end{equation}
+and
+\begin{equation}
+({\bf a}\times{\bf b}) \times {\bf c}\equiv ({\bf a}\cdot {\bf c}) \,{\bf b} - ({\bf b}\cdot
+{\bf c})\,{\bf a}.
+\end{equation}
+
+Let us try to prove the first of the above theorems. The left-hand side and the
+right-hand side are both proper vectors, so if we can prove this result in one particular
+coordinate system then it must be true in general. Let us take convenient axes such that 
+$Ox$ lies along ${\bf b}$, and ${\bf c}$ lies in the $x$-$y$ plane. It follows that
+${\bf b} \equiv (b_x,\,0,\,0)$, ${\bf c} \equiv (c_x,\, c_y,\, 0)$, and ${\bf a} \equiv (a_x,\, a_y,\, a_z)$. 
+The vector ${\bf b}\times {\bf c}$ is directed along $Oz$: {\em i.e.}, 
+${\bf b}\times{\bf c} \equiv (0,\,0,\,b_x\, c_y)$. Hence, ${\bf a}\times({\bf b}\times{\bf c})$
+lies in the $x$-$y$ plane:  {\em i.e.}, ${\bf a}\times({\bf b}\times{\bf c}) \equiv (a_y \,b_x\, c_y,\, -a_x\, b_x\, c_y,\, 0)$.
+This is the left-hand side of Equation~(\ref{e247}) in our convenient coordinate system. To evaluate the right-hand side,
+we need ${\bf a}\cdot {\bf c} = a_x \,c_x + a_y\, c_y$ and ${\bf a}\cdot {\bf b} = a_x \,b_x$.
+It follows that the right-hand side is 
+\begin{eqnarray}
+{\rm RHS} &= &(\,[a_x\, c_x + a_y \,c_y]\, b_x,\, 0,\, 0) - (a_x \,b_x \,c_x,\, a_x\, b_x\, c_y,\, 0)\nonumber\\[0.5ex]
+&=& (a_y\, c_y\, b_x,\, -a_x\, b_x\, c_y,\, 0 ) = {\rm LHS},
+\end{eqnarray}
+which proves the theorem.
+
+\section{Vector Calculus}\label{s28}
+Suppose that  vector ${\bf a}$ varies with time, so that ${\bf a} = {\bf a} (t)$. The time
+derivative of the vector is defined
+\begin{equation}
+\frac{d {\bf a}}{dt} = \lim_{\delta t\rightarrow 0} \left[\frac{{\bf a}(t+\delta t) - {\bf a}(t)}
+{\delta t}\right].
+\end{equation}
+When written out in component form this becomes
+\begin{equation}
+\frac{d {\bf a}}{dt} \equiv \left(\frac{d a_x}{dt}, \frac{d a_y}{d t}, \frac{d a_z}{ d t}\right).
+\end{equation} 
+
+Suppose that ${\bf a}$ is, in fact, the product of a scalar $\phi(t)$ and another vector
+${\bf b}(t)$. What now is the time derivative of ${\bf a}$? We have
+\begin{equation}
+\frac{d a_x}{dt} = \frac{d}{dt}\!\left(\phi\, b_x\right) = \frac{d\phi}{dt}\, b_x + \phi \,
+\frac{d b_x}{dt},
+\end{equation}
+which implies that
+\begin{equation}
+\frac{d {\bf a}}{dt} = \frac{d\phi}{dt}\, {\bf b} + \phi\, \frac{d {\bf b}}{dt}.
+\end{equation}
+Moreover, it is easily demonstrated that 
+\begin{equation}
+\frac{d}{dt}\left({\bf a}\cdot{\bf b}\right) = \frac{d{\bf a}}{dt}\cdot {\bf b} +{\bf a}\cdot\frac{d{\bf b}}{dt},
+\end{equation}
+and
+\begin{equation}
+\frac{d}{dt}\left({\bf a}\times{\bf b}\right) = \frac{d{\bf a}}{dt}\times{\bf b} + {\bf a}\times
+\frac{d{\bf b}}{dt}.
+\end{equation}
+Hence, it can be seen that the laws of vector differentiation are analogous to those in 
+conventional calculus.
+
+\section{Line Integrals}
+Consider a two-dimensional function $f(x,y)$ which is defined for all $x$ and $y$. 
+What is meant by the integral of $f$ along a given curve joining the points $P$ and $Q$ in the $x$-$y$ plane?
+Well, we first draw out $f$ as a function of length $l$ along the path---see Figure~\ref{f10}. The integral is then simply given
+by
+\begin{equation}
+\int_{P}^Q f(x,y)\,dl = {\rm Area~under~the~curve},
+\end{equation}
+where $dl=\sqrt{dx^2+dy^2}$. 
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{AppendixA/figA.10.eps}}
+\caption{\em A line integral.}\label{f10}
+\end{figure}
+
+As an example of this, consider the integral of $f(x,y)= x\,y^2$ between $P$ and $Q$ along the
+two routes indicated in Figure~\ref{f11}.
+Along route 1 we have $x=y$, so $dl= \sqrt{2}\, dx$. Thus,
+\begin{equation}
+\int_P^Q x\,y^2\,dl = \int_0^1 x^3\,\sqrt{2} \,dx = \frac{\sqrt{2}}{4}.
+\end{equation}
+The integration along route 2 gives
+\begin{eqnarray}
+\int_P^Q x\,y^2\,dl &=& \left.\int_0^1 x\,y^2\,dx\right|_{y=0}+\left.\int_0^1 x\,y^2 \,dy
+\right|_{x=1}\nonumber\\[0.5ex]
+&=& 0 + \int_0^1 y^2\,dy = \frac{1}{3}.
+\end{eqnarray}
+Note that the integral depends on the route taken between the initial and final points. 
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.11.eps}}
+\caption{\em An example line integral.}\label{f11}
+\end{figure}
+
+The most common type of line integral is that in which the contributions from $dx$ and $dy$ are evaluated
+separately, rather that through the path length $dl$: {\em i.e.}, 
+\begin{equation}
+\int_P^Q \left[ f(x,y)\,dx + g(x,y)\,dy\right].
+\end{equation}
+As an example of this, consider the integral
+\begin{equation}
+\int_P^Q \left[ y\,dx + x^3\,dy\right]
+\end{equation}
+along the two routes indicated in Figure~\ref{f12}.
+Along route 1 we have $x=y+1$ and $dx=dy$, so
+\begin{equation}
+\int_P^Q \left[ y\,dx + x^3\,dy\right]= \int_{0}^1\left[y\,dy + (y+1)^3\,dy\right] = \frac{17}{4}.
+\end{equation}
+Along route 2,
+\begin{equation}
+\int_P^Q \left[ y\,dx + x^3\,dy\right]= \left.\int_0^1 x^3\,dy\right|_{x=1} + \left.\int_1^2 y\,dx\right|_{y=1} = \frac{7}{4}.
+\end{equation}
+Again, the integral depends on the path of integration. 
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{AppendixA/figA.12.eps}}
+\caption{\em An example line integral.}\label{f12}
+\end{figure}
+
+Suppose that we have a line integral which does {\em not}\/ depend on the path of integration. It
+follows that
+\begin{equation}
+\int_P^Q \left(f\,dx + g\,dy\right) = F(Q) - F(P)
+\end{equation}
+for some function $F$. Given $F(P)$ for one point $P$ in the $x$-$y$ plane, then
+\begin{equation}
+F(Q) = F(P) + \int_P^Q \left(f\,dx + g\,dy\right)
+\end{equation}
+defines $F(Q)$ for all other points in the plane. We can then draw a contour map of $F(x,y)$.
+The line integral between points $P$ and $Q$ is simply the change in height in the contour
+map between these two points:
+\begin{equation}
+\int_P^Q \left(f\,dx + g\,dy\right) = \int_P^Q dF(x,y) = F(Q) - F(P).
+\end{equation}
+Thus,
+\begin{equation}
+dF(x,y) = f(x,y)\,dx + g(x,y)\,dy.
+\end{equation}
+For instance, if $F=x^3\,y$ then $dF= 3\,x^2\,y\,dx + x^3\,dy$ and 
+\begin{equation}
+\int_P^Q \left(3\,x^2\,y\,dx + x^3\,dy\right) = \left[x^3\,y\right]_P^Q 
+\end{equation}
+is independent of the path of integration. 
+
+It is clear that there are two distinct types of line integral. Those which depend only on their
+endpoints and not on the path of integration, and those which depend  both on their endpoints
+and the integration path. Later on, we shall learn how to distinguish between these two types (see Section~\ref{sgrad}).
+
+\section{Vector Line Integrals}
+A {\em vector field}\/ is defined as a set of vectors associated with each point in space.
+For instance, the velocity ${\bf v}({\bf r})$ in a moving liquid 
+({\em e.g.}, a whirlpool) constitutes
+a vector field. By analogy, a {\em scalar field}\/ is a set of scalars associated with each
+point in space. An example of a scalar field is the temperature distribution $T({\bf r})$ in
+a furnace. 
+
+Consider a general vector field ${\bf A}({\bf r})$. Let $d{\bf r} \equiv (dx,\,dy,\,dz)$ be the
+vector element of line length. Vector line integrals often arise as 
+\begin{equation}
+\int_P^Q {\bf A}\cdot d{\bf r} = \int_P^Q (A_x\,dx+A_y\,dy + A_z\,dz).
+\end{equation}
+For instance, if ${\bf A}$ is a force-field then the line integral is the work done in going from
+$P$ to $Q$. 
+
+As an example, consider the work done by a repulsive inverse-square 
+central field, ${\bf F} = - {\bf r}/ |r^3|$. The 
+element of work done  is $dW={\bf F}\cdot d{\bf r}$. 
+Take $P=(\infty, 0, 0)$ and $Q=(a,0,0)$. Route 1 is along the $x$-axis, so 
+\begin{equation}
+W = \int_{\infty}^a \left(-\frac{1}{x^2}\right)\,dx = \left[\frac{1}{x}\right]_{\infty}^a
+=\frac{1}{a}.
+\end{equation}
+The second route is, firstly, around a large circle ($r=$ constant) to the point
+($a$, $\infty$, 0), and then parallel to the $y$-axis---see Figure~\ref{f13a}. In the first  part, no work is 
+done,
+since ${\bf F}$ is perpendicular to $d{\bf r}$. In the second part,
+\begin{equation}
+W = \int_{\infty}^0 \frac{-y\,dy}{(a^2 + y^2)^{3/2}} = \left[\frac{1}{(y^2+a^2)^{1/2}}
+\right]^0_\infty = \frac{1}{a}.
+\end{equation}
+In this case, the integral is independent of the path. However, not all vector line integrals
+are path independent.
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{AppendixA/figA.13.eps}}
+\caption{\em An example vector line integral.}\label{f13a}
+\end{figure}
+
+\section{Volume Integrals}
+A volume integral takes the form
+\begin{equation}
+\int\!\int\!\int_V f(x,y,z)\,dV,
+\end{equation}
+where $V$ is some volume, and $dV = dx \,dy \,dz$ is a small volume element. The
+volume element is sometimes written $d^3{\bf r}$, or even $d\tau$. 
+
+As an example
+of a volume integral, let us evaluate the center of gravity of a solid pyramid. Suppose that
+the pyramid has a square base of side $a$, a  height $a$, and is composed of material of uniform density. Let the centroid of the base lie at the origin, and let
+the apex lie at $(0,\,0,\,a)$. 
+By symmetry, the center of mass lies on the line joining the centroid  to the apex. 
+In fact, the height of the center of mass is given by
+\begin{equation}
+\overline{z} = \left. \int\!\int\!\int z\,dV\right/ \int\!\int\!\int dV.
+\end{equation}
+The bottom integral is  just the volume of the pyramid, and can be written
+\begin{eqnarray}
+\int\!\int\!\int dV &=& \int_0^a dz \int_{-(a-z)/2}^{(a-z)/2} dy\int_{-(a-z)/2}^{(a-z)/2} dx = \int_0^a (a-z)^2\,dz=\int_0^a (a^2-2\,a\,z+z^2)\,dz\nonumber\\[0.5ex]
+& =& \left[a^2\,z-a\,z^2+z^3/3\right]_0^a= \frac{1}{3}\,a^3.
+\end{eqnarray}
+Here, we have evaluated the $z$-integral last because the limits of the $x$- and $y$- integrals are $z$-dependent. 
+The top integral takes the form
+\begin{eqnarray}
+\int\!\int\!\int z\,dV &=& \int_0^a z\,dz \int_{-(a-z)/2}^{(a-z)/2} dy\int_{-(a-z)/2}^{(a-z)/2} dx = \int_0^a z\,(a-z)^2\,dz=\int_0^a (z\,a^2-2\,a\,z^2+z^3)\,dz\nonumber\\[0.5ex]
+& =& \left[a^2\,z^2/2-2\,a\,z^3/3+z^4/4\right]_0^a= \frac{1}{12}\,a^4.
+\end{eqnarray}
+Thus,
+\begin{equation}
+\bar{z} = \left.\frac{1}{12}\,a^4\right/\frac{1}{3}\,a^3 = \frac{1}{4}\,a.
+\end{equation}
+In other words, the center of mass of a pyramid lies one quarter of the way between the centroid of the base and the apex. 
+
+
+\section{Gradient}\label{sgrad}
+A one-dimensional function $f(x)$ has a  gradient $df/dx$ which is
+defined as the slope of the tangent to the curve at $x$. 
+We wish to extend this idea to cover scalar fields in two and three dimensions. 
+
+Consider a two-dimensional scalar field $h(x,\,y)$, which is (say) height above sea-level in a hilly region.
+Let  $d{\bf r}\equiv(dx,\,dy)$ be an element of horizontal distance. Consider
+$dh/dr$, where $dh$ is the change in height after moving an infinitesimal distance
+$d{\bf r}$. This quantity is  somewhat like the one-dimensional gradient, except that
+$dh$ depends on the {\em direction}\/ of $d{\bf r}$, as well as its magnitude. 
+In the immediate vicinity of some point $P$, the slope reduces to an inclined plane---see Figure~\ref{f15}.
+The largest value of $dh/dr$ is straight up the slope. It is easily shown that for any other direction
+\begin{equation}
+\frac{dh}{dr}= \left(\frac{dh}{dr}\right)_{\rm max}\, \cos\theta,
+\end{equation}
+where $\theta$ is the angle shown in Figure~\ref{f15}. 
+Let us define a two-dimensional vector, ${\bf  grad}\,h$, 
+called the {\em gradient}\/ of $h$, whose magnitude is
+$(dh/dr)_{\rm max}$, and whose direction is the direction of steepest ascent.
+The $\cos\theta$ variation exhibited in the above expression ensures that the component of ${\bf grad}\,h$ in any
+direction is equal to $dh/dr$ for that direction. 
+
+\begin{figure}
+\epsfysize=2.25in
+\centerline{\epsffile{AppendixA/figA.14.eps}}
+\caption{\em A two-dimensional gradient.}\label{f15}
+\end{figure}
+
+The component of $dh/dr$ in the $x$-direction can be  obtained by plotting out the
+profile of $h$ at constant $y$, and then finding the slope of the tangent to the
+curve at given $x$. This quantity is known as the {\em partial derivative}\/ of
+$h$ with respect to $x$ at constant $y$, and is denoted $(\partial h/\partial x)_y$.
+Likewise, the gradient of the profile at constant $x$ is written
+$(\partial h/\partial y)_x$. Note that the subscripts denoting constant-$x$ and
+constant-$y$ are usually omitted, unless there is any ambiguity. If follows that
+in component form
+\begin{equation}
+{\bf grad}\,h \equiv \left(\frac{\partial h}{\partial x},\, \frac{\partial h}{\partial y}
+\right).
+\end{equation}
+
+Now, the equation of the tangent plane at $P=(x_0,\, y_0)$ is
+\begin{equation}
+h_T(x,\,y)= h(x_0,\,y_0) + \alpha\,(x-x_0)+\beta\,(y-y_0).
+\end{equation}
+This has the same local gradients as $h(x,\,y)$, so
+\begin{equation}
+\alpha = \frac{\partial h}{\partial x},~~~~~\beta= \frac{\partial h}{\partial y},
+\end{equation}
+by differentiation of the above.
+For small $dx=x-x_0$ and $dy=y-y_0$, the function $h$ is coincident with the tangent
+plane, so
+\begin{equation}
+dh = \frac{\partial h}{\partial x}\, dx +\frac{\partial h}
+{\partial y}\, dy.
+\end{equation}
+But, ${\bf grad}\,h \equiv (\partial h/\partial x, \,\partial h/\partial y)$ and
+$d{\bf r} \equiv (dx, \,dy)$, so
+\begin{equation}
+dh = {\bf grad}\,h \cdot d{\bf r}.
+\end{equation}
+Incidentally, the above equation demonstrates that ${\bf grad}\,h$ is a proper vector,
+since the left-hand side is a scalar, and, according to the properties of the dot
+product, the right-hand side is also a scalar provided that $d{\bf r}$ and
+${\bf grad}\,h$ are both 
+proper vectors ($d{\bf r}$ is an obvious vector, because it is
+directly derived from displacements).
+
+Consider, now, a three-dimensional temperature distribution $T(x,\,y,\,z)$ in 
+(say) a
+reaction vessel.  Let us define
+${\bf grad}\,T$, as before, as a vector whose magnitude is $(dT/dr)_{\rm max}$,
+and whose direction is the direction of the maximum gradient. 
+This vector is written in component form
+\begin{equation}
+{\bf grad}\,T \equiv \left(\frac{\partial T}{\partial x}, \,\frac{\partial T}{\partial y},\,
+\frac{\partial T}{\partial z}\right).
+\end{equation}
+Here, $\partial T/\partial x\equiv (\partial T/\partial x)_{y, z}$ is the
+gradient of the one-dimensional temperature profile at constant $y$ and $z$. 
+The change in $T$ in going from point $P$ to a neighbouring point offset by
+$d{\bf r}\equiv (dx,\,dy,\,dz)$ is
+\begin{equation}
+dT = \frac{\partial T}{\partial x}\,dx +\frac{\partial T}{\partial y}\,dy+
+ \frac{\partial T}{\partial z}\,dz.
+\end{equation}
+In vector form, this becomes
+\begin{equation}
+dT = {\bf grad}\,T \cdot d{\bf r}.
+\end{equation}
+Suppose that $dT=0$ for some $d{\bf r}$. It follows that
+\begin{equation}
+dT = {\bf grad}\,T \cdot d{\bf r} = 0.
+\end{equation}
+So, $d{\bf r}$ is perpendicular to ${\bf grad}\,T$. Since $dT=0$ along so-called
+``isotherms'' ({\em i.e.}, contours of the temperature), we conclude that the isotherms
+(contours) are everywhere perpendicular to ${\bf grad}\,T$---see Figure~\ref{f16}.
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{AppendixA/figA.15.eps}}
+\caption{\em Isotherms.}\label{f16}
+\end{figure}
+
+It is, of course, possible to integrate $dT$. For instance, the line integral of $dT$ between points $P$ and
+$Q$ is written
+\begin{equation}
+\int_P^Q dT = \int_P^Q {\bf grad}\,T\cdot d{\bf r} = T(Q)-T(P).
+\end{equation}
+This integral is clearly independent of the path taken between $P$ and $Q$, so
+$\int_P^Q {\bf grad }\,T\cdot d{\bf r}$ must be path independent. 
+
+
+Consider a vector field ${\bf A}({\bf r})$. In general, the line integral $\int_P^Q {\bf A}\cdot d{\bf r}$ depends on the path
+taken between the end points,
+but for some special vector fields the integral is path independent. Such fields
+are called {\em conservative}\/ fields. It can be shown that if ${\bf A}$ is a
+conservative field then ${\bf A} = {\bf grad}\,V$ for some scalar field $V$.
+The proof of this is straightforward. Keeping $P$ fixed, we have
+\begin{equation}
+\int_P^Q {\bf A}\cdot d{\bf r} = V(Q),
+\end{equation}
+where $V(Q)$ is a well-defined function, due to the path independent nature of the
+line integral. Consider moving the position of the end point by an infinitesimal
+amount $dx$ in the $x$-direction. We have
+\begin{equation}
+V(Q+dx) = V(Q) + \int_Q^{Q+dx} {\bf A}\cdot d{\bf r} = V(Q) + A_x\,dx.
+\end{equation}
+Hence,
+\begin{equation}
+\frac{\partial V}{\partial x} = A_x,
+\end{equation}
+with analogous relations for the other components of ${\bf A}$. It follows that
+\begin{equation}
+{\bf A} = {\bf grad} \,V.
+\end{equation}
+
+In Newtonian dynamics, the force due to gravity is a good example of a conservative field.
+Now, if ${\bf A}({\bf r})$ is a force-field then  $\int {\bf A}\cdot d{\bf r}$ is the work done
+in traversing some path. If ${\bf A}$ is conservative then
+\begin{equation}
+\oint {\bf A}\cdot d{\bf r} = 0,
+\end{equation}
+where $\oint$ corresponds to the line integral around a {\em closed}\/ loop. 
+The fact that zero net work is done in going around a closed loop is equivalent
+to the conservation of energy (which is why conservative fields are called
+``conservative''). A good example of a non-conservative field is the force due
+to friction. Clearly, a frictional system loses energy in going around a closed
+cycle, so $\oint {\bf A}\cdot d{\bf r} \neq 0$. 
+
+\section{Grad Operator}\label{sgradx}
+It is useful to define the vector {\em operator}
+\begin{equation}
+\nabla \equiv \left( \frac{\partial}{\partial x},\, \frac{\partial}{\partial y},\,
+\frac{\partial }{\partial z}\right),
+\end{equation}
+which is usually called the {\em grad}\/ or  {\em del}\/ operator. 
+This operator acts on everything to
+its right in a expression,   until the end of the expression
+or a closing bracket is reached.
+For instance,
+\begin{equation}
+{\bf grad}\,f  = \nabla f \equiv \left(\frac{\partial f}{\partial x},\,
+\frac{\partial f}{\partial y},\,\frac{\partial f}{\partial z}\right).
+\end{equation}
+For two scalar fields $\phi$ and $\psi$,
+\begin{equation}
+{\bf grad}\,(\phi \,\psi) = \phi\,\, {\bf grad}\,\psi +\psi\,\, {\bf grad}\,\phi
+\end{equation}
+can be written more succinctly as
+\begin{equation}
+\nabla(\phi\, \psi) = \phi \,\nabla\psi + \psi\, \nabla \phi.
+\end{equation}
+
+Suppose that we rotate the coordinate axes through an angle $\theta$  about $Oz$. 
+By analogy with Equations~(\ref{t1})--(\ref{t3}), the old coordinates ($x$,\, $y$, \,$z$) are related 
+to the new ones ($x'$, \,$y'$,\, $z'$) via
+\begin{eqnarray}
+x &=& x'\, \cos\theta - y'\,\sin\theta,\\[0.5ex]
+y &=& x\,'\sin\theta +y'\,\cos\theta,\\[0.5ex]
+z&=& z'.
+\end{eqnarray}
+Now,
+\begin{equation}
+\frac{\partial}{\partial x'} = \left(\frac{\partial x}{\partial x'} \right)_{y',z'}
+\frac{\partial}{\partial x}+\left(\frac{\partial y}{\partial x'} \right)_{y',z'}
+\frac{\partial}{\partial y}+\left(\frac{\partial z}{\partial x'} \right)_{y',z'}
+\frac{\partial}{\partial z},
+\end{equation}
+giving
+\begin{equation}
+\frac{\partial}{\partial x'} = \cos\theta \,\frac{\partial}{\partial x} + 
+\sin\theta \,\frac{\partial}{\partial y},
+\end{equation}
+and 
+\begin{equation}
+\nabla_{x'} = \cos\theta\, \nabla_x + \sin\theta \,\nabla_y.
+\end{equation}
+It can be seen, from  Equations~(\ref{tt1})--(\ref{tt3}), that 
+the differential operator $\nabla$ transforms in an analogous manner to
+a vector.
+ This is another proof that $\nabla f$ is a good  vector.
+ 
+\begin{figure}
+\epsfysize=2.75in
+\centerline{\epsffile{AppendixA/figA.25.eps}}
+\caption{\em Cylindrical polar coordinates.}\label{fcyl}
+\end{figure}
+
+\section{Curvilinear Coordinates}\label{spolar}
+In the {\em cylindrical}\/ coordinate system, the Cartesian coordinates $x$ and
+$y$ are replaced by $r=\sqrt{x^2+y^2}$ and $\theta=\tan^{-1}(y/x)$.
+Here, $r$ is the perpendicular distance from the $z$-axis, and $\theta$
+the angle subtended between the perpendicular radius vector and the $x$-axis---see
+Figure~\ref{fcyl}. A general  vector ${\bf A}$ is thus written
+\begin{equation}
+{\bf A} = A_r\,{\bf e}_r+ A_\theta\,{\bf e}_\theta + A_z\,{\bf e}_z,
+\end{equation}
+where ${\bf e}_r=\nabla r/|\nabla r|$ and ${\bf e}_\theta = \nabla\theta/|\nabla\theta|$---see Figure~\ref{fcyl}. Note that the unit vectors
+${\bf e}_r$, ${\bf e}_\theta$, and ${\bf e}_z$ are mutually orthogonal.
+Hence, $A_r = {\bf A}\cdot {\bf e}_r$, {\em etc.} The
+volume element in this coordinate system is $d^3{\bf r} = r\,dr\,d\theta\,dz$. 
+Moreover, the gradient of a general scalar field $V({\bf r})$ takes the form
+\begin{equation}
+\nabla V = \frac{\partial V}{\partial r}\,{\bf e}_r
++ \frac{1}{r}\frac{\partial V}{\partial\theta}\,{\bf e}_\theta
++ \frac{\partial V}{\partial z}\,{\bf e}_z.
+\end{equation}
+
+In the {\em spherical}\/ coordinate system, the Cartesian coordinates
+$x$, $y$, and $z$
+are replaced by $r=\sqrt{x^2+y^2+z^2}$, $\theta = \cos^{-1}(z/r)$,
+and $\phi=\tan^{-1}(y/x)$. Here, $r$ is the radial distance from the origin,
+$\theta$ the angle subtended between the radius vector and the $z$-axis,
+and $\phi$ the angle subtended between the projection of the radius vector
+onto the $x$-$y$ plane and the $x$-axis---see Figure~\ref{fsphx}.
+Note that $r$ and $\theta$ in the spherical system are {\em not}\/ the same as their counterparts in the cylindrical system.
+A general vector ${\bf A}$ is written
+\begin{equation}
+{\bf A} = A_r\,{\bf e}_r + A_\theta\,{\bf e}_\theta+ A_\phi\,{\bf e}_\phi,
+\end{equation}
+where ${\bf e}_r=\nabla r/|\nabla r|$, ${\bf e}_\theta = \nabla\theta/|\nabla\theta|$, and ${\bf e}_\phi = \nabla\phi/|\nabla\phi|$. The unit
+vectors ${\bf e}_r$, ${\bf e}_\theta$, and ${\bf e}_\phi$ are mutually
+orthogonal. Hence, $A_r = {\bf A}\cdot{\bf e}_r$, {\em etc.}
+The
+volume element in this coordinate system is $d^3{\bf r} = r^2\,\sin\theta\,dr\,d\theta\,d\phi$. 
+Moreover, the gradient of a general scalar field $V({\bf r})$ takes the form
+\begin{equation}
+\nabla V = \frac{\partial V}{\partial r}\,{\bf e}_r
++ \frac{1}{r}\frac{\partial V}{\partial\theta}\,\,{\bf e}_\theta
++ \frac{1}{r\,\sin\theta}\,\frac{\partial V}{\partial \phi}\,{\bf e}_\phi.
+\end{equation}
+
+\begin{figure}
+\epsfysize=2.75in
+\centerline{\epsffile{AppendixA/figA.26.eps}}
+\caption{\em Spherical polar coordinates.}\label{fsphx}
+\end{figure}
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{A.\arabic{enumi}}
+\begin{enumerate}
+\item The position vectors of the four  points $A$, $B$, $C$, and $D$ are ${\bf a}$, ${\bf b}$, $3\,{\bf a}+2\,{\bf b}$,
+and ${\bf a}-3\,{\bf b}$, respectively. Express $\stackrel{\displaystyle \rightarrow}{AC}$, $\stackrel{\displaystyle \rightarrow}{DB}$,
+$\stackrel{\displaystyle \rightarrow}{BC}$, and $\stackrel{\displaystyle \rightarrow}{CD}$ in terms of ${\bf a}$ and ${\bf b}$. 
+\item Prove the trigonometric law of sines 
+$$
+\frac{\sin a}{A} = \frac{\sin b}{B} = \frac{\sin c}{C}
+$$
+using vector methods. Here, $a$, $b$, and $c$ are  the three
+angles of a plane triangle, and $A$, $B$, and $C$ the lengths of the corresponding opposite sides.
+
+\item Demonstrate using vectors that the diagonals of a parallelogram bisect one another. In addition, show  that if the diagonals of a quadrilateral bisect one another then it is a parallelogram.
+
+\item From the inequality
+$$
+{\bf a}\cdot{\bf b}= |{\bf a}|\,|{\bf b}|\,\cos\theta\leq |{\bf a}|\,|{\bf b}|
+$$
+deduce the triangle inequality
+$$
+|{\bf a} + {\bf b}|\leq |{\bf a}|+|{\bf b}|.
+$$
+
+\item Find the scalar product ${\bf a}\cdot{\bf b}$ and the vector product ${\bf a}\times {\bf b}$ when
+\begin{enumerate}
+\item ${\bf a} = {\bf e}_x + 3\,{\bf e}_y-{\bf e}_z$,\mbox{\hspace{0.5cm}}${\bf b} = 3\,{\bf e}_x+ 2\,{\bf e}_y+{\bf e}_z$,
+\item ${\bf a} = {\bf e}_x - 2\,{\bf e}_y+{\bf e}_z$,\mbox{\hspace{0.5cm}}${\bf b} = 2\,{\bf e}_x+ {\bf e}_y+{\bf e}_z$.
+\end{enumerate}
+
+\item Which of the following statements regarding the three general vectors ${\bf a}$, ${\bf b}$, and ${\bf c}$ are true?
+\begin{enumerate}
+\item ${\bf c}\cdot ({\bf a}\times {\bf b}) = ({\bf b}\times {\bf a})\cdot{\bf c}$.
+\item ${\bf a}\times ({\bf b}\times {\bf c})= ({\bf a}\times {\bf b})\times {\bf c}$.
+\item ${\bf a}\times ({\bf b}\times {\bf c}) = ({\bf a}\cdot{\bf c})\,{\bf b} - ({\bf a}\cdot{\bf b})\,{\bf c}$.
+\item ${\bf d} = \lambda\,{\bf a} + \mu\,{\bf b}$ implies that $({\bf a}\times {\bf b})\cdot {\bf d} = 0$. 
+\item ${\bf a}\times {\bf c} = {\bf b}\times {\bf c}$ implies that ${\bf c}\cdot{\bf a} - {\bf c}\cdot{\bf b} = c\,|{\bf a}-{\bf b}|$.
+\item $({\bf a}\times {\bf b})\times ({\bf c}\times {\bf b}) = [{\bf b}\cdot({\bf c}\times {\bf a})]\,{\bf b}$.
+\end{enumerate}
+
+\item Prove that the length of the shortest straight-line from point ${\bf a}$ to the
+straight-line joining points ${\bf b}$ and ${\bf c}$ is
+$$
+\frac{|{\bf a}\times {\bf b} + {\bf b}\times {\bf c} + {\bf c}\times {\bf a}|}{|{\bf b}-{\bf c}|}.
+$$
+
+\item Identify the following surfaces:
+\begin{enumerate}
+\item $|{\bf r}| = a$,
+\item ${\bf r}\cdot{\bf n} = b$,
+\item ${\bf r}\cdot{\bf n} = c\,|{\bf r}|$,
+\item $|{\bf r} -({\bf r}\cdot{\bf n})\,{\bf n}| = d$.
+\end{enumerate}
+Here, ${\bf r}$ is the position vector, $a$, $b$,  $c$, and $d$ are positive
+constants, and ${\bf n}$ is a fixed unit vector.
+
+\item Let ${\bf a}$, ${\bf b}$, and ${\bf c}$ be coplanar vectors related via
+$$
+\alpha\,{\bf a} + \beta\,{\bf b} + \gamma\,{\bf c} = {\bf 0},
+$$
+where $\alpha$, $\beta$, and $\gamma$ are not all zero. Show that the condition
+for the points with position vectors $u\,{\bf a}$, $v\,{\bf b}$,
+and $w\,{\bf c}$ to be colinear is
+$$
+\frac{\alpha}{u} +\frac{\beta}{v} + \frac{\gamma}{w} = 0.
+$$
+
+\item If ${\bf p}$, ${\bf q}$, and ${\bf r}$ are any vectors, demonstrate that 
+${\bf a}={\bf q} + \lambda\,{\bf r}$, ${\bf b} = {\bf r}+\mu\,{\bf p}$,
+and ${\bf c} = {\bf p} + \nu\,{\bf q}$ are coplanar provided that
+$\lambda\,\mu\,\nu=-1$, where $\lambda$, $\mu$, and $\nu$ are scalars.
+Show that this condition is satisfied when ${\bf a}$ is perpendicular to ${\bf p}$, ${\bf b}$ to ${\bf q}$, and ${\bf c}$ to ${\bf r}$.
+
+\item The vectors ${\bf a}$, ${\bf b}$, and ${\bf c}$ are non-coplanar, and
+form a non-orthogonal vector base. The vectors ${\bf A}$, ${\bf B}$,
+and ${\bf C}$, defined by
+$$
+{\bf A} = \frac{{\bf b}\times {\bf c}}{{\bf a}\cdot{\bf b}\times {\bf c}},
+$$
+plus cyclic permutations, are said to be {\em reciprocal vectors}. Show that
+ $$
+ {\bf a} = ({\bf B}\times {\bf C})/({\bf A}\cdot{\bf B}\times {\bf C}),
+ $$
+plus cyclic permutations.
+
+\item In the notation of the previous question, demonstrate that the plane passing
+through points ${\bf a}/\alpha$, ${\bf b}/\beta$, and ${\bf c}/\gamma$
+is normal to the direction of the vector
+$$
+{\bf h} = \alpha\,{\bf A} + \beta\,{\bf B} + \gamma\,{\bf C}.
+$$
+In addition, show that the perpendicular distance of the plane from the
+origin is $|{\bf h}|^{-1}$.
+
+\item Evaluate $\oint {\bf A}\cdot d{\bf r}$ for
+$$
+{\bf A} = \frac{x\,{\bf e}_x + y\,{\bf e}_y}{\sqrt{x^2 + y^2}}
+$$
+around the square whose sides are $x=0$, $x=a$, $y=0$, $y=a$. 
+
+\item Find the gradients of the following scalar functions of the position vector ${\bf r}=(x,\,y,\,z)$:
+\begin{enumerate}
+\item ${\bf k}\cdot{\bf r}$,
+\item $|{\bf r}|^n,$
+\item $|{\bf r}-{\bf k}|^{-n}$,
+\item $\cos({\bf k}\cdot {\bf r}).$
+\end{enumerate}
+Here, ${\bf k}$ is a fixed vector.
+
+\end{enumerate}
+\renewcommand{\theenumi}{\arabic{enumi}}}

@@ -1,0 +1,458 @@
+\chapter{Rotating Reference Frames}\label{snoni}
+\section{Introduction}
+As we saw in Chapter~\ref{sfun}, Newton's second law of motion is
+only valid in {\em inertial}\/ frames of reference. Unfortunately, we are sometimes
+forced to observe motion in {\em non-inertial}\/  reference frames. For instance,
+it is most convenient for us to observe the motions of the objects in our
+immediate vicinity
+in a reference frame which is {\em fixed}\/ relative to the {\em surface of the Earth}.
+Such a frame is {\em non-inertial}\/ in nature, since it
+{\em accelerates}\/ with respect to a standard inertial frame due to the Earth's daily rotation  about
+its axis. (Note that the accelerations of this frame due to the Earth's orbital motion about the Sun, or
+the Sun's orbital motion about the galactic center, {\em etc}., are
+negligible compared to the acceleration due to the Earth's axial rotation.) Let us now investigate
+motion in a {\em rotating}\/ reference frame.
+
+\section{Rotating Reference Frames}\label{srot}
+Suppose that a given object has position vector ${\bf r}$ in some {\em non-rotating inertial}\/ reference frame. Let us observe the motion of
+this object in a {\em non-inertial}\/ reference frame which {\em  rotates}\/ with {\em constant}\/ angular
+velocity $\bOmega$ about
+an axis passing through the origin of the inertial frame. Suppose, first of all, that our object appears {\em stationary}\/ in the rotating reference frame. Hence, in the non-rotating frame,
+the object's  position vector ${\bf r}$ will appear to {\em precess}\/ about the origin with
+angular velocity $\bOmega$. It follows, from Equation~(\ref{e239}),
+that in the non-rotating reference frame
+\begin{equation}
+\frac{d{\bf r}}{dt} =  \bOmega\times{\bf r}.
+\end{equation}
+Suppose, now, that our object appears to move in the rotating reference frame
+with instantaneous velocity ${\bf v}'$. It is fairly obvious that the appropriate generalization of the above equation is simply
+\begin{equation}
+\frac{d{\bf r}}{dt} = {\bf v}'+   \bOmega\times{\bf r}.
+\end{equation}
+
+Let and $d/dt$ and  $d/dt'$ denote apparent time derivatives in the non-rotating and rotating frames of reference, respectively. Since an object which is
+stationary in the rotating reference frame appears to move in the non-rotating
+frame, it is clear that $d/dt\neq d/dt'$. Writing the apparent velocity, ${\bf v}'$, 
+of our object in the rotating reference frame as $d{\bf r}/dt'$, the above
+equation takes the form
+\begin{equation}\label{e8.3}
+\frac{d{\bf r}}{dt} = \frac{d{\bf r}}{dt'}+\bOmega\times{\bf r},
+\end{equation}
+or
+\begin{equation}\label{e8.4}
+\frac{d}{dt} =\frac{d}{dt'}+ \bOmega\times,
+\end{equation}
+since ${\bf r}$ is a general position vector. Equation~(\ref{e8.4}) expresses the
+relationship between  apparent time derivatives in the non-rotating and
+rotating reference frames.
+
+Operating on the general position vector ${\bf r}$ with the time derivative (\ref{e8.4}), we get
+\begin{equation}
+{\bf v} = {\bf v}' + \bOmega\times{\bf r}.
+\end{equation}
+This equation relates the apparent velocity, ${\bf v}=d{\bf r}/dt$, of an object with
+position vector ${\bf r}$ in the non-rotating reference frame to its
+apparent velocity, ${\bf v}' = d{\bf r}/dt'$, in the rotating reference frame.
+
+Operating twice on the position vector ${\bf r}$ with the time
+derivative (\ref{e8.4}), we obtain
+\begin{equation}
+{\bf a} = \left(\frac{d}{dt'}+ \bOmega\times\right)\left({\bf v}' + \bOmega\times{\bf r}\right),
+\end{equation}
+or
+\begin{equation}\label{e8.6}
+{\bf a} = {\bf a}' + \bOmega\times(\bOmega\times{\bf r}) + 2\,\bOmega\times{\bf v}'.
+\end{equation}
+This equation relates the apparent acceleration, ${\bf a}= d^2{\bf r}/dt^2$, of an object with
+position vector ${\bf r}$ in the non-rotating reference frame to its
+apparent acceleration, ${\bf a}'= d^2{\bf r}/dt'^2$, in the rotating reference frame.
+
+Applying Newton's second law of motion in the inertial ({\em i.e.}, non-rotating) reference frame, we obtain
+\begin{equation}
+m\,{\bf a} = {\bf f}.
+\end{equation}
+Here, $m$ is the mass of our object, and ${\bf f}$ is the (non-fictitious) force acting on it. Note that these quantities are the {\em same}\/ in both reference
+frames.
+Making use of Equation~(\ref{e8.6}), the  apparent equation of motion of our object in the
+rotating reference frame takes the form
+\begin{equation}\label{e8.8}
+m\,{\bf a}' = {\bf f} - m\,\bOmega\times(\bOmega\times{\bf r}) -2\,m\,\bOmega\times{\bf v}'.
+\end{equation}
+The last two terms in the above equation are so-called ``fictitious forces''. Such forces
+are always needed to account for motion observed in non-inertial reference
+frames. Note that fictitious forces can always be distinguished from
+non-fictitious forces in Newtonian dynamics because the former
+have no associated reactions. 
+ Let us now investigate the two fictitious forces appearing in Equation~(\ref{e8.8}).
+
+\section{Centrifugal Acceleration}
+Let our non-rotating inertial frame be one whose origin lies at the center
+of the Earth, and let our rotating frame be one whose origin is fixed with respect
+to some point,  of latitude $\lambda$, on the Earth's surface---see Figure~\ref{rot}.
+The latter reference frame thus rotates with respect to the former (about an
+axis passing through the Earth's center)
+with an angular velocity vector, $\bOmega$, which points from  the center of the Earth toward its north pole, and is of magnitude
+\begin{equation}
+{\mit\Omega} = \frac{2\pi}{24\,\,{\rm hrs}}=7.27\times 10^{-5}\,{\rm rad./s}.
+\end{equation}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter07/fig7.01.eps}}
+\caption{\em Inertial and non-inertial reference frames.}\label{rot}
+\end{figure}
+
+Consider an object which appears stationary in our rotating reference frame:
+{\em i.e.}, an object which is stationary with respect to the Earth's surface. 
+According to Equation~(\ref{e8.8}), the object's apparent equation of motion in the
+rotating frame takes the form
+\begin{equation}
+m\,{\bf a}' = {\bf f} - m\,\bOmega\times(\bOmega\times{\bf r}).
+\end{equation}
+Let the non-fictitious force acting on our object be the force of
+gravity, ${\bf f}= m\,{\bf g}$. Here, the local gravitational acceleration, ${\bf g}$, 
+points directly toward the center of the Earth. It follows, from the above,
+that the apparent gravitational acceleration in the rotating frame is written
+\begin{equation}\label{e8.12}
+{\bf g}' = {\bf g} - \bOmega\times(\bOmega\times{\bf R}),
+\end{equation}
+where ${\bf R}$ is the displacement vector of the origin of the rotating
+frame (which  lies on the Earth's surface) with respect to
+the center of the Earth. Here, we are assuming that our object is situated
+relatively close to the Earth's surface ({\em i.e.}, ${\bf r}\simeq {\bf R}$).
+
+It can be seen, from Equation~(\ref{e8.12}), that the apparent gravitational acceleration
+of a stationary object close to the Earth's surface has two components. First,
+the true gravitational acceleration, ${\bf g}$, of magnitude
+$g\simeq 9.8\,{\rm m/s^2}$, which always points directly toward the
+center of the Earth. Second, the so-called  {\em centrifugal acceleration}, $-\bOmega\times(\bOmega\times{\bf R})$. This acceleration is normal to the Earth's axis of
+rotation, and always points directly away from this axis. The magnitude
+of the centrifugal acceleration is ${\mit\Omega}^2\,\rho = {\mit\Omega}^2\,R\,\cos\lambda$, where
+$\rho$ is the perpendicular distance to the Earth's rotation axis, and $R=6.37\times 10^6\,{\rm m}$
+is the Earth's radius---see Figure~\ref{cent}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter07/fig7.02.eps}}
+\caption{\em Centrifugal acceleration.}\label{cent}
+\end{figure}
+
+It is convenient to define Cartesian axes in the rotating reference frame such that the $z'$-axis
+points vertically upward, and $x'$- and $y'$-axes are horizontal, with
+the $x'$-axis pointing directly northward, and the $y'$-axis pointing directly westward---see Figure~\ref{rot}.
+The Cartesian components of the Earth's angular velocity are thus
+\begin{equation}
+\bOmega = {\mit\Omega}\,(\cos\lambda,\,0,\,\sin\lambda),
+\end{equation}
+whilst the vectors ${\bf R}$ and ${\bf g}$ are written
+\begin{eqnarray}
+{\bf R} &=& (0,\,0,\,R),\\[0.5ex]
+{\bf g} &=& (0,\,0,\,-g),
+\end{eqnarray}
+respectively.
+ It follows that the Cartesian coordinates
+of the apparent gravitational acceleration, (\ref{e8.12}), are
+\begin{equation}\label{e8.13}
+{\bf g}' = \left(-{\mit\Omega}^2\,R\,\cos\lambda\,\sin\lambda,\,0,\,
+-g + {\mit\Omega}^2\,R\,\cos^2\lambda\right).
+\end{equation}
+The magnitude of this acceleration is approximately
+\begin{equation}
+g' \simeq g - {\mit\Omega}^2\,R\,\cos^2\lambda \simeq 9.8 - 0.034\,\cos^2\lambda\,\,\, {\rm m/s^2}.
+\end{equation}
+According to the above equation, the centrifugal acceleration causes the magnitude of the apparent gravitational
+acceleration on the Earth's surface to {\em vary}\/ by about $0.3\%$, being largest
+at the poles, and smallest at the equator. This variation in apparent
+gravitational acceleration, due (ultimately) to the Earth's rotation, causes the
+Earth itself to {\em bulge}\/ slightly at the equator (see Section~\ref{srotf}), which has the effect of further intensifying the variation, since a point on the surface of the Earth at the
+equator is slightly further away  from the Earth's center than a similar point at one of the
+poles (and, hence, the true gravitational acceleration is slightly weaker in the
+former case).
+
+Another consequence of centrifugal acceleration is that the apparent
+gravitational acceleration on the Earth's surface has a {\em horizontal}\/
+component aligned in the north/south direction. This horizontal component
+ensures that the apparent gravitational acceleration {\em does not}\/ point
+directly toward the center of the Earth. In other words,
+a plumb-line on the surface of the Earth does not point vertically
+downward, but is deflected slightly away from a true vertical in the north/south
+direction. The angular deviation from true vertical can easily be 
+calculated from Equation~(\ref{e8.13}):
+\begin{equation}
+\theta_{dev} \simeq - \frac{{\mit\Omega}^2\,R}{2\,g}\,\sin(2\,\lambda)\simeq 
+-0.1^\circ\,\sin(2\,\lambda).
+\end{equation}
+Here, a positive angle denotes a northward deflection, and {\em vice versa}.
+Thus, the deflection is {\em southward}\/ in the {\em northern hemisphere}\/ ({\em i.e.},
+$\lambda>0$) and {\em northward}\/ in the {\em  southern hemisphere}\/ ({\em i.e.}, 
+$\lambda < 0$). The deflection is
+zero at the poles and at the equator, and reaches its maximum magnitude
+(which is very small) at middle latitudes.
+
+\section{Coriolis Force}
+We have now accounted for the first fictitious force,
+$-m\,\bOmega\times(\bOmega\times{\bf r})$, in Equation~(\ref{e8.8}).
+Let us now investigate the second, which takes the form $-2\,m\,\bOmega\times{\bf v}'$, and is called the {\em Coriolis force}.
+Obviously, this force only affects objects which are {\em moving}\/ in the rotating
+reference frame.
+
+Consider a particle of mass $m$ free-falling under gravity in our rotating reference frame. As before, we define  Cartesian axes in the rotating  frame such that the $z'$-axis
+points vertically upward, and the $x'$- and $y'$-axes are horizontal, with
+the $x'$-axis pointing directly northward, and the $y'$-axis pointing directly
+westward. It follows, from Equation~(\ref{e8.8}), that the Cartesian equations of motion of the particle
+in the rotating reference frame take the form:
+\begin{eqnarray}\label{e8.18}
+\ddot{x}' &=&2\,{\mit\Omega}\,\sin\lambda\,\dot{y}',\\[0.5ex]
+\ddot{y}'&=&-2\,{\mit\Omega}\,\sin\lambda\,\dot{x}'+2\,{\mit\Omega}\,\cos\lambda\,
+\dot{z}',\label{e8.19}\\[0.5ex]
+\ddot{z}'&=& -g - 2\,{\mit\Omega}\,\cos\lambda\,\dot{y}'.\label{e8.20}
+\end{eqnarray}
+Here, $\dot{}\equiv d/dt$, and $g$ is the local acceleration due to gravity. In the
+above, we have neglected the centrifugal acceleration, for the sake
+of simplicity. This is reasonable, since the only effect of the centrifugal
+acceleration is to slightly modify the magnitude and direction of the
+local  gravitational acceleration. We have also neglected air resistance,
+which is less reasonable.
+
+Consider a particle which is dropped (at $t=0$) from rest a height $h$ above the Earth's
+surface. The following solution method exploits the fact that the
+Coriolis force is much smaller in magnitude that the force of gravity: hence,
+${\mit\Omega}$ can be treated as a {\em small}\/ parameter. 
+To lowest order ({\em i.e.}, neglecting ${\mit\Omega}$), the
+particle's vertical motion satisfies $\ddot{z}'=-g$, which can be solved,
+subject to the initial conditions, to give
+\begin{equation}
+z' = h - \frac{g\,t^{\,2}}{2}.
+\end{equation}
+Substituting this expression into Equations~(\ref{e8.18}) and (\ref{e8.19}), 
+neglecting terms involving ${\mit\Omega}^2$, and solving subject to the
+initial conditions, we obtain
+$x'\simeq 0$, and
+\begin{equation}
+y' \simeq - g\,{\mit\Omega}\,\cos\lambda\,\frac{t^{\,3}}{3}.
+\end{equation}
+In other words, the particle is deflected {\em eastward}\/ ({\em i.e.}, in the negative
+$y'$-direction). Now, the particle hits the ground when
+$t\simeq \sqrt{2\,h/g}$. Hence, the net eastward deflection of the particle as strikes the ground is
+\begin{equation}
+d_{east} = \frac{{\mit\Omega}}{3}\,\cos\lambda\,\left(\frac{8\,h^3}{g}\right)^{1/2}.
+\end{equation}
+Note that this deflection is in the {\em same}\/ direction as the Earth's rotation ({\em i.e.}, west to east),
+and is greatest at the equator, and zero at the poles. 
+A particle dropped from a height of 100\,m at the equator is deflected by about
+$2.2\,{\rm cm}$. 
+
+Consider a particle launched {\em horizontally}\/ with some fairly large velocity
+\begin{equation}
+{\bf V} = V_0\,(\cos\theta,-\sin\theta,\,0).
+\end{equation}
+ Here, $\theta$ is the {\em compass
+bearing}\/ of the velocity vector (so north is $0^\circ$, east is $90^\circ$, {\em etc.}). Neglecting any vertical motion, Equations~(\ref{e8.18}) and (\ref{e8.19}) yield
+\begin{eqnarray}
+\dot{v}_{x'} &\simeq& -2\,{\mit\Omega}\,V_0\,\sin\lambda\,\sin\theta,\\[0.5ex]
+\dot{v}_{y}' &\simeq& -2\,{\mit\Omega}\,V_0\,\sin\lambda\,\cos\theta,
+\end{eqnarray}
+which can be integrated to give
+\begin{eqnarray}
+v_{x'}&\simeq& V_0\,\cos\theta -2\,{\mit\Omega}\,V_0\,\sin\lambda\,\sin\theta\,t,\\[0.5ex]
+v_{y'}&\simeq&- V_0\,\sin\theta - 2\,{\mit\Omega}\,V_0\,\sin\lambda\,\cos\theta\,t.
+\end{eqnarray}
+To lowest order in ${\mit\Omega}$, the above equations are equivalent to
+\begin{eqnarray}
+v_{x'} &\simeq& V_0\,\cos(\theta +2\,{\mit\Omega}\,\sin\lambda\,t),\\[0.5ex]
+v_{y'} &\simeq& -V_0\,\sin(\theta+2\,{\mit\Omega}\,\sin\lambda\,t).
+\end{eqnarray}
+If follows that the Coriolis force causes the compass
+bearing of the particle's velocity vector to {\em rotate}\/ steadily as time progresses. The rotation rate is
+\begin{equation}
+\frac{d\theta}{dt} \simeq 2\,{\mit\Omega}\,\sin\lambda.
+\end{equation}
+Hence, the rotation is {\em clockwise}\/ (looking from above) in the
+{\em northern hemisphere}, and {\em counter-clockwise}\/ in the
+{\em southern  hemisphere}. The rotation rate is zero at the equator, and
+greatest at the poles. 
+
+The Coriolis force has a significant effect on terrestrial weather patterns. 
+Near equatorial regions, the intense heating  of the Earth's surface due to the Sun results in hot
+air rising. In the northern hemisphere, this causes cooler air to
+move in a southerly direction toward the equator. The Coriolis
+force deflects this moving air in a clockwise sense (looking from above),
+resulting in the {\em trade winds}, which blow toward the {\em southwest}.
+In the southern hemisphere, the cooler air moves northward, and
+is deflected by the Coriolis force in a counter-clockwise sense, resulting
+in trade winds which blow toward the {\em northwest}. 
+
+Furthermore, as air flows from high to low pressure regions,
+the Coriolis force deflects the air in a clockwise/counter-clockwise manner in the northern/southern
+hemisphere, producing {\em cyclonic}\/  rotation---see Figure~\ref{cyc}. 
+It follows that cyclonic rotation is {\em counter-clockwise}\/ in the {\em northern hemisphere},
+and {\em clockwise}\/ in the {\em southern hemisphere}.  Thus, this
+is the direction of rotation of tropical storms ({\em e.g.}, hurricanes,
+typhoons) in each hemisphere.
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter07/fig7.03.eps}}
+\caption{\em A cyclone in the northern hemisphere.}\label{cyc}
+\end{figure}
+
+\section{Foucault Pendulum}
+Consider a pendulum consisting of a compact mass $m$ suspended from a light cable of length $l$ in such
+a manner that the pendulum is free to oscillate in any plane whose
+normal is parallel to the Earth's surface. The mass is
+subject to three forces: first, the force of gravity $m\,{\bf g}$, which
+is directed vertically downward (we are again ignoring centrifugal
+acceleration); second, the tension ${\bf T}$ in the cable, which is directed upward
+along the cable; and, third,  the Coriolis force. It follows that the
+apparent equation of motion of the mass, in a frame of
+reference which co-rotates with the Earth, is [see Equation~(\ref{e8.8})]
+\begin{equation}
+m\,\ddot{\bf r}' = m\,{\bf g} + {\bf T} - 2\,m\,\bOmega\times \dot{\bf r}'.
+\end{equation}
+
+Let us define our usual Cartesian coordinates ($x'$,\,$y'$,\,$z'$), and
+let the origin of our coordinate system correspond to the equilibrium position
+of the mass. If the pendulum cable is deflected from the downward vertical by a {\em small}\/ angle
+$\theta$ then it is easily seen that $x'\sim  l\,\theta$, $y'\sim l\,\theta$,
+and $z'\sim l\,\theta^{\,2}$. In other words, the change in height
+of the mass, $z'$, is negligible compared to its horizontal displacement.
+Hence, we can write $z'\simeq 0$, provided that $\theta\ll 1$. The
+tension ${\bf T}$ has the vertical component $T\,\cos\theta\simeq T$,
+and the horizontal component ${\bf T}_{hz}= - T\,\sin\theta\,{\bf r}'/r'\simeq
+-T\,{\bf r}'/l$, since $\sin\theta \simeq r'/l$---see Figure~\ref{pend}. Hence, the
+Cartesian equations of motion of the mass are written [{\em cf.}, Equations~(\ref{e8.18})--(\ref{e8.20})]
+\begin{eqnarray}\label{e8.34}
+\ddot{x}' &=& - \frac{T}{l\,m}\,x' + 2\,{\mit\Omega}\,\sin\lambda\,\dot{y}',
+\\[0.5ex]
+\ddot{y}' &=& - \frac{T}{l\,m}\,y' - 2\,{\mit\Omega}\,\sin\lambda\,\dot{x}',
+\label{e8.35}\\[0.5ex]
+0 &=& \frac{T}{m} - g - 2\,{\mit\Omega}\,\cos\lambda\,\dot{y}'.
+\end{eqnarray}
+To lowest order in ${\mit\Omega}$ ({\em i.e.}, neglecting ${\mit\Omega}$), the final equation, which is just vertical force balance, yields $T\simeq m\,g$.
+Hence, Equations~(\ref{e8.34}) and (\ref{e8.35}) reduce to
+\begin{eqnarray}\label{e8.37}
+\ddot{x}' &\simeq& - \frac{g}{l}\,x' + 2\,{\mit\Omega}\,\sin\lambda\,\dot{y}',
+\\[0.5ex]
+\ddot{y}' &\simeq& - \frac{g}{l}\,y' - 2\,{\mit\Omega}\,\sin\lambda\,\dot{x}'.\label{e8.38}
+\end{eqnarray}
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter07/fig7.04.eps}}
+\caption{\em The Foucault pendulum.}\label{pend}
+\end{figure}
+
+Let
+\begin{equation}\label{e8.39}
+s = x' + {\rm i}\,y'.
+\end{equation}
+Equations ~(\ref{e8.37})  and (\ref{e8.38}) can be combined to give a single complex
+equation for $s$:
+\begin{equation}\label{e8.40}
+\ddot{s} = -\frac{g}{l}\,s - {\rm i}\,2\,{\mit\Omega}\,\sin\lambda\,\dot{s}.
+\end{equation}
+Let us look for a sinusoidally oscillating solution of the form
+\begin{equation}\label{e8.41}
+s = s_0\,{\rm e}^{-{\rm i}\,\omega\,t}.
+\end{equation}
+Here, $\omega$ is the (real) angular frequency of oscillation, and $s_0$
+is an arbitrary complex constant. Equations~(\ref{e8.40}) and (\ref{e8.41})
+yield the following quadratic equation for $\omega$:
+\begin{equation}
+\omega^2 - 2\,{\mit\Omega}\,\sin\lambda\,\omega - \frac{g}{l}=0.
+\end{equation}
+The solutions are approximately
+\begin{equation}
+\omega_{\pm} \simeq {\mit\Omega}\,\sin\lambda \pm \sqrt{\frac{g}{l}},
+\end{equation}
+where we have neglected terms involving ${\mit\Omega}^{\,2}$. 
+Hence, the general solution of (\ref{e8.41}) takes the form
+\begin{equation}
+s = s_+\, {\rm e}^{-{\rm i}\,\omega_+\,t}+s_-\, {\rm e}^{-{\rm i}\,
+\omega_-\,t},
+\end{equation}
+where $s_+$ and $s_-$ are two arbitrary complex constants.
+
+Making the specific choice $s_+=s_-=a/2$, where $a$ is real, the
+above solution reduces to
+\begin{equation}
+s = a\,{\rm e}^{-{\rm i}\,{\mit\Omega}\,\sin\lambda\,t} \,\cos\left(\sqrt{\frac{g}{l}}\,t\right).
+\end{equation}
+Now, it is clear from Equation~(\ref{e8.39}) that $x'$  and $y'$ are the real and imaginary
+parts of $s$, respectively. Thus, it follows from the above that
+\begin{eqnarray}
+x'&=& a\,\cos({\mit\Omega}\,\sin\lambda\,t)\,\cos\left(\sqrt{\frac{g}{l}}\,t\right),\\[0.5ex]
+y'&=& -a\,\sin({\mit\Omega}\,\sin\lambda\,t)\,\cos\left(\sqrt{\frac{g}{l}}\,t\right).
+\end{eqnarray}
+These  equations describe sinusoidal oscillations, in a plane whose normal
+is parallel to the Earth's surface, at the standard pendulum frequency $\sqrt{g/l}$. 
+The Coriolis force, however, causes the plane of oscillation to slowly {\em precess}\/ at the
+angular frequency ${\mit\Omega}\,\sin\lambda$. The period of the
+precession is 
+\begin{equation}
+T = \frac{2\pi}{{\mit\Omega}\,\sin\lambda} = \frac{24}{\sin\lambda}\,\,{\rm hrs}.
+\end{equation}
+For example, according to the above equations, the pendulum oscillates
+in the $x'$-direction ({\em i.e.}, north/south) at $t\simeq 0$, in the $y'$-direction
+({\em i.e.}, east/west) at $t\simeq T/4$, in the $x'$-direction again at $t\simeq T/2$, {\em etc.} The precession is {\em clockwise}\/ (looking from above)
+in the {\em northern hemisphere}, and {\em counter-clockwise}\/
+in the  {\em southern
+hemisphere}. 
+
+The precession of the plane of oscillation of a pendulum, due to
+the Coriolis force, is used in many museums and observatories to
+demonstrate that the Earth is rotating. This method of making the
+Earth's rotation manifest was first devised by Foucault in 1851.
+
+\section{Exercises}
+{\small 
+\renewcommand{\theenumi}{7.\arabic{enumi}}
+\begin{enumerate}
+\item A pebble is dropped down an elevator shaft in the Empire State
+Building ($h=1250$ ft, latitude $=41^\circ$ N). Find the pebble's horizontal deflection (magnitude and direction) 
+due to the Coriolis force at the bottom of the shaft. Neglect air resistance.
+\item If a bullet is fired due east, at an elevation angle $\alpha$, from a point
+on the Earth whose latitude is $+\lambda$ show that it will strike the
+Earth with a lateral deflection $4\,{\mit\Omega}\,v_0^{\,3}\,\sin\lambda\,\sin^2\alpha\,\cos\alpha/g^2$.
+Here, ${\mit\Omega}$ is the Earth's angular velocity, $v_0$ is the bullet's initial speed, and
+$g$ is the acceleration due to gravity. Neglect air resistance.
+\item A particle is thrown vertically with initial speed $v_0$, reaches
+a maximum height, and falls back to the ground. Show that the horizontal Coriolis
+deflection of the particle when it returns to the ground is opposite in direction,
+and four times greater in magnitude, than the Coriolis deflection when it
+is dropped at rest from the same maximum height. Neglect air resistance.
+\item The surface of the Diskworld is a disk which
+rotates (counter-clockwise looking down) with angular frequency $\Omega$ about a perpendicular axis passing through
+its center. Diskworld gravitational acceleration is of magnitude
+$g$, and is everywhere directed normal to the disk.
+A projectile is launched from the surface of the disk at a point whose radial distance from the axis of rotation is $R$.
+The initial velocity of the projectile (in a co-rotating frame) is of magnitude $v_0$,  is directly radially
+outwards, and is inclined at an angle  $\alpha$ to the horizontal. 
+What are the radial and tangential displacements of the impact point
+from that calculated by neglecting the centrifugal and Coriolis forces?
+Neglect air resistance. You may assume that the displacements are small
+compared to both $R$ and the horizontal range of the projectile. 
+\item Demonstrate that the Coriolis force causes conical pendulums to
+rotate clockwise and counter-clockwise with slightly different angular frequencies. What
+is the frequency difference as a function of terrestrial latitude?
+\item A satellite is in a circular orbit of radius $a$ about the Earth.
+Let us define a set of co-moving Cartesian coordinates, centered on the satellite, such that
+the $x$-axis always points toward the center of the Earth, the $y$-axis in the
+direction of the satellite's orbital motion, and the $z$-axis in the direction
+of the satellite's orbital angular velocity, $\bomega$. Demonstrate that the
+equation of motion of a small mass in orbit about the satellite are
+\begin{eqnarray}
+\ddot{x} &=& 3\,\omega^2\,x + 2\,\omega\,\dot{y},\nonumber\\[0.5ex]
+\ddot{y} &=& -2\,\omega\,\dot{x},\nonumber
+\end{eqnarray}
+assuming that $|x|/a\ll 1$ and $|y|/a\ll 1$. You may neglect the gravitational
+attraction between the satellite and the mass.
+Show that the mass
+executes a retrograde ({\em i.e.}, in the opposite sense to the
+satellite's orbital rotation)  elliptical orbit about the satellite whose 
+period matches that of the satellite's orbit, and whose major and minor axes
+are in the ratio $2:1$, and are  aligned along the $y$- and $x$-axes,
+respectively. 
+\end{enumerate}
+
+}

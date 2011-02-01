@@ -1,0 +1,1277 @@
+\chapter{The Chaotic Pendulum}\label{schaos}
+\section{Introduction}
+Up until now, we have only dealt with dynamical problems which are capable of analytic solution. Let us now investigate a problem
+which is quite intractable analytically, and  in which meaningful progress can only be
+made via numerical methods.
+
+\section{Basic Problem}
+Consider a simple pendulum consisting of a point mass $m$, at the end of a light
+rigid rod of length $l$, attached to a fixed frictionless pivot
+which allows the rod (and the mass) to move freely under gravity in the vertical plane. Such a
+pendulum is sketched in Figure~\ref{cf1}. Let us parameterize the instantaneous position
+of the pendulum via the angle $\theta$ the rod makes with the downward vertical. It is
+assumed that the pendulum is free to swing through a full circle. Hence, $\theta$ and $\theta +2\pi$
+both correspond to the same pendulum position.
+
+The angular equation of motion of the pendulum is simply
+\begin{equation}
+m\,l\,\frac{d^2\theta}{dt^2} + m\,g\,\sin\theta = 0,
+\end{equation}
+where $g$ is the downward acceleration due to gravity---see Section~\ref{s4.8}. 
+Suppose that the pendulum is embedded in  a viscous medium ({\em e.g.}, air). 
+Let us assume that the viscous drag torque acting on the pendulum is
+directly proportional to the pendulum's instantaneous velocity.
+ It follows that, in the presence of viscous drag, the above
+equation generalizes to
+\begin{equation}
+m\,l\,\frac{d^2\theta}{dt^2}+ \nu\,\frac{d\theta}{dt} + m\,g\,\sin\theta = 0,
+\end{equation}
+where $\nu$ is a positive constant parameterizing the viscosity of the medium
+in question---see Section~\ref{s4.4}. Of course, viscous
+damping will eventually drain all energy from the pendulum, leaving it in a stationary state. 
+In order to maintain the motion against viscosity, it is necessary to add some external driving.
+For the sake of simplicity, we choose a fixed amplitude periodic drive (which could arise, for
+instance, via periodic oscillations of the pendulum's pivot point). Thus, the final equation
+of motion of the pendulum is written
+\begin{equation}\label{e16.3}
+m\,l\,\frac{d^2\theta}{dt^2}+ \nu\,\frac{d\theta}{dt} + m\,g\,\sin\theta =  A\,\cos(\omega\, t),
+\end{equation}
+where $A$ and $\omega$ are  constants parameterizing the amplitude
+and  frequency  of the external driving torque, respectively.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.01.eps}}
+\caption{\em A simple pendulum.}\label{cf1}
+\end{figure}
+
+Let
+\begin{equation}
+\omega_0 = \sqrt{\frac{g}{l}}.
+\end{equation}
+Of course, we recognize $\omega_0$ as the natural  frequency of small
+amplitude oscillations of the pendulum. We can conveniently normalize the
+pendulum's equation of motion by writing,
+\begin{eqnarray}
+\hat{t} &=& \omega_0\,t,\\[0.5ex]
+\hat{\omega} &=& \frac{\omega}{\omega_0},\\[0.5ex]
+Q &=& \frac{m\,g}{\omega_0\,\nu},\\[0.5ex]
+\hat{A} &=& \frac{A}{m\,g},
+\end{eqnarray}
+in which case Equation~(\ref{e16.3}) becomes
+\begin{equation}\label{e16.9}
+\frac{d^2\theta}{d\hat{t}^2} + \frac{1}{Q}\,\frac{d\theta}{d\hat{t}}
++ \sin\theta = \hat{A}\,\cos(\hat{\omega}\,\hat{t}).
+\end{equation}
+From now on, the hats on normalized quantities will be omitted, for ease of
+notation. Note that, in normalized units, the natural frequency of small amplitude
+oscillations is {\em unity}. Moreover, $Q$ is the familiar {\em quality-factor}, which is, roughly speaking,
+the number of oscillations of the undriven system which must
+elapse before its energy is significantly
+reduced via the action of viscosity---see Section~\ref{squal}. The quantity $A$ is the amplitude of the external
+torque measured in units of the maximum possible gravitational torque. Finally,
+$\omega$ is the oscillation frequency of the external torque measured in units of the
+pendulum's natural frequency.
+
+Equation~(\ref{e16.9}) is clearly a second-order ordinary differential equation. It can, therefore, also be written as
+two coupled first-order ordinary differential equations:
+\begin{eqnarray}
+\frac{d\theta}{dt} &=& v,\label{e16.11}\\[0.5ex]
+\frac{dv}{dt} &=& -\frac{v}{Q} -\sin\theta + A\,\cos(\omega\, t).\label{e16.12}
+\end{eqnarray}
+
+\section{Analytic Solution}\label{s5.2}
+Before attempting a numerical solution of the equations of motion of any dynamical system, it is a good idea to, first, investigate the equations as thoroughly as possible via standard analytic techniques. 
+Unfortunately, Equations~(\ref{e16.11}) and (\ref{e16.12}) constitute a {\em non-linear}\/ dynamical
+system---because of the presence of the $\sin\theta$ term on the right-hand side of
+Equation~(\ref{e16.12}). This system, like most non-linear systems, does not possess a simple
+analytic solution. Fortunately, however, if we restrict our attention to {\em small amplitude}\/ oscillations,
+such that the approximation
+\begin{equation}
+\sin\theta \simeq \theta
+\end{equation}
+is valid,
+then the system becomes {\em linear}, and can easily be solved analytically.
+
+The linearized equations of motion of the pendulum take the form:
+\begin{eqnarray}
+\frac{d\theta}{dt} &=& v,\label{e16.13}\\[0.5ex]
+\frac{dv}{dt} &=& -\frac{v}{Q} -\theta + A\,\cos(\omega \,t).\label{e16.14}
+\end{eqnarray}
+ Suppose
+that the pendulum's position, $\theta(0)$, and velocity, $v(0)$,  are specified at time $t=0$. 
+As is well-known, in this case, the above equations of motion can be solved analytically to give:
+\begin{eqnarray}
+\theta(t) &=&\left\{\theta(0) - \frac{A\,(1-\omega^2)}{[(1-\omega^2)^2+\omega^2/Q^2]}\right\}
+{\rm e}^{-t/2Q}\,\cos(\omega_\ast\, t)\nonumber\\[0.5ex]
+&&+\frac{1}{\omega_\ast}\left\{ v(0) + \frac{\theta(0)}{2Q}
+-\frac{A\,(1-3\,\omega^2)/2Q}
+{[(1-\omega^2)^2+ \omega^2/Q^2]}\right\}{\rm e}^{-t/2Q}\,\sin(\omega_\ast\,t) \nonumber\\[0.5ex]
+ &&+\frac{A\left[(1-\omega^2)\,\cos(\omega\, t)+ (\omega/Q)\,\sin(\omega\, t)\right]}
+{\left[(1-\omega^2)^2+\omega^2/Q^2\right]},\label{e16.15}\\[0.5ex]
+v(t) &=& \left\{v(0) - \frac{A\,\omega^2/Q}{[(1-\omega^2)^2+\omega^2/Q^2]}\right\}
+{\rm e}^{-t/2Q}\,\cos\omega_\ast t\nonumber\\[0.5ex]
+&&-\frac{1}{\omega_\ast}\left\{ \theta(0) + \frac{v(0)}{2Q}
+-\frac{A\,[(1-\omega^2)-\omega^2/2Q^2]}
+{[(1-\omega^2)^2+ \omega^2/Q^2]}\right\}{\rm e}^{-t/2Q}\,\sin(\omega_\ast\, t)\nonumber\\[0.5ex]
+&&+\frac{\omega\,A\left[-(1-\omega^2)\,\sin(\omega\, t)+ (\omega/Q)\,\cos(\omega\, t)\right]}
+{\left[(1-\omega^2)^2+\omega^2/Q^2\right]}.\label{e16.16}
+\end{eqnarray}
+Here, 
+\begin{equation}
+\omega_\ast = \sqrt{1-\frac{1}{4Q^2}},
+\end{equation}
+and it is assumed that $Q>1/2$. 
+It can be seen that the above expressions for $\theta$ and $v$  both consist  of {\em three}\/
+terms. The first two terms clearly represent {\em transients},  since they depend on the initial
+conditions, and {\em decay}\/ exponentially in time---see Section~\ref{strans}. In fact, the e-folding time for the decay of these
+terms is $2\,Q$ (in normalized time units). 
+The final term represents the {\em time-asymptotic motion}\/ of the pendulum, and is manifestly {\em independent}\/ of the initial conditions---see Section~\ref{s4.4}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.02.eps}}
+\caption{\em A phase-space plot of the periodic attractor for a linear  damped periodically
+driven  pendulum. Data calculated analytically for $Q=4$ and $\omega=2$. }\label{cf2}
+\end{figure}
+
+It is often convenient to {\em visualize}\/ the motion of a dynamical system as an orbit, or  trajectory, in
+{\em phase-space}, which is defined as the space of all of the dynamical variables required to
+specify the instantaneous state of the system. For the case in hand, there are two dynamical
+variables, $v$ and $\theta$, and so phase-space corresponds to the $\theta$-$v$ plane. Note that
+each different point in this plane corresponds to a unique instantaneous state of the pendulum.
+[Strictly speaking, we should also consider $t$ to be a dynamical variable, since it 
+appears explicitly on the right-hand side of Equation~(\ref{e16.12}).]
+
+It is clear, from Equations~(\ref{e16.15}) and (\ref{e16.16}), that if we wait long enough for all
+of the transients to decay away then the motion of the pendulum settles down to the
+following simple orbit in phase-space:
+\begin{eqnarray}
+\theta(t) &=&
+\frac{A\left[(1-\omega^2)\,\cos(\omega\, t)+ (\omega/Q)\,\sin(\omega\, t)\right]}
+{\left[(1-\omega^2)^2+\omega^2/Q^2\right]},\\[0.5ex]
+v(t) &=& \frac{\omega\, A\left[-(1-\omega^2)\,\sin(\omega\, t)+ (\omega/Q)\,\cos(\omega\, t)\right]}
+{\left[(1-\omega^2)^2+\omega^2/Q^2\right]}.
+\end{eqnarray}
+This orbit traces out the closed curve
+\begin{equation}
+\left(\frac{\theta}{\tilde{A}}\right)^2 + \left(\frac{v}{\omega\,\tilde{A}}\right)^2 =1,
+\end{equation}
+in phase-space, where 
+\begin{equation}\label{e16.18}
+\tilde{A} = \frac{A}{\sqrt{(1-\omega^2)^2+\omega^2/Q^2}}.
+\end{equation}
+As illustrated in Figure~\ref{cf2}, this curve is an {\em ellipse}\/ whose principal axes are 
+aligned with the $v$ and $\theta$ coordinate axes.
+Observe that the curve is {\em closed}, which suggests that the associated motion is {\em periodic}\/ in time. In fact, the
+motion repeats itself exactly every
+\begin{equation}
+\tau = \frac{2\pi}{\omega}
+\end{equation}
+normalized time units. The maximum angular displacement of the pendulum from its undriven rest position
+($\theta=0$) is $\tilde{A}$. 
+As illustrated in Figure~\ref{cf3}, the variation of $\tilde{A}$ with driving frequency $\omega$
+[see Equation~(\ref{e16.18})] displays all of the features of a classic resonance curve. The maximum
+amplitude of the driven oscillation is proportional to the quality-factor, $Q$, and
+is achieved when the driving frequency matches the natural
+frequency of the pendulum ({\em i.e.}, when $|\omega|=1$). Moreover, 
+the width of the resonance in $\omega$-space
+is proportional to $1/Q$---see Section~\ref{eres}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.03.eps}}
+\caption{\em The maximum angular displacement of a linear damped periodically driven 
+pendulum as a function of driving frequency. The solid curve corresponds to $Q=1$. The
+short-dashed curve corresponds to $Q=5$. The long-dashed curve corresponds to $Q=10$.
+Analytic data.}\label{cf3}
+\end{figure}
+
+The phase-space curve shown in Figure~\ref{cf2} is called a {\em periodic attractor}. It is 
+termed an ``attractor'' because,
+irrespective of the initial conditions, the trajectory of the system in phase-space tends
+asymptotically to---in other words, is attracted to---this curve as $t\rightarrow\infty$. This
+gravitation of phase-space trajectories towards the attractor is illustrated in Figures~\ref{cf4} and
+\ref{cf5}. Of course, the attractor is termed ``periodic'' because it corresponds to motion which is
+periodic in time.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.04.eps}}
+\caption{\em The phase-space trajectory of a linear damped  periodically driven
+pendulum. Data calculated analytically for $Q=1$ and $\omega=2$. Here, $v(0)/A=0$ and $\theta(0)/A=0$.
+}\label{cf4}
+\end{figure}
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.05.eps}}
+\caption{\em The phase-space trajectory of a linear damped periodically driven
+pendulum. Data calculated analytically for $Q=1$ and $\omega=2$.
+Here, $v(0)/A=0.5$ and $\theta(0)/A=0.5$. }\label{cf5}
+\end{figure}
+
+Let us summarize our findings so far. We have discovered that if a damped pendulum is
+subject to a low amplitude periodic drive then its {\em time-asymptotic}\/ response ({\em i.e.},
+its response after any transients have died away) is {\em periodic}, with the same period
+as the driving torque. Moreover, the response exhibits {\em resonant}\/ behaviour as the driving
+frequency approaches the natural frequency of oscillation of the pendulum. The amplitude
+of the resonant response, as well as the width of the resonant window, is governed by the
+amount of damping in the system. After a little reflection, we can easily appreciate that
+all of these results are a direct consequence of the {\em linearity}\/ of the pendulum's
+equations of  motion in the low amplitude limit. In fact, 
+it is easily demonstrated that the time-asymptotic response of {\em any} intrinsically
+stable linear system (with a discrete spectrum of normal modes) to a periodic drive is periodic,
+with the same period as the drive. Moreover, if the driving frequency approaches
+one of the natural frequencies of oscillation of the system then the response exhibits
+resonant behaviour. But, is this the only allowable time-asymptotic response of a dynamical system to a
+periodic drive? It turns out that it is not.
+Indeed, the response of
+a {\em non-linear}\/ system to a periodic drive is generally much richer  and
+far more diverse than simple periodic motion. Since the majority of naturally
+occurring dynamical systems are non-linear, it is clearly important that we gain a
+basic understanding of this phenomenon. Unfortunately, we cannot achieve this goal via
+a standard analytic approach, since non-linear equations of motion generally do not possess
+simple analytic solutions. Instead, we must employ {\em numerical methods}. As an example, let us
+investigate the dynamics of a damped pendulum, subject to a periodic drive, with {\em no
+restrictions}\/ on the amplitude of the pendulum's motion.
+
+\section{Numerical Solution}
+In the following, we present numerical solutions of Equations~(\ref{e16.11}) and (\ref{e16.12})
+obtained using a fairly standard fixed step-length fourth-order
+Runge-Kutta integration scheme.\footnote{W.H.~Press, S.A.~Teukolsky,
+W.T.~Vetterling, and B.P.~Flannery, {\em Numerical recipes in C: The
+art of scientific computing}, 2nd Edition (Cambridge University Press,
+Cambridge UK, 1992), Section~16.1.}
+
+\section{Poincar\'{e} Section}
+For the sake of definiteness, let us fix the normalized amplitude and frequency of the external
+drive to be $A=1.5$ and $\omega=2/3$, respectively.\footnote{G.L.~Baker, {\em Control of
+the chaotic driven pendulum},  Am.\ J.\ Phys.\
+{\bf 63}, 832 (1995).}
+ Furthermore, let us investigate any changes which
+may develop in the nature of the
+pendulum's time-asymptotic motion
+ as the quality-factor $Q$ is varied. Of course, if $Q$ is made sufficiently small 
+({\em i.e.}, if the pendulum is embedded in a sufficiently viscous medium) then we expect the
+amplitude of the pendulum's time-asymptotic motion to become low enough that the linear analysis
+outlined in Section~\ref{s5.2} is valid.  Indeed, we expect non-linear effects to manifest themselves
+as $Q$ is gradually made larger, and the amplitude of the pendulum's motion 
+consequently increases to such an extent that the
+small angle approximation breaks down.
+
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.06.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit
+in phase-space. Data calculated numerically
+ for $Q=0.5$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$, and
+$v(0)=0$. }\label{f18}
+\end{figure}
+
+Figure~\ref{f18} shows a time-asymptotic orbit in phase-space 
+calculated numerically for a case where $Q$ is sufficiently
+small ({\em i.e.}, $Q=1/2$) that the small angle approximation holds reasonably well. Not surprisingly,
+the orbit is very similar to the analytic orbits
+ described in Section~\ref{s5.2}. The fact that the orbit consists
+of a {\em single}\/ loop, and forms a {\em closed}\/ curve in phase-space,
+ strongly suggests that the corresponding
+motion is periodic with the same period as the external drive---we term this type of motion
+{\em period-1}\/ motion. More generally, period-$n$ motion consists of motion which
+repeats itself exactly every $n$ periods of the external drive (and, obviously,
+does not repeat itself on any time-scale less than $n$ periods). Of course, period-1 motion
+is the only allowed time-asymptotic motion in the small angle limit. 
+
+It would certainly be helpful
+to possess a graphical test for period-$n$ motion. In fact, such a test was developed more than a
+ hundred years ago by the
+French mathematician Henry Poincar\'{e}. Nowadays, it is called a
+{\em Poincar\'{e} section}\/ in his honour. The idea of a  Poincar\'{e} section, as applied
+to a periodically driven pendulum,  is very simple.
+As before, we calculate the time-asymptotic motion of the pendulum, and visualize it as a
+series of points in $\theta$-$v$
+phase-space. However, we only plot {\em one point per period}\/ of the external drive. To be more
+exact, we only plot a point when
+\begin{equation}
+\omega\,t = \phi + k\,2\pi
+\end{equation}
+where $k$ is any integer, and $\phi$ is referred to as the {\em Poincar\'{e} phase}. 
+For period-1 motion, in which the motion repeats itself exactly every period of the
+external drive, we expect the Poincar\'{e} section to consist of only {\em one} point
+in phase-space ({\em i.e.},  we expect all of the points to plot on top of one another). 
+Likewise, for period-2 motion, in which the motion repeats itself exactly every two periods of the
+external drive, we expect the Poincar\'{e} section to consist of  {\em two}\/ points
+in phase-space ({\em i.e.},  we expect alternating  points to plot on top of one another).
+Finally, for period-$n$ motion we expect the Poincar\'{e} section to consist of  $n$ points
+in phase-space.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.07.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic
+orbit. Data calculated numerically for $Q=0.5$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+$v(0)=0$, and $\phi=0$. }\label{f19}
+\end{figure}
+
+Figure~\ref{f19} displays the Poincar\'{e} section of the orbit shown in Figure~\ref{f18}. 
+The fact that the section consists of a single point confirms that the motion
+displayed in Figure~\ref{f18} is indeed period-1 motion.
+
+
+\section{Spatial Symmetry Breaking}
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.08.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=0$, and $\phi=0$. }\label{f20}
+\end{figure}
+Suppose that we now gradually increase the quality-factor $Q$. What happens to the
+simple orbit shown in Figure~\ref{f18}? It turns out that, at first,  nothing particularly exciting
+happens. The size of the orbit gradually increases, indicating a corresponding increase in
+the amplitude of the pendulum's motion, but the general nature of the motion remains unchanged.
+However, something interesting does occur when $Q$ is increased beyond about $1.2$. 
+Figure~\ref{f20} shows the $v$-coordinate of the orbit's Poincar\'{e} section  plotted
+against  $Q$ in the range $1.2$ and $1.3$. Note the sharp downturn
+in the curve at $Q\simeq 1.245$. What does this signify? Well, Figure~\ref{f21} shows
+ the time-asymptotic phase-space orbit just before the downturn ({\em i.e.}, 
+at $Q=1.24$), and Figure~\ref{f22} shows the orbit somewhat after the downturn
+({\em i.e.}, at $Q=1.30$). It is clear that the downturn is associated with a
+sudden change in the nature of the pendulum's time-asymptotic phase-space orbit. Prior to the downturn, the orbit
+spends as much time in the region $\theta<0$ as in the region $\theta>0$. However,
+after the downturn the orbit spends the majority of its time in the region $\theta<0$. 
+In other words, after the downturn, the pendulum bob favours the region to the {\em left}\/ of
+the pendulum's vertical. This is somewhat surprising, since there is nothing in the
+pendulum's equations of motion which differentiates between the regions to the left
+and to the right of the vertical. We refer to a solution of this type---{\em i.e.}, one which fails
+to realize the full symmetry of the dynamical system in question---as a {\em symmetry
+breaking}\/ solution. In this case, because the particular symmetry which is broken is
+a {\em spatial}\/ symmetry, we refer to the process by which the symmetry breaking solution
+suddenly appears, as the control parameter $Q$ is adjusted, as {\em spatial symmetry breaking}.
+Needless to say, spatial symmetry breaking is an intrinsically {\em non-linear}\/ process---it
+cannot take place in dynamical systems possessing linear equations of motion.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.09.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit in phase-space.
+Data calculated numerically for $Q=1.24$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$, and
+$v(0)=0$. }\label{f21}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.10.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit in phase-space.
+Data calculated  
+numerically  for $Q=1.30$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$, and
+$v(0)=0$. }\label{f22}
+\end{figure}
+
+It stands to reason that since the pendulum's equations of motion favour neither the
+left nor the right then the left-favouring orbit pictured in Figure~\ref{f22} must be accompanied
+by a mirror image right-favouring orbit. How do we obtain this mirror image orbit?
+It turns out that all we have to do is keep the physical  parameters $Q$, $A$, and $\omega$
+fixed, but {\em change the initial conditions} $\theta(0)$ and $v(0)$. Figure~\ref{f23} shows
+a time-asymptotic phase-space orbit calculated with the same physical parameters  used in Figure~\ref{f22}, but
+with the initial conditions $\theta(0)=0$ and $v(0)=-3$, instead of $\theta(0)=0$ and
+$v(0)=0$. It can be seen that the orbit is indeed the mirror image of that pictured in Figure~\ref{f22}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.11.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit in phase-space. Data
+ calculated numerically for $Q=1.30$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$, and
+$v(0)=-3$. }\label{f23}
+\end{figure}
+
+Figure~\ref{fx24} shows the $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit,
+calculated with the same physical parameters used in Figure~\ref{f20}, versus
+  $Q$ in the range $1.2$ and $1.3$. Data is shown for the two sets of
+initial conditions discussed above. The figure is interpreted as
+follows. When $Q$ is less than a critical value,
+which is about $1.245$, then the two sets of initial conditions lead to motions
+which converge on the {\em same}\/ left-right symmetric 
+period-1 attractor. However, once
+$Q$ exceeds the critical value then the attractor {\em bifurcates}\/ into two 
+asymmetric mirror image  period-1
+attractors.  Obviously, the bifurcation is indicated by the forking of the
+curve shown in Figure~\ref{fx24}. The lower and upper branches correspond to the left- and right-favouring
+ attractors, respectively.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.12.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, and $\omega=2/3$. Data is shown for two sets of initial
+conditions: $\theta(0)=0$ and $v(0)=0$ (lower branch); and $\theta(0)=0$ and $v(0)=-3$ (upper branch).}\label{fx24}
+\end{figure}
+
+Spontaneous symmetry breaking, which is the fundamental non-linear process illustrated in the
+above discussion,  plays an
+important role in many areas of physics. For instance, symmetry breaking gives mass
+to elementary particles in the unified theory of electromagnetic and weak interactions.\footnote{E.S.~Albers
+and B.W.~Lee, Phys.\ Rep.\ 9{\bf C}, 1 (1973).}
+Symmetry breaking also plays a pivotal role in the so-called ``inflation'' theory of the expansion
+of the early universe.\footnote{P.~Coles, and F.~Lucchin, {\em Cosmology: The origin and evolution
+of cosmic structure}, (J.~Wiley \& Sons, Chichester UK, 1995).}
+
+\section{Basins of Attraction}
+We have seen that when $Q=1.3$, $A=1.5$, and $\omega=2/3$ there are two co-existing
+period-1 attractors in $\theta$--$v$ phase-space. The time-asymptotic trajectory of the pendulum 
+through phase-space converges on one or other of these attractors depending on the initial conditions:
+{\em i.e.}, depending on the values of $\theta(0)$ and $v(0)$. 
+Let us define the {\em basin of attraction}\/ of a given attractor as the locus of all
+points in the $\theta(0)$--$v(0)$ plane which lead to motion which ultimately converges on that attractor.
+We have seen that in the low-amplitude ({\em i.e.}, linear) limit (see Section~\ref{s5.2}) there is only a
+single period-1 attractor  in phase-space, and  all possible initial conditions lead to motion
+which converges on this attractor. In other words,  the basin of attraction for the
+low-amplitude attractor constitutes the entire $\theta(0)$--$v(0)$ plane. The present
+case, in which there are {\em two} co-existing attractors in phase-space, is somewhat more complicated.
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter15/fig15.13.eps}}
+\caption{\em The basins of attraction for the asymmetric, mirror image, attractors
+pictured in Figures~\ref{f22} and \ref{f23}. Regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the left-favouring attractor shown
+in Figure~\ref{f22} are coloured white: regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the right-favouring attractor shown
+in Figure~\ref{f23} are coloured black. Data calculated numerically
+for $Q=1.3$, $A=1.5$, $\omega=2/3$, and $\phi=0$.
+}\label{f25}
+\end{figure}
+
+Figure~\ref{f25} shows the basins of attraction, in $\theta(0)$--$v(0)$ space, 
+of the asymmetric mirror image attractors
+pictured in Figures~\ref{f22} and \ref{f23}. The basin of attraction
+of  the left-favoring attractor shown in Figure~\ref{f22} is coloured black, whereas
+the basin of attraction
+of  the right-favoring attractor shown in Figure~\ref{f23} is coloured  white. It can
+be seen that the two basins form a complicated interlocking pattern. Since we can
+identify the angles $\pi$ and $-\pi$, the right-hand edge of the pattern connects
+smoothly with its left-hand edge. In fact, we can think of the pattern as existing
+on the surface of a {\em cylinder}.
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter15/fig15.14.eps}}
+\caption{\em  Detail of the basins of attraction for the asymmetric, mirror image, attractors
+pictured in Figures~\ref{f22} and \ref{f23}. Regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the left-favouring attractor shown
+in Figure~\ref{f22} are coloured white: regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the right-favouring attractor shown
+in Figure~\ref{f23} are coloured black. Data calculated numerically
+for $Q=1.3$, $A=1.5$, $\omega=2/3$, and $\phi=0$.
+}\label{f26}
+\end{figure}
+
+Suppose that we take a diagonal from the bottom left-hand corner of Figure~\ref{f25}
+to its top right-hand corner. This diagonal is intersected by a number of black
+bands of varying thickness. Observe that the two narrowest bands ({\em i.e.}, the
+fourth band from the bottom left-hand corner and the second band from the
+upper right-hand corner) both exhibit structure which is not very well resolved in the
+present picture. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter15/fig15.15.eps}}
+\caption{\em  Detail of the basins of attraction for the asymmetric, mirror image, attractors
+pictured in Figures~\ref{f22} and \ref{f23}. Regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the left-favouring attractor shown
+in Figure~\ref{f22} are coloured white: regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the right-favouring attractor shown
+in Figure~\ref{f23} are coloured black. Data calculated numerically
+for $Q=1.3$, $A=1.5$, $\omega=2/3$, and $\phi=0$.
+}\label{f27}
+\end{figure}
+
+Figure~\ref{f26} is a blow-up of a region close to the lower left-hand corner of Figure~\ref{f25}. 
+It can be seen that the unresolved band in the latter figure ({\em i.e.}, the second and
+third bands from the right-hand side in the former figure) actually consists of a closely spaced 
+{\em pair}\/ of bands. 
+Note, however, that the narrower of these two bands exhibits structure which is not very well resolved in the
+present picture. 
+
+\begin{figure}
+\epsfysize=3.5in
+\centerline{\epsffile{Chapter15/fig15.16.eps}}
+\caption{\em  Detail of the basins of attraction for the asymmetric, mirror image, attractors
+pictured in Figures~\ref{f22} and \ref{f23}. Regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the left-favouring attractor shown
+in Figure~\ref{f22} are coloured white: regions of $\theta(0)$--$v(0)$
+space which lead to motion converging on the right-favouring attractor shown
+in Figure~\ref{f23} are coloured black. Data calculated numerically
+for $Q=1.3$, $A=1.5$, $\omega=2/3$, and $\phi=0$.
+}\label{f28}
+\end{figure}
+
+Figure~\ref{f27} is a blow-up of a region of Figure~\ref{f26}. 
+It can be seen that the unresolved band in the latter figure ({\em i.e.}, the first and
+second bands from the left-hand side in the former figure) actually consists of a closely spaced 
+{\em pair} of bands. 
+Note, however, that the broader of these two bands exhibits structure which is not very well resolved in the
+present picture. 
+
+Figure~\ref{f28} is a blow-up of a region of Figure~\ref{f27}. 
+It can be seen that the unresolved band in the latter figure ({\em i.e.}, the first, second, and third
+bands from the right-hand side in the former figure) actually consists of a closely spaced 
+{\em triplet}\/ of bands. 
+Note, however, that the narrowest of these  bands exhibits structure which is not very well resolved in the
+present picture. 
+
+It should be clear, by this stage, that no matter how closely we look at Figure~\ref{f25} we are
+going to find structure which  we cannot resolve. In other words, the separatrix between the two
+basins of attraction shown in this figure is a curve which exhibits structure {\em at all
+scales}. Mathematicians have a special term for such a curve---they call it a 
+{\em fractal}.\footnote{B.B.~Mandelbrot, {\em The fractal geometry of nature}, (W.H.~Freeman, 
+New York NY, 1982).}
+
+Many people think of fractals as mathematical toys whose principal use is the generation
+of pretty pictures. However, it turns out that there is a close connection between fractals
+and the dynamics of non-linear systems---particularly systems which exhibit chaotic
+dynamics. We have just seen an example in which the boundary between the basins of attraction of two
+co-existing attractors in phase-space is a fractal curve. This turns out to be a fairly
+general result: {\em i.e.}, when multiple attractors exist in phase-space the separatrix
+between their various basins of attraction is invariably fractal. What is this telling us
+about the nature of non-linear dynamics? Well, returning to Figure~\ref{f25}, we can see that in the
+region of phase-space in which the fractal behaviour of the separatrix manifests itself most
+strongly ({\em i.e.}, the region where the light and dark bands fragment) the system exhibits
+abnormal sensitivity to  initial conditions. In other words, we only have to change the initial
+conditions slightly ({\em i.e.}, so as to move from a dark to a light band, or {\em vice versa})
+in order to significantly alter the time-asymptotic motion of the pendulum ({\em i.e.}, to cause the
+system to converge to a left-favouring  instead of  a right-favouring attractor, 
+or {\em vice versa}). Fractals and extreme sensitivity to initial conditions
+are themes which will reoccur in our investigation of non-linear dynamics.
+
+\section{Period-Doubling Bifurcations}
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.17.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=0$, and $\phi=0$. }\label{f29}
+\end{figure}
+Let us now return to Figure~\ref{f20}. Recall, that as the quality-factor $Q$
+is gradually increased,  the time-asymptotic orbit of the
+pendulum through phase-space undergoes a sudden transition, at $Q\simeq 1.245$, from a
+left-right symmetric period-1  orbit to a left-favouring period-1 orbit. What happens if
+we continue to increase $Q$? Figure~\ref{f29} is basically a continuation of Figure~\ref{f20}. 
+It can be seen that as $Q$ is increased the left-favouring period-1 orbit gradually
+evolves until a critical value of $Q$, which is about $1.348$, is reached.
+When $Q$ exceeds this critical value the nature of the orbit undergoes another sudden change:
+this time
+from a left-favouring period-1 orbit to a left-favouring {\em period-2}\/ orbit. 
+Obviously, the
+change is
+indicated by the forking of the curve in Figure~\ref{f29}. This type of transition
+is termed a {\em period-doubling bifurcation}, since it involves a 
+sudden doubling of the
+repetition period of the pendulum's time-asymptotic motion. 
+
+We can represent period-1 motion schematically as $AAAAAA\cdots$, where $A$ represents a pattern
+of motion which is repeated every period of the external drive. Likewise, we can represent
+period-2 motion as $ABABAB\cdots$, where $A$ and $B$ represent {\em distinguishable}\/  patterns of motion
+which are repeated every alternate period of the external drive. A period-doubling
+bifurcation is represented: $AAAAAA\cdots\rightarrow ABABAB\cdots$. Clearly, all that happens
+in such a bifurcation is that the pendulum suddenly decides to do something slightly different in
+alternate periods of the external drive.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.18.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit in phase-space. Data
+calculated numerically for $Q=1.36$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+and $v(0)=-3$. }\label{f30}
+\end{figure}
+
+Figure~\ref{f30} shows the time-asymptotic phase-space orbit of the pendulum calculated for a
+value of $Q$ somewhat higher than that required to trigger the above mentioned period-doubling bifurcation. It can
+be seen that the orbit is left-favouring ({\em i.e.}, it spends the majority of its time on
+the left-hand side of the plot), and takes the form of a closed curve consisting of
+{\em two}\/ interlocked loops in phase-space.
+Recall that for period-1 orbits there was only a single closed  loop in phase-space.
+Figure~\ref{f31} shows the Poincar\'{e} section of the orbit shown in Figure~\ref{f30}. 
+The fact that the section consists
+of {\em two}\/ points confirms that the orbit does indeed correspond to period-2 motion.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.19.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic
+orbit. Data calculated numerically for $Q=1.36$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+$v(0)=0$, and $\phi=0$. }\label{f31}
+\end{figure}
+
+A period-doubling bifurcation is an example of {\em temporal symmetry breaking}. The equations of
+motion of the pendulum are invariant under the transformation $t\rightarrow t+\tau$, where
+$\tau$ is the period of the external drive. In the low amplitude ({\em i.e.}, linear) limit, 
+the time-asymptotic motion of the pendulum always respects this symmetry. However, as we have just seen, in the
+non-linear regime it is possible to obtain solutions which spontaneously break this  symmetry.
+Obviously, motion which repeats itself every two periods of the external drive is not
+as temporally symmetric as motion which repeats every period of the drive. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.20.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, and $\phi=0$. Data is shown for two sets of initial
+conditions: $\theta(0)=0$ and $v(0)=0$ (lower branch); and $\theta(0)=0$ and $v(0)=-2$ (upper branch).}\label{f32}
+\end{figure}
+
+Figure~\ref{f32} is essentially a continuation of Fig~\ref{fx24}. Data is shown for two
+sets of initial conditions which lead to motions converging on left-favouring (lower branch) and
+right-favouring (upper branch) periodic attractors. We have already seen that the left-favouring
+periodic attractor undergoes a period-doubling bifurcation at $Q=1.348$. It is clear from Figure~\ref{f32}
+that the right-favouring attractor undergoes a similar bifurcation at almost exactly the
+same $Q$-value. This is hardly surprising since, as has already
+been mentioned, for fixed physical parameters ({\em i.e.}, $Q$, $A$, $\omega$), the
+left- and right-favouring attractors are mirror-images of one another.
+
+\section{Route to Chaos}\label{spd}
+Let us return to Figure~\ref{f29}, which tracks the evolution of a left-favouring
+periodic attractor as the quality-factor $Q$ is gradually increased. Recall that when
+$Q$ exceeds a critical value, which is about $1.348$, then the attractor
+undergoes a period-doubling bifurcation which converts it from a period-1 to a period-2
+attractor. This bifurcation is indicated by the forking of the curve in
+Figure~\ref{f29}. Let us now investigate what happens as we continue to increase $Q$. Figure~\ref{f34} is basically
+a continuation of Figure~\ref{f29}. It can be seen that, as $Q$ is gradually
+increased, the attractor undergoes a period-doubling bifurcation at $Q=1.348$, as before,
+but then undergoes a {\em second}\/ period-doubling bifurcation (indicated by the 
+second forking of
+the curves) at $Q\simeq 1.370$, and a {\em third}\/ bifurcation at $Q\simeq 1.375$. Obviously, the second bifurcation
+converts a period-2 attractor into a period-4 attractor (hence, two curves split apart to
+give four curves). Likewise, the third bifurcation converts a period-4 attractor
+into a period-8 attractor (hence, four curves split into eight curves). 
+Shortly after the third
+bifurcation, the various curves in the figure seem to expand explosively and  merge together
+to produce an area of almost solid black. As we shall see, this behaviour is indicative
+of the onset of {\em chaos}. 
+ 
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter15/fig15.21.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=0$, and $\phi=0$.}\label{f34}
+\end{figure}
+
+Figure~\ref{f35} is a blow-up of Figure~\ref{f34}, showing more details of the onset of
+chaos. The period-4 to period-8 bifurcation can be seen quite clearly. However,
+we can also see a period-8 to period-16 bifurcation, at $Q\simeq 1.3755$. Finally,
+if we look carefully, we can see a hint of a period-16 to period-32 bifurcation, just
+before the start of the solid black region.
+ Figures~\ref{f34} and \ref{f35} seem to suggest that the
+onset of chaos is triggered by an {\em infinite series}\/ of period-doubling bifurcations.
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter15/fig15.22.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=0$,
+ and $\phi=0$.}\label{f35}
+\end{figure}
+
+Table~\ref{tpd} gives some details of the sequence of period-doubling bifurcations
+shown in Figures~\ref{f34} and \ref{f35}. Let us introduce a bifurcation index $n$: the
+period-1 to period-2 bifurcation corresponds to $n=1$;  the
+period-2 to period-4 bifurcation corresponds to $n=2$; and so on. Let $Q_n$ be
+the critical value of the quality-factor $Q$ at which the $n$th bifurcation is
+triggered. Table~\ref{tpd} shows the $Q_n$, determined from  Figures~\ref{f34} and \ref{f35}, for
+$n=1$ to 5. Also shown is the ratio
+\begin{equation}
+F_n = \frac{Q_{n-1}-Q_{n-2}}{Q_{n}-Q_{n-1}}
+\end{equation}
+for $n=3$ to 5. It can be seen that Table~\ref{tpd} offers reasonably
+convincing  evidence that this ratio takes the {\em constant}\/ value $F=4.69$.
+It follows that we can estimate the critical $Q$-value required to trigger the $n$th
+ bifurcation via the following formula:
+\begin{equation}
+Q_n = Q_1 + (Q_2-Q_1)\sum_{j=0}^{n-2}\frac{1}{F^j},
+\end{equation}
+for $n>1$. Note that the distance (in $Q$) between bifurcations decreases rapidly as
+$n$ increases. In fact, the above
+formula predicts an {\em accumulation}\/ of period-doubling bifurcations at $Q=Q_\infty$, where
+\begin{equation}
+Q_\infty = Q_1 + (Q_2-Q_1)\sum_{j=0}^{\infty}\frac{1}{F^j} \equiv Q_1 + (Q_2-Q_1)\,\frac{F}{F-1}=
+1.3758.
+\end{equation}
+Note that our calculated  accumulation point corresponds almost exactly to the onset of the 
+solid black region in Figure~\ref{f35}.
+By the time that $Q$ exceeds $Q_\infty$,  we expect the attractor to have been
+converted into a {\em period-infinity}\/
+attractor via an infinite series of period-doubling bifurcations. 
+A period-infinity  attractor is one  whose corresponding motion {\em never}\/ repeats
+itself, no matter
+how long we wait. In dynamics, such bounded aperiodic motion is generally referred to as {\em chaos}. 
+Hence, a period-infinity attractor is sometimes called a {\em chaotic attractor}. 
+Now,  period-$n$ motion is represented by $n$ separate curves in Figure~\ref{f35}. 
+It is, therefore, not surprising that chaos ({\em i.e.}, period-infinity motion) is
+represented by an infinite number of curves which merge together to form a region of solid black.
+
+
+\begin{table}
+\centering
+\begin{tabular}{ccccc}\hline
+Bifurcation & $n$ & $Q_n$ & $Q_{n} - Q_{n-1}$ & $F_n$\\\hline
+period-1$\rightarrow$period-2 & $1$ & $1.34870$ & - & - \\
+period-2$\rightarrow$period-4 & $2$ & $1.37003$ & 0.02133 & - \\
+period-4$\rightarrow$period-8 & $3$ & $1.37458$ & 0.00455 & $4.69\pm 0.01$ \\
+period-8$\rightarrow$period-16 & $4$ & $1.37555$ & 0.00097 & $4.69\pm 0.04$ \\
+period-16$\rightarrow$period-32 & $5$ & $1.37575$ & 0.00020 & $4.9\pm 0.20$ \\
+\hline
+\end{tabular}
+\caption{\em The period-doubling cascade.}\label{tpd}
+\end{table}
+
+Let us examine the onset of chaos in a little more detail. Figures~\ref{f36}--\ref{f39}
+show details of the pendulum's time-asymptotic motion at various stages on the
+period-doubling cascade discussed above. Figure~\ref{f36} shows period-4 motion:
+note that the  Poincar\'{e} section consists of four points, and the associated sequence of
+net rotations per period of the pendulum repeats itself every four periods.
+ Figure~\ref{f37} shows period-8 motion:
+now the Poincar\'{e} section consists of eight points, and the rotation sequence
+ repeats itself every eight periods. Figure~\ref{f38} shows period-16 motion:
+as expected, the Poincar\'{e} section consists of sixteen points, and the rotation sequence
+ repeats itself every sixteen periods. Finally, Figure~\ref{f39} shows chaotic motion. Note that
+the Poincar\'{e} section now consists of a set of four {\em continuous}\/ line segments, which are, presumably, made
+up of an infinite number of points (corresponding to the infinite period of chaotic motion). 
+Note, also, that the associated sequence of net rotations per period shows no obvious sign of ever
+repeating itself. In fact, this sequence looks rather like one of the previously shown periodic
+sequences with the addition of a small random component. The generation of {\em apparently
+random}\/ motion from   equations of motion, such as Equations~(\ref{e16.11}) and
+(\ref{e16.12}), which contain no overtly random elements is one of the most surprising features of
+non-linear dynamics.
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.23.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data 
+calculated numerically for $Q=1.372$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=0$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$,  calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f36}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.24.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit.
+Data calculated numerically  for $Q=1.375$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=0$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f37}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.25.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=1.3757$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=0$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f38}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.26.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=1.376$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=0$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f39}
+\end{figure}
+
+Many non-linear dynamical systems found in nature exhibit a transition
+from periodic to chaotic motion as some control parameter is varied.
+Moreover, there are various known mechanisms by which chaotic motion can arise from periodic
+motion. A transition to chaos via an infinite series of period-doubling bifurcations, as
+illustrated
+above, is one of the most commonly occurring mechanisms. 
+Around 1975, the physicist Mitchell Feigenbaum was investigating a simple mathematical
+model, known as the {\em logistic map}, which exhibits a transition to chaos,
+via a sequence of period-doubling bifurcations, as a control parameter
+$r$ is increased. Let $r_n$ be the value of $r$ at which the
+first $2^n$-period cycle appears. Feigenbaum noticed that the ratio
+\begin{equation}
+F_n =\frac{r_{n-1}-r_{n-2}}{r_{n}-r_{n-1}}
+\end{equation}
+converges rapidly to a constant value, $F=4.669$, as $n$ increases. Feigenbaum was
+able to demonstrate  that this value of $F$ is common to a wide range of different
+mathematic models which exhibit transitions to chaos via period-doubling
+bifurcations.\footnote{M.J.~Feigenbaum, {\em Quantitative universality for a
+class of nonlinear transformations}, J.\ Stat.\ Phys.\ {\bf 19}, 25 (1978).}
+Feigenbaum  went on to argue that the {\em Feigenbaum ratio}, $F_n$,
+should converge to the value $4.669$ in {\em any} dynamical system exhibiting a
+transition to chaos via period-doubling bifurcations.\footnote{M.J.~Feigenbaum, 
+{\em The universal metric properties of nonlinear transformations}, 
+J.\ Stat.\ Phys.\ {\bf 21}, 69 (1979).} This amazing prediction has
+been verified experimentally in a number of quite different physical
+systems.\footnote{P.~Citanovic, {\em Universality in chaos}, (Adam Hilger,
+Bristol UK, 1989).} Note that our best estimate of the
+Feigenbaum ratio (see Table~\ref{tpd}) is $4.69\pm 0.01$, in good agreement with Feigenbaum's
+prediction.
+
+The existence of a universal ratio characterizing the transition to chaos via
+period-doubling bifurcations is one of many pieces of evidence indicating that
+chaos is a {\em universal}\/ phenomenon ({\em i.e.}, the onset and nature
+of chaotic motion in different dynamical systems has many common features). 
+This observation encourages us to believe that in studying the chaotic motion of 
+a damped periodically driven pendulum we are  learning lessons which can
+be applied to a wide range of non-linear dynamical systems.
+
+\section{Sensitivity to Initial Conditions}
+Suppose that we launch  our pendulum  and then wait until its motion has converged onto
+a particular attractor. The subsequent motion can be visualized as a
+trajectory $\theta_0(t)$, $v_0(t)$ through phase-space. Suppose that we then somehow
+perturb the pendulum, at time $t=t_0$, such that its position in phase-space
+is instantaneously changed from  $\theta_0(t_0)$, $v_0(t_0)$ to $\theta_0(t_0)+\delta\theta_0$, $v_0(t_0)
++\delta v_0$. The subsequent motion can be visualized as a second trajectory
+   $\theta_1(t)$, $v_1(t)$ through phase-space. What is the relationship
+between the original trajectory $\theta_0(t)$, $v_0(t)$ and the perturbed trajectory 
+$\theta_1(t)$, $v_1(t)$?
+In particular, does the phase-space separation between the two trajectories,
+whose components are
+\begin{eqnarray}
+\delta\theta({\mit\Delta} t) &=& \theta_1(t_0+{\mit\Delta} t)-\theta_0(t_0+{\mit\Delta} t),\\[0.5ex]
+\delta v({\mit\Delta} t) &=& v_1(t_0+{\mit\Delta} t)-v_0(t_0+{\mit\Delta} t),
+\end{eqnarray}
+grow in time,  decay in time, or stay more or less the same? What
+we are really investigating is how sensitive  the time-asymptotic
+ motion of the pendulum  is to initial conditions. 
+
+According to the linear analysis of Section~\ref{s5.2},
+\begin{eqnarray}
+\delta\theta({\mit\Delta} t) &=& \delta\theta_0\,\cos(\omega_\ast\, {\mit\Delta} t)\,\,{\rm e}^{-{\mit\Delta} t/2Q}\nonumber\\[0.5ex]&&
++ \frac{1}{\omega_\ast}\left\{\delta v_0 + \frac{\delta\theta_0}{2Q}\right\}
+\sin(\omega_\ast \,{\mit\Delta} t)\,\,{\rm e}^{-{\mit\Delta} t/2Q},\\[0.5ex]
+\delta v({\mit\Delta} t) &=& \delta v_0\,\cos(\omega_\ast \,{\mit\Delta} t)\,\,{\rm e}^{-{\mit\Delta} t/2Q}
+\nonumber\\[0.5ex]&&
+- \frac{1}{\omega_\ast}\left\{\delta \theta_0 + \frac{\delta v_0}{2Q}\right\}
+\sin(\omega_\ast \,{\mit\Delta} t)\,\,{\rm e}^{- {\mit\Delta} t/2Q},
+\end{eqnarray}
+assuming $\sin(\omega_\ast\,t_0)=0$.
+It is clear that, in the linear regime, at least, the pendulum's 
+time-asymptotic motion  is not particularly sensitive
+to initial conditions. In fact, if we move the pendulum's phase-space trajectory slightly off
+the linear attractor, as described above, then
+ the perturbed
+trajectory   decays  back to the attractor {\em exponentially}\/ in time.
+In other words, if we wait long enough then the perturbed and unperturbed motions of the pendulum
+become effectively indistinguishable. Let us now investigate whether this insensitivity to
+initial conditions carries over into the non-linear regime.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.27.eps}}
+\caption{\em The $v$-component of the separation between two neighbouring
+phase-space trajectories (one of which lies on an attractor) plotted against normalized time. Data
+ calculated numerically for $Q=1.372$, 
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, and $v(0)=0$. The separation between the
+two trajectories is initialized to $\delta\theta_0=\delta v_0 = 10^{-6}$ at
+${\mit\Delta} t = 0$.}\label{f40}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.28.eps}}
+\caption{\em The $v$-component of the separation between two neighbouring
+phase-space trajectories  (one of which lies on an attractor) plotted against normalized time. Data
+ calculated numerically for $Q=1.375$, 
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, and $v(0)=0$. The separation between the
+two trajectories is initialized to $\delta\theta_0=\delta v_0 = 10^{-6}$ at
+${\mit\Delta} t = 0$.}\label{f41}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.29.eps}}
+\caption{\em The $v$-component of the separation between two neighbouring
+phase-space trajectories (one of which lies on an attractor) plotted against normalized time. Data
+calculated numerically for $Q=1.3757$, 
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, and $v(0)=0$. The separation between the
+two trajectories is initialized to $\delta\theta_0=\delta v_0 = 10^{-6}$ at
+${\mit\Delta} t = 0$.}\label{f42}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter15/fig15.30.eps}}
+\caption{\em The $v$-component of the separation between two neighbouring
+phase-space trajectories (one of which lies on an attractor) plotted against normalized time. Data
+ calculated numerically for $Q=1.376$, 
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, and $v(0)=0$. The separation between the
+two trajectories is initialized to $\delta\theta_0=\delta v_0 = 10^{-6}$ at
+${\mit\Delta} t = 0$.}\label{fx43}
+\end{figure}
+
+Figures~\ref{f40}--\ref{fx43} show the results of the experiment described above,
+in which the pendulum's phase-space trajectory is moved slightly off an attractor
+and the phase-space separation between the perturbed and unperturbed trajectories
+is then monitored as a function of time,
+at various stages on the period-doubling cascade discussed in the previous section. 
+To be more exact, the figures show the logarithm of the absolute magnitude of the
+$v$-component of the phase-space separation between the perturbed and unperturbed
+trajectories as  a function of normalized time.
+
+Figure~\ref{f40} shows the time evolution of the $v$-component of the phase-space
+separation, $\delta v$, between two neighbouring trajectories, one of which is the period-4
+attractor illustrated in Figure~\ref{f36}. It can be seen that $\delta v$ decays rapidly
+in time. In fact, the graph of $\log(|\delta v|)$ versus ${\mit\Delta} t$ can be plausibly
+represented as a {\em straight-line} of gradient $\lambda$. In other words,
+\begin{equation}
+|\delta v({\mit\Delta} t)| \simeq \delta v_0\,{\rm e}^{\,\lambda\,{\mit\Delta t}},\label{lia}
+\end{equation}
+where the quantity $\lambda$ is known as the {\em Liapunov exponent}, and is obviously negative. Clearly, in this case,
+$\lambda$ measures the strength of the exponential convergence of the two
+trajectories in phase-space. 
+Of course,
+the  graph of $\log(|\delta v|)$ versus ${\mit\Delta} t$ is not exactly a straight-line. There
+are deviations due to the fact that $\delta v$ oscillates, as well as decays, in time.
+There are  
+also deviations because the strength
+of the exponential convergence between the two trajectories varies along the attractor. 
+
+The above definition of the Liapunov exponent is rather inexact, for
+two main reasons. In the first place,
+the strength
+of the exponential convergence/divergence between  two neighbouring trajectories in phase-space,
+one of which is an attractor, generally {\em varies}\/ along the attractor. Hence, we should really
+take formula (\ref{lia}) and somehow {\em average}\/ it over the attractor,
+in order to obtain a more unambiguous definition of $\lambda$. In the second place,
+since the dynamical system under investigation  is a second-order system, it actually possesses {\em two}\/
+different Liapunov exponents. Consider the evolution of an infinitesimal circle of perturbed
+initial conditions, centred on a point in phase-space
+lying on an attractor. During its evolution, the circle will become
+distorted into an infinitesimal ellipse. Let $\delta_k$, where $k=1,2$, denote the phase-space
+length of the $k$th principal axis of the ellipse. The two Liapunov exponents, $\lambda_1$ and $\lambda_2$,
+are defined via $\delta_k({\mit\Delta}t)\simeq \delta_k(0)\,\exp(\lambda_k\,{\mit\Delta}t)$. 
+However, for large ${\mit\Delta}t$, the diameter of the ellipse is effectively controlled by the 
+Liapunov exponent with the most positive real part. Hence, when we refer to
+{\em the}\/ Liapunov exponent, $\lambda$, what we generally mean is the Liapunov 
+exponent with the most positive real part. 
+
+Figure~\ref{f41} shows the time evolution of the $v$-component of the phase-space
+separation, $\delta v$, between two neighbouring trajectories, one of which is the period-8
+attractor illustrated in Figure~\ref{f37}. It can be seen that $\delta v$ decays in time,
+though not as rapidly as in Figure~\ref{f40}. Another way of saying this is that the
+Liapunov exponent of the periodic  attractor shown in Figure~\ref{f37} 
+is negative ({\em i.e.}, it has a negative real part),
+but not as negative as that of the periodic attractor shown in Figure~\ref{f36}.
+
+Figure~\ref{f42} shows the time evolution of the $v$-component of the phase-space
+separation, $\delta v$, between two neighbouring trajectories, one of which is the period-16
+attractor illustrated in Figure~\ref{f38}. It can be seen that $\delta v$ decays weakly in
+time. In other words, the Liapunov exponent of the periodic attractor shown in Figure~\ref{f38} is
+small and negative. 
+
+Finally, Figure~\ref{fx43} shows the time evolution of the $v$-component of the phase-space
+separation, $\delta v$, between two neighbouring trajectories, one of which is the chaotic
+attractor illustrated in Figure~\ref{f39}. It can be seen that $\delta v$ {\em increases}\/   in
+time. In other words, the  Liapunov exponent of the chaotic attractor shown in Figure~\ref{f39} is
+{\em positive}. Further investigation reveals that, as the control parameter $Q$
+is gradually increased, the Liapunov exponent changes sign and becomes positive at exactly the same
+point that chaos ensues in Figure~\ref{f35}. 
+
+The above discussion strongly suggests that periodic attractors are characterized by negative
+Liapunov exponents, whereas chaotic attractors are characterized by positive exponents.
+But, how can an attractor have a positive Liapunov exponent? Surely, a positive
+exponent necessarily implies that neighbouring phase-space trajectories {\em diverge}\/
+from the attractor (and, hence, that the attractor is not a true attractor)? 
+It turns out that this is not the case. The chaotic attractor
+shown in Figure~\ref{f39} is a true attractor, in the sense that neighbouring trajectories
+rapidly converge onto it---{\em i.e.}, after a few periods of the external drive
+their Poincar\'{e} sections plot out the same four-line segment shown in Figure~\ref{f39}. 
+Thus, the exponential divergence of neighbouring trajectories, characteristic of chaotic
+attractors, takes place {\em within the attractor}\/ itself. Obviously, this exponential divergence
+must come to an end when the phase-space separation of the trajectories becomes comparable to the 
+extent of the attractor.
+
+A dynamical system characterized by a positive Liapunov exponent, $\lambda$,  has a {\em time horizon} beyond
+which regular deterministic prediction breaks down. Suppose that we measure the initial
+conditions of an experimental system very accurately. Obviously, no measurement is perfect: there
+is always some error $\delta_0$ between our estimate and the true initial state. After a
+time $t$, the discrepancy grows to $\delta(t)\sim \delta_0\,\exp(\lambda\,t)$. Let $a$ be
+a measure of our tolerance: {\em i.e.}, a prediction within $a$ of the true state
+is
+considered acceptable. It follows that our prediction becomes unacceptable when
+$\delta \gg a$, which occurs when
+\begin{equation}
+t> t_h \sim \frac{1}{\lambda}\ln\!\left(\frac{a}{\delta_0}\right).
+\end{equation}
+Note the {\em logarithmic}\/ dependence on $\delta_0$. This ensures that, in practice, no matter how
+hard we work to reduce our initial measurement error, we cannot predict the behaviour of
+the system for longer than a few multiples of $1/\lambda$. 
+
+It follows, from the above discussion, that chaotic attractors are associated with motion which is
+essentially {\em unpredictable}. In other words, if we attempt to integrate the equations of
+motion of a chaotic system then even the slightest error made in the initial conditions
+will be amplified exponentially over time, and will rapidly destroy the accuracy of our prediction. 
+Eventually, all that we will be able to say is that the motion lies somewhere on the chaotic attractor
+in phase-space, but exactly where it lies on the attractor at any given time will be unknown to
+us. 
+
+The hyper-sensitivity of chaotic systems to initial conditions  is
+sometimes called the {\em butterfly effect}. The idea is that a butterfly flapping its wings
+in a South American rain-forest could, in principle,  affect the weather in Texas (since the atmosphere 
+exhibits chaotic dynamics). This idea was first publicized by the meteorologist Edward Lorenz,
+who constructed a very crude model of the convection of the atmosphere when it is heated from
+below by the ground.\footnote{E.~Lorenz, {\em Deterministic nonperiodic flow}, J.\ Atmospheric
+Science {\bf 20}, 130 (1963).}
+ Lorenz discovered, much to his surprise, that his model atmosphere exhibited
+chaotic motion---which, at that time, was virtually unknown.
+ In fact, Lorenz was essentially the first
+scientist to fully understand the nature and ramifications of chaotic motion in
+physical systems. In particular, Lorenz realized that the chaotic dynamics of the
+atmosphere spells the doom of long-term weather forecasting: the best one can hope 
+to achieve is
+to predict the weather a few days in advance ($1/\lambda$ for the atmosphere is of order a
+few days). 
+
+\section{Definition of Chaos}
+There is no universally agreed definition of chaos. However, most people would accept the
+following working definition:
+\begin{quote}
+Chaos is aperiodic time-asymptotic behaviour in a deterministic system which
+exhibits sensitive dependence on initial conditions.
+\end{quote}
+This definition contains three main elements:
+\begin{enumerate}
+\item Aperiodic time-asymptotic behaviour---this implies the existence of
+phase-space trajectories which do not settle down to fixed points or
+periodic orbits. For practical reasons, we  insist that these trajectories
+are not too rare. We also require the trajectories to be {\em bounded}:
+{\em i.e.}, they should not go off to infinity. 
+\item Deterministic---this implies that the equations of motion of the system  possess no
+random inputs. In other words, the irregular behaviour of the system   arises
+from non-linear dynamics, and not from noisy driving forces. 
+\item Sensitive dependence on initial conditions---this implies that nearby
+trajectories in phase-space separate exponentially fast in time: {\em i.e.}, that the
+system has a positive Liapunov exponent.
+\end{enumerate}
+
+\section{Periodic Windows}
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter15/fig15.31.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=-0.75$,
+ and $\phi=0$.}\label{fx44}
+\end{figure}
+
+Let us return to Figure~\ref{f35}. Recall, that this figure shows the onset of
+chaos, via a cascade of period-doubling bifurcations, as the quality-factor $Q$
+is gradually increased. Figure~\ref{fx44} is essentially a continuation of Figure~\ref{f35}
+which shows the full extent of the chaotic region (in $Q$-$v$ space). It can be
+seen that the chaotic region ends abruptly when $Q$ exceeds a critical
+value, which is about $1.4215$. Beyond this critical value, the time-asymptotic motion appears to
+revert to period-1 motion ({\em i.e.}, the solid black region collapses to a single curve). 
+It can also be seen that the chaotic region contains many narrow  windows in which
+chaos reverts to periodic motion  ({\em i.e.}, the solid black region collapses
+to $n$ curves, where $n$ is the period of the motion) for a short interval in $Q$. The four widest
+windows are indicated in the figure.
+
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter15/fig15.32.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=-0.75$, and $\phi=0$.}\label{f45}
+\end{figure}
+
+Figure~\ref{f45} is a blow-up of the period-3 window shown in Figure~\ref{fx44}. It can be
+seen that the window appears ``out of the blue'' as $Q$ is gradually increased. However,
+it can also be seen that, as $Q$ is further increased,  the window breaks down,
+and eventually disappears, due to the action of a cascade of period-doubling
+bifurcations. The same basic mechanism operates here as in the original period-doubling
+cascade, discussed in Section~\ref{spd}, except that now the orbits are of period $3\cdot 2^n$, instead of $2\cdot 2^n$. 
+Note that all of the other periodic windows seen in Figure~\ref{fx44} break down in an analogous manner,
+as $Q$ is increased.
+
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.33.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=1.387976$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=-0.75$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f46}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.34.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=1.387977$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=-0.75$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f47}
+\end{figure}
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.35.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=1.387978$, $A=1.5$, $\omega=2/3$,
+$\theta(0)=0$, $v(0)=-0.75$, and $\phi=0$. Also, shown is the
+net rotation per period, ${\mit\Delta}\theta/2\pi$, calculated at the Poincar\'{e} phase
+$\phi=0$.}\label{f48}
+\end{figure}
+
+We now understand how periodic windows break down. But, how do they appear in the
+first place? Figures~\ref{f46}--\ref{f48} show details of the pendulum's time-asymptotic
+motion calculated {\em just before}\/ the appearance of the period-3 window (shown in Figure~\ref{f45}), {\em just at}\/ the appearance of the window, and {\em just after}\/ the appearance of the window,
+respectively. It can be seen, from Figure~\ref{f46}, that just before the appearance of the
+window the attractor is chaotic ({\em i.e.}, its Poincar\'e section consists of a line,
+rather than a discrete set of points), and the time-asymptotic motion of the pendulum
+consists of intervals of period-3 motion interspersed with intervals of chaotic motion.
+Figure~\ref{f47} shows that just at the appearance of the window the attractor
+loses much of its chaotic nature ({\em i.e.}, its Poincar\'e section  breaks up into a series 
+of points), and the chaotic intervals  become shorter and much less frequent. Finally,
+Figure~\ref{f48} shows that just after the appearance of the window the attractor
+collapses to a period-3 attractor, and the chaotic intervals cease altogether. 
+All of the other periodic windows seen in Figure~\ref{fx44} appear in an analogous manner to that
+just described.
+
+According to the above discussion,
+the typical time-asymptotic motion seen just prior to the appearance of a period-$n$ window
+consists of intervals of period-$n$ motion interspersed with intervals of chaotic
+motion. This type of behaviour is called {\em intermittency}, and is observed in a
+wide variety of non-linear systems. As we move away from the window, in parameter
+space, the intervals of periodic motion become gradually shorter and more infrequent. 
+Eventually, they cease altogether. Likewise, as we move towards the window, the
+intervals of periodic motion become gradually longer and more frequent. Eventually,
+the whole motion becomes periodic. 
+
+In 1973, Metropolis and co-workers investigated a class of simple mathematical models which all
+exhibit a transition to chaos, via a cascade of period-doubling bifurcations, as
+some control parameter $r$ is increased.\footnote{N.~Metropolis,
+M.L.~Stein, and P.R.~Stein, {\em On finite limit sets for transformations
+on the unit interval}, J.\ Combin.\ Theor.\ {\bf 15}, 25 (1973).} They were able to demonstrate
+that, for these models,  the order in which stable periodic orbits occur as $r$ is
+increased  is fixed. 
+That is, {\em stable periodic attractors always occur in the same sequence}\/ as
+$r$ is varied. This sequence is
+called the universal or {\em U-sequence}. It is possible to make a fairly
+convincing argument that any physical system which exhibits a transition to chaos
+via a sequence of period-doubling bifurcations should also exhibit the U-sequence
+of stable periodic attractors.
+Up to period-6, the U-sequence is
+$$
+1, \,2,\, 2\times 2,\, 6,\, 5,\, 3,\, 2\times 3,\, 5, \,6,\, 4,\, 6,\, 5,\, 6.
+$$
+The beginning of this sequence is familiar: periods 1, 2, $2\times 2$ are the
+first stages of the  period-doubling cascade. (The later period-doublings
+give rise to periods greater than 6, and so are omitted here). The next periods,
+$6,5,3$ correspond to the first three periodic windows shown in Figure~\ref{fx44}. 
+Period $2\times 3$ is the first component of the period-doubling cascade which
+breaks up the period-3 window. The next period, 5, corresponds to the last
+periodic window shown in Figure~\ref{fx44}. The remaining periods,
+6, 4, 6, 5, 6, correspond to tiny periodic windows, which, in practice,
+are virtually impossible to  observe. It follows that our
+driven pendulum system exhibits the U-sequence of stable periodic orbits fairly
+convincingly. This sequence has also been observed experimentally in other,
+quite different, dynamical systems.\footnote{R.H.~Simoyi,
+A.~Wolf, and H.L.~Swinney, {\em One-dimensional dynamics in a multi-component
+chemical reaction}, Phys.\ Rev.\ Lett.\ {\bf 49}, 245 (1982).} The existence of
+a universal sequence of stable periodic orbits in dynamical systems which
+exhibit a transition to chaos via a cascade of period-doubling bifurcations
+ is another indication that
+chaos is a universal phenomenon.
+
+\section{Further Investigation}
+\begin{figure}
+\epsfysize=3.in
+\centerline{\epsffile{Chapter15/fig15.36.eps}}
+\caption{\em The $v$-coordinate of the Poincar\'{e} section of a time-asymptotic orbit
+plotted against the quality-factor $Q$. Data
+ calculated numerically for
+$A=1.5$, $\omega=2/3$, $\theta(0)=0$, $v(0)=0$, and $\phi=0$.}\label{f49}
+\end{figure}
+Figure~\ref{f49} shows the complete {\em bifurcation diagram}\/ for the damped, periodically
+driven, pendulum (with $A=1.5$ and $\omega=2/3$). 
+ It can be seen that the chaotic region investigated in the previous section is, in fact,
+the first, and least extensive, of {\em three}\/ different chaotic regions. 
+
+\begin{figure}
+\epsfysize=2.in
+\centerline{\epsffile{Chapter15/fig15.37.eps}}
+\caption{\em Equally spaced (in time) points on a time-asymptotic orbit in phase-space. Data 
+calculated numerically for $Q=1.5$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+and $v(0)=0$.
+Also shown is the time-asymptotic orbit calculated for the modified initial
+conditions $\theta(0)=0$, and
+$v(0)=-1$.}\label{f50}
+\end{figure}
+
+The interval
+between the first and second chaotic regions is occupied by the period-1 orbits shown in
+Figure~\ref{f50}. Note that these orbits differ somewhat  from previously encountered period-1 orbits
+ in that the pendulum executes a complete rotation (either to
+the left or to the right) every period of the external drive. 
+Now, an $n,l$ periodic orbit is defined such that
+$$
+\theta(t+n\,\tau) = \theta(t) + 2\pi\,l
+$$
+for all $t$ (after the transients have died away). It follows that all of the periodic orbits which we 
+encountered in previous sections were $l=0$ orbits: {\em i.e.}, their  associated motions did
+not involve a net rotation of the pendulum. The orbits show in Figure~\ref{f50}
+are $n=1, l=-1$ and $n=1, l=+1$ orbits, respectively. The existence of periodic
+orbits in which the pendulum undergoes a net rotation, either to the left or to the right,
+is another example of spatial symmetry breaking---there is nothing in the pendulum's equations
+of motion which distinguishes between the two possible directions of rotation.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter15/fig15.38.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic orbit. Data
+calculated numerically for $Q=2.13$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+$v(0)=0$, and $\phi=0$. }\label{f51}
+\end{figure}
+
+Figure~\ref{f51} shows the Poincar\'{e} section of a typical  attractor in the
+second chaotic region shown in Figure~\ref{f49}. It can be seen that this attractor is far more
+convoluted and extensive than the simple 4-line chaotic attractor pictured in Figure~\ref{f39}. 
+In fact, the attractor shown in Figure~\ref{f51} is clearly a {\em fractal}\/ curve. It turns
+out that virtually all chaotic attractors exhibit fractal structure.
+
+The interval between the second and third chaotic regions shown in Figure~\ref{f49} is
+occupied by $n=3$, $l=0$ periodic orbits. Figure~\ref{f52} shows the Poincar\'{e} section 
+of a typical attractor in the
+third chaotic region. It can be seen that this attractor is even more overtly fractal
+in nature than that pictured in the previous figure. Note that the fractal nature
+of chaotic attractors is closely associated with some of their  unusual properties. 
+Trajectories on a chaotic attractor remain confined to a bounded region of phase-space,
+and yet they separate from their neighbours exponentially fast (at least, initially).
+How can trajectories diverge endlessly and still stay bounded? The basic mechanism
+is described below.
+If we imagine
+a blob of initial conditions in phase-space then these undergo a series of
+repeated {\em stretching and folding}\/ episodes, as the chaotic motion unfolds. The stretching is
+what gives rise to the divergence of neighbouring trajectories. The folding is what ensures that
+the trajectories remain bounded. 
+The net
+result is a phase-space structure which looks  a bit like filo pastry---in other words, a fractal
+structure. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter15/fig15.39.eps}}
+\caption{\em The Poincar\'{e} section of a time-asymptotic
+orbit. Data  calculated numerically for $Q=3.9$, $A=1.5$, $\omega=2/3$, $\theta(0)=0$,
+$v(0)=0$,  and $\phi=0$. }\label{f52}
+\end{figure}

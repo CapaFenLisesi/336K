@@ -1,0 +1,701 @@
+\chapter{Two-Body Dynamics}\label{ctwo}
+\section{Introduction}
+This chapter examines the motion of dynamical systems consisting
+of two freely moving and mutually interacting  point objects. 
+
+\section{Reduced Mass}\label{sredm}
+Suppose that our first object is of mass $m_1$, and is located
+at position vector ${\bf r}_1$. Likewise, our second object
+is of mass $m_2$, and is located at position vector ${\bf r}_2$. 
+Let the first object exert a force ${\bf f}_{21}$ on the
+second. By Newton's third law, the second object exerts an
+equal and opposite force, ${\bf f}_{12} = -{\bf f}_{21}$, on the 
+first. Suppose that there are no other forces in the problem. The equations of motion of our two objects are thus
+\begin{eqnarray}\label{e7.1}
+m_1\,\frac{d^2{\bf r}_1}{dt^2} &=& -{\bf f},\\[0.5ex]
+m_2\,\frac{d^2{\bf r}_2}{dt^2} &=&{\bf f},\label{e7.2}
+\end{eqnarray}
+where ${\bf f} = {\bf f}_{21}$. 
+
+Now, the center of mass of our system is located at
+\begin{equation}
+{\bf r}_{cm} = \frac{m_1\,{\bf r}_1+ m_2\,{\bf r}_2}{m_1 + m_2}.
+\end{equation}
+Hence, we can write
+\begin{eqnarray}
+{\bf r}_1 &=& {\bf r}_{cm} - \frac{m_2}{m_1+m_2}\,{\bf r},\\[0.5ex]
+{\bf r}_2 &=& {\bf r}_{cm} + \frac{m_1}{m_1+m_2}\,{\bf r},
+\end{eqnarray}
+where ${\bf r}= {\bf r}_2-{\bf r}_1$. 
+Substituting the above two equations into Equations~(\ref{e7.1}) and (\ref{e7.2}),
+and making use of the fact that the center of mass of an isolated system
+{\em does not accelerate}\/ (see Section~\ref{new3}), we find that both equations yield
+\begin{equation}\label{e7.6}
+\mu\,\frac{d^2{\bf r}}{d t^2} = {\bf f},
+\end{equation}
+where 
+\begin{equation}
+\mu = \frac{m_1\,m_2}{m_1+ m_2}
+\end{equation}
+is called the {\em reduced mass}. Hence, we have effectively converted our
+original two-body problem into an equivalent one-body problem. In the equivalent problem, the
+force ${\bf f}$ is the {\em same}\/ as that acting on both objects  in the original problem (modulo a minus sign). However, the mass, $\mu$, is {\em different}, and
+is less than either of $m_1$ or $m_2$ (which is why it is called the ``reduced'' mass). 
+
+\section{Binary Star Systems}\label{sbin}
+Approximately half of the stars in our galaxy are members of so-called {\em binary star
+systems}. Such systems consist of two stars orbiting about their common
+center of mass. The distance separating the  stars is always  much less than
+the distance to the nearest neighbour star. Hence, a binary star system
+can be treated as a two-body dynamical system to a very good approximation.
+
+In a binary star system, the gravitational force which the first star exerts on
+the second is
+\begin{equation}
+{\bf f} = - \frac{G\,m_1\,m_2}{r^3}\,{\bf r},
+\end{equation}
+where ${\bf r}= {\bf r}_2-{\bf r}_1$.
+As we have seen, a two-body system can be reduced to an equivalent
+one-body system whose equation of motion is of the form (\ref{e7.6}),
+where $\mu= m_1\,m_2/(m_1+m_2)$. 
+Hence, in this particular case, we can write
+\begin{equation}
+\frac{m_1\,m_2}{m_1+m_2}\, \frac{d^2{\bf r}}{dt^2} =-
+\frac{G\,m_1\,m_2}{r^3} \,{\bf r},
+\end{equation}
+which gives
+\begin{equation}\label{e7.10}
+\frac{d^2{\bf r}}{dt^2} =-
+\frac{G\,M}{r^3} \,{\bf r},
+\end{equation}
+where
+\begin{equation}
+M = m_1+ m_2.
+\end{equation}
+
+Equation~(\ref{e7.10}) is identical to Equation~(\ref{e6.3}), which we have already
+solved. Hence, we can immediately write down the solution:
+\begin{equation}
+{\bf r} = (r\,\cos\theta,\,r\,\sin\theta,\, 0),
+\end{equation}
+where
+\begin{equation}
+ r = \frac{a\,(1-e^2)}{1-e\,\cos\theta},
+\end{equation}
+and
+\begin{equation}
+\frac{d\theta}{dt} = \frac{h}{r^2},
+\end{equation}
+with
+\begin{equation}
+a = \frac{h^2}{(1-e^2)\,G\,M}.
+\end{equation}
+Here, $h$ is a constant, and we have aligned our Cartesian axes so that the plane of the orbit
+coincides with the $x$-$y$ plane.
+According to the above solution, the second star executes a Keplerian
+elliptical orbit, with major radius $a$ and eccentricity $e$,
+relative to the first star, and {\em vice versa}. From Equation~(\ref{e6.49}), the period of revolution, $T$, is given by
+\begin{equation}\label{e7.18}
+T = \sqrt{\frac{4\pi^2\,a^3}{G\,M}}.
+\end{equation}
+
+In the {\em inertial}\/ frame of reference whose origin always coincides with the center of mass---the so-called {\em center of mass frame}---the position vectors of the two stars are
+\begin{eqnarray}\label{e7.16}
+{\bf r}_1 &=& -\frac{m_2}{m_1+m_2}\,{\bf r},\\[0.5ex]
+{\bf r}_2 &=& \frac{m_1}{m_1+m_2}\,{\bf r},\label{e7.17}
+\end{eqnarray}
+where ${\bf r}$ is specified above. Figure~\ref{double} shows an example binary star orbit, in the center of mass frame, calculated with $m_1/m_2=0.5$
+and $e=0.2$. Here, the triangles and squares denote the positions of the
+first and second star, respectively (which are always diagrammatically opposite one another, as indicated by the arrows). It can be seen that both stars execute
+elliptical orbits about their common center of mass.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter06/fig6.01.eps}}
+\caption{\em An example binary star orbit.}\label{double}
+\end{figure}
+
+Binary star systems have been very useful to astronomers, since it is
+possible to determine the masses of both stars in such a system
+by careful observation.
+ The {\em sum}\/ of the masses of the two stars, $M=m_1+m_2$, can be found
+from Equation~(\ref{e7.18}) after a measurement of the major radius, $a$ (which
+is the mean of the greatest and smallest distance apart of the two
+stars during their orbit), and the orbital period, $T$. The {\em ratio}\/ of the
+masses of the two stars, $m_1/m_2$,  can be determined from Equations~(\ref{e7.16}) and (\ref{e7.17}) by
+observing the fixed ratio of the relative distances of the two stars from the common
+center of mass about which they both appear to rotate. Obviously, given the sum
+of the masses, and the ratio of the masses, the individual masses themselves can
+then be calculated.
+
+\section{Scattering in the Center of Mass Frame}\label{cofm}
+Let us now consider scattering due to the collision of two particles. We shall
+restrict our discussion to particles which interact via {\em conservative central
+forces}. It turns out that scattering looks particularly simple when
+viewed in the {\em  center of mass frame}. Let us, therefore, start our investigation
+by considering two-particle scattering in the center of mass frame.
+
+As before, the first particle is of mass $m_1$, and is located at position
+vector ${\bf r}_1$, whereas the second particle is of mass $m_2$,
+and is located at ${\bf r}_2$.
+By definition,  there is {\em zero net linear momentum}\/ in the center of mass
+frame at all times. Hence, if the first particle approaches the collision
+point with momentum ${\bf p}$ then the second must approach
+with momentum ${\bf -p}$. Likewise, after the collision, if the
+first particle recedes from the collision point with momentum ${\bf p}'$ 
+then the second  must recede with momentum $-{\bf p}'$---see Figure~\ref{coll}. Furthermore, since the interaction force is
+{\em conservative}, the total kinetic energy before and after the collision must
+be the {\em same}. It follows that the {\em magnitude}\/ of the final momentum
+vector, ${\bf p}'$, is equal to the magnitude of the initial momentum vector, ${\bf p}$. Because of this, the collision event is completely specified
+once the angle $\theta$ through which the
+first particle is scattered  is given. Of course, in the center of mass frame, the second particle
+is scattered through the same angle---see Figure~\ref{coll}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/fig6.02.eps}}
+\caption{\em A collision viewed in the center of mass frame.}\label{coll}
+\end{figure}
+
+Suppose that the two particles interact via the potential $U(r)$, where $r$
+is the distance separating the particles. As we have seen, the two-body
+problem sketched in Figure~\ref{coll} can be converted into the
+equivalent one-body problem sketched in Figure~\ref{coll1}. In this
+equivalent problem, a particle of mass $\mu=m_1\,m_2/(m_1+m_2)$ is scattered
+in the fixed potential $U(r)$, where $r$ is now the distance from the origin.
+The vector position ${\bf r}$ of the particle in the equivalent problem corresponds to the relative position vector ${\bf r}_2-{\bf r}_1$ in the original problem.
+It follows that the angle $\theta$ through which the particle is scattered in the equivalent
+problem is the same as the scattering angle $\theta$ in the original problem.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/fig6.03.eps}}
+\caption{\em The one-body equivalent to the previous figure.}\label{coll1}
+\end{figure}
+
+The scattering angle, $\theta$, is largely
+determined by the so-called {\em impact parameter}, $b$, which is the
+distance of closest approach of the two particles in the {\em absence}\/ of an
+interaction potential. In the equivalent problem, $b$ is the distance of
+closest approach to the origin in the absence of an interaction
+potential---see Figure~\ref{coll1}. If $b=0$ then we have a head-on collision. In this case, we expect
+the two particles to reverse direction after colliding: {\em i.e.}, we expect 
+$\theta=\pi$. Likewise, if $b$ is large then we expect the two particles
+to miss one another entirely, in which case $\theta=0$. It follows that the
+scattering angle, $\theta$, is a {\em decreasing}\/ function of the impact parameter,
+$b$. 
+
+Suppose that the  polar coordinates of the particle in the equivalent problem 
+are $(r,\,\vartheta)$. Let the particle approach the origin from the direction
+$\vartheta=0$, and attain its closest distance to the origin when
+$\vartheta={\mit\Theta}$. From symmetry, the angle $\alpha$ in Figure~\ref{coll1} is equal to the angle $\beta$. However, from simple geometry,
+$\alpha={\mit\Theta}$. Hence,
+\begin{equation}\label{e7.19}
+\theta = \pi - 2\,{\mit\Theta}.
+\end{equation}
+Now, by analogy with Equation~(\ref{e6.55}), the conserved total energy $E$ in the equivalent
+problem, which can easily be shown to be the same as the total energy in
+the original problem, is given by
+\begin{equation}\label{e7.20}
+E = \frac{\mu\,h^2}{2}\left[\left(\frac{du}{d\vartheta}\right)^2 + u^2\right] + U(u),
+\end{equation}
+where $u=r^{-1}$, and $h$ is the angular momentum per unit mass in the
+equivalent problem. It is easily seen that
+\begin{equation}
+h = b\,v_\infty = b\left(\frac{2\,E}{\mu}\right)^{1/2},
+\end{equation}
+where $v_\infty$ is the approach velocity in the equivalent problem
+at large $r$. 
+It follows that
+\begin{equation}\label{e7.22}
+E = E\,b^2\left[\left(\frac{du}{d\vartheta}\right)^2 + u^2\right] + U(u).
+\end{equation}
+The above equation can be rearranged to
+give
+\begin{equation}\label{e7.23}
+\frac{d\vartheta}{d u } = \frac{b}{\sqrt{1 - b^2\,u^2-U(u)/E}}.
+\end{equation}
+Integration yields
+\begin{equation}\label{e7.24}
+{\mit\Theta} = \int_0^{u_{max}}\frac{b\,du}{\sqrt{1-b^2\,u^2- U(u)/E}}.
+\end{equation}
+Here, $u_{max}=1/r_{min}$, where $r_{min}$ is the distance of closest approach. Since, by symmetry,  $(du/d\vartheta)_{u_{max}}=0$, it follows from Equation~(\ref{e7.23}) that
+\begin{equation}\label{e7.25}
+1 - b^2\,u_{max}^2 - U(u_{max})/E = 0.
+\end{equation}
+Equations (\ref{e7.19}) and (\ref{e7.24}) enable us to calculate the
+function $b(\theta)$ for a given interaction potential, $U(r)$, and a
+given total energy, $E$, of the two particles  in the center of mass frame. The function $b(\theta)$
+tells us which impact parameter corresponds to which scattering angle,
+and {\em vice versa}. 
+
+Instead of two particles, suppose that we now have  two counter-propag\-ating {\em beams}\/ of  identical particles (with the same properties as the
+two particles described above) which scatter one another via binary collisions. What
+is the angular distribution of the scattered particles?
+Consider pairs of particles whose impact parameters lie in the range $b$ to $b+db$. These particles are scattered in such a manner that their scattering
+angles lie in the range $\theta$ to $\theta+d\theta$, where $\theta$
+is determined from inverting the function $b(\theta)$, and
+\begin{equation}
+d\theta = \frac{db}{|db(\theta)/d\theta|}.
+\end{equation}
+Incidentally, we must take the modulus of $db(\theta)/d\theta$ because $b(\theta)$ is
+a decreasing function of $\theta$. Assuming, as seems reasonable, that the scattering
+is azimuthally symmetric, the range of {\em solid angle}\/ into which
+the particles are scattered is
+\begin{equation}
+d{\mit\Omega} = 2\pi\,\sin\theta\,d\theta = \frac{2\pi\,\sin\theta\,db}{|db/d\theta|}
+\end{equation}
+Finally, the {\em cross-sectional area}\/ of the {\em annulus}\/ through which incoming
+particles must pass if they are to have impact parameters in the
+range $b$ to $b+db$ is
+\begin{equation}
+d\sigma = 2\pi\,b\,db.
+\end{equation}
+The previous two equations allow us to define the {\em differential scattering
+cross-section}:
+\begin{equation}\label{e7.29}
+\frac{d\sigma}{d{\mit\Omega}} = \frac{b}{\sin\theta}\left|\frac{db}{d\theta}\right|
+\end{equation}
+The differential scattering cross-section has units of area per steradian,
+and specifies the effective target area for scattering into a given
+range of solid angle. For two {\em uniform}\/ beams scattering
+off one another, the differential scattering cross-section thus 
+effectively specifies the {\em probability}\/ of scattering into a given range of
+solid angle. The {\em total scattering cross-section}\/ is the integral
+of the differential cross-section over all solid angles,
+\begin{equation}
+\sigma = \int \frac{d\sigma}{d{\mit\Omega}}\,d{\mit\Omega},\label{e7.29a}
+\end{equation}
+and measures the effective target area for scattering in {\em any}\/ direction. 
+Thus, if the flux of particles per unit area per unit time, otherwise known as the {\em intensity}, of the two beams is $I$, then the number of particles of a given type scattered
+per unit time is simply $I\,\sigma$. 
+
+Let us now calculate the scattering cross-section for the following
+very simple interaction potential:
+\begin{equation}
+U(r) = 
+\left\{\begin{array}{lll}
+0&\mbox{\hspace{1cm}} & r>a\\[0.5ex]
+\infty && r\leq a
+\end{array}\right..\label{e7.31}
+\end{equation}
+This is the interaction potential of {\em impenetrable spheres}\/ which only
+exert a force on one another when they are in physical contact 
+({\em e.g.}, billiard balls). If the particles in the first beam have
+radius $R_1$, and the particles in the second beam have radius $R_2$,
+then $a=R_1+R_2$. In other words, the centers of two particles, one from either
+beam, can never be less than a distance $a$ apart, where
+$a$ is the sum of their radii (since the particles
+are impenetrable spheres). 
+
+Equations~(\ref{e7.19}), (\ref{e7.24}), and (\ref{e7.31})
+yield
+\begin{equation}
+\theta = \pi - 2\int_0^{1/a}\frac{b\,du}{\sqrt{1-b^2\,u^2}} = \pi - 2\,\sin^{-1}(b/a).
+\end{equation}
+The above formula can be rearranged to give
+\begin{equation}
+b(\theta) = a\,\cos(\theta/2).
+\end{equation}
+Note that
+\begin{equation}\label{e7.34}
+b\left|\frac{db}{d\theta}\right| = \frac{1}{2}\left|\frac{d b^2}{d\theta}\right| = \frac{a^2}{2}\,\sin(\theta/2)\,\cos(\theta/2) = \frac{a^2}{4}\,\sin\theta.
+\end{equation}
+Hence, Equations~(\ref{e7.29}) and (\ref{e7.34}) yield
+\begin{equation}\label{e7.36}
+\frac{d\sigma}{d{\mit\Omega}} = \frac{a^2}{4}.
+\end{equation}
+We thus conclude that when two beams of impenetrable spheres
+collide, in the center of mass frame, the particles in the two beams have 
+an equal probability of being scattered in any direction. The total scattering
+cross-section is
+\begin{equation}\label{e7.37}
+\sigma = \int \frac{d\sigma}{d{\mit\Omega}}\,d{\mit\Omega} = \pi\,a^2.
+\end{equation}
+Obviously, this result makes a lot of sense---the total scattering cross-section
+for two  impenetrable spheres is simply the area of a circle
+whose radius is the sum of the radii of the two spheres.
+
+Let us now consider scattering by an inverse-square interaction force
+whose potential takes the form
+\begin{equation}
+U(r) = \frac{k}{r}.
+\end{equation}
+It follows from Equations~(\ref{e7.24}) and (\ref{e7.25}) that
+\begin{equation}
+{\mit\Theta} = \int_0^{u_{max}}\frac{b\,du}{\sqrt{1-b^2\,u^2
+- k\,u/E}} = \int_0^{x_{max}}\frac{dx}{\sqrt{1-x^2- \alpha\,x}},
+\end{equation}
+where $\alpha = k/(E\,b)$, and
+\begin{equation}
+1 - x_{max}^{\,2} - \alpha\,x_{max}= 0.
+\end{equation}
+Integration yields
+\begin{equation}
+{\mit\Theta} = \frac{\pi}{2} - \sin^{-1}\left(\frac{\alpha}{\sqrt{4+\alpha^2}}\right).
+\end{equation}
+Hence, from Equation~(\ref{e7.19}), we obtain
+\begin{equation}
+\theta = 2\,\sin^{-1}\left(\frac{\alpha}{\sqrt{4+\alpha^2}}\right).
+\end{equation}
+The above equation can be rearranged to give
+\begin{equation}
+b^2 = \frac{k^2}{4\,E^{\,2}}\,\cot^2(\theta/2).
+\end{equation}
+Thus,
+\begin{equation}
+2\, b\left|\frac{db}{d\theta}\right| = \frac{k^2}{8\,E^{\,2}}\frac{\sin\theta}{\sin^4(\theta/2)}.
+\end{equation}
+Finally, using Equation~(\ref{e7.29}), we get
+\begin{equation}\label{e7.45}
+\frac{d\sigma}{d{\mit\Omega}} = \frac{k^2}{16\,E^{\,2}}\frac{1}{\sin^4(\theta/2)}.
+\end{equation}
+There are a number of things to note about the above formula. First, the
+scattering cross-section is proportional to $k^2$. This means that
+{\em repulsive}\/ ($k>0$) and {\em attractive}\/ ($k<0$) inverse-square interaction forces
+of the same strength give rise to {\em identical}\/ angular distributions of scattered
+particles. Second, the scattering cross-section is proportional to $E^{-2}$.
+This means that inverse-square interaction forces are much
+more effective at scattering low energy, rather than high energy, particles.
+Finally, the differential scattering cross-section is proportional to
+$\sin^{-4}(\theta/2)$. This means that, with an inverse-square
+interaction force, the overwhelming majority of
+``collisions''  consist of  {\em small angle}\/ scattering events ({\em i.e.}, $\theta\ll 1$).
+
+Let us now consider a specific case. Suppose that we have particles
+of electric charge $q$ scattering off  particles of the same charge. The
+interaction potential due to the Coulomb force between the particles
+is simply
+\begin{equation}
+U(r) = \frac{q^2}{4\pi\,\epsilon_0\,r}.
+\end{equation}
+Thus, it follows from Equation~(\ref{e7.45}) [with $k=q^2/(4\pi\,\epsilon_0)$]
+that the differential scattering cross-section takes the form
+\begin{equation}\label{ruthf}
+\frac{d\sigma}{d{\mit\Omega}} = \frac{q^4}{16\,(4\,\pi\,\epsilon_0)^2\,E^{\,2}}\frac{1}{\sin^4(\theta/2)}.
+\end{equation}
+This very famous formula is known as the {\em Rutherford scattering cross-section}, since it was first derived by Earnst Rutherford for use in his
+celebrated $\alpha$-particle scattering experiment.
+
+Note, finally, that if we try to integrate the Rutherford formula to obtain
+the {\em total}\/ scattering cross-section then we find that the integral is {\em divergent},
+due to the very strong increase in $d\sigma/d{\mit\Omega}$ as $\theta\rightarrow 0$. This implies that the Coulomb potential (or any
+other inverse-square-law potential)
+ has an effectively {\em infinite}\/ range. In practice, however, an electric
+charge  is generally surrounded by charges of the opposite sign which
+{\em shield}\/ the Coulomb potential of the charge beyond a certain distance.
+This shielding effect allows the charge to have a {\em finite}\/ total
+scattering cross-section (for the scattering of other electric charges). However, the total scattering cross-section of the charge
+depends (albeit, logarithmically) on the shielding distance, and, hence, on the
+nature and distribution of the charges surrounding it.
+
+\section{Scattering in the Laboratory Frame}
+We have seen that two-particle scattering looks fairly simple when viewed in the
+center of mass frame. Unfortunately, we are not usually in a position
+to do this. In the laboratory, the most
+common scattering scenario is one in which the second particle is
+initially at rest. Let us now investigate this situation.
+
+Suppose that, in the center of mass frame, the first particle has velocity
+${\bf v}_1$ before the collision, and velocity ${\bf v}_1'$ after the
+collision. Likewise, the second particle has velocity ${\bf v}_2$ before the
+collision, and ${\bf v}_2'$ after the collision. We know that
+\begin{equation}
+m_1\,{\bf v}_1 + m_2\,{\bf v}_2 = m_1\,{\bf v}_1'+m_2\,{\bf v}_2' = {\bf 0}
+\end{equation}
+in the center of mass frame. Moreover, since the collision is assumed to be elastic ({\em i.e.}, energy conserving),
+\begin{eqnarray}
+v_1' &= &v_1,\\[0.5ex]
+v_2' &=& v_2.
+\end{eqnarray}
+
+Let us transform
+to a new inertial frame of reference---which we shall call the {\em laboratory frame}---which is moving with the uniform velocity $-{\bf v}_2$ with respect to
+the center of mass frame. In the new reference frame, the first
+particle has initial velocity ${\bf V}_1= {\bf v}_1-{\bf v}_2$, and
+final velocity ${\bf V}_1' = {\bf v}_1'-{\bf v}_2$. Furthermore, the second particle
+is initially at {\em rest}, and has the final velocity ${\bf V}_2' = {\bf v}_2'-{\bf v}_2$. The relationship between scattering in the center of mass frame
+and scattering in the laboratory frame is illustrated in Figure~\ref{lab}.
+
+\begin{figure}
+\epsfysize=1.8in
+\centerline{\epsffile{Chapter06/fig6.04.eps}}
+\caption{\em Scattering in the center of mass and laboratory frames.}\label{lab}
+\end{figure}
+
+In the center of mass frame, both particles are scattered through the same angle $\theta$. However, in the laboratory frame, the first and second particles
+are scattered by the (generally different) angles $\psi$ and $\zeta$,
+respectively.
+
+Defining $x$- and $y$-axes, as indicated in Figure~\ref{lab}, it is easily
+seen that the Cartesian components of the various velocity vectors in the
+two frames of reference are:
+\begin{eqnarray}\label{e7.51}
+{\bf v}_1 &=& v_1\,(1,\, 0),\\[0.5ex]
+{\bf v}_2 &=&(m_1/m_2)\,v_1\,(-1,\,0),\\[0.5ex]
+{\bf v}_1' &=& v_1\,(\cos\theta,\,\sin\theta),\\[0.5ex]
+{\bf v}_2' &=&(m_1/m_2)\,v_1(-\cos\theta,\,-\sin\theta),\\[0.5ex]
+{\bf V}_1 &=& (1+m_1/m_2)\,v_1\,(1,\,0),\\[0.5ex]
+{\bf V}_1'&=& v_1\,(\cos\theta+m_1/m_2,\,\sin\theta),\\[0.5ex]
+{\bf V}_2' &=& (m_1/m_2)\,v_1\,(1-\cos\theta,\,-\sin\theta).\label{e7.57}
+\end{eqnarray}
+
+In the center of mass frame, let $E$ be the total energy,  let $E_1=(1/2)\,m_1\,v_1^{\,2}$ and $E_2=(1/2)\,m_2\,v_2^{\,2}$ be the kinetic energies of the first and second particles, respectively, before the collision, and let
+$E_1'=(1/2)\,m_1\,v_1'^{\,2}$ and $E_2'=(1/2)\,m_2\,v_2'^{\,2}$ be the kinetic energies of the first and second particles, respectively, after the collision. Of course, $E=E_1+E_2=E_1'+E_2'$. 
+In the laboratory frame, let ${\cal E}$ be the total energy. This is, of course,
+equal to the kinetic energy of the first particle before the collision. Likewise,
+let ${\cal E}_1'=(1/2)\,m_1\,V_1'^{\,2}$ and ${\cal E}_2'=(1/2)\,m_2\,V_2'^{\,2}$ be the kinetic energies of the first and second particles, respectively, after the collision. Of course, ${\cal E} = {\cal E}_1' + {\cal E}_2'$. 
+
+The following results can easily be obtained from the above definitions and
+Equations~(\ref{e7.51})--(\ref{e7.57}). First,
+\begin{equation}\label{e7.58}
+{\cal E} = \left(\frac{m_1+m_2}{m_2}\right)E.
+\end{equation}
+Hence, the total energy in the laboratory frame is always {\em greater}\/ than
+that in the center of mass frame. In fact, it can be demonstrated that the
+total energy in the center of mass frame is less than the total energy in {\em any}\/
+other inertial frame. Second,
+\begin{eqnarray}
+E_1 &=& E_1'= \left(\frac{m_2}{m_1+m_2}\right) E,\label{e7.59}\\[0.5ex]
+E_2 &=& E_2'=\left(\frac{m_1}{m_1+m_2}\right) E.\label{e7.60}
+\end{eqnarray}
+These equations specify how the total energy in the center of mass
+frame is distributed
+between the two particles. Note that this distribution is {\em unchanged}\/ by the
+collision.
+Finally,
+\begin{eqnarray}
+{\cal E}_1' &=& \left[\frac{m_1^{\,2}+2\,m_1\,m_2\,\cos\theta+m_2^{\,2}}{(m_1+m_2)^2}\right]{\cal E},\label{e7.61}\\[0.5ex]
+{\cal E}_2'&=& \left[\frac{2\,m_1\,m_2\,(1-\cos\theta)}{(m_1+m_2)^2}\right] {\cal E}.\label{e7.62}
+\end{eqnarray}
+These equations specify how the total energy in the laboratory frame is distributed between
+the two particles after the collision. Note that
+the energy distribution in the laboratory frame is {\em different}\/ before and after the collision.
+
+Equations~(\ref{e7.51})--(\ref{e7.57}), and some simple trigonometry, yield
+\begin{equation}\label{e7.63}
+\tan\psi = \frac{\sin\theta}{\cos\theta+m_1/m_2},
+\end{equation}
+and
+\begin{equation}
+\tan\zeta = \frac{\sin\theta}{1-\cos\theta} = \tan\left(\frac{\pi}{2}-\frac{\theta}{2}\right).
+\end{equation}
+The last equation implies that
+\begin{equation}\label{e7.65}
+\zeta = \frac{\pi}{2}- \frac{\theta}{2}.
+\end{equation}
+Differentiating Equation~(\ref{e7.63}) with respect to $\theta$, we obtain
+\begin{equation}
+\frac{d\tan\psi}{d\theta} = \frac{1+(m_1/m_2)\,\cos\theta}{(\cos\theta+m_1/m_2)^2}.
+\end{equation}
+Thus, $\tan\psi$ attains an extreme value, which can be shown to correspond to a {\em maximum}\/
+possible value of $\psi$, when the numerator of the above expression is zero:
+{\em i.e.}, when
+\begin{equation}
+\cos\theta = -\frac{m_2}{m_1}.
+\end{equation}
+Note that it is only possible to solve the above equation when $m_1>m_2$.
+If this is the case then Equation~(\ref{e7.63}) yields
+\begin{equation}
+\tan\psi_{max} = \frac{m_2/m_1}{\sqrt{1-(m_2/m_1)^2}},
+\end{equation}
+which reduces to
+\begin{equation}
+\psi_{max} = \sin^{-1}\left(\frac{m_2}{m_1}\right).
+\end{equation}
+Hence, we conclude that when $m_1>m_2$ there is a {\em maximum}\/ possible
+value of the scattering angle, $\psi$, in the laboratory frame. This maximum
+value is always less than $\pi/2$, which implies that there is
+{\em no backward scattering}\/ ({\em i.e.}, $\psi>\pi/2$) at all when $m_1>m_2$. For the special case when
+$m_1=m_2$, the maximum scattering angle is $\pi/2$. However, for
+$m_1<m_2$ there is no maximum value, and the scattering angle in the laboratory frame can thus
+range all the way to $\pi$. 
+
+Equations~(\ref{e7.58})--(\ref{e7.65}) enable us to relate the
+particle energies and scattering angles in the laboratory frame to those
+in the center of mass frame. In general, these relationships are fairly complicated. 
+However, there are two special cases in which the relationships become
+much simpler. 
+
+The first special case is when $m_2\gg m_1$. In this limit, it is easily seen
+from Equations~(\ref{e7.58})--(\ref{e7.65}) that the second mass is {\em stationary}\/
+both before and after the collision, and that the center of mass frame
+{\em coincides}\/ with the laboratory frame (since the energies and
+scattering angles in the two frames are the same). Hence, the simple analysis
+outlined in Section~\ref{cofm} is applicable in  this case.
+
+The second special case is when $m_1=m_2$. In this case, Equation~(\ref{e7.63})
+yields
+\begin{equation}
+\tan\psi = \frac{\sin\theta}{\cos\theta+1} =\tan(\theta/2).
+\end{equation}
+Hence,
+\begin{equation}\label{e7.71}
+\psi = \frac{\theta}{2}.
+\end{equation}
+In other words, the scattering angle of the first particle in the laboratory
+frame is {\em half}\/ of the scattering angle in the center of mass frame.
+The above equation can be combined with Equation~(\ref{e7.65}) to
+give
+\begin{equation}
+\psi + \zeta =\frac{\pi}{2}.
+\end{equation}
+Thus, in the laboratory frame, the two particles move off at {\em right-angles}\/ to one another after the collision. Equation~(\ref{e7.58})
+yields
+\begin{equation}\label{e7.73}
+{\cal E} = 2\,E.
+\end{equation}
+In other words, the total energy in the laboratory frame is {\em twice}\/ that
+in the center of mass frame. According to Equations~(\ref{e7.59}) and (\ref{e7.60}),
+\begin{equation}
+E_1 = E_1' = E_2=E_2' = \frac{E}{2}.
+\end{equation}
+Hence,  the total energy in the center of mass frame is divided {\em equally}\/ between the two particles. Finally, Equations~(\ref{e7.61}) and (\ref{e7.62})
+give
+\begin{eqnarray}
+{\cal E}_1' &=& \left(\frac{1+\cos\theta}{2}\right){\cal E} = \cos^2(\theta/2)\,\,{\cal E} = \cos^2\psi\,\,{\cal E},\\[0.5ex]
+{\cal E}_2'&=& \left(\frac{1-\cos\theta}{2}\right){\cal E} = \sin^2(\theta/2)\,\,{\cal E} = \sin^2\psi\,\,{\cal E}.
+\end{eqnarray}
+Thus, in the laboratory frame, the unequal energy distribution between the two particles
+after the collision  is simply related to
+the scattering angle $\psi$.
+
+What is the angular distribution of scattered particles when a beam
+of particles of the first type  scatter off stationary particles of the second type?
+Well, we can define a differential scattering cross-section, $d\sigma(\psi)/d{\mit\Omega}'$, in the
+laboratory frame, where ${\mit\Omega}'=2\pi\,\sin\psi\,d\psi$ is an element of solid angle in
+this frame. Thus, $(d\sigma(\psi)/d{\mit\Omega}')\,d{\mit\Omega}'$
+is the effective cross-sectional area in the laboratory  frame
+for scattering into the range of scattering angles $\psi$ to $\psi+d\psi$.
+Likewise, $(d\sigma(\theta)/d{\mit\Omega})\,d{\mit\Omega}$ is
+the effective cross-sectional area in the center of mass frame for
+scattering into the range of scattering angles $\theta$ to $\theta+d\theta$.
+Note that $d{\mit\Omega} =2\pi\,\sin\theta\,d\theta$.
+However, a cross-sectional area is not changed when we transform between
+different inertial frames. Hence, we can write
+\begin{equation}
+\frac{d\sigma(\psi)}{d{\mit\Omega}'} \,d{\mit\Omega}' =
+\frac{d\sigma(\theta)}{d{\mit\Omega}}\,d{\mit\Omega},
+\end{equation}
+provided that $\psi$ and $\theta$ are related via Equation~(\ref{e7.63}).
+This equation can be rearranged to give
+\begin{equation}
+\frac{d\sigma(\psi)}{d{\mit\Omega}'} = \frac{d{\mit\Omega}}{d{\mit\Omega}'}\,\frac{d\sigma(\theta)}{d{\mit\Omega}},
+\end{equation}
+or
+\begin{equation}\label{e7.79}
+\frac{d\sigma(\psi)}{d{\mit\Omega}'} = \frac{\sin\theta}{\sin\psi}\,\frac{d\theta}{d\psi}\,\frac{d\sigma(\theta)}{d{\mit\Omega}}.
+\end{equation}
+The above equation allows us to relate the differential scattering cross-section
+in the laboratory frame to that in the center of mass frame. In general, this
+relationship is extremely complicated. However, for the special
+case where the masses of the two types of particles are {\em equal}, we
+have seen that $\psi=\theta/2$ [see Equation~(\ref{e7.71})]. Hence, it follows from Equation~(\ref{e7.79})
+that
+\begin{equation}\label{e7.80}
+\frac{d\sigma(\psi)}{d{\mit\Omega}'} = 4\,\cos\psi\,\,\frac{d\sigma(\theta=2\,\psi)}{d{\mit\Omega}}.
+\end{equation}
+
+Let us now consider some specific examples. We saw earlier that, in the
+center of mass frame, the
+differential scattering cross-section for {\em impenetrable spheres}\/  is [see Equation~(\ref{e7.36})]
+\begin{equation}\label{e7.81}
+\frac{d\sigma(\theta)}{d{\mit\Omega}} = \frac{a^2}{4},
+\end{equation}
+where $a$ is the sum of the radii. According to Equation~(\ref{e7.80}),
+the differential scattering cross-section (for equal mass spheres) in the laboratory frame is 
+\begin{equation}\label{e7.82}
+\frac{d\sigma(\psi)}{d{\mit\Omega}'} = a^2\,\cos\psi.
+\end{equation}
+Note that this cross-section is {\em negative}\/ for $\psi>\pi/2$. This
+just tells us that there is {\em no scattering}\/ with scattering angles
+greater than $\pi/2$ ({\em i.e.}, there is no backward scattering).
+Comparing Equations~(\ref{e7.81}) and (\ref{e7.82}), we can see that
+the scattering is {\em isotropic}\/ in the center of mass frame, but appears
+concentrated in the forward direction in the laboratory frame.
+We can integrate Equation~(\ref{e7.82}) over all solid angles to obtain the
+total scattering cross-section in the laboratory frame. Note that we
+only integrate over angular regions where the differential scattering
+cross-section is {\em positive}. Doing this, we get
+\begin{equation}
+\sigma = \pi\,a^2,
+\end{equation}
+which is the same as the total scattering cross-section in the center of mass
+frame [see Equation~(\ref{e7.37})]. This is a general result. The total scattering cross-section is
+{\em frame independent}, since a cross-sectional area is not modified by
+switching between different frames of reference.
+
+As we have seen, the Rutherford scattering cross-section  takes
+the form [see Equation~(\ref{ruthf})]
+\begin{equation}
+\frac{d\sigma}{d{\mit\Omega}} = \frac{q^4}{16\,(4\,\pi\,\epsilon_0)^2\,E^{\,2}}\frac{1}{\sin^4(\theta/2)}
+\end{equation}
+in the center of mass frame.
+It follows, from Equation~(\ref{e7.80}), that the Rutherford scattering
+cross-section (for equal mass particles) in the laboratory frame is written
+\begin{equation}
+\frac{d\sigma}{d{\mit\Omega}'} = \frac{q^4}{(4\,\pi\,\epsilon_0)^2\,{\cal E}^{\,2}}\frac{\cos\psi}{\sin^4\psi}.
+\end{equation}
+Here, we have made use of the fact that ${\cal E} = 2\,E$ for equal
+mass particles [see Equation~(\ref{e7.73})]. Note, again, that this cross-section is negative
+for $\psi>\pi/2$, indicating the absence of backward scattering.
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{6.\arabic{enumi}}
+\begin{enumerate}
+\item A particle subject to a repulsive force varying as $1/r^3$ is projected from infinity with a velocity
+that would carry it to a distance $a$ from the center of force, if it were directed toward the latter. Actually, it
+is projected along a line whose closest distance from the center of force would be $b$ if there were no repulsion. Prove that the
+particle's least distance from
+the center is $\sqrt{a^2+b^2}$, and that the angle between the two asymptotes of its path
+is $\pi\,b/\sqrt{a^2+b^2}$. 
+\item A particle subject to a repulsive force varying as $1/r^5$ is projected from infinity with a velocity $V$ that
+would carry it to a distance $a$ from the center of force, if it were directed toward the latter. Actually, it
+is projected along a line whose closest distance from the center of force would be $b$ if there were no repulsion. 
+Show that the least velocity of the particle is
+$$
+V\,\frac{b^2}{a^2}\left[\left(\frac{a^4}{b^4}+\frac{1}{4}\right)^{1/2}-\frac{1}{2}\right]^{1/2}.
+$$
+\item  Using the notation of Section~\ref{sredm}, show that
+the angular momentum of a  two-body system takes the
+form
+$$
+{\bf L} = M\,{\bf r}_{cm}\times \dot{\bf r}_{cm} + \mu\,{\bf r}\times \dot{\bf r},
+$$
+where $M=m_1+m_2$.
+\item Consider the case of Rutherford scattering in the event that $m_1\gg m_2$. Demonstrate that the differential scattering cross-section in the
+laboratory frame is approximately
+$$
+\frac{d\sigma}{d\Omega'}\simeq \frac{q_1^{\,2}\,q_2^{\,2}}{4\,(4\pi\epsilon_0)^2\,{\cal E}^2}\frac{\psi_{\rm max}^{-4}}{[1-\sqrt{1-(\psi/\psi_{\rm max})^2}]^2\,\left[1-(\psi/\psi_{\rm max})^2\right]^{1/2}},
+$$
+where $\psi_{\rm max}=m_2/m_1$.
+ \item Show that the energy distribution of particles recoiling from an elastic
+collision is always directly proportional to the differential scattering cross-section
+in the center of mass frame.
+\item It is found experimentally that in the elastic scattering of neutrons
+by protons ($m_n\simeq m_p$) at relatively low energies the energy distribution
+of the recoiling protons in the laboratory frame is constant up to
+a maximum energy, which is the energy of the incident neutrons. What is the
+angular distribution of the scattering in the center of mass frame?
+\item The most energetic $\alpha$-particles available to Earnst Rutherford and his colleagues for the
+famous Rutherford scattering experiment were $7.7$\,MeV. For the scattering of 7.7\,MeV $\alpha$-particles from Uranium 238 nuclei (initially at rest) at a scattering angle in the laboratory frame of
+$90^\circ$, find the following (in the laboratory frame, unless otherwise specified):
+\begin{enumerate}
+\item The recoil scattering angle of the Uranium nucleus. 
+\item The scattering angles of the $\alpha$-particle and Uranium nucleus in the center of mass
+frame.
+\item The kinetic energies of the scattered $\alpha$-particle and Uranium nucleus (in MeV).
+\item The impact parameter, $b$.
+\item The distance of closest approach.
+\item The differential scattering cross-section at $90^\circ$. 
+\end{enumerate}
+\item Consider scattering by the repulsive potential $U=k/r^2$ (where $k>0$)
+viewed in the center of mass frame. Demonstrate that the differential
+scattering cross-section is
+$$
+\frac{d\sigma}{d\Omega } = \frac{k}{E\,\pi}\, \frac{1}{\sin\theta}\,
+\frac{(1-\theta/\pi)}{(\theta/\pi)^2\,(2-\theta/\pi)^2}.
+$$
+\end{enumerate}
+}

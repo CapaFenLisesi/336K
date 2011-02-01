@@ -1,0 +1,615 @@
+\chapter{Hamiltonian Dynamics}
+\section{Introduction} 
+This chapter investigates the application of variational principles
+to Newtonian dynamics. 
+
+\section{Calculus of Variations}\label{s11.2}
+It is a well-known fact, first enunciated by Archimedes, that the shortest
+distance between two points in a plane is a straight-line. However, suppose that
+we wish to demonstrate this result from first principles. Let us consider the
+length, $l$, of various curves, $y(x)$, which run between two fixed
+points, $A$ and $B$, in a plane, as illustrated in Figure~\ref{calv}. Now, $l$ takes the form
+\begin{equation}\label{e11.1}
+l = \int_A^B [dx^2 + dy^2]^{1/2} = \int_a^b [1 + y'^{\,2}(x)]^{1/2}\,dx,
+\end{equation}
+where $y'\equiv dy/dx$. Note that $l$ is a function of the function $y(x)$.
+In mathematics, a function of a function is  termed a {\em functional}. 
+
+\begin{figure}[h]
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter10/fig10.01.eps}}
+\caption{\em Different paths between points $A$ and $B$.}\label{calv}
+\end{figure}
+
+Now, in order to find the shortest path between points $A$ and $B$, we need to {\em minimize}\/ the functional $l$ with respect to small variations
+in the function $y(x)$, subject to the constraint that the end points, $A$
+and $B$, remain fixed. In other words, we need to solve
+\begin{equation}
+\delta l = 0.
+\end{equation}
+The meaning of the above equation is that if $y(x)\rightarrow y(x)+\delta y(x)$, where $\delta y(x)$ is small, then the {\em first-order variation} in $l$,
+denoted $\delta l$, 
+vanishes. In other words, $l\rightarrow l + {\cal O}(\delta y^{\,2})$. The particular function
+$y(x)$ for which $\delta l =0$ obviously yields an {\em extremum}\/ of $l$ ({\em i.e.}, either a maximum or a minimum). Hopefully,
+in the  case under consideration, 
+it yields a minimum of $l$.
+
+Consider a general functional of the form
+\begin{equation}\label{e11.3}
+I = \int_a^b F(y, y',x)\,dx,
+\end{equation}
+where the end points of the integration are fixed.
+   Suppose that $y(x)\rightarrow
+y(x)+\delta y(x)$. The first-order variation in $I$ is written
+\begin{equation}
+\delta I = \int_a^b\left(\frac{\partial F}{\partial y}\,\delta y+ \frac{\partial F}{\partial y'}\,\delta y'\right)dx,
+\end{equation}
+where $\delta y' = d(\delta y)/dx$.  Setting $\delta I$ to zero, we
+obtain
+\begin{equation}
+\int_a^b\left(\frac{\partial F}{\partial y}\,\delta y+ \frac{\partial F}{\partial y'}\,\delta y'\right)\,dx = 0.
+\end{equation}
+This equation must be satisfied for all possible small perturbations $\delta y(x)$. 
+
+Integrating the second term in the integrand of the above equation by
+parts, we get
+\begin{equation}
+\int_a^b\left[\frac{\partial F}{\partial y}- \frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)\right]\delta y\,dx +\left[\frac{\partial F}{\partial y'}\,\delta y\right]_a^b=0.
+\end{equation}
+Now, if the end points  are fixed then $\delta y=0$ at
+$x=a$ and $x=b$. Hence, the last term on the left-hand side of the
+above equation is zero. Thus, we obtain
+\begin{equation}
+\int_a^b\left[\frac{\partial F}{\partial y}- \frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)\right]\delta y\,dx =0.
+\end{equation}
+The above equation must be satisfied for {\em all}\/ small  perturbations
+$\delta y(x)$. The only way in which this is possible is for the
+expression enclosed in square brackets in the integral to be zero. Hence, the functional
+$I$ attains an extremum value whenever
+\begin{equation}\label{e11.8}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-\frac{\partial F}{\partial y} = 0.
+\end{equation}
+This condition is known as the {\em Euler-Lagrange equation}.
+
+Let us consider some special cases. Suppose that $F$ does not explicitly
+depend on $y$. It follows that $\partial F/\partial y = 0$. Hence,
+the Euler-Lagrange equation (\ref{e11.8}) simplifies to
+\begin{equation}\label{e11.9}
+\frac{\partial F}{\partial y'} = {\rm const}.
+\end{equation}
+Next, suppose that $F$ does not depend explicitly on $x$. Multiplying
+Equation~(\ref{e11.8}) by $y'$, we obtain
+\begin{equation}
+y'\,\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-y'\,\frac{\partial F}{\partial y} = 0.
+\end{equation}
+However, 
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = y'\,\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)+ y''\,\frac{\partial F}{\partial y'}.
+\end{equation}
+Thus, we get
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = y'\,\frac{\partial F}{\partial y} +  y''\,\frac{\partial F}{\partial y'}.
+\end{equation}
+Now, if $F$ is not an explicit function of $x$ then the right-hand side of
+the above equation is the total derivative of $F$, namely $dF/dx$. 
+Hence, we obtain
+\begin{equation}
+\frac{d}{dx}\!\left(y'\,\frac{\partial F}{\partial y'}\right) = \frac{dF}{dx},
+\end{equation}
+which yields
+\begin{equation}\label{e11.14}
+y'\,\frac{\partial F}{\partial y'} - F = {\rm const}.
+\end{equation}
+
+Returning to the  case under consideration, we have $F = \sqrt{1+y'^{\,2}}$, according to Equation~(\ref{e11.1}) and (\ref{e11.3}).  Hence, $F$ is not
+an explicit function of $y$, so Equation~(\ref{e11.9}) yields
+\begin{equation}
+\frac{\partial F}{\partial y'} = \frac{y'}{\sqrt{1+y'^{\,2}}} = c,
+\end{equation}
+where $c$ is a constant. So,
+\begin{equation}
+y' = \frac{c}{\sqrt{1-c^2}} = {\rm const}.
+\end{equation}
+Of course, $y' = {\rm constant}$ is the equation of a {\em straight-line}. Thus, the shortest distance between two fixed points in a plane is indeed a
+straight-line.
+
+\section{Conditional Variation}
+Suppose that we wish to find the function $y(x)$ which
+maximizes or minimizes the functional
+\begin{equation}
+I = \int_a^b F(y, y',x)\,dx,
+\end{equation}
+subject to the {\em  constraint}\/ that the value of
+\begin{equation}\label{e11.18}
+J = \int_a^b G(y,y',x)\,dx
+\end{equation}
+remains constant. We can achieve our goal by finding an  extremum of the new functional
+$K = I + \lambda\,J$, where $\lambda(x)$ is an undetermined function. We know
+that $\delta J = 0$, since the value of $J$ is fixed, so if $\delta K= 0$ then
+$\delta I = 0$ as well. In other words, finding an extremum of $K$ is equivalent
+to finding an extremum of $I$. Application of the Euler-Lagrange
+equation yields
+\begin{equation}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y'}\right)-\frac{\partial F}{\partial y} +\left[\frac{d}{dx}\!\left(\frac{\partial [\lambda\,G]}{\partial y'}\right)-\frac{\partial [\lambda\,G]}{\partial y}\right]= 0.
+\end{equation}
+In principle, the above equation, together with the constraint (\ref{e11.18}),
+yields the  functions $\lambda(x)$ and  $y(x)$. Incidentally,  $\lambda$ is generally
+termed a {\em Lagrange multiplier}.  If $F$ and $G$ have no explicit $x$-dependence then $\lambda$ is usually a {\em constant}.
+
+As an example, consider the following famous problem. Suppose that a uniform
+chain of fixed length $l$ is suspended by its ends from
+two equal-height fixed points which are a distance $a$ apart, where $a < l$. 
+What is the equilibrium configuration of the chain?
+
+Suppose that the chain has the uniform density per unit length $\rho$. 
+Let the $x$- and $y$-axes be horizontal and vertical, respectively, and
+let the two ends of the chain lie at $(\pm a/2, 0)$. The equilibrium configuration of the chain is specified by the function $y(x)$, for $-a/2\leq x \leq +a/2$, where
+$y(x)$ is the vertical distance of the chain below its end points at horizontal
+position $x$. Of course, $y(-a/2) = y(+a/2) = 0$. 
+
+According to the discussion in Section~\ref{gpotn}, the stable equilibrium
+state of a conservative dynamical system is one which {\em minimizes}\/
+the system's potential energy. Now, the potential energy of the chain
+is written
+\begin{equation}
+U = - \rho\,g\,\int y\,ds = - \rho\,g\,\int_{-a/2}^{a/2} y\,[1+y'^{\,2}]^{1/2}\,dx,
+\end{equation}
+where $ds = \sqrt{dx^2+dy^2}$ is an element of length along the chain, and
+$g$ is the acceleration due to gravity.
+Hence, we need to minimize $U$ with respect to small variations in $y(x)$. 
+However, the variations in $y(x)$ must be such as to conserve the
+fixed length of the chain. Hence, our minimization procedure is subject to
+the constraint that
+\begin{equation}\label{e11.21}
+l = \int ds = \int_{-a/2}^{a/2}[1+y'^{\,2}]^{1/2}\,dx
+\end{equation} 
+remains constant.
+
+It follows, from the above discussion, that we need to minimize the
+functional
+\begin{equation}
+K = U + \lambda\,l = \int_{-a/2}^{a/2}(-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{1/2}\,dx,
+\end{equation}
+where $\lambda$ is an, as yet, undetermined constant. Since the integrand
+in the functional does not depend explicitly on $x$, we have
+from Equation~(\ref{e11.14}) that
+\begin{equation}
+y'^{\,2}\,(-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{-1/2} - (-\rho\,g\,y+\lambda)\,[1+y'^{\,2}]^{1/2} = k,
+\end{equation}
+where $k$ is a constant. This expression reduces to
+\begin{equation}\label{e11.24}
+y'^{\,2} = \left(\lambda' + \frac{y}{h}\right)^2 - 1,
+\end{equation}
+where $\lambda' = \lambda/k$, and $h=-k/\rho\,g$. 
+
+Let 
+\begin{equation}\label{e11.25}
+\lambda' + \frac{y}{h} = -\cosh z.
+\end{equation}
+Making this substitution, Equation~(\ref{e11.24}) yields
+\begin{equation}
+\frac{dz}{dx} = -h^{-1}.
+\end{equation}
+Hence, 
+\begin{equation}
+z =-\frac{x}{h} + c,
+\end{equation}
+where  $c$ is a constant. It follows from Equation~(\ref{e11.25}) that 
+\begin{equation}
+y(x) =-h\,[\lambda' + \cosh(-x/h + c)].
+\end{equation}
+The above solution contains three undetermined constants, $h$, $\lambda'$, and $c$. We can
+eliminate two of these constants by application of the boundary
+conditions $y(\pm a/2)= 0$. This yields
+\begin{equation}
+\lambda' + \cosh(\mp a/2\,h + c) = 0.
+\end{equation}
+Hence, $c=0$, and $\lambda' = - \cosh (a/2\,h)$. It follows that
+\begin{equation}\label{ecat}
+y(x) = h\,[\cosh(a/2\,h) - \cosh(x/h)].
+\end{equation}
+The final unknown constant, $h$, is determined via the application of
+the constraint (\ref{e11.21}). Thus,
+\begin{equation}
+l= \int_{-a/2}^{a/2}[1+y'^{\,2}]^{1/2}\,dx = \int_{-a/2}^{a/2} \cosh(x/h) \,dx = 2\,h\,\sinh(a/2\,h).
+\end{equation}
+Hence, the equilibrium configuration of the chain is given by the curve
+(\ref{ecat}), which is known as a {\em catenary}, where the parameter $h$ satisfies
+\begin{equation}
+\frac{l}{2\,h} = \sinh\left(\frac{a}{2\,h}\right).
+\end{equation}
+
+\section{Multi-Function Variation}\label{s11.4}
+Suppose that we wish to maximize or minimize the functional
+\begin{equation}
+I = \int_a^b F(y_1,y_2,\cdots,y_{\cal F},y_1',y_2',\cdots,y_{\cal F}',x)\,dx.
+\end{equation}
+Here, the integrand $F$ is now a functional of the ${\cal F}$ independent
+functions $y_i(x)$, for $i=1,{\cal F}$. A fairly straightforward extension of the
+analysis in Section~\ref{s11.2} yields ${\cal F}$ separate Euler-Lagrange equations,
+\begin{equation}\label{e11.34}
+\frac{d}{dx}\!\left(\frac{\partial F}{\partial y_i'}\right)-\frac{\partial F}{\partial y_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$, which determine the ${\cal F}$ functions $y_i(x)$. If $F$ does not
+explicitly depend on the function $y_k$ then the $k$th Euler-Lagrange
+equation simplifies to
+\begin{equation}
+\frac{\partial F}{\partial y_k'} = {\rm const}.
+\end{equation}
+Likewise, if $F$ does not explicitly depend on $x$ then all ${\cal F}$ Euler-Lagrange equations simplify to
+\begin{equation}
+y_i'\,\frac{\partial F}{\partial y_i'} - F = {\rm const},
+\end{equation}
+for $i=1,{\cal F}$. 
+
+\section{Hamilton's Principle}
+We saw, in Chapter~\ref{s10}, that  we can specify the instantaneous configuration of a conservative dynamical system
+with ${\cal F}$ degrees of freedom  in terms of ${\cal F}$ independent generalized coordinates $q_i$, for
+$i=1,{\cal F}$.  Let $K(q_1,q_2,\cdots,q_{\cal F},$
+ $\dot{q}_1,\dot{q}_2,\cdots,\dot{q}_{\cal F},t)$ and
+$U(q_1,q_2,\cdots,q_{\cal F},t)$ represent the kinetic and potential energies of the
+system, respectively, expressed in terms of these generalized coordinates.
+Here, $\dot{~}\equiv d/dt$. 
+The Lagrangian of the system is defined
+\begin{equation}
+L(q_1,q_2,\cdots,q_{\cal F}, \dot{q}_1,\dot{q}_2,\cdots,\dot{q}_{\cal F},t) = K - U.
+\end{equation}
+Finally, the ${\cal F}$ Lagrangian equations of motion of the system take the form
+\begin{equation}\label{e11.38}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_i}\right)-\frac{\partial L}{\partial q_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$. 
+
+Note that the above equations of motion have exactly the same mathematical form as the Euler-Lagrange equations (\ref{e11.34}). Indeed, it is clear, from Section~\ref{s11.4}, that the ${\cal F}$ Lagrangian equations of motion (\ref{e11.38})
+can all be derived from a single equation: namely,
+\begin{equation}
+\delta\int_{t_1}^{t_2} L(q_1,q_2,\cdots,q_{\cal F}, \dot{q}_1,\dot{q}_2,\cdots,\dot{q}_{\cal F},t)\,dt = 0.
+\end{equation}
+In other words, the motion of the system in a given time interval is such as to maximize or
+minimize the time integral of the Lagrangian, which is known as the
+{\em action integral}. Thus,  the laws of Newtonian dynamics can be summarized in a
+single statement:
+\begin{quote}
+ The motion of a dynamical
+system in a given time interval is such as to maximize or minimize the action integral. 
+\end{quote}
+(In practice, the action integral is almost always minimized.) This statement is known as {\em Hamilton's principle}, and was first formulated in 1834 by the Irish
+mathematician William Hamilton.
+
+\section{Constrained Lagrangian Dynamics}
+Suppose that we have a dynamical system described by two generalized
+coordinates, $q_1$ and $q_2$. Suppose, further, that $q_1$ and $q_2$ are
+{\em not}\/ independent variables. In other words, $q_1$ and $q_2$ are connected
+via some constraint equation of the form
+\begin{equation}\label{e11.40}
+f(q_1,q_2,t) = 0,
+\end{equation}
+where $f$ is some function of three variables.
+This type of constraint is called a {\em holonomic}. [A general
+holonomic constraint is of the form $f(q_1,q_2,\cdots,q_{\cal F},t)=0$.]
+Let $L(q_1,q_2,\dot{q}_1,\dot{q}_2,t)$ be the  Lagrangian.
+How do we write the Lagrangian equations of motion of the system?
+
+Well, according to Hamilton's principle, 
+\begin{equation}\label{e11.41}
+\delta\int_{t_1}^{t_2} L\,dt = \int_{t_1}^{t_2}\left\{\left[
+\frac{\partial L}{\partial q_1}-\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_1}\right)\right]\delta q_1+ \left[
+\frac{\partial L}{\partial q_2}-\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_2}\right)\right]\delta q_2 \right\} dt=0.
+\end{equation}
+However, at any given instant in time, $\delta q_1$ and $\delta q_2$ are not independent. Indeed,
+Equation~(\ref{e11.40}) yields
+\begin{equation}
+\delta f = \frac{\partial f}{\partial q_1}\,\delta q_1 + \frac{\partial f}{\partial
+q_2}\,\delta q_2 = 0
+\end{equation}
+at a fixed time. Eliminating $\delta q_2$ from Equation~(\ref{e11.41}), we obtain
+\begin{equation}
+\int_{t_1}^{t_2}\left\{\left[
+\frac{\partial L}{\partial q_1}-\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_1}\right)\right]\frac{1}{\partial f/\partial q_1}- \left[
+\frac{\partial L}{\partial q_2}-\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_2}\right)\right]\frac{1}{\partial f/\partial q_2}\right\} \delta q_1\,dt=0.
+\end{equation}
+This equation must be satisfied for all possible perturbations $\delta q_1(t)$, which implies that the term enclosed in curly brackets is zero.
+Hence, we obtain
+\begin{equation}
+\frac{\partial L/\partial q_1-(d/dt)\,(\partial L/\partial \dot{q}_1)}{\partial f/\partial q_1} = \frac{\partial L/\partial q_2-(d/dt)\,(\partial L/\partial \dot{q}_2)}{\partial f/\partial q_2}.
+\end{equation}
+One obvious way in which we can solve this equation is to separately set both sides
+equal to the same function of time, which
+we shall denote $-\lambda(t)$. It follows that the Lagrangian equations of
+motion of the system can be written
+\begin{eqnarray}\label{e11.45}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_1}\right)-\frac{\partial L}{\partial q_1} - \lambda(t)\,\frac{\partial f}{\partial q_1}& =& 0,\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_2}\right)-\frac{\partial L}{\partial q_2} - \lambda(t)\,\frac{\partial f}{\partial q_2}& =& 0.\label{e11.46}
+\end{eqnarray}
+In principle, the above two equations can be solved, together with the constraint equation (\ref{e11.40}), to give $q_1(t)$, $q_2(t)$, and the
+so-called {\em Lagrange multiplier}\/ $\lambda(t)$. 
+Equation~(\ref{e11.45}) can be rewritten
+\begin{equation}\label{e11.45a}
+\frac{d}{dt}\!\left(\frac{\partial K}{\partial \dot{q}_1}\right)-\frac{\partial K}{\partial q_1} =-  \frac{\partial U}{\partial q_1}+ \lambda(t)\,\frac{\partial f}{\partial q_1}.
+\end{equation}
+Now, the generalized force conjugate to
+the generalized coordinate $q_1$ is  [see Equation~(\ref{e10.8})]
+\begin{equation}
+Q_1 = -\frac{\partial U}{\partial q_1}.
+\end{equation}
+By analogy, it seems clear from Equation~(\ref{e11.45a}) that the generalized {\em constraint force}\/ [{\em i.e.}, the generalized force responsible for maintaining the constraint
+(\ref{e11.40})] conjugate to $q_1$ takes the form
+\begin{equation}
+\tilde{Q}_1 = \lambda(t)\,\frac{\partial f}{\partial q_1},
+\end{equation}
+with a similar expression for the generalized constraint force conjugate to $q_2$.
+
+Suppose, now, that we have a dynamical system described by ${\cal F}$
+generalized coordinates $q_i$, for $i=1,{\cal F}$, which is subject to the
+holonomic constraint
+\begin{equation}
+f(q_1,q_2,\cdots,q_{\cal F},t) = 0.
+\end{equation}
+A simple extension of above analysis yields following the Lagrangian equations of motion of the
+system,
+\begin{equation}\label{e11.50}
+\frac{d}{dt}\!\left(\frac{\partial L}{\partial \dot{q}_i}\right)-\frac{\partial L}{\partial q_i} - \lambda(t)\,\frac{\partial f}{\partial q_i} = 0,
+\end{equation}
+for $i=1,{\cal F}$. As before,
+\begin{equation}
+\tilde{Q}_i = \lambda(t)\,\frac{\partial f}{\partial q_i}
+\end{equation}
+is the generalized constraint force conjugate to $q_i$. 
+Finally, the generalization to multiple holonomic constraints is straightforward. 
+
+\begin{figure}[h]
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter10/fig10.02.eps}}
+\caption{\em A cylinder rolling down an inclined plane.}\label{wedge}
+\end{figure}
+
+Consider the following example. A cylinder of radius $a$ rolls without slipping down a plane
+inclined at an angle $\theta$ to the horizontal. Let $x$ represent the downward displacement of the center of mass of the cylinder parallel to the surface of the plane, and let $\phi$ represent the angle of rotation of the cylinder about
+its symmetry axis. The fact that the cylinder is rolling without slipping
+implies that $x$ and $\phi$ are interrelated via the well-known constraint
+\begin{equation}\label{e11.52}
+f(x,\phi) = x - a\,\phi = 0.
+\end{equation}
+The Lagrangian of the cylinder takes the form
+\begin{equation}
+L = \frac{1}{2}\,m\,\dot{x}^{\,2} + \frac{1}{2}\,I\,\dot{\phi}^{\,2} + m\,g\,x\,\sin\theta,
+\end{equation}
+where $m$ is the cylinder's mass, $I$  its moment of inertia, and $g$
+the acceleration due to gravity. 
+
+Note that $\partial f/\partial x = 1$ and $\partial f/\partial\phi = -a$. Hence,
+Equation~(\ref{e11.50}) yields the following Lagrangian equations of motion:
+\begin{eqnarray}
+m\,\ddot{x} - m\,g\,\sin\theta - \lambda &=& 0,\label{e11.54}\\[0.5ex]
+I\,\ddot{\phi} + \lambda\,a &=&0.\label{e11.55}
+\end{eqnarray}
+Equations (\ref{e11.52}), (\ref{e11.54}), and (\ref{e11.55}) can be solved to
+give
+\begin{eqnarray}
+\ddot{x} &=& \frac{g\,\sin\theta}{1+ I/m\,a^2},\\[0.5ex]
+a\,\ddot{\phi}&=& \frac{g\,\sin\theta}{1+ I/m\,a^2},\\[0.5ex]
+\lambda &=& -\frac{m\,g\,\sin\theta}{1+ m\,a^2/I}. 
+\end{eqnarray}
+The generalized constraint force conjugate to $x$ is
+\begin{equation}
+\tilde{Q}_x =  \lambda\,\frac{\partial f}{\partial x} = - \frac{m\,g\,\sin\theta}{1+ m\,a^2/I}.
+\end{equation}
+This represents the frictional force acting parallel to the plane which
+impedes the downward acceleration of the cylinder, causing it to be less than the standard value $m\,g\,\sin\theta$. The
+generalized constraint force conjugate to $\phi$ is
+\begin{equation}
+\tilde{Q}_\phi =  \lambda\,\frac{\partial f}{\partial\phi} = 
+\frac{m\,g\,a\,\sin\theta}{1+ m\,a^2/I}.
+\end{equation}
+This represents the frictional torque acting on the cylinder which forces the
+cylinder to rotate in such a manner that the constraint (\ref{e11.52}) is
+always satisfied.
+
+Consider a second example. A bead of mass $m$ slides without friction
+on a vertical circular hoop of radius $a$. Let $r$ be the
+radial coordinate of the bead, and let $\theta$ be its
+angular coordinate, with the lowest point on the hoop corresponding
+to $\theta = 0$. Both coordinates are measured relative to the
+center of the hoop. Now, the bead is constrained to slide along the wire, which implies that
+\begin{equation}\label{e11.61}
+f(r,\theta) = r - a = 0.
+\end{equation}
+Note that $\partial f/\partial r =1$ and $\partial f/\partial\theta = 0$.
+The Lagrangian of the system takes the form
+\begin{equation}
+L = \frac{1}{2}\,m\,(\dot{r}^{\,2} + r^2\,\dot{\theta}^{\,2})
++ m\,g\,r\,\cos\theta.
+\end{equation}
+Hence, according to Equation~(\ref{e11.50}), the Lagrangian equations of motion
+of the system are written
+\begin{eqnarray}\label{e11.63}
+m\,\ddot{r} -m\,r\,\dot{\theta}^{\,2} - m\,g\,\cos\theta - \lambda &=& 0,\\[0.5ex]
+m\,r^2\,\ddot{\theta} + m\,g\,r\,\sin\theta &=& 0.
+\end{eqnarray}
+The second of these equations can be integrated  (by multiplying by $\dot{\theta}$), subject to the constraint  (\ref{e11.61}), to give
+\begin{equation}
+\dot{\theta}^{\,2} = \frac{2\,g}{a}\,\cos\theta + c,
+\end{equation}
+where $c$ is a constant. Let $v_0$ be the tangential velocity of the
+bead at the bottom of the hoop ({\em i.e.}, at $\theta = 0$). It follows that
+\begin{equation}\label{e11.66}
+\dot{\theta}^{\,2} = \frac{2\,g}{a}\,(\cos\theta-1) + \frac{v_0^{\,2}}{a^2}.
+\end{equation}
+Equations (\ref{e11.61}), (\ref{e11.63}), and (\ref{e11.66}) can be combined to give
+\begin{equation}
+\lambda = - m \left(3\,g\,\cos\theta - 2\,g + \frac{v_0^{\,2}}{a}\right).
+\end{equation}
+Finally, the constraint force conjugate to $r$ is given by
+\begin{equation}
+\tilde{Q}_r = \lambda\,\frac{\partial f}{\partial r} = -m \left(3\,g\,\cos\theta - 2\,g + \frac{v_0^{\,2}}{a}\right).
+\end{equation}
+This represents the radial reaction exerted on the bead by the hoop. Of course, 
+there is no constraint force conjugate to $\theta$ (since $\partial f/\partial\theta =0$) because the bead slides without friction.
+
+\section{Hamilton's Equations}
+Consider a dynamical system with ${\cal F}$ degrees of freedom which is described
+by the generalized coordinates $q_i$, for $i=1,{\cal F}$. Suppose that
+neither the kinetic energy, $K$, nor the potential energy, $U$, depend
+explicitly on the time, $t$. Now, in conventional dynamical systems, the potential energy is generally independent of the $\dot{q}_i$, whereas the kinetic
+energy takes the form of a {\em homogeneous quadratic function}\/ of
+the $\dot{q}_i$. In other words,
+\begin{equation}
+K = \sum_{i,j = 1,{\cal F}} m_{ij}\,\dot{q}_i\,\dot{q}_j,
+\end{equation}
+where the $m_{ij}$ depend on the $q_i$, but not on the $\dot{q}_i$. 
+It is easily demonstrated from the above equation that
+\begin{equation}\label{e11.xx}
+\sum_{i=1,{\cal F}} \dot{q}_i\,\frac{\partial K}{\partial \dot{q}_i} = 2\,K.
+\end{equation}
+
+Recall, from Section~\ref{s10.8}, that generalized momentum conjugate to the $i$th
+generalized coordinate is defined
+\begin{equation}\label{e11.71}
+p_i = \frac{\partial L}{\partial \dot{q}_i} = \frac{\partial K}{\partial \dot{q}_i},
+\end{equation}
+where $L=K-U$ is the Lagrangian of the system, and we have made use of the fact that $U$ is independent of the $\dot{q}_i$. Consider the
+function
+\begin{equation}\label{e11.70}
+H = \sum_{i=1,{\cal F}} \dot{q}_i\,p_i - L = \sum_{i=1,{\cal F}} \dot{q}_i\,p_i -K + U.
+\end{equation}
+If all of the conditions discussed above are satisfied then Equations~(\ref{e11.xx})
+and (\ref{e11.71})
+yield
+\begin{equation}
+H = K+ U.
+\end{equation}
+In other words, the function $H$ is equal to the {\em total energy}\/ of the system.
+
+Consider the variation of the function $H$. We have
+\begin{equation}
+\delta H = \sum_{i=1,{\cal F}} \left(\delta\dot{q}_i\,p_i + \dot{q}_i\,\delta p_i
+- \frac{\partial L}{\partial \dot{q}_i}\,\delta \dot{q}_i - \frac{\partial L}{\partial q_i}\,\delta q_i\right).
+\end{equation}
+The first and third terms in the bracket cancel, because $p_i=
+\partial L/\partial \dot{q}_i$. Furthermore, since Lagrange's equation
+can be written $\dot{p}_i = \partial L/\partial q_i$ (see Section~\ref{s10.8}), we obtain
+\begin{equation}
+\delta H = \sum_{i=1,{\cal F}} \left(\dot{q}_i\,\delta p_i - \dot{p}_i\,\delta q_i\right).
+\end{equation}
+Suppose, now, that we can express the total energy of the system, $H$, solely
+as a function of the $q_i$ and the $p_i$, with no explicit
+dependence on the $\dot{q}_i$. In other words, suppose that we
+can write $H=H(q_i,p_i)$. When the energy is written
+in this fashion it is generally termed the {\em Hamiltonian} of the system. The variation of the Hamiltonian function  takes the form
+\begin{equation}
+\delta H =\sum_{i=1,{\cal F}} \left(\frac{\partial H}{\partial p_i}\,\delta p_i + 
+\frac{\partial H}{\partial q_i}\,\delta{q}_i\right).
+\end{equation}
+A comparison of the previous two equations yields
+\begin{eqnarray}\label{e11.77}
+\dot{q}_i &=& \frac{\partial H}{\partial p_i},\\[0.5ex]
+\dot{p}_i &=&-\frac{\partial H}{\partial q_i},\label{e11.78}
+\end{eqnarray}
+for $i=1,{\cal F}$. These $2{\cal F}$ first-order differential equations are known
+as {\em Hamilton's equations}. Hamilton's equations are often a
+useful alternative to Lagrange's equations, which take the
+form of ${\cal F}$ second-order differential equations. 
+
+Consider a one-dimensional harmonic oscillator. The kinetic and potential
+energies of the system are written $K = (1/2)\,m\,\dot{x}^{\,2}$ and
+$U=(1/2)\,k\,x^2$, where $x$ is the displacement, $m$ the mass, and $k>0$. 
+The generalized momentum conjugate to $x$ is
+\begin{equation}\label{e11.79}
+p = \frac{\partial K}{\partial\dot{x}} = m\,\dot{x}.
+\end{equation}
+Hence, we can write
+\begin{equation}
+K = \frac{1}{2}\,\frac{p^{\,2}}{m}.
+\end{equation}
+So, the Hamiltonian of the system takes the form
+\begin{equation}
+H = K + U = \frac{1}{2}\,\frac{p^{\,2}}{m} + \frac{1}{2}\,k\,x^2.
+\end{equation}
+Thus, Hamilton's equations, (\ref{e11.77}) and (\ref{e11.78}), yield
+\begin{eqnarray}
+\dot{x} &=& \frac{\partial H}{\partial p} = \frac{p}{m},\\[0.5ex]
+\dot{p} &=& - \frac{\partial H}{\partial x} = - k\,x.
+\end{eqnarray}
+Of course, the first equation is just a restatement of Equation~(\ref{e11.79}), whereas the second is Newton's second law of motion for the
+system.
+
+Consider a particle of mass $m$ moving in the central potential $U(r)$. 
+In this case,
+\begin{equation}
+K = \frac{1}{2}\,m\,(\dot{r}^{\,2} + r^2\,\dot{\theta}^{\,2}),
+\end{equation}
+where $r,\theta$ are  polar coordinates. The generalized momenta conjugate to $r$ and $\theta$ are
+\begin{eqnarray}\label{e11.85}
+p_r &=& \frac{\partial K}{\partial \dot{r}} = m\,\dot{r},\\[0.5ex]
+p_\theta &=& \frac{\partial K}{\partial \dot{\theta}} = m\,r^2\,\dot{\theta},\label{e11.86}
+\end{eqnarray}
+respectively.
+Hence, we can write
+\begin{equation}
+K = \frac{1}{2\,m}\left(p_r^{\,2} + \frac{p_\theta^{\,2}}{r^2}\right).
+\end{equation}
+Thus, the Hamiltonian of the system takes the form
+\begin{equation}
+H = \frac{1}{2\,m}\left(p_r^{\,2} + \frac{p_\theta^{\,2}}{r^2}\right)
++ U(r).
+\end{equation}
+In this case, Hamilton's equations yield
+\begin{eqnarray}
+\dot{r} &=& \frac{\partial H}{\partial p_r} = \frac{p_r}{m},\\[0.5ex]
+\dot{\theta}&=& \frac{\partial H}{\partial p_\theta} = \frac{p_\theta}{m\,r^2},
+\end{eqnarray}
+which are just restatements of Equations~(\ref{e11.85}) and (\ref{e11.86}), respectively, 
+as well as
+\begin{eqnarray}\label{e11.91}
+\dot{p}_r &=& -\frac{\partial H}{\partial r} = \frac{p_\theta^{\,2}}{m\,r^3}-\frac{\partial U}{\partial r},\\[0.5ex]
+\dot{p}_\theta &=& -\frac{\partial H}{\partial \theta} = 0.
+\end{eqnarray}
+The last equation implies that
+\begin{equation}\label{e11.93}
+\frac{p_\theta}{m} =r^2\,\dot{\theta} =h,
+\end{equation}
+where $h$ is a constant. This can be combined with Equation~(\ref{e11.91})
+to give
+\begin{equation}\label{e11.94}
+\frac{\dot{p}_r}{m} = \ddot{r} = \frac{h^2}{r^3} - \frac{\partial V}{\partial r},
+\end{equation}
+where $V=U/m$. Of course, Equations~(\ref{e11.93}) and (\ref{e11.94}) are the
+conventional equations of motion for a particle moving in a central potential---see Chapter~\ref{skepler}.
+
+\section{Exercises}
+{\small
+\renewcommand{\theenumi}{10.\arabic{enumi}}
+\begin{enumerate}
+\item A particle of mass $m$ is placed at the top of
+a smooth vertical hoop of radius $a$. Calculate the reaction of the hoop on the
+particle as it slides down the hoop by means of the method of Lagrange multipliers. Find the height at which the particle falls off the hoop.
+\item A uniform disk of mass $m$ and radius $a$ has a light string wrapped
+around its circumference with one end of the string attached to a fixed
+support. The disk is allowed to fall under gravity, unwinding the string
+as it falls. Solve the problem using the method of Lagrange multipliers.
+What is the tension in the string?
+\item Consider two particles of masses $m_1$ and $m_2$. Let $m_1$
+be constrained to move on a circle of radius $a$ in the $z=0$ plane,
+centered at $x=y=0$. (Here, $z$ measures vertical height). Let $m_2$
+be constrained to move on a circle of radius $a$ in the $z=c$ plane,
+centered on $x=y=0$. A light  spring of spring constant $k$ and unstretched
+length $c$
+is attached between the particles. Find the Lagrangian of the system. Solve the
+problem using Lagrange multipliers and give a physical interpretation
+for each multiplier.
+
+\item Find the Hamiltonian of a particle of mass $m$ constrained to
+move under gravity on the inside of a sphere of radius $a$. 
+Use the standard spherical polar coordinates $\theta$ and $\phi$ as
+your generalized coordinates, where the axis of the coordinates points
+vertically downward. Find Hamilton's equations of motion for the system.
+\item A particle of mass $m$ is subject to a central attractive force
+given by
+$$
+{\bf f} = - \frac{k\,{\rm e}^{-\beta\,t}}{r^2}\,{\bf e}_r,
+$$
+where $k$ and $\beta$ are positive constants. Find the Hamiltonian of
+the particle. Compare the Hamiltonian to the total energy of the particle.
+Is the energy of the particle conserved?
+\end{enumerate}
+}
