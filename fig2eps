@@ -1,0 +1,16 @@
+#!/bin/tcsh
+
+fig2dev -L pstex $1.fig > tmpfig.ps 
+fig2dev -L pstex_t -p tmpfig.ps $1.fig > tmpfig.tex
+
+echo \\documentclass\{article} > tmp.tex
+echo \\usepackage\{graphicx, epsfig} >> tmp.tex
+echo \\usepackage\{color} >> tmp.tex
+echo \\begin\{document} >> tmp.tex
+echo \\pagestyle\{empty} >> tmp.tex
+echo \\input\{tmpfig} >> tmp.tex
+echo \\end\{document} >> tmp.tex
+
+latex tmp
+dvips -E tmp -o $1.eps
+rm -rf tmp.tex tmpfig.*
